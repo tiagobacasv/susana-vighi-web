@@ -1,5 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import {
+  X,
+  User,
+  Settings,
+  Microscope,
+  TrendingUp,
+  Lightbulb,
+  Building2,
+  FlaskConical,
+  Stethoscope,
+  Wrench,
+  ChevronRight,
+} from "lucide-react";
 
 export const Route = createFileRoute("/equipo")({
   head: () => ({
@@ -13,38 +28,350 @@ export const Route = createFileRoute("/equipo")({
   component: EquipoPage,
 });
 
-const equipo = [
-  { nombre: "Dra. Susana Vighi", rol: "Dirección médica · Médica anatomopatóloga" },
-  { nombre: "Equipo de patólogos", rol: "Médicos especialistas en anatomía patológica" },
-  { nombre: "Citotecnólogos", rol: "Lectura y screening de citologías" },
-  { nombre: "Técnicos histológicos", rol: "Procesamiento de muestras y cortes" },
-  { nombre: "Área de calidad", rol: "Sistema de gestión y trazabilidad" },
-  { nombre: "Recepción y secretaría", rol: "Atención a pacientes y médicos derivantes" },
+// ─── Grid data ────────────────────────────────────────────────────────────────
+
+const direccion = [
+  { nombre: "Emiliano Pastor", rol: "Director Ejecutivo", detalle: "Contador Público Nacional (UBA) · Lic. en Administración de Empresas (UBA) · Máster en Finanzas Corporativas (UCEMA) · Ex Coca-Cola Company" },
+  { nombre: "Dra. Andrea Paparatto", rol: "Directora Médica", detalle: "Especialista en Anatomía Patológica (MN98395 / MP451876) · Citopatología y Uropatología · Ex Visiting Fellow MD Anderson Cancer Center, Houston" },
+];
+const subdireccion = [
+  { nombre: "Dr. Federico Ferrando", rol: "Sub-Dirección", detalle: "Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica · Ex docente de Anatomía Patológica" },
+  { nombre: "Dra. Marysol Costoya", rol: "Sub-Dirección", detalle: "Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología" },
+];
+const especialistas = [
+  { nombre: "Dra. Diana Miserendino", rol: "Nefropatología y Gastroenteropatología", detalle: "MN100367" },
+  { nombre: "Dr. Mauro García Montenegro", rol: "Hematopatología", detalle: "MN154271 · Vicepresidente SOLAHP 2025–2027" },
+];
+const cuerpoMedico = [
+  { nombre: "Dra. Tania Rodriguez", rol: "Médica Anatomopatóloga", detalle: "MN188687" },
+  { nombre: "Dr. Daniel Vila Melgarejo", rol: "Patología Forense", detalle: "MN159165 · Diplomatura en Patología Forense" },
+  { nombre: "Dra. Andrea Flores Herbas", rol: "Patología Forense y Pediátrica", detalle: "MN1631960" },
+];
+const citotecnicos = [
+  { nombre: "Miguel Domenniani", rol: "Citotécnico" },
+  { nombre: "Tobias Pardo", rol: "Citotécnico" },
+];
+const responsables = [
+  { nombre: "Antonella Pandolfi", rol: "Asistente de Dirección" },
+  { nombre: "Javier Pecollo", rol: "Supervisor de Procesos" },
+];
+const coordinadores = [
+  { nombre: "Adriana Lopez", rol: "Coordinadora de Citología" },
+  { nombre: "Laura Ureta", rol: "Coordinadora de Inmunohistoquímica" },
 ];
 
+type Member = { nombre: string; rol: string; detalle?: string };
+
+// ─── Grid components ──────────────────────────────────────────────────────────
+
+function GridSection({ label, members }: { label: string; members: Member[] }) {
+  return (
+    <div>
+      <div className="mb-8 flex items-center gap-4">
+        <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">{label}</span>
+        <div className="h-px flex-1 bg-border" />
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {members.map((m) => (
+          <div key={m.nombre} className="rounded-xl border border-border bg-background p-6 transition-all hover:border-clinical-accent hover:shadow-lg hover:shadow-clinical-accent/5">
+            <h3 className="text-base font-bold tracking-tight">{m.nombre}</h3>
+            <p className="mt-1 text-sm font-semibold text-clinical-accent">{m.rol}</p>
+            {m.detalle && <p className="mt-3 text-xs leading-relaxed text-clinical-slate">{m.detalle}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function GridView() {
+  return (
+    <div className="py-24">
+      <div className="mx-auto max-w-7xl px-6 space-y-20">
+        <GridSection label="Dirección" members={direccion} />
+        <GridSection label="Sub-Dirección" members={subdireccion} />
+        <GridSection label="Médicos Especialistas" members={especialistas} />
+        <GridSection label="Cuerpo Médico" members={cuerpoMedico} />
+        <div>
+          <div className="mb-8 flex items-center gap-4">
+            <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">Personal Técnico</span>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          <div className="space-y-10">
+            <GridSection label="Citotécnicos" members={citotecnicos} />
+            <GridSection label="Responsables" members={responsables} />
+            <GridSection label="Coordinadores" members={coordinadores} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Organogram data ──────────────────────────────────────────────────────────
+
+interface NodeDef {
+  id: string;
+  title: string;
+  name?: string;
+  Icon: React.ElementType;
+  primary?: boolean;
+  details: string[];
+}
+
+const ND: Record<string, NodeDef> = {
+  de: { id: "de", title: "Dirección Ejecutiva", name: "Emiliano Pastor", Icon: User, primary: true, details: ["Contador Público Nacional (UBA)", "Lic. en Administración de Empresas (UBA)", "Máster en Finanzas Corporativas (UCEMA)", "Experiencia en Coca-Cola Company"] },
+  ad: { id: "ad", title: "Asistente de Dirección", name: "Antonella Pandolfi", Icon: Settings, details: [] },
+  ti: { id: "ti", title: "Tecnología e Innovación", Icon: Lightbulb, details: ["Pioneros en la incorporación de IA aplicada a la Anatomía Patológica en Argentina", "Patología digital integrada al flujo de trabajo"] },
+  dm: { id: "dm", title: "Dirección Médica", name: "Dra. Andrea Paparatto", Icon: Stethoscope, primary: true, details: ["Especialista en Anatomía Patológica (MN98395 / MP451876)", "Especialista en Citopatología y Uropatología", "Ex Visiting Fellow en MD Anderson Cancer Center, Houston"] },
+  sp: { id: "sp", title: "Supervisión de Procesos", name: "Javier Pecollo", Icon: Settings, details: [] },
+  ga: { id: "ga", title: "Gerencia Administrativa", Icon: Building2, details: [] },
+  gc: { id: "gc", title: "Gerencia Comercial", name: "Nicolás Santillán", Icon: TrendingUp, details: [] },
+  sm: { id: "sm", title: "Subdirección Médica", name: "Costoya / Ferrando", Icon: User, details: ["Dra. Marysol Costoya — Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología", "Dr. Federico Ferrando — Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica"] },
+  rc: { id: "rc", title: "Citos y BPs", Icon: Microscope, details: ["Miguel Domenniani — Citotécnico", "Tobias Pardo — Citotécnico"] },
+  aa: { id: "aa", title: "Área Administrativa", Icon: Building2, details: [] },
+  al: { id: "al", title: "Área Logística", Icon: Settings, details: [] },
+  am: { id: "am", title: "Área Médica", Icon: Stethoscope, details: ["Dra. Diana Miserendino — Nefropatología y Gastroenteropatología (MN100367)", "Dr. Mauro García Montenegro — Hematopatología (MN154271) · Vicepresidente SOLAHP 2025–2027", "Dra. Tania Rodriguez (MN188687)", "Dr. Daniel Vila Melgarejo — Patología Forense (MN159165)", "Dra. Andrea Flores Herbas — Patología Forense y Pediátrica (MN1631960)"] },
+  at: { id: "at", title: "Área Técnica", Icon: Wrench, details: [] },
+  ai: { id: "ai", title: "Área Inmunohistoquímica", Icon: FlaskConical, details: ["Adriana Lopez — Coordinadora de Citología", "Laura Ureta — Coordinadora de Inmunohistoquímica"] },
+};
+
+// ─── Organogram components ────────────────────────────────────────────────────
+
+function OrgModal({ node, onClose }: { node: NodeDef; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+      <div className="relative w-full max-w-md rounded-2xl border border-border bg-background p-8 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute right-4 top-4 flex size-8 items-center justify-center rounded-full border border-border text-clinical-slate hover:bg-secondary">
+          <X className="size-4" />
+        </button>
+        <div className="mb-5 flex size-12 items-center justify-center rounded-full bg-clinical-blue/10">
+          <node.Icon className="size-6 text-clinical-blue" />
+        </div>
+        <h2 className="text-xl font-bold tracking-tight">{node.title}</h2>
+        {node.name && <p className="mt-1 text-sm font-semibold text-clinical-accent">{node.name}</p>}
+        {node.details.length > 0 ? (
+          <ul className="mt-6 space-y-2">
+            {node.details.map((d, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-clinical-slate">
+                <ChevronRight className="mt-0.5 size-3.5 shrink-0 text-clinical-accent" />
+                {d}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-4 text-sm text-clinical-slate">Información no disponible.</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+const VLine = ({ h = "h-8" }: { h?: string }) => (
+  <div className={cn("mx-auto w-px bg-clinical-accent/30", h)} />
+);
+
+function OrgCard({ node, onClick, compact = false }: { node: NodeDef; onClick: () => void; compact?: boolean }) {
+  const { Icon, title, name, primary } = node;
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "group flex w-full cursor-pointer flex-col items-center rounded-xl border text-center transition-all hover:shadow-lg",
+        compact ? "px-1 py-2" : "w-full px-3 py-3",
+        primary
+          ? "border-clinical-blue bg-clinical-blue hover:shadow-clinical-blue/20"
+          : "border-border bg-background hover:border-clinical-accent hover:shadow-clinical-accent/10"
+      )}
+    >
+      <div className={cn("mb-1.5 flex items-center justify-center rounded-full", compact ? "size-6" : "size-8", primary ? "bg-white/20" : "bg-secondary group-hover:bg-clinical-accent/10")}>
+        <Icon className={cn(compact ? "size-3" : "size-4", primary ? "text-white" : "text-clinical-blue")} />
+      </div>
+      <div className={cn("font-bold uppercase leading-tight tracking-wide", compact ? "text-[9px]" : "text-[10px]", primary ? "text-white" : "text-foreground")}>
+        {title}
+      </div>
+      {name && <div className={cn("mt-0.5 leading-tight", compact ? "text-[8px]" : "text-[9px]", primary ? "text-white/70" : "text-clinical-slate")}>{name}</div>}
+    </button>
+  );
+}
+
+function LevelBadge({ n, label, sub }: { n: string; label: string; sub?: string }) {
+  return (
+    <div className="flex shrink-0 flex-col gap-0.5">
+      <span className="inline-flex items-center rounded-full bg-clinical-blue px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-white">
+        NIVEL {n}
+      </span>
+      <span className="font-mono text-[9px] uppercase tracking-widest text-clinical-slate">{label}</span>
+      {sub && <p className="max-w-[72px] text-[8px] leading-tight text-clinical-slate/60">{sub}</p>}
+    </div>
+  );
+}
+
+function OrgView() {
+  const [selected, setSelected] = useState<NodeDef | null>(null);
+  const open = (node: NodeDef) => setSelected(node);
+
+  const GuideLine = ({ n, label, sub }: { n?: string; label?: string; sub?: string }) => (
+    <div className="mb-6 flex items-center gap-3">
+      <div className="shrink-0 ml-3 flex flex-col items-center">
+        {n && (
+          <span className="inline-flex items-center rounded-full bg-clinical-blue px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-white">
+            NIVEL {n}
+          </span>
+        )}
+        {label && (
+          <span className="mt-1 font-mono text-[9px] uppercase tracking-widest text-clinical-slate">
+            {label}
+          </span>
+        )}
+        {sub && (
+          <p className="mt-0.5 font-mono text-[8px] uppercase tracking-widest text-clinical-slate/50 text-center">
+            {sub}
+          </p>
+        )}
+      </div>
+      <div className="flex-1 border-t border-dashed border-clinical-accent/25" />
+    </div>
+  );
+
+  return (
+    <>
+      <div className="overflow-x-auto py-12">
+        <div className="ml-0 min-w-[900px] w-full pl-2 pr-8">
+
+          <GuideLine n="1" label="ESTRATÉGICO" />
+
+          {/* ── NIVEL 1 ─────────────────────────────── */}
+          <div className="mx-auto w-full max-w-4xl py-8">
+            <div className="relative flex flex-col items-center">
+              <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-clinical-accent/30" />
+
+              <div className="relative z-10">
+                <OrgCard node={ND.de} onClick={() => open(ND.de)} />
+              </div>
+
+              <div className="relative grid w-full grid-cols-3 items-center py-6">
+                <div className="absolute left-[17%] right-[17%] top-1/2 h-px bg-clinical-accent/30" />
+                <div className="z-10 flex justify-center">
+                  <OrgCard node={ND.ad} onClick={() => open(ND.ad)} />
+                </div>
+                <div />
+                <div className="z-10 flex justify-center">
+                  <OrgCard node={ND.ti} onClick={() => open(ND.ti)} />
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                <OrgCard node={ND.dm} onClick={() => open(ND.dm)} />
+              </div>
+
+              <div className="relative grid w-full grid-cols-3 items-center py-6">
+                <div className="absolute left-1/2 right-[17%] top-1/2 h-px bg-clinical-accent/30" />
+                <div />
+                <div />
+                <div className="z-10 flex justify-center">
+                  <OrgCard node={ND.sp} onClick={() => open(ND.sp)} />
+                </div>
+              </div>
+
+              <VLine h="h-8" />
+            </div>
+          </div>
+          <GuideLine n="2" label="TÁCTICO"/>
+
+          {/* ── NIVEL 2 ─────────────────────────────── */}
+          <div className="mx-auto w-full max-w-4xl py-6">
+            <div className="relative grid grid-cols-3 items-start">
+              <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+              {[ND.ga, ND.gc, ND.sm].map((node) => (
+                <div key={node.id} className="flex flex-col items-center px-4">
+                  <VLine h="h-6" />
+                  <OrgCard node={node} onClick={() => open(node)} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <GuideLine n="3" label="OPERATIVO" />
+
+          {/* ── NIVEL 3 ─────────────────────────────── */}
+          <div className="mx-auto w-full max-w-4xl py-6">
+            <div className="grid grid-cols-3">
+              <div className="flex flex-col items-center">
+                <VLine h="h-8" />
+                <div className="relative grid w-full grid-cols-3 items-start">
+                  <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+                  {[ND.rc, ND.aa, ND.al].map((node) => (
+                    <div key={node.id} className="flex flex-col items-center px-1">
+                      <VLine h="h-5" />
+                      <OrgCard node={node} onClick={() => open(node)} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div />
+
+              <div className="flex flex-col items-center">
+                <VLine h="h-8" />
+                <div className="relative grid w-full grid-cols-3 items-start">
+                  <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+                  {[ND.am, ND.at, ND.ai].map((node) => (
+                    <div key={node.id} className="flex flex-col items-center px-1">
+                      <VLine h="h-5" />
+                      <OrgCard node={node} onClick={() => open(node)} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <GuideLine />
+
+          <p className="mt-8 text-center font-mono text-[10px] uppercase tracking-widest text-clinical-slate/60">
+            Hacé clic en cada nodo para ver más información
+          </p>
+        </div>
+      </div>
+
+      {selected && <OrgModal node={selected} onClose={() => setSelected(null)} />}
+    </>
+  );
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 function EquipoPage() {
+  const [view, setView] = useState<"grid" | "org">("grid");
+
   return (
     <SiteLayout>
       <PageHero
         eyebrow="Nuestro equipo"
         title="Profesionales formados para el más alto estándar."
-        description="Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes, sostenidos por una cultura de mejora continua."
+        description="Combinamos experiencia médica, gestión de calidad y especialización técnica para sostener un diagnóstico de excelencia."
       />
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
-            {equipo.map((p, i) => (
-              <div key={p.nombre} className="bg-background p-8">
-                <div className="mb-6 font-mono text-xs text-clinical-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <h3 className="mb-2 text-lg font-bold tracking-tight">{p.nombre}</h3>
-                <p className="text-sm text-clinical-slate">{p.rol}</p>
-              </div>
-            ))}
-          </div>
+
+      <div className="border-b border-border">
+        <div className="mx-auto flex max-w-7xl gap-1 px-6 py-4">
+          <button
+            onClick={() => setView("grid")}
+            className={cn("rounded-lg px-4 py-2 text-sm font-semibold transition-colors", view === "grid" ? "bg-clinical-blue text-primary-foreground" : "text-clinical-slate hover:bg-secondary")}
+          >
+            Vista grilla
+          </button>
+          <button
+            onClick={() => setView("org")}
+            className={cn("rounded-lg px-4 py-2 text-sm font-semibold transition-colors", view === "org" ? "bg-clinical-blue text-primary-foreground" : "text-clinical-slate hover:bg-secondary")}
+          >
+            Organigrama
+          </button>
         </div>
-      </section>
+      </div>
+
+      {view === "grid" ? <GridView /> : <OrgView />}
     </SiteLayout>
   );
 }

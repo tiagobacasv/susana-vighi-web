@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import logoImg from "@/assets/fav-icon.png";
 
 const navLinks = [
   { to: "/", label: "Inicio" },
@@ -29,9 +30,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex size-9 items-center justify-center rounded-md bg-clinical-blue">
-            <span className="size-3 bg-clinical-accent" />
-          </span>
+          <img src={logoImg} alt="CAP Vighi" className="h-12 w-auto object-contain" />
           <span className="text-base font-bold uppercase tracking-tight md:text-lg">
             CAP Vighi
           </span>
@@ -100,9 +99,7 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <span className="flex size-9 items-center justify-center rounded-md bg-white/10">
-              <span className="size-3 bg-clinical-accent" />
-            </span>
+            <img src={logoImg} alt="CAP Vighi" className="h-16 w-auto object-contain" />
             <span className="text-lg font-bold uppercase tracking-tight">CAP Vighi</span>
           </div>
           <p className="mt-6 max-w-sm text-sm text-white/60">

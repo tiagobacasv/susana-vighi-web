@@ -256,7 +256,7 @@ function Index() {
 
       {/* CTA */}
       <section className="py-32">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
+        <div className="mt-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
           <div>
             <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
               Tres décadas formando un referente en diagnóstico.
@@ -264,7 +264,7 @@ function Index() {
           </div>
           <div>
             <p className="text-lg text-clinical-slate">
-              Bajo la dirección de la Dra. Susana Vighi, integramos experiencia clínica,
+              Integramos experiencia clínica,
               tecnología y un sistema de gestión riguroso para sostener un estándar de
               excelencia.
             </p>
