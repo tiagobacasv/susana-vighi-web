@@ -45,11 +45,12 @@
 :root {
   --radius: 0.75rem;
 
-  --clinical-blue: oklch(0.22 0.05 256);
-  --clinical-accent: oklch(0.78 0.14 220);
-  --clinical-slate: oklch(0.55 0.02 256);
+  /* Institutional palette — deep CAP Vighi violet */
+  --clinical-blue: oklch(0.32 0.13 305);
+  --clinical-accent: oklch(0.62 0.22 305);
+  --clinical-slate: oklch(0.5 0.04 300);
   --clinical-bg: oklch(1 0 0);
-  --clinical-surface: oklch(0.98 0.005 250);
+  --clinical-surface: oklch(0.975 0.008 305);
 
   --background: var(--clinical-bg);
   --foreground: var(--clinical-blue);
