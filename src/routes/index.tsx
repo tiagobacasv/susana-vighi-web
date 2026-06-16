@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/SiteLayout";
 import heroImg from "@/assets/hero-histology.jpg";
 import histoImg from "@/assets/service-histopathology.jpg";
 import immunoImg from "@/assets/service-immuno.jpg";
@@ -25,10 +26,10 @@ export const Route = createFileRoute("/")({
 });
 
 const turnaround = [
-  { label: "Papanicolaou", value: "3", unit: "días hábiles" },
-  { label: "Biopsia", value: "6", unit: "días hábiles" },
-  { label: "Inmunohistoquímica", value: "7", unit: "días hábiles" },
-  { label: "Biopsia c/ IHQ", value: "9", unit: "días hábiles" },
+  { label: "Papanicolaou", value: "3" },
+  { label: "Biopsia", value: "6" },
+  { label: "Inmunohistoquímica", value: "7" },
+  { label: "Biopsia c/ IHQ", value: "9" },
 ];
 
 const services = [
@@ -56,12 +57,12 @@ const pillars = [
   {
     n: "01",
     title: "Celeridad",
-    desc: "Reducir tiempos de diagnóstico puede salvar vidas. Nuestra logística está diseñada para informar lo antes posible.",
+    desc: "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible.",
   },
   {
     n: "02",
     title: "Calidad médica",
-    desc: "Fomentamos los más altos estándares de calidad médica con controles internos y revisión por pares.",
+    desc: "Fomentamos los más altos estándares con controles internos y revisión por pares.",
   },
   {
     n: "03",
@@ -71,47 +72,13 @@ const pillars = [
   {
     n: "04",
     title: "Tecnología",
-    desc: "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo de trabajo.",
+    desc: "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo.",
   },
 ];
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground selection:bg-clinical-accent/30">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-          <a href="#" className="flex items-center gap-2.5">
-            <span className="flex size-9 items-center justify-center rounded-md bg-clinical-blue">
-              <span className="size-3 bg-clinical-accent" />
-            </span>
-            <span className="text-lg font-bold uppercase tracking-tight">
-              Susana Vighi
-            </span>
-          </a>
-          <div className="hidden items-center gap-10 text-sm font-medium uppercase tracking-wide text-clinical-slate md:flex">
-            <a href="#especialidades" className="transition-colors hover:text-foreground">
-              Especialidades
-            </a>
-            <a href="#tecnologia" className="transition-colors hover:text-foreground">
-              Tecnología
-            </a>
-            <a href="#equipo" className="transition-colors hover:text-foreground">
-              Equipo
-            </a>
-            <a href="#contacto" className="transition-colors hover:text-foreground">
-              Contacto
-            </a>
-            <a
-              href="#contacto"
-              className="rounded-full bg-clinical-blue px-5 py-2.5 text-xs text-primary-foreground transition-all hover:opacity-90"
-            >
-              Portal de resultados
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <SiteLayout>
       {/* Hero */}
       <section className="relative overflow-hidden px-6 pt-20 pb-32">
         <div className="mx-auto max-w-7xl">
@@ -124,26 +91,26 @@ function Index() {
                 </span>
               </div>
               <h1 className="mb-8 text-5xl font-bold leading-[0.95] tracking-tighter text-balance md:text-7xl">
-                Patología de <br />
-                <span className="text-clinical-slate">precisión digital.</span>
+                Lideramos la <br />
+                <span className="text-clinical-accent">anatomía patológica.</span>
               </h1>
               <p className="mb-10 max-w-lg text-xl leading-relaxed text-clinical-slate">
-                Lideramos la especialidad de anatomía patológica en Argentina, combinando
-                experiencia médica, innovación y eficiencia al servicio del diagnóstico.
+                Combinamos experiencia médica, innovación e infraestructura digital
+                para optimizar el flujo de trabajo y reducir los tiempos de informe.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href="#especialidades"
+                <Link
+                  to="/especialidades"
                   className="rounded-lg bg-clinical-blue px-8 py-4 font-semibold text-primary-foreground transition-all hover:shadow-xl"
                 >
                   Ver especialidades
-                </a>
-                <a
-                  href="#contacto"
+                </Link>
+                <Link
+                  to="/contacto"
                   className="rounded-lg border border-border bg-background px-8 py-4 font-semibold text-foreground transition-all hover:bg-secondary"
                 >
-                  Consultar estudios
-                </a>
+                  Consultar
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -167,34 +134,34 @@ function Index() {
         </div>
       </section>
 
-      {/* Turnaround / data row */}
+      {/* Turnaround */}
       <section className="border-y border-border bg-secondary py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-12">
+          <div className="mb-12 flex items-baseline justify-between">
             <span className="font-mono text-xs uppercase tracking-widest text-clinical-slate">
               Tiempos de entrega promedio
+            </span>
+            <span className="hidden font-mono text-[10px] uppercase tracking-widest text-clinical-slate md:block">
+              Días hábiles
             </span>
           </div>
           <div className="grid gap-12 md:grid-cols-4">
             {turnaround.map((t) => (
               <div key={t.label}>
                 <div className="mb-6 h-1 w-12 bg-clinical-accent" />
-                <div className="mb-2 text-4xl font-bold tracking-tight">
+                <div className="mb-2 text-5xl font-bold tracking-tight">
                   {t.value}
                   <span className="ml-1 text-2xl text-clinical-slate">d</span>
                 </div>
-                <div className="text-sm font-medium text-clinical-slate">
-                  <span className="block font-semibold text-foreground">{t.label}</span>
-                  {t.unit}
-                </div>
+                <div className="text-sm font-semibold text-foreground">{t.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="especialidades" className="py-32">
+      {/* Services preview */}
+      <section className="py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
             <div className="max-w-2xl">
@@ -209,13 +176,13 @@ function Index() {
                 personalizado.
               </p>
             </div>
-            <a
-              href="#contacto"
+            <Link
+              to="/especialidades"
               className="group flex items-center gap-2 font-semibold italic text-clinical-blue hover:not-italic"
             >
-              Ver todos los servicios
+              Ver todas las especialidades
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
@@ -256,8 +223,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Pillars / Tecnología */}
-      <section id="tecnologia" className="bg-clinical-blue py-32 text-primary-foreground">
+      {/* Pillars */}
+      <section className="bg-clinical-blue py-32 text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-20 max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
@@ -287,112 +254,37 @@ function Index() {
         </div>
       </section>
 
-      {/* Equipo / Lugar */}
-      <section id="equipo" className="py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-2">
+      {/* CTA */}
+      <section className="py-32">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
           <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-              Nuestro equipo
-            </span>
-            <h2 className="mt-4 text-4xl font-bold tracking-tight">
-              Dirección médica con más de tres décadas de trayectoria.
+            <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
+              Tres décadas formando un referente en diagnóstico.
             </h2>
-            <p className="mt-6 text-lg text-clinical-slate">
-              Bajo la dirección de la Dra. Susana Vighi, nuestro laboratorio combina la
-              experiencia clínica acumulada con metodologías modernas para sostener un
-              estándar de excelencia.
-            </p>
-            <div className="mt-10 grid grid-cols-2 gap-8">
-              <div>
-                <div className="text-3xl font-bold">+30</div>
-                <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  Años de trayectoria
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold">SGC</div>
-                <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  Sistema de gestión de calidad
-                </div>
-              </div>
-            </div>
           </div>
-          <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-3xl bg-secondary ring-1 ring-black/5">
-              <img
-                src={heroImg}
-                alt="Centro de Anatomía Patológica"
-                loading="lazy"
-                width={800}
-                height={1000}
-                className="size-full object-cover"
-              />
+          <div>
+            <p className="text-lg text-clinical-slate">
+              Bajo la dirección de la Dra. Susana Vighi, integramos experiencia clínica,
+              tecnología y un sistema de gestión riguroso para sostener un estándar de
+              excelencia.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/equipo"
+                className="rounded-lg bg-clinical-blue px-6 py-3 font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Conocer al equipo
+              </Link>
+              <Link
+                to="/sistema-gestion"
+                className="rounded-lg border border-border px-6 py-3 font-semibold hover:bg-secondary"
+              >
+                Sistema de gestión
+              </Link>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Footer / Contacto */}
-      <footer id="contacto" className="mt-20 bg-clinical-blue py-20 text-primary-foreground">
-        <div className="mx-auto grid max-w-7xl gap-20 px-6 md:grid-cols-2">
-          <div>
-            <h2 className="mb-8 text-3xl font-bold">
-              Confianza médica, <br />
-              claridad científica.
-            </h2>
-            <p className="mb-10 max-w-sm text-white/60">
-              Estamos a disposición de pacientes, médicos derivantes e instituciones para
-              consultas y derivaciones.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <span className="size-2 bg-clinical-accent" />
-                <span className="text-sm uppercase tracking-widest">
-                  Ciudad de Buenos Aires, Argentina
-                </span>
-              </div>
-              <div className="flex items-center gap-4 text-white/60">
-                <span className="size-2 bg-white/20" />
-                <a href="mailto:info@susanavighi.com.ar" className="text-sm hover:text-primary-foreground">
-                  info@susanavighi.com.ar
-                </a>
-              </div>
-              <div className="flex items-center gap-4 text-white/60">
-                <span className="size-2 bg-white/20" />
-                <span className="text-sm">Lunes a Viernes 08:00 — 20:00</span>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-10 backdrop-blur-sm">
-            <h4 className="mb-6 font-bold italic">Médicos derivantes</h4>
-            <p className="mb-8 text-sm text-white/60">
-              Coordinemos la recepción de muestras y la entrega digital de informes para
-              su institución.
-            </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="Email profesional"
-                className="flex-1 rounded-lg border border-white/10 bg-white/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-white/40 focus:border-clinical-accent focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="rounded-lg bg-clinical-accent px-6 py-3 text-sm font-bold uppercase text-clinical-blue transition-opacity hover:opacity-90"
-              >
-                Contactar
-              </button>
-            </form>
-          </div>
-        </div>
-        <div className="mx-auto mt-20 flex max-w-7xl flex-col justify-between gap-4 border-t border-white/10 px-6 pt-10 text-[10px] uppercase tracking-widest text-white/40 md:flex-row">
-          <div>© {new Date().getFullYear()} Centro de Anatomía Patológica Dra. Susana Vighi</div>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-primary-foreground">Privacidad</a>
-            <a href="#" className="hover:text-primary-foreground">Términos</a>
-            <a href="#" className="hover:text-primary-foreground">Sistema de gestión</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </SiteLayout>
   );
 }
