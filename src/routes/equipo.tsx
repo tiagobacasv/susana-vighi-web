@@ -30,37 +30,96 @@ export const Route = createFileRoute("/equipo")({
 
 // ─── Grid data ────────────────────────────────────────────────────────────────
 
-const direccion = [
-  { nombre: "Emiliano Pastor", rol: "Director Ejecutivo", detalle: "Contador Público Nacional (UBA) · Lic. en Administración de Empresas (UBA) · Máster en Finanzas Corporativas (UCEMA) · Ex Coca-Cola Company" },
-  { nombre: "Dra. Andrea Paparatto", rol: "Directora Médica", detalle: "Especialista en Anatomía Patológica (MN98395 / MP451876) · Citopatología y Uropatología · Ex Visiting Fellow MD Anderson Cancer Center, Houston" },
+type Member = { nombre: string; rol: string; detalle?: string };
+
+const direccion: Member[] = [
+  {
+    nombre: "Emiliano Pastor",
+    rol: "Director Ejecutivo",
+    detalle:
+      "Contador Público Nacional (UBA) · Lic. en Administración de Empresas (UBA) · Máster en Finanzas Corporativas (UCEMA) · Ex Gerencia de Finanzas División Centro América y Gerencia de Planeamiento Estratégico Región BPU — The Coca-Cola Company",
+  },
+  {
+    nombre: "Dra. Andrea Paparatto",
+    rol: "Directora Médica",
+    detalle:
+      "Especialista en Anatomía Patológica (MN98395 / MP451876) — Certificación SAP · Especialista en Citopatología (Certif. SAC), Uropatología y Patología Osteoarticular · Ex Secretaria de Actas SAP (2011–2013) · Ex Residente, Jefa de Residentes y Médica de Planta — CEMIC · Ex Patóloga Staff Centro de Patología Dr. Boris Elsner · Visiting Fellow MD Anderson Cancer Center, Houston (USA)",
+  },
 ];
-const subdireccion = [
-  { nombre: "Dr. Federico Ferrando", rol: "Sub-Dirección", detalle: "Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica · Ex docente de Anatomía Patológica" },
-  { nombre: "Dra. Marysol Costoya", rol: "Sub-Dirección", detalle: "Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología" },
+
+const subdireccion: Member[] = [
+  {
+    nombre: "Dr. Federico Ferrando",
+    rol: "Sub-Dirección",
+    detalle:
+      "Especialista en Anatomía Patológica (MN112223) · Especializado en Patología Ginecológica — CAP Vighi · Ex Docente de Anatomía Patológica — Escuela de Técnicos de Histología · Ex Residente Hospital Ramos Mejía",
+  },
+  {
+    nombre: "Dra. Marysol Costoya",
+    rol: "Sub-Dirección",
+    detalle:
+      "Especialista en Anatomía Patológica (MN123151) — Certificación SAP · Especializada en Patología Ginecológica — CAP Vighi · Especialista en Citopatología (Certif. SAC) · Ex Residente Hospital de Clínicas (UBA)",
+  },
 ];
-const especialistas = [
-  { nombre: "Dra. Diana Miserendino", rol: "Nefropatología y Gastroenteropatología", detalle: "MN100367" },
-  { nombre: "Dr. Mauro García Montenegro", rol: "Hematopatología", detalle: "MN154271 · Vicepresidente SOLAHP 2025–2027" },
+
+const especialistas: Member[] = [
+  {
+    nombre: "Dra. Diana Miserendino",
+    rol: "Especialista en Nefropatología y Gastroenteropatología",
+    detalle:
+      "Especialista en Anatomía Patológica (MN100367 / MP23630-2) — Certificación SAP · Especialista en Nefropatología y Gastroenteropatología · Ex Patóloga Staff Centro de Patología Dr. Boris Elsner · Ex Residente, Jefa de Residentes e Instructora Nefropatóloga — Hospital JM Ramos Mejía",
+  },
+  {
+    nombre: "Dr. Mauro García Montenegro",
+    rol: "Especialista en Hematopatología",
+    detalle:
+      "Especialista en Anatomía Patológica (MN154271) · Especialista en Hematopatología Diagnóstica Integral — Ex Fellow Fundaleu (2015–2020) · MSc en Biología Molecular Médica (Facultad de Farmacia y Bioquímica — UBA) · Vicepresidente SOLAHP (2025–2027) · Médico Concurrente Lab. Genética de Neoplasias Linfoides (IMEX-CONICET — Academia Nacional de Medicina) · Visiting Fellow Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)",
+  },
 ];
-const cuerpoMedico = [
-  { nombre: "Dra. Tania Rodriguez", rol: "Médica Anatomopatóloga", detalle: "MN188687" },
-  { nombre: "Dr. Daniel Vila Melgarejo", rol: "Patología Forense", detalle: "MN159165 · Diplomatura en Patología Forense" },
-  { nombre: "Dra. Andrea Flores Herbas", rol: "Patología Forense y Pediátrica", detalle: "MN1631960" },
+
+const cuerpoMedico: Member[] = [
+  {
+    nombre: "Dra. Tania Rodriguez",
+    rol: "Médica Anatomopatóloga",
+    detalle:
+      "Especialista en Anatomía Patológica (MN188687) · Postgrado de Anatomía Patológica — Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela) · Especialidad en Medicina Legal — Instituto Universitario de la Policía Federal Argentina · Ex Patóloga Staff Hospital Luisa C. de Gandulfo (Lomas de Zamora)",
+  },
+  {
+    nombre: "Dr. Daniel Vila Melgarejo",
+    rol: "Patología Forense",
+    detalle:
+      "Especialista en Anatomía Patológica (MN159165) — Certificación SAP · Diplomatura en Patología Forense (UCA) · Ex Residente Hospital HIGA San Martín — Universidad Mayor de San Simón · Fellow en Patología Hospital Británico",
+  },
+  {
+    nombre: "Dra. Andrea Flores Herbas",
+    rol: "Patología Forense y Pediátrica",
+    detalle:
+      "Especialista en Anatomía Patológica (MN1631960) — Certificación SAP · Diplomatura en Patología Forense (UCA) · Ex Residente Hospital HIGA San Martín — Universidad Mayor de San Simón · Becaria en Patología Pediátrica — Hospital Garrahan",
+  },
 ];
-const citotecnicos = [
-  { nombre: "Miguel Domenniani", rol: "Citotécnico" },
-  { nombre: "Tobias Pardo", rol: "Citotécnico" },
+
+const citotecnicos: Member[] = [
+  {
+    nombre: "Miguel Domenniani",
+    rol: "Citotécnico",
+    detalle: "Matrícula MN241914 · Citotecnólogo Universitario — Instituto Universitario CEMIC (IUC)",
+  },
+  {
+    nombre: "Tobias Pardo",
+    rol: "Citotécnico",
+    detalle: "Matrícula MN 377 · Citotecnólogo Universitario — Instituto Universitario CEMIC (IUC)",
+  },
 ];
-const responsables = [
+
+const responsables: Member[] = [
   { nombre: "Antonella Pandolfi", rol: "Asistente de Dirección" },
   { nombre: "Javier Pecollo", rol: "Supervisor de Procesos" },
 ];
-const coordinadores = [
+
+const coordinadores: Member[] = [
   { nombre: "Adriana Lopez", rol: "Coordinadora de Citología" },
   { nombre: "Laura Ureta", rol: "Coordinadora de Inmunohistoquímica" },
 ];
-
-type Member = { nombre: string; rol: string; detalle?: string };
 
 // ─── Grid components ──────────────────────────────────────────────────────────
 
@@ -92,17 +151,9 @@ function GridView() {
         <GridSection label="Sub-Dirección" members={subdireccion} />
         <GridSection label="Médicos Especialistas" members={especialistas} />
         <GridSection label="Cuerpo Médico" members={cuerpoMedico} />
-        <div>
-          <div className="mb-8 flex items-center gap-4">
-            <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">Personal Técnico</span>
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          <div className="space-y-10">
-            <GridSection label="Citotécnicos" members={citotecnicos} />
-            <GridSection label="Responsables" members={responsables} />
-            <GridSection label="Coordinadores" members={coordinadores} />
-          </div>
-        </div>
+        <GridSection label="Citotécnicos" members={citotecnicos} />
+        <GridSection label="Responsables de Área" members={responsables} />
+        <GridSection label="Coordinadores" members={coordinadores} />
       </div>
     </div>
   );
