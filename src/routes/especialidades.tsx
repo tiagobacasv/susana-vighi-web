@@ -1,47 +1,183 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import histoImg from "@/assets/service-histopathology.jpg";
-import immunoImg from "@/assets/service-immuno.jpg";
-import cytoImg from "@/assets/service-cytology.jpg";
+import {
+  FlaskConical,
+  Microscope,
+  Dna,
+  Activity,
+  Sparkles,
+  ScanLine,
+  Layers,
+  ChevronRight,
+} from "lucide-react";
+import type { ElementType } from "react";
 
 export const Route = createFileRoute("/especialidades")({
   head: () => ({
     meta: [
       { title: "Especialidades — CAP Vighi" },
-      { name: "description", content: "Histopatología, inmunohistoquímica, citología y patología digital." },
+      {
+        name: "description",
+        content:
+          "Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad: citometría de flujo, inmunofluorescencia y microscopía electrónica.",
+      },
       { property: "og:title", content: "Especialidades — CAP Vighi" },
-      { property: "og:description", content: "Servicios diagnósticos del Centro de Anatomía Patológica Dra. Susana Vighi." },
+      {
+        property: "og:description",
+        content:
+          "Diagnóstico anatomopatológico integral: biología molecular, inmunohistoquímica y técnicas de alta complejidad.",
+      },
     ],
   }),
   component: EspecialidadesPage,
 });
 
-const items = [
+// ───────────────────────────────────────────────────────────────────────────────
+
+type SubBlock = {
+  titulo: string;
+  Icon: ElementType;
+  descripcion: string;
+  bullets?: string[];
+  envio?: string[];
+};
+
+type Especialidad = {
+  slug: string;
+  numero: string;
+  titulo: string;
+  Icon: ElementType;
+  resumen: string;
+  partnership?: string;
+  destacados?: { titulo: string; detalle: string }[];
+  paneles?: { titulo: string; detalle: string }[];
+  sub?: SubBlock[];
+};
+
+const especialidades: Especialidad[] = [
   {
-    titulo: "Histopatología",
-    desc: "Procesamiento y diagnóstico de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales.",
-    tiempo: "6 días hábiles",
-    img: histoImg,
+    slug: "biologia-molecular",
+    numero: "01",
+    titulo: "Biología Molecular",
+    Icon: Dna,
+    resumen:
+      "La Biología Molecular es una herramienta clave para el diagnóstico de precisión: impacta en el pronóstico y la selección terapéutica de los pacientes. Nuestro servicio integra técnicas moleculares validadas en estrecha correlación con los hallazgos anatomopatológicos, garantizando resultados confiables y alineados con estándares científicos actuales.",
+    partnership: "Sistema BenchMark ULTRA — Roche ©",
+    destacados: [
+      {
+        titulo: "Tecnología de avanzada",
+        detalle:
+          "El sistema BenchMark ULTRA es el sistema de tinción por láminas de hibridación in situ más innovador y totalmente automatizado de Roche Tissue Diagnostics. Cajones deslizantes individuales para flujo de trabajo de una sola pieza y un menú de más de 250 ensayos listos para usar.",
+      },
+      {
+        titulo: "Técnicas automatizadas",
+        detalle:
+          "Efectuadas en condiciones estables, con idénticos antisueros y controles computarizados.",
+      },
+      {
+        titulo: "El diagnóstico biomolecular permite",
+        detalle:
+          "Elevar las posibilidades y calidad de vida humana e incrementar las probabilidades en la gestación del embarazo.",
+      },
+    ],
   },
   {
+    slug: "inmunohistoquimica",
+    numero: "02",
     titulo: "Inmunohistoquímica",
-    desc: "Determinación de marcadores diagnósticos, pronósticos y predictivos para oncología de precisión.",
-    tiempo: "7 días hábiles",
-    img: immunoImg,
+    Icon: FlaskConical,
+    resumen:
+      "Herramienta esencial para el diagnóstico anatomopatológico actual: tipificación tumoral, evaluación de factores pronósticos y predictivos, aportando información decisiva para la clasificación y toma de decisiones clínicas. Utilizamos técnicas estandarizadas con protocolos automatizados en plataforma BenchMark Ultra de Ventana, con anticuerpos monoclonales y policlonales y controles de calidad rigurosos.",
+    partnership: "Plataforma BenchMark Ultra — Ventana / Roche ©",
+    paneles: [
+      {
+        titulo: "Inestabilidad Microsatelital",
+        detalle: "MLH1 (M1) · PMS2 (A16-4) · MSH2 (G219-1129) · MSH6 (SP93)",
+      },
+      {
+        titulo: "PDL-1 · BRAF",
+        detalle:
+          "Marcadores clave en oncología de precisión. Aporta información fundamental para la selección terapéutica.",
+      },
+      {
+        titulo: "Microambiente Inmunológico — Panel Endometrio",
+        detalle: "CD3 · CD4 · CD8 · CD16 · CD20 · CD45 · CD56 · CD68 · CD138",
+      },
+      {
+        titulo: "Patología Mamaria",
+        detalle:
+          "Receptores Hormonales (Estrógeno y Progesterona) · Her2-Neu · Ki-67 · Proteínas 5/6 · 8/18 · P-53",
+      },
+      {
+        titulo: "Paneles de Hematopatología",
+        detalle: "Clasificación de neoplasias linfoides y mieloides.",
+      },
+      {
+        titulo: "Paneles de Origen Primario Desconocido",
+        detalle: "Orientado a la identificación del sitio primario tumoral.",
+      },
+      {
+        titulo: "Paneles Epiteliales, Mesenquimáticos y Neuroendócrinos",
+        detalle: "Para la correcta categorización tumoral.",
+      },
+    ],
   },
   {
-    titulo: "Citología — Papanicolaou",
-    desc: "Screening cervicovaginal con lectura especializada y entrega ágil.",
-    tiempo: "3 días hábiles",
-    img: cytoImg,
+    slug: "tecnicas-alta-complejidad",
+    numero: "03",
+    titulo: "Técnicas de Alta Complejidad",
+    Icon: Layers,
+    resumen:
+      "Métodos complementarios al diagnóstico anatomopatológico que amplían la resolución, sensibilidad y precisión del informe en patologías complejas.",
+    sub: [
+      {
+        titulo: "Citometría de Flujo",
+        Icon: Activity,
+        descripcion:
+          "Método de diagnóstico rápido que provee múltiples parámetros, obtenidos de células y partículas provenientes de muestras líquidas o tejidos sólidos de material en fresco. Valor auxiliar invaluable en Hematopatología: diagnóstico, clasificación y determinación de factores pronósticos en entidades linfoproliferativas.",
+        envio: [
+          "Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día.",
+          "Sangre periférica y líquidos: tubo con EDTA a temperatura ambiente (no refrigerar). Enviar en el día.",
+        ],
+      },
+      {
+        titulo: "Inmunofluorescencia",
+        Icon: Sparkles,
+        descripcion:
+          "Técnica que utiliza marcadores fluorescentes para identificar moléculas adheridas en la superficie celular. Se realiza sobre tejidos en fresco.",
+        bullets: ["Biopsias renales", "Biopsias de piel", "Biopsias oculares"],
+        envio: [
+          "Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día.",
+        ],
+      },
+      {
+        titulo: "Microscopía Electrónica",
+        Icon: ScanLine,
+        descripcion:
+          "Técnica que obtiene imágenes de alta resolución sobre la ultraestructura celular. Utilizada como método complementario al diagnóstico anatomopatológico.",
+        envio: ["Tacos de parafina.", "Adjuntar informe histológico."],
+      },
+    ],
   },
   {
-    titulo: "Citología por punción (PAAF)",
-    desc: "Estudio de muestras obtenidas por punción aspirativa de órganos sólidos.",
-    tiempo: "6 días hábiles",
-    img: cytoImg,
+    slug: "histopatologia",
+    numero: "04",
+    titulo: "Histopatología",
+    Icon: Microscope,
+    resumen:
+      "Procesamiento y diagnóstico de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales. Tiempo de entrega promedio: 6 días hábiles para biopsia y 9 días hábiles para biopsia con inmunohistoquímica.",
+  },
+  {
+    slug: "citologia",
+    numero: "05",
+    titulo: "Citología — Papanicolaou y PAAF",
+    Icon: ScanLine,
+    resumen:
+      "Screening cervicovaginal (Papanicolaou) con lectura especializada y entrega ágil — 3 días hábiles promedio — y estudio de muestras obtenidas por punción aspirativa con aguja fina (PAAF) de órganos sólidos.",
   },
 ];
+
+// ───────────────────────────────────────────────────────────────────────────────
 
 function EspecialidadesPage() {
   return (
@@ -49,38 +185,166 @@ function EspecialidadesPage() {
       <PageHero
         eyebrow="Especialidades"
         title="Diagnóstico anatomopatológico integral."
-        description="Cubrimos el espectro completo de la especialidad con tiempos de entrega ágiles y trazabilidad de extremo a extremo."
+        description="Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad — con tecnología validada y partnerships internacionales."
       />
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6 space-y-16">
-          {items.map((it, idx) => (
-            <article
-              key={it.titulo}
-              className={
-                "grid items-center gap-12 md:grid-cols-2 " +
-                (idx % 2 === 1 ? "md:[&>div:first-child]:order-2" : "")
-              }
-            >
-              <div className="overflow-hidden rounded-2xl ring-1 ring-black/5">
-                <img src={it.img} alt={it.titulo} loading="lazy" width={800} height={600} className="aspect-[4/3] w-full object-cover" />
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                  {String(idx + 1).padStart(2, "0")} · Servicio
-                </div>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{it.titulo}</h2>
-                <p className="mt-5 text-clinical-slate leading-relaxed">{it.desc}</p>
-                <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-border bg-secondary px-4 py-2">
-                  <span className="size-1.5 rounded-full bg-clinical-accent" />
-                  <span className="font-mono text-xs uppercase tracking-widest text-clinical-blue">
-                    Tiempo de entrega · {it.tiempo}
-                  </span>
-                </div>
-              </div>
-            </article>
-          ))}
+
+      {/* Índice */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-10">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {especialidades.map((e) => (
+              <a
+                key={e.slug}
+                href={`#${e.slug}`}
+                className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              >
+                <e.Icon className="size-4 text-clinical-accent" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                  {e.numero}
+                </span>
+                <span className="text-xs font-semibold leading-tight">{e.titulo}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Detalle */}
+      <div className="bg-secondary/30">
+        {especialidades.map((e, idx) => (
+          <section
+            key={e.slug}
+            id={e.slug}
+            className={
+              "scroll-mt-24 py-20 " + (idx % 2 === 1 ? "bg-background" : "")
+            }
+          >
+            <div className="mx-auto max-w-7xl px-6">
+              <header className="mb-10 flex items-start gap-6">
+                <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-clinical-blue text-white shadow-lg shadow-clinical-blue/20">
+                  <e.Icon className="size-7" />
+                </div>
+                <div className="flex-1">
+                  <div className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
+                    {e.numero} · Especialidad
+                  </div>
+                  <h2 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+                    {e.titulo}
+                  </h2>
+                  {e.partnership && (
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5">
+                      <span className="size-1.5 rounded-full bg-clinical-accent" />
+                      <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-blue">
+                        Partnership · {e.partnership}
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </header>
+
+              <p className="max-w-4xl text-base leading-relaxed text-clinical-slate md:text-lg">
+                {e.resumen}
+              </p>
+
+              {/* Destacados */}
+              {e.destacados && (
+                <div className="mt-12 grid gap-5 md:grid-cols-3">
+                  {e.destacados.map((d) => (
+                    <div
+                      key={d.titulo}
+                      className="rounded-xl border border-border bg-background p-6"
+                    >
+                      <h3 className="text-sm font-bold tracking-tight">{d.titulo}</h3>
+                      <p className="mt-3 text-xs leading-relaxed text-clinical-slate">
+                        {d.detalle}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Paneles IMHQ */}
+              {e.paneles && (
+                <div className="mt-12">
+                  <h3 className="mb-6 font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+                    Paneles orientados según contexto clínico y morfológico
+                  </h3>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {e.paneles.map((p) => (
+                      <div
+                        key={p.titulo}
+                        className="flex gap-4 rounded-xl border border-border bg-background p-5"
+                      >
+                        <ChevronRight className="mt-0.5 size-4 shrink-0 text-clinical-accent" />
+                        <div>
+                          <h4 className="text-sm font-bold tracking-tight">{p.titulo}</h4>
+                          <p className="mt-1.5 text-xs leading-relaxed text-clinical-slate">
+                            {p.detalle}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Sub-técnicas */}
+              {e.sub && (
+                <div className="mt-12 space-y-6">
+                  {e.sub.map((s) => (
+                    <article
+                      key={s.titulo}
+                      className="rounded-2xl border border-border bg-background p-7"
+                    >
+                      <header className="flex items-center gap-3">
+                        <div className="flex size-10 items-center justify-center rounded-lg bg-clinical-accent/10">
+                          <s.Icon className="size-5 text-clinical-accent" />
+                        </div>
+                        <h3 className="text-xl font-bold tracking-tight">{s.titulo}</h3>
+                      </header>
+                      <p className="mt-4 text-sm leading-relaxed text-clinical-slate">
+                        {s.descripcion}
+                      </p>
+
+                      {s.bullets && (
+                        <ul className="mt-5 grid gap-2 sm:grid-cols-3">
+                          {s.bullets.map((b) => (
+                            <li
+                              key={b}
+                              className="flex items-center gap-2 rounded-md bg-secondary px-3 py-2 text-xs font-medium"
+                            >
+                              <span className="size-1 rounded-full bg-clinical-accent" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {s.envio && (
+                        <div className="mt-5 rounded-lg border border-dashed border-border bg-secondary/50 p-4">
+                          <p className="font-mono text-[10px] uppercase tracking-widest text-clinical-blue">
+                            Envío de muestras
+                          </p>
+                          <ul className="mt-2 space-y-1.5">
+                            {s.envio.map((line, i) => (
+                              <li
+                                key={i}
+                                className="text-xs leading-relaxed text-clinical-slate"
+                              >
+                                · {line}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        ))}
+      </div>
     </SiteLayout>
   );
 }

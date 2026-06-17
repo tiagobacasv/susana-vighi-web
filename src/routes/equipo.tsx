@@ -30,20 +30,34 @@ export const Route = createFileRoute("/equipo")({
 
 // ─── Grid data ────────────────────────────────────────────────────────────────
 
-type Member = { nombre: string; rol: string; detalle?: string };
+type FormacionItem = { titulo: string; institucion?: string };
+type Member = { nombre: string; rol: string; formacion?: FormacionItem[] };
 
 const direccion: Member[] = [
   {
     nombre: "Emiliano Pastor",
     rol: "Director Ejecutivo",
-    detalle:
-      "Contador Público Nacional (UBA) · Lic. en Administración de Empresas (UBA) · Máster en Finanzas Corporativas (UCEMA) · Ex Gerencia de Finanzas División Centro América y Gerencia de Planeamiento Estratégico Región BPU — The Coca-Cola Company",
+    formacion: [
+      { titulo: "Contador Público Nacional", institucion: "UBA" },
+      { titulo: "Licenciado en Administración de Empresas", institucion: "UBA" },
+      { titulo: "Máster en Finanzas Corporativas", institucion: "UCEMA" },
+      { titulo: "Gerencia de Finanzas", institucion: "División Centro América — The Coca-Cola Company" },
+      { titulo: "Gerencia de Planeamiento Estratégico", institucion: "Región BPU — The Coca-Cola Company" },
+    ],
   },
   {
     nombre: "Dra. Andrea Paparatto",
     rol: "Directora Médica",
-    detalle:
-      "Especialista en Anatomía Patológica (MN98395 / MP451876) — Certificación SAP · Especialista en Citopatología (Certif. SAC), Uropatología y Patología Osteoarticular · Ex Secretaria de Actas SAP (2011–2013) · Ex Residente, Jefa de Residentes y Médica de Planta — CEMIC · Ex Patóloga Staff Centro de Patología Dr. Boris Elsner · Visiting Fellow MD Anderson Cancer Center, Houston (USA)",
+    formacion: [
+      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN98395 / MP451876" },
+      { titulo: "Médica Especialista en Citopatología", institucion: "Certificación SAC" },
+      { titulo: "Médica Especialista en Uropatología" },
+      { titulo: "Médica Especialista en Patología Osteoarticular" },
+      { titulo: "Ex Secretaria de Actas SAP", institucion: "Período 2011–2013" },
+      { titulo: "Ex Residente, Jefa de Residentes y Médica de Planta", institucion: "CEMIC" },
+      { titulo: "Ex Patóloga Staff", institucion: "Centro de Patología Dr. Boris Elsner" },
+      { titulo: "Visiting Fellow de Patología", institucion: "MD Anderson Cancer Center, Houston, Texas, USA" },
+    ],
   },
 ];
 
@@ -51,14 +65,22 @@ const subdireccion: Member[] = [
   {
     nombre: "Dr. Federico Ferrando",
     rol: "Sub-Dirección",
-    detalle:
-      "Especialista en Anatomía Patológica (MN112223) · Especializado en Patología Ginecológica — CAP Vighi · Ex Docente de Anatomía Patológica — Escuela de Técnicos de Histología · Ex Residente Hospital Ramos Mejía",
+    formacion: [
+      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN112223" },
+      { titulo: "Especializado en Patología Ginecológica", institucion: "CAP Vighi" },
+      { titulo: "Ex Docente de Anatomía Patológica", institucion: "Escuela de Técnicos de Histología" },
+      { titulo: "Ex Residente", institucion: "Hospital Ramos Mejía" },
+    ],
   },
   {
     nombre: "Dra. Marysol Costoya",
     rol: "Sub-Dirección",
-    detalle:
-      "Especialista en Anatomía Patológica (MN123151) — Certificación SAP · Especializada en Patología Ginecológica — CAP Vighi · Especialista en Citopatología (Certif. SAC) · Ex Residente Hospital de Clínicas (UBA)",
+    formacion: [
+      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN123151" },
+      { titulo: "Especializada en Patología Ginecológica", institucion: "CAP Vighi" },
+      { titulo: "Médica Especialista en Citopatología", institucion: "Certificación SAC" },
+      { titulo: "Ex Residente", institucion: "Hospital de Clínicas — UBA" },
+    ],
   },
 ];
 
@@ -66,14 +88,25 @@ const especialistas: Member[] = [
   {
     nombre: "Dra. Diana Miserendino",
     rol: "Especialista en Nefropatología y Gastroenteropatología",
-    detalle:
-      "Especialista en Anatomía Patológica (MN100367 / MP23630-2) — Certificación SAP · Especialista en Nefropatología y Gastroenteropatología · Ex Patóloga Staff Centro de Patología Dr. Boris Elsner · Ex Residente, Jefa de Residentes e Instructora Nefropatóloga — Hospital JM Ramos Mejía",
+    formacion: [
+      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2" },
+      { titulo: "Médica Especialista en Nefropatología" },
+      { titulo: "Médica Especialista en Gastroenteropatología" },
+      { titulo: "Ex Patóloga Staff", institucion: "Centro de Patología Dr. Boris Elsner" },
+      { titulo: "Ex Residente, Jefa de Residentes e Instructora Nefropatóloga", institucion: "Hospital JM Ramos Mejía" },
+    ],
   },
   {
     nombre: "Dr. Mauro García Montenegro",
     rol: "Especialista en Hematopatología",
-    detalle:
-      "Especialista en Anatomía Patológica (MN154271) · Especialista en Hematopatología Diagnóstica Integral — Ex Fellow Fundaleu (2015–2020) · MSc en Biología Molecular Médica (Facultad de Farmacia y Bioquímica — UBA) · Vicepresidente SOLAHP (2025–2027) · Médico Concurrente Lab. Genética de Neoplasias Linfoides (IMEX-CONICET — Academia Nacional de Medicina) · Visiting Fellow Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)",
+    formacion: [
+      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN154271" },
+      { titulo: "Médico Especialista en Hematopatología Diagnóstica Integral", institucion: "Ex-Fellow Fundaleu (2015–2020)" },
+      { titulo: "MSc en Biología Molecular Médica", institucion: "Facultad de Farmacia y Bioquímica — UBA" },
+      { titulo: "Vicepresidente SOLAHP", institucion: "Soc. Latinoamericana de Hematopatología (2025–2027)" },
+      { titulo: "Médico Concurrente Lab. Genética de Neoplasias Linfoides", institucion: "IMEX-CONICET — Academia Nacional de Medicina" },
+      { titulo: "Visiting Fellow", institucion: "Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)" },
+    ],
   },
 ];
 
@@ -81,20 +114,32 @@ const cuerpoMedico: Member[] = [
   {
     nombre: "Dra. Tania Rodriguez",
     rol: "Médica Anatomopatóloga",
-    detalle:
-      "Especialista en Anatomía Patológica (MN188687) · Postgrado de Anatomía Patológica — Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela) · Especialidad en Medicina Legal — Instituto Universitario de la Policía Federal Argentina · Ex Patóloga Staff Hospital Luisa C. de Gandulfo (Lomas de Zamora)",
+    formacion: [
+      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "MN188687" },
+      { titulo: "Postgrado de Anatomía Patológica", institucion: "Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela)" },
+      { titulo: "Especialidad en Medicina Legal", institucion: "Inst. Universitario de la Policía Federal Argentina" },
+      { titulo: "Ex Patóloga Staff", institucion: "Hospital Luisa C. de Gandulfo (Lomas de Zamora)" },
+    ],
   },
   {
     nombre: "Dr. Daniel Vila Melgarejo",
     rol: "Patología Forense",
-    detalle:
-      "Especialista en Anatomía Patológica (MN159165) — Certificación SAP · Diplomatura en Patología Forense (UCA) · Ex Residente Hospital HIGA San Martín — Universidad Mayor de San Simón · Fellow en Patología Hospital Británico",
+    formacion: [
+      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN159165" },
+      { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
+      { titulo: "Ex Residente", institucion: "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
+      { titulo: "Fellow en Patología", institucion: "Hospital Británico" },
+    ],
   },
   {
     nombre: "Dra. Andrea Flores Herbas",
     rol: "Patología Forense y Pediátrica",
-    detalle:
-      "Especialista en Anatomía Patológica (MN1631960) — Certificación SAP · Diplomatura en Patología Forense (UCA) · Ex Residente Hospital HIGA San Martín — Universidad Mayor de San Simón · Becaria en Patología Pediátrica — Hospital Garrahan",
+    formacion: [
+      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN1631960" },
+      { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
+      { titulo: "Ex Residente", institucion: "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
+      { titulo: "Becaria en Patología Pediátrica", institucion: "Hospital Garrahan" },
+    ],
   },
 ];
 
@@ -102,12 +147,18 @@ const citotecnicos: Member[] = [
   {
     nombre: "Miguel Domenniani",
     rol: "Citotécnico",
-    detalle: "Matrícula MN241914 · Citotecnólogo Universitario — Instituto Universitario CEMIC (IUC)",
+    formacion: [
+      { titulo: "Matrícula MN241914" },
+      { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
+    ],
   },
   {
     nombre: "Tobias Pardo",
     rol: "Citotécnico",
-    detalle: "Matrícula MN 377 · Citotecnólogo Universitario — Instituto Universitario CEMIC (IUC)",
+    formacion: [
+      { titulo: "Matrícula MN 377" },
+      { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
+    ],
   },
 ];
 
@@ -123,23 +174,50 @@ const coordinadores: Member[] = [
 
 // ─── Grid components ──────────────────────────────────────────────────────────
 
+function MemberCard({ m }: { m: Member }) {
+  return (
+    <article className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-all hover:border-clinical-accent hover:shadow-lg hover:shadow-clinical-accent/5">
+      <header className="border-b border-border pb-4">
+        <h3 className="text-base font-bold tracking-tight leading-tight">{m.nombre}</h3>
+        <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-clinical-accent">
+          {m.rol}
+        </p>
+      </header>
+      {m.formacion && m.formacion.length > 0 && (
+        <ul className="mt-5 space-y-3">
+          {m.formacion.map((f, i) => (
+            <li key={i} className="flex gap-3">
+              <span className="mt-1.5 inline-block size-1 shrink-0 rounded-full bg-clinical-accent" />
+              <div className="flex-1">
+                <p className="text-xs font-semibold leading-snug text-foreground">{f.titulo}</p>
+                {f.institucion && (
+                  <p className="mt-0.5 text-[11px] leading-snug text-clinical-slate">{f.institucion}</p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </article>
+  );
+}
+
 function GridSection({ label, members }: { label: string; members: Member[] }) {
   return (
-    <div>
+    <section>
       <div className="mb-8 flex items-center gap-4">
         <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">{label}</span>
         <div className="h-px flex-1 bg-border" />
+        <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+          {String(members.length).padStart(2, "0")}
+        </span>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {members.map((m) => (
-          <div key={m.nombre} className="rounded-xl border border-border bg-background p-6 transition-all hover:border-clinical-accent hover:shadow-lg hover:shadow-clinical-accent/5">
-            <h3 className="text-base font-bold tracking-tight">{m.nombre}</h3>
-            <p className="mt-1 text-sm font-semibold text-clinical-accent">{m.rol}</p>
-            {m.detalle && <p className="mt-3 text-xs leading-relaxed text-clinical-slate">{m.detalle}</p>}
-          </div>
+          <MemberCard key={m.nombre} m={m} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
