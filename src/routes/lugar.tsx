@@ -1,46 +1,230 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import heroImg from "@/assets/hero-histology.jpg";
+import { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+
+// Planta Baja
+import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.jpg";
+import pbS2 from "@/assets/NuestroLugar/PB/Slider02_h.jpg";
+import pbS3 from "@/assets/NuestroLugar/PB/Slider03_h.jpg";
+import pbS4 from "@/assets/NuestroLugar/PB/Slider04_h.jpg";
+import pbS5 from "@/assets/NuestroLugar/PB/Slider05_h.jpg";
+
+// Primer Piso
+import p1S1 from "@/assets/NuestroLugar/1P/Slider01_h.jpg";
+import p1S2 from "@/assets/NuestroLugar/1P/Slider02_h.jpg";
+import p1S3 from "@/assets/NuestroLugar/1P/Slider03_h.jpg";
+import p1S4 from "@/assets/NuestroLugar/1P/Slider04_h.jpg";
+import p1S5 from "@/assets/NuestroLugar/1P/Slider05_h.jpg";
+
+// Segundo Piso
+import p2S1 from "@/assets/NuestroLugar/2P/Slider01_h.jpg";
+import p2S2 from "@/assets/NuestroLugar/2P/Slider02_h.jpg";
+import p2S3 from "@/assets/NuestroLugar/2P/Slider03_h.jpg";
+import p2S4 from "@/assets/NuestroLugar/2P/Slider04_h.jpg";
+import p2S5 from "@/assets/NuestroLugar/2P/Slider05_h.jpg";
+
+// Tercer Piso
+import p3S1 from "@/assets/NuestroLugar/3P/Slider01_h.jpg";
+import p3S2 from "@/assets/NuestroLugar/3P/Slider02_h.jpg";
+import p3S3 from "@/assets/NuestroLugar/3P/Slider03_h.jpg";
+import p3S4 from "@/assets/NuestroLugar/3P/Slider04_h.jpg";
+import p3S5 from "@/assets/NuestroLugar/3P/Slider05_h.jpg";
 
 export const Route = createFileRoute("/lugar")({
   head: () => ({
     meta: [
       { title: "Nuestro lugar — CAP Vighi" },
-      { name: "description", content: "Instalaciones del Centro de Anatomía Patológica Dra. Susana Vighi en Buenos Aires." },
+      { name: "description", content: "Edificio especialmente diseñado para la actividad de Anatomía Patológica, cumpliendo estándares de calidad y seguridad." },
       { property: "og:title", content: "Nuestro lugar — CAP Vighi" },
-      { property: "og:description", content: "Un espacio diseñado para la precisión diagnóstica y la trazabilidad." },
+      { property: "og:description", content: "Cuatro pisos diseñados para la precisión diagnóstica y la trazabilidad." },
     ],
   }),
   component: LugarPage,
 });
+
+const pisos = [
+  {
+    nivel: "PB",
+    nombre: "Planta Baja",
+    desc: "Acceso principal y gestión operativa del centro.",
+    areas: ["Recepción", "Gerencia Administrativa", "Administración", "Facturación y Sistemas", "Comedor"],
+    fotos: [
+      { src: pbS1, label: "Recepción" },
+      { src: pbS2, label: "Gerencia Administrativa" },
+      { src: pbS3, label: "Administración" },
+      { src: pbS4, label: "Facturación y Sistemas" },
+      { src: pbS5, label: "Comedor" },
+    ],
+  },
+  {
+    nivel: "1°",
+    nombre: "Primer Piso",
+    desc: "Área de dirección médica y staff de patólogos.",
+    areas: ["Dirección Médica", "Sala de Reuniones", "Sub-Dirección Médica", "Sector Patólogos Staff"],
+    fotos: [
+      { src: p1S1, label: "Dirección Médica" },
+      { src: p1S2, label: "Sala de Reuniones" },
+      { src: p1S3, label: "Sub-Dirección Médica" },
+      { src: p1S4, label: "Sector Patólogos Staff" },
+      { src: p1S5, label: "Sector Patólogos Staff" },
+    ],
+  },
+  {
+    nivel: "2°",
+    nombre: "Segundo Piso — Laboratorio",
+    desc: "Procesamiento integral de muestras histológicas con flujo ordenado y trazable.",
+    areas: ["Sector de Corte", "Sector de Inclusión", "Sector de Inmunohistoquímica", "Sector de Procesamiento y Coloración", "Sector de Macroscopía"],
+    fotos: [
+      { src: p2S1, label: "Sector de Corte" },
+      { src: p2S2, label: "Sector de Inclusión" },
+      { src: p2S3, label: "Sector de Inmunohistoquímica" },
+      { src: p2S4, label: "Sector de Procesamiento y Coloración" },
+      { src: p2S5, label: "Sector de Macroscopía" },
+    ],
+  },
+  {
+    nivel: "3°",
+    nombre: "Tercer Piso",
+    desc: "Gestión estratégica, capacitación y espacios de reunión.",
+    areas: ["Sala de Reuniones", "Dirección Ejecutiva"],
+    fotos: [
+      { src: p3S1, label: "Sala de Reuniones" },
+      { src: p3S2, label: "Sala de Reuniones" },
+      { src: p3S3, label: "Sala de Reuniones" },
+      { src: p3S4, label: "Dirección Ejecutiva" },
+      { src: p3S5, label: "Dirección Ejecutiva" },
+    ],
+  },
+];
+
+type Foto = { src: string; label: string };
+
+function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string }) {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const n = fotos.length;
+
+  const next = useCallback(() => setCurrent((c) => (c + 1) % n), [n]);
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + n) % n), [n]);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(next, 4000);
+    return () => clearInterval(id);
+  }, [paused, next]);
+
+  const getStyle = (i: number): React.CSSProperties => {
+    let diff = i - current;
+    if (diff > n / 2) diff -= n;
+    if (diff < -n / 2) diff += n;
+    const abs = Math.abs(diff);
+    const dir = diff >= 0 ? 1 : -1;
+
+    if (abs === 0) return { transform: "scale(1) translateX(0%) rotateY(0deg)", zIndex: 10, opacity: 1, filter: "none" };
+    if (abs === 1) return { transform: `scale(0.78) translateX(${dir * 62}%) rotateY(${dir * -35}deg)`, zIndex: 6, opacity: 0.85, filter: "brightness(0.75)" };
+    if (abs === 2) return { transform: `scale(0.58) translateX(${dir * 112}%) rotateY(${dir * -45}deg)`, zIndex: 3, opacity: 0.5, filter: "brightness(0.5)" };
+    return { opacity: 0, zIndex: 0, transform: `translateX(${dir * 150}%)` };
+  };
+
+  return (
+    <div
+      className="relative flex h-96 items-center justify-center overflow-hidden md:h-full md:min-h-[520px]"
+      style={{ perspective: "900px" }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {fotos.map((foto, i) => {
+        const style = getStyle(i);
+        let diff = i - current;
+        if (diff > n / 2) diff -= n;
+        if (diff < -n / 2) diff += n;
+        const isCenter = diff === 0;
+        return (
+          <div
+            key={i}
+            onClick={() => !isCenter && setCurrent(i)}
+            style={{ ...style, transition: "all 0.65s cubic-bezier(0.4,0,0.2,1)", position: "absolute", width: "80%", transformOrigin: "center center" }}
+            className={`overflow-hidden rounded-2xl shadow-2xl ${!isCenter ? "cursor-pointer" : ""}`}
+          >
+            <img
+              src={foto.src}
+              alt={`${nombre} — ${foto.label}`}
+              className="aspect-[4/3] w-full object-cover"
+            />
+            <div
+              className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 via-black/10 to-transparent p-5 transition-opacity duration-500"
+              style={{ opacity: isCenter ? 1 : 0 }}
+            >
+              <div className="flex items-center gap-2 self-start rounded-full bg-white/15 px-3 py-1.5 backdrop-blur-md ring-1 ring-white/20">
+                <MapPin className="size-3 shrink-0 text-clinical-accent" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-white">{foto.label}</span>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      <button onClick={prev} className="absolute left-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+        <ChevronLeft className="size-5" />
+      </button>
+      <button onClick={next} className="absolute right-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+        <ChevronRight className="size-5" />
+      </button>
+
+      <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+        {fotos.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/50"}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }) {
+  return (
+    <div className={`flex flex-col overflow-hidden rounded-2xl border border-border md:flex-row ${reverse ? "md:flex-row-reverse" : ""}`}>
+      <div className="md:w-1/2">
+        <CoverflowCarousel fotos={piso.fotos} nombre={piso.nombre} />
+      </div>
+      <div className="flex flex-col justify-center gap-6 p-10 md:w-1/2">
+        <span className="inline-flex w-fit items-center rounded-full bg-clinical-blue px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white">
+          {piso.nivel}
+        </span>
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">{piso.nombre}</h2>
+          <p className="mt-2 text-clinical-slate">{piso.desc}</p>
+        </div>
+        <ul className="space-y-2">
+          {piso.areas.map((area) => (
+            <li key={area} className="flex items-center gap-2 text-sm text-clinical-slate">
+              <span className="size-1.5 shrink-0 rounded-full bg-clinical-accent" />
+              {area}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
 
 function LugarPage() {
   return (
     <SiteLayout>
       <PageHero
         eyebrow="Nuestro lugar"
-        title="Un espacio diseñado para la precisión."
-        description="Instalaciones planificadas para optimizar el flujo de muestras, garantizar la trazabilidad y sostener la incorporación continua de nueva tecnología."
+        title="Un edificio diseñado para la Anatomía Patológica."
+        description="Especialmente construido para desarrollar la actividad diagnóstica cumpliendo con los estándares de calidad y seguridad requeridos."
       />
       <section className="py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 md:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl ring-1 ring-black/5">
-            <img src={heroImg} alt="Recepción CAP Vighi" loading="lazy" width={800} height={1000} className="aspect-[4/5] w-full object-cover" />
-          </div>
-          <div className="space-y-8 self-center">
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Recepción y atención</h2>
-              <p className="mt-3 text-clinical-slate">Espacio diferenciado para pacientes y para la entrega de muestras de médicos derivantes.</p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Laboratorio histológico</h2>
-              <p className="mt-3 text-clinical-slate">Procesamiento, inclusión, microtomía y coloración con flujo ordenado y trazable.</p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold tracking-tight">Patología digital</h2>
-              <p className="mt-3 text-clinical-slate">Escaneo de portaobjetos en alta resolución para diagnóstico digital, archivo e interconsulta.</p>
-            </div>
-          </div>
+        <div className="mx-auto max-w-7xl space-y-8 px-6">
+          {pisos.map((piso, i) => (
+            <PisoCard key={piso.nivel} piso={piso} reverse={i % 2 !== 0} />
+          ))}
         </div>
       </section>
     </SiteLayout>

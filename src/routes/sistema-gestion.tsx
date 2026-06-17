@@ -63,7 +63,7 @@ function SistemaGestionPage() {
                 <h3 className="mb-1 text-xl font-bold tracking-tight">{p.titulo}</h3>
                 <p className="mb-4 text-sm font-semibold text-clinical-accent">{p.subtitulo}</p>
                 <p className="mb-8 text-sm leading-relaxed text-clinical-slate">{p.desc}</p>
-                <div className="flex flex-wrap gap-3 border-t border-border pt-6">
+                <div className="flex flex-wrap justify-evenly gap-3 border-t border-border pt-6">
                   {p.items.map((item) => (
                     <div key={item.label} className="flex flex-col">
                       <span className="text-2xl font-bold tracking-tight text-clinical-blue">{item.value}</span>
