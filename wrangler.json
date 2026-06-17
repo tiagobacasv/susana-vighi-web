@@ -1,9 +1,9 @@
 {
   "name": "susana-vighi-web",
-  "main": ".output/server/index.mjs",
+  "main": "dist/server/server.js",
   "compatibility_date": "2025-06-17",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": ".output/public"
+    "directory": "dist/client"
   }
 }
