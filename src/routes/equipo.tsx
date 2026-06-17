@@ -179,7 +179,7 @@ function OrgCard({ node, onClick, compact = false }: { node: NodeDef; onClick: (
       onClick={onClick}
       className={cn(
         "group flex w-full cursor-pointer flex-col items-center rounded-xl border text-center transition-all hover:shadow-lg",
-        compact ? "px-1 py-2" : "w-full px-3 py-3",
+        compact ? "px-1 py-2" : "min-w-[150px] w-full px-3 py-3",
         primary
           ? "border-clinical-blue bg-clinical-blue hover:shadow-clinical-blue/20"
           : "border-border bg-background hover:border-clinical-accent hover:shadow-clinical-accent/10"
@@ -243,7 +243,7 @@ function OrgView() {
           <GuideLine n="1" label="ESTRATÉGICO" />
 
           {/* ── NIVEL 1 ─────────────────────────────── */}
-          <div className="mx-auto w-full max-w-4xl py-8">
+          <div className="mx-auto w-full max-w-5xl py-8">
             <div className="relative flex flex-col items-center">
               <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-clinical-accent/30" />
 
@@ -281,13 +281,15 @@ function OrgView() {
           <GuideLine n="2" label="TÁCTICO"/>
 
           {/* ── NIVEL 2 ─────────────────────────────── */}
-          <div className="mx-auto w-full max-w-4xl py-6">
-            <div className="relative grid grid-cols-3 items-start">
-              <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+          <div className="w-full px-40 py-6">
+            <div className="relative flex items-start gap-16">
+              <div className="absolute left-[15%] right-[15%] top-0 h-px bg-clinical-accent/30" />
               {[ND.ga, ND.gc, ND.sm].map((node) => (
-                <div key={node.id} className="flex flex-col items-center px-4">
+                <div key={node.id} className="flex flex-1 flex-col items-center">
                   <VLine h="h-6" />
-                  <OrgCard node={node} onClick={() => open(node)} />
+                  <div className="w-full max-w-[180px]">
+                    <OrgCard node={node} onClick={() => open(node)} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -296,14 +298,15 @@ function OrgView() {
           <GuideLine n="3" label="OPERATIVO" />
 
           {/* ── NIVEL 3 ─────────────────────────────── */}
-          <div className="mx-auto w-full max-w-4xl py-6">
-            <div className="grid grid-cols-3">
+          <div className="w-full px-40 py-6">
+            <div className="grid grid-cols-3 gap-16">
+
               <div className="flex flex-col items-center">
                 <VLine h="h-8" />
-                <div className="relative grid w-full grid-cols-3 items-start">
-                  <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+                <div className="relative flex w-full items-start justify-center gap-4">
+                  <div className="absolute left-[calc(50%-166px)] right-[calc(50%-166px)] top-0 h-px bg-clinical-accent/30" />
                   {[ND.rc, ND.aa, ND.al].map((node) => (
-                    <div key={node.id} className="flex flex-col items-center px-1">
+                    <div key={node.id} className="flex w-[150px] flex-col items-center">
                       <VLine h="h-5" />
                       <OrgCard node={node} onClick={() => open(node)} />
                     </div>
@@ -315,16 +318,17 @@ function OrgView() {
 
               <div className="flex flex-col items-center">
                 <VLine h="h-8" />
-                <div className="relative grid w-full grid-cols-3 items-start">
-                  <div className="absolute left-[17%] right-[17%] top-0 h-px bg-clinical-accent/30" />
+                <div className="relative flex w-full items-start justify-center gap-4">
+                  <div className="absolute left-[calc(50%-166px)] right-[calc(50%-166px)] top-0 h-px bg-clinical-accent/30" />
                   {[ND.am, ND.at, ND.ai].map((node) => (
-                    <div key={node.id} className="flex flex-col items-center px-1">
+                    <div key={node.id} className="flex w-[150px] flex-col items-center">
                       <VLine h="h-5" />
                       <OrgCard node={node} onClick={() => open(node)} />
                     </div>
                   ))}
                 </div>
               </div>
+
             </div>
           </div>
 
