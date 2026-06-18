@@ -114,7 +114,7 @@ function SistemaGestionPage() {
             <div className="md:col-span-3">
               <div className="overflow-hidden rounded-2xl border border-border bg-secondary shadow-sm">
                 <img
-                  src={sistemaImg}
+                  src={sistemaAsset.url}
                   alt="Plataforma de gestión de muestras CAP Vighi"
                   loading="lazy"
                   width={1920}
