@@ -280,9 +280,9 @@ function EspecialidadesPage() {
       />
 
       {/* Índice */}
-      <section className="border-b border-border bg-background">
+      <section id="indice" className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
             {especialidades.map((e) => (
               <a
                 key={e.slug}
@@ -296,9 +296,30 @@ function EspecialidadesPage() {
                 <span className="text-xs font-semibold leading-tight">{e.titulo}</span>
               </a>
             ))}
+            <a
+              href="#subespecialidades"
+              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+            >
+              <Grid2x2 className="size-4 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                06
+              </span>
+              <span className="text-xs font-semibold leading-tight">Subespecialidades</span>
+            </a>
+            <a
+              href="#complementarios"
+              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+            >
+              <PlusCircle className="size-4 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                07
+              </span>
+              <span className="text-xs font-semibold leading-tight">Complementarios</span>
+            </a>
           </div>
         </div>
       </section>
+
 
       {/* Detalle */}
       <div className="bg-secondary/30">
