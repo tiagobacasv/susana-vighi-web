@@ -13,8 +13,11 @@ import {
   Droplets,
   FileSearch,
   Stethoscope,
+  ArrowUp,
+  Grid2x2,
+  PlusCircle,
 } from "lucide-react";
-import type { ElementType } from "react";
+import { useEffect, useState, type ElementType } from "react";
 
 export const Route = createFileRoute("/especialidades")({
   head: () => ({
