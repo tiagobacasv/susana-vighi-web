@@ -9,6 +9,10 @@ import {
   ScanLine,
   Layers,
   ChevronRight,
+  Snowflake,
+  Droplets,
+  FileSearch,
+  Stethoscope,
 } from "lucide-react";
 import type { ElementType } from "react";
 
