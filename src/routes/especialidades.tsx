@@ -536,6 +536,7 @@ function EspecialidadesPage() {
           </div>
         </div>
       </section>
+      <BackToTop />
     </SiteLayout>
   );
 }
