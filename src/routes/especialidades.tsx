@@ -282,40 +282,50 @@ function EspecialidadesPage() {
       {/* Índice */}
       <section id="indice" className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
-            {especialidades.map((e) => (
+          {/* Mobile: 2 cols / Desktop: grid-cols-8 con col-span-2 por chip */}
+          <div className="grid gap-3 grid-cols-2 lg:grid-cols-8">
+            {/* Fila 1 — primeros 4 */}
+            {especialidades.slice(0, 4).map((e) => (
               <a
                 key={e.slug}
                 href={`#${e.slug}`}
-                className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+                className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
               >
-                <e.Icon className="size-4 text-clinical-accent" />
-                <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  {e.numero}
-                </span>
-                <span className="text-xs font-semibold leading-tight">{e.titulo}</span>
+                <e.Icon className="size-5 shrink-0 text-clinical-accent" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">{e.numero}</span>
+                <span className="min-w-0 text-xs font-semibold leading-tight">{e.titulo}</span>
+              </a>
+            ))}
+            {/* Fila 2 — spacer + 3 items + spacer */}
+            <div className="hidden lg:block lg:col-span-1" />
+            {especialidades.slice(4).map((e) => (
+              <a
+                key={e.slug}
+                href={`#${e.slug}`}
+                className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              >
+                <e.Icon className="size-5 shrink-0 text-clinical-accent" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">{e.numero}</span>
+                <span className="min-w-0 text-xs font-semibold leading-tight">{e.titulo}</span>
               </a>
             ))}
             <a
               href="#subespecialidades"
-              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
             >
-              <Grid2x2 className="size-4 text-clinical-accent" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                06
-              </span>
-              <span className="text-xs font-semibold leading-tight">Subespecialidades</span>
+              <Grid2x2 className="size-5 shrink-0 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">06</span>
+              <span className="min-w-0 text-xs font-semibold leading-tight">Subespecialidades</span>
             </a>
             <a
               href="#complementarios"
-              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
             >
-              <PlusCircle className="size-4 text-clinical-accent" />
-              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                07
-              </span>
-              <span className="text-xs font-semibold leading-tight">Complementarios</span>
+              <PlusCircle className="size-5 shrink-0 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">07</span>
+              <span className="min-w-0 text-xs font-semibold leading-tight">Complementarios</span>
             </a>
+            <div className="hidden lg:block lg:col-span-1" />
           </div>
         </div>
       </section>
@@ -501,8 +511,8 @@ function EspecialidadesPage() {
       {/* Servicios complementarios */}
       <section id="complementarios" className="scroll-mt-24 border-t border-border bg-secondary/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-14 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl">
+          <div className="mb-14 max-w-3xl">
+            <div className="max-w-3xl">
               <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
                 07 · Servicios complementarios
               </div>
@@ -510,7 +520,7 @@ function EspecialidadesPage() {
                 Prestaciones que acompañan al informe.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-clinical-slate">
+            <p className="mt-3 max-w-sm text-sm leading-relaxed text-clinical-slate">
               Estudios y servicios adicionales que se integran al flujo diagnóstico
               cuando el caso lo requiere.
             </p>
