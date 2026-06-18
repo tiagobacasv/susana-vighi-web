@@ -38,19 +38,19 @@ const services = [
     title: "Histopatología",
     desc: "Procesamiento y análisis de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales.",
     img: histoImg,
-    shape: "square",
+    Icon: Microscope,
   },
   {
     title: "Inmunohistoquímica",
     desc: "Determinación de biomarcadores para oncología de precisión y terapias dirigidas.",
     img: immunoImg,
-    shape: "circle",
+    Icon: FlaskConical,
   },
   {
     title: "Citología",
     desc: "Papanicolaou y punciones aspirativas (PAAF) con lectura especializada.",
     img: cytoImg,
-    shape: "diamond",
+    Icon: ScanLine,
   },
 ];
 
