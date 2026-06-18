@@ -540,3 +540,26 @@ function EspecialidadesPage() {
     </SiteLayout>
   );
 }
+
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      type="button"
+      aria-label="Volver al inicio"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className={
+        "fixed bottom-6 right-6 z-50 flex size-12 items-center justify-center rounded-full bg-clinical-blue text-white shadow-lg shadow-clinical-blue/30 transition-all hover:bg-clinical-accent hover:scale-105 " +
+        (visible ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-3")
+      }
+    >
+      <ArrowUp className="size-5" />
+    </button>
+  );
+}
