@@ -73,6 +73,9 @@
   --ring: var(--clinical-accent);
 }
 
+@layer utilities {
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

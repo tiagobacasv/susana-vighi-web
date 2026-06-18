@@ -154,8 +154,60 @@ export function PageHero({
   description?: string;
 }) {
   return (
-    <section className="border-b border-border bg-secondary">
-      <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+    <section className="relative overflow-hidden border-b border-border bg-secondary">
+      {/* Decorative pathology field-of-view */}
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2">
+        <svg
+          viewBox="0 0 520 380"
+          className="absolute right-[-8%] top-1/2 h-[130%] w-auto -translate-y-1/2"
+          aria-hidden="true"
+        >
+          {/* Outer microscope rings */}
+          <circle cx="260" cy="190" r="175" fill="none" stroke="var(--clinical-accent)" strokeWidth="1" opacity="0.22" />
+          <circle cx="260" cy="190" r="152" fill="none" stroke="var(--clinical-blue)" strokeWidth="0.6" opacity="0.12" />
+          <circle cx="260" cy="190" r="130" fill="none" stroke="var(--clinical-accent)" strokeWidth="0.4" strokeDasharray="4 6" opacity="0.15" />
+
+          {/* Reticle crosshair */}
+          <line x1="260" y1="30" x2="260" y2="350" stroke="var(--clinical-accent)" strokeWidth="0.5" opacity="0.12" />
+          <line x1="95" y1="190" x2="425" y2="190" stroke="var(--clinical-accent)" strokeWidth="0.5" opacity="0.12" />
+
+          {/* Main cell — center */}
+          <circle cx="260" cy="190" r="32" fill="var(--clinical-accent)" opacity="0.10" />
+          <circle cx="260" cy="190" r="20" fill="var(--clinical-accent)" opacity="0.08" />
+          <circle cx="260" cy="190" r="7"  fill="var(--clinical-accent)" opacity="0.45" />
+
+          {/* Cell top-left */}
+          <circle cx="172" cy="138" r="24" fill="var(--clinical-blue)" opacity="0.09" />
+          <circle cx="172" cy="138" r="6"  fill="var(--clinical-blue)" opacity="0.4" />
+
+          {/* Cell top-right */}
+          <circle cx="348" cy="122" r="19" fill="var(--clinical-accent)" opacity="0.10" />
+          <circle cx="348" cy="122" r="5"  fill="var(--clinical-accent)" opacity="0.42" />
+
+          {/* Cell bottom-left */}
+          <circle cx="195" cy="268" r="26" fill="var(--clinical-blue)" opacity="0.08" />
+          <circle cx="195" cy="268" r="6"  fill="var(--clinical-blue)" opacity="0.38" />
+
+          {/* Cell bottom-right */}
+          <circle cx="330" cy="262" r="21" fill="var(--clinical-accent)" opacity="0.09" />
+          <circle cx="330" cy="262" r="5"  fill="var(--clinical-accent)" opacity="0.38" />
+
+          {/* Small satellite cells */}
+          <circle cx="136" cy="218" r="13" fill="var(--clinical-blue)"   opacity="0.07" />
+          <circle cx="136" cy="218" r="3"  fill="var(--clinical-blue)"   opacity="0.35" />
+          <circle cx="388" cy="205" r="15" fill="var(--clinical-accent)"  opacity="0.07" />
+          <circle cx="388" cy="205" r="4"  fill="var(--clinical-accent)"  opacity="0.35" />
+          <circle cx="290" cy="82"  r="11" fill="var(--clinical-blue)"   opacity="0.07" />
+          <circle cx="290" cy="82"  r="3"  fill="var(--clinical-blue)"   opacity="0.32" />
+          <circle cx="222" cy="310" r="10" fill="var(--clinical-accent)"  opacity="0.07" />
+          <circle cx="222" cy="310" r="2"  fill="var(--clinical-accent)"  opacity="0.32" />
+        </svg>
+
+        {/* Fade to left so no corte brusco con el texto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/60 to-transparent" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
         <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
           {eyebrow}
         </span>

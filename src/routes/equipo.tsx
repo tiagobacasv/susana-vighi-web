@@ -31,7 +31,7 @@ export const Route = createFileRoute("/equipo")({
 // ─── Grid data ────────────────────────────────────────────────────────────────
 
 type FormacionItem = { titulo: string; institucion?: string };
-type Member = { nombre: string; rol: string; formacion?: FormacionItem[] };
+type Member = { nombre: string; rol: string; foto?: string; formacion?: FormacionItem[] };
 
 const direccion: Member[] = [
   {
@@ -175,30 +175,80 @@ const coordinadores: Member[] = [
 // ─── Grid components ──────────────────────────────────────────────────────────
 
 function MemberCard({ m }: { m: Member }) {
+  const [flipped, setFlipped] = useState(false);
+  const initials = m.nombre
+    .split(" ")
+    .filter((w) => w.length > 2)
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join("");
+
   return (
-    <article className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-all hover:border-clinical-accent hover:shadow-lg hover:shadow-clinical-accent/5">
-      <header className="border-b border-border pb-4">
-        <h3 className="text-base font-bold tracking-tight leading-tight">{m.nombre}</h3>
-        <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-wider text-clinical-accent">
-          {m.rol}
-        </p>
-      </header>
-      {m.formacion && m.formacion.length > 0 && (
-        <ul className="mt-5 space-y-3">
-          {m.formacion.map((f, i) => (
-            <li key={i} className="flex gap-3">
-              <span className="mt-1.5 inline-block size-1 shrink-0 rounded-full bg-clinical-accent" />
-              <div className="flex-1">
-                <p className="text-xs font-semibold leading-snug text-foreground">{f.titulo}</p>
-                {f.institucion && (
-                  <p className="mt-0.5 text-[11px] leading-snug text-clinical-slate">{f.institucion}</p>
-                )}
+    <div
+      className="relative h-80 cursor-pointer"
+      style={{ perspective: "1000px" }}
+      onClick={() => setFlipped((f) => !f)}
+    >
+      <div
+        className="relative h-full w-full transition-transform duration-700 ease-in-out"
+        style={{ transformStyle: "preserve-3d", transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
+      >
+        {/* ── Frente ── */}
+        <div
+          className="absolute inset-0 flex flex-col overflow-hidden rounded-xl border border-border bg-background"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          {/* Foto / placeholder */}
+          <div className="relative flex-1 overflow-hidden">
+            {m.foto ? (
+              <img src={m.foto} alt={m.nombre} className="h-full w-full object-cover object-top" />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-clinical-blue/8 to-clinical-accent/12">
+                <span className="select-none text-5xl font-black tracking-tight text-clinical-blue/20">{initials}</span>
               </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </article>
+            )}
+            {/* Hint de flip */}
+            <div className="absolute bottom-2 right-2 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
+              ver más
+            </div>
+          </div>
+          {/* Nombre y rol */}
+          <div className="border-t border-border px-5 py-4">
+            <h3 className="text-sm font-bold leading-tight tracking-tight">{m.nombre}</h3>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-clinical-accent">{m.rol}</p>
+          </div>
+        </div>
+
+        {/* ── Dorso ── */}
+        <div
+          className="absolute inset-0 flex flex-col overflow-hidden rounded-xl border border-clinical-accent/30 bg-background p-5"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <div className="mb-4 border-b border-border pb-3">
+            <h3 className="text-sm font-bold leading-tight tracking-tight">{m.nombre}</h3>
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-clinical-accent">{m.rol}</p>
+          </div>
+          {m.formacion && m.formacion.length > 0 ? (
+            <ul className="flex-1 space-y-2.5 overflow-y-auto">
+              {m.formacion.map((f, i) => (
+                <li key={i} className="flex gap-2.5">
+                  <span className="mt-1.5 inline-block size-1 shrink-0 rounded-full bg-clinical-accent" />
+                  <div>
+                    <p className="text-xs font-semibold leading-snug">{f.titulo}</p>
+                    {f.institucion && (
+                      <p className="mt-0.5 text-[11px] leading-snug text-clinical-slate">{f.institucion}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-xs text-clinical-slate">Información no disponible.</p>
+          )}
+          <p className="mt-3 text-right text-[10px] text-clinical-slate/50">click para volver</p>
+        </div>
+      </div>
+    </div>
   );
 }
 

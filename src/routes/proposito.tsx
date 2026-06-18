@@ -59,7 +59,7 @@ function PropositoPage() {
             anatomía patológica en Argentina.”
           </p>
           <p className="mt-6 font-mono text-xs uppercase tracking-widest text-clinical-accent">
-            Dra. Susana Vighi
+            CAP Vighi
           </p>
           <Link
             to="/contacto"
