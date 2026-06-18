@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Gauge, Radar, Activity } from "lucide-react";
 import type { ElementType } from "react";
-import sistemaImg from "@/assets/sistema-gestion.jpg";
+import sistemaAsset from "@/assets/sistema-gestion.jpg.asset.json";
 
 export const Route = createFileRoute("/sistema-gestion")({
   head: () => ({
