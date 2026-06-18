@@ -433,6 +433,85 @@ function EspecialidadesPage() {
           </section>
         ))}
       </div>
+
+      {/* Subespecialidades diagnósticas */}
+      <section className="border-t border-border bg-background py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-14 max-w-3xl">
+            <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+              06 · Subespecialidades
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+              Pericia diagnóstica por sistema y órgano.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-clinical-slate">
+              Nuestro cuerpo médico integra especialistas con dedicación específica en
+              distintas áreas de la patología quirúrgica, lo que permite un abordaje
+              fundamentado en cada contexto clínico.
+            </p>
+          </div>
+
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+            {subespecialidades.map((s) => (
+              <div key={s.area} className="bg-background p-7">
+                <h3 className="text-sm font-bold tracking-tight text-clinical-blue">
+                  {s.area}
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {s.items.map((it) => (
+                    <li
+                      key={it}
+                      className="flex items-start gap-2 text-xs leading-relaxed text-clinical-slate"
+                    >
+                      <span className="mt-1.5 size-1 shrink-0 rounded-full bg-clinical-accent" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Servicios complementarios */}
+      <section className="border-t border-border bg-secondary/40 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-14 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+                07 · Servicios complementarios
+              </div>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+                Prestaciones que acompañan al informe.
+              </h2>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-clinical-slate">
+              Estudios y servicios adicionales que se integran al flujo diagnóstico
+              cuando el caso lo requiere.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {complementarios.map((c) => (
+              <article
+                key={c.titulo}
+                className="flex gap-5 rounded-2xl border border-border bg-background p-7"
+              >
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-clinical-accent/10">
+                  <c.Icon className="size-5 text-clinical-accent" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold tracking-tight">{c.titulo}</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-clinical-slate">
+                    {c.detalle}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
