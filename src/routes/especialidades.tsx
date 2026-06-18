@@ -181,6 +181,90 @@ const especialidades: Especialidad[] = [
   },
 ];
 
+// Subespecialidades diagnósticas — áreas de pericia por sistema/órgano.
+const subespecialidades: { area: string; items: string[] }[] = [
+  {
+    area: "Patología Mamaria & Ginecológica",
+    items: [
+      "Patología mamaria",
+      "Patología ginecológica",
+      "Patología del tracto genital inferior",
+      "Patología obstétrica y placentaria",
+    ],
+  },
+  {
+    area: "Oncohematología & Linfoproliferativos",
+    items: [
+      "Hematopatología",
+      "Síndromes linfoproliferativos",
+      "Médula ósea",
+    ],
+  },
+  {
+    area: "Patología Digestiva & Hepática",
+    items: [
+      "Patología gastrointestinal",
+      "Patología hepática",
+      "Patología pancreática y biliar",
+    ],
+  },
+  {
+    area: "Uropatología & Nefropatología",
+    items: [
+      "Patología urológica",
+      "Patología renal médica",
+      "Patología prostática",
+    ],
+  },
+  {
+    area: "Dermatopatología & Tejidos Blandos",
+    items: [
+      "Dermatopatología",
+      "Tumores de tejidos blandos",
+      "Patología ósea y articular",
+    ],
+  },
+  {
+    area: "Otras áreas",
+    items: [
+      "Patología pulmonar",
+      "Patología endócrina",
+      "Patología de cabeza y cuello",
+      "Neuropatología",
+      "Patología oftálmica",
+      "Patología pediátrica",
+    ],
+  },
+];
+
+// Servicios complementarios — prestaciones que acompañan al diagnóstico.
+const complementarios: { titulo: string; Icon: ElementType; detalle: string }[] = [
+  {
+    titulo: "Biopsia por congelación intraoperatoria",
+    Icon: Snowflake,
+    detalle:
+      "Diagnóstico rápido durante el acto quirúrgico para definir conducta inmediata sobre la pieza.",
+  },
+  {
+    titulo: "Tinciones histoquímicas especiales",
+    Icon: Droplets,
+    detalle:
+      "Batería amplia de coloraciones complementarias (PAS, Tricrómico, Reticulina, Ziehl-Neelsen, Giemsa, entre otras) para caracterización tisular.",
+  },
+  {
+    titulo: "Consulta y segunda opinión",
+    Icon: FileSearch,
+    detalle:
+      "Revisión de casos derivados de otros centros, con reinterpretación de láminas y ampliación de estudios cuando corresponde.",
+  },
+  {
+    titulo: "Interconsulta clínico-patológica",
+    Icon: Stethoscope,
+    detalle:
+      "Diálogo permanente con médicos tratantes para correlacionar hallazgos morfológicos con el contexto clínico y orientar conducta terapéutica.",
+  },
+];
+
 // ───────────────────────────────────────────────────────────────────────────────
 
 function EspecialidadesPage() {
