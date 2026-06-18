@@ -459,7 +459,7 @@ function EspecialidadesPage() {
       </div>
 
       {/* Subespecialidades diagnósticas */}
-      <section className="border-t border-border bg-background py-24">
+      <section id="subespecialidades" className="scroll-mt-24 border-t border-border bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 max-w-3xl">
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
