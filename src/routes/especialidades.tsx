@@ -499,7 +499,7 @@ function EspecialidadesPage() {
       </section>
 
       {/* Servicios complementarios */}
-      <section className="border-t border-border bg-secondary/40 py-24">
+      <section id="complementarios" className="scroll-mt-24 border-t border-border bg-secondary/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
