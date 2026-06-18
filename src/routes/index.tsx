@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Microscope, FlaskConical, ScanLine } from "lucide-react";
 import heroImg from "@/assets/hero-histology.jpg";
 import histoImg from "@/assets/service-histopathology.jpg";
 import immunoImg from "@/assets/service-immuno.jpg";
