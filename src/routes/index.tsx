@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { Microscope, FlaskConical, ScanLine } from "lucide-react";
 import heroImg from "@/assets/hero-histology.jpg";
 import histoImg from "@/assets/service-histopathology.jpg";
 import immunoImg from "@/assets/service-immuno.jpg";
@@ -37,19 +38,19 @@ const services = [
     title: "Histopatología",
     desc: "Procesamiento y análisis de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales.",
     img: histoImg,
-    shape: "square",
+    Icon: Microscope,
   },
   {
     title: "Inmunohistoquímica",
     desc: "Determinación de biomarcadores para oncología de precisión y terapias dirigidas.",
     img: immunoImg,
-    shape: "circle",
+    Icon: FlaskConical,
   },
   {
     title: "Citología",
     desc: "Papanicolaou y punciones aspirativas (PAAF) con lectura especializada.",
     img: cytoImg,
-    shape: "diamond",
+    Icon: ScanLine,
   },
 ];
 
@@ -192,16 +193,7 @@ function Index() {
                 className="group rounded-2xl border border-border p-8 transition-all hover:border-clinical-accent hover:shadow-2xl hover:shadow-clinical-accent/10"
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-lg border border-border bg-secondary transition-colors group-hover:border-clinical-accent/30 group-hover:bg-clinical-accent/10">
-                  <span
-                    className={
-                      "size-5 border-2 border-clinical-blue transition-colors group-hover:border-clinical-accent " +
-                      (s.shape === "circle"
-                        ? "rounded-full"
-                        : s.shape === "diamond"
-                          ? "rotate-45"
-                          : "")
-                    }
-                  />
+                  <s.Icon className="size-5 text-clinical-blue transition-colors group-hover:text-clinical-accent" />
                 </div>
                 <h3 className="mb-4 text-xl font-bold">{s.title}</h3>
                 <p className="mb-6 text-sm leading-relaxed text-clinical-slate">

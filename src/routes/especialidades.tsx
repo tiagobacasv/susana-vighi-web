@@ -13,8 +13,11 @@ import {
   Droplets,
   FileSearch,
   Stethoscope,
+  ArrowUp,
+  Grid2x2,
+  PlusCircle,
 } from "lucide-react";
-import type { ElementType } from "react";
+import { useEffect, useState, type ElementType } from "react";
 
 export const Route = createFileRoute("/especialidades")({
   head: () => ({
@@ -277,9 +280,9 @@ function EspecialidadesPage() {
       />
 
       {/* Índice */}
-      <section className="border-b border-border bg-background">
+      <section id="indice" className="border-b border-border bg-background">
         <div className="mx-auto max-w-7xl px-6 py-10">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7">
             {especialidades.map((e) => (
               <a
                 key={e.slug}
@@ -293,9 +296,30 @@ function EspecialidadesPage() {
                 <span className="text-xs font-semibold leading-tight">{e.titulo}</span>
               </a>
             ))}
+            <a
+              href="#subespecialidades"
+              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+            >
+              <Grid2x2 className="size-4 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                06
+              </span>
+              <span className="text-xs font-semibold leading-tight">Subespecialidades</span>
+            </a>
+            <a
+              href="#complementarios"
+              className="group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+            >
+              <PlusCircle className="size-4 text-clinical-accent" />
+              <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                07
+              </span>
+              <span className="text-xs font-semibold leading-tight">Complementarios</span>
+            </a>
           </div>
         </div>
       </section>
+
 
       {/* Detalle */}
       <div className="bg-secondary/30">
@@ -435,7 +459,7 @@ function EspecialidadesPage() {
       </div>
 
       {/* Subespecialidades diagnósticas */}
-      <section className="border-t border-border bg-background py-24">
+      <section id="subespecialidades" className="scroll-mt-24 border-t border-border bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 max-w-3xl">
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
@@ -475,7 +499,7 @@ function EspecialidadesPage() {
       </section>
 
       {/* Servicios complementarios */}
-      <section className="border-t border-border bg-secondary/40 py-24">
+      <section id="complementarios" className="scroll-mt-24 border-t border-border bg-secondary/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
@@ -512,6 +536,30 @@ function EspecialidadesPage() {
           </div>
         </div>
       </section>
+      <BackToTop />
     </SiteLayout>
+  );
+}
+
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      type="button"
+      aria-label="Volver al inicio"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className={
+        "fixed bottom-6 right-6 z-50 flex size-12 items-center justify-center rounded-full bg-clinical-blue text-white shadow-lg shadow-clinical-blue/30 transition-all hover:bg-clinical-accent hover:scale-105 " +
+        (visible ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-3")
+      }
+    >
+      <ArrowUp className="size-5" />
+    </button>
   );
 }
