@@ -83,9 +83,9 @@ function ContactoPage() {
               </article>
 
               {/* Emails */}
-              <article className="rounded-2xl border border-border bg-background p-8">
+              <article className="rounded-2xl border border-border bg-secondary p-8">
                 <div className="flex items-center gap-3">
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-clinical-accent text-clinical-blue">
+                  <div className="flex size-10 items-center justify-center rounded-lg bg-clinical-blue text-white">
                     <Mail className="size-4" />
                   </div>
                   <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
@@ -97,9 +97,11 @@ function ContactoPage() {
                     <li key={e.email}>
                       <a
                         href={`mailto:${e.email}`}
-                        className="group flex items-start gap-3 rounded-xl border border-border bg-secondary p-4 transition-colors hover:border-clinical-accent"
+                        className="group flex items-start gap-3 rounded-xl border border-border bg-background p-4 transition-colors hover:border-clinical-accent"
                       >
-                        <e.Icon className="mt-0.5 size-4 shrink-0 text-clinical-accent" />
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                          <e.Icon className="size-4" />
+                        </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-mono uppercase tracking-widest text-clinical-slate">
                             {e.label}
@@ -141,9 +143,9 @@ function ContactoPage() {
                   </a>
                 </article>
 
-                <article className="rounded-2xl border border-border bg-background p-8">
+                <article className="rounded-2xl border border-border bg-secondary p-8">
                   <div className="flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-lg bg-clinical-accent text-clinical-blue">
+                    <div className="flex size-10 items-center justify-center rounded-lg bg-clinical-blue text-white">
                       <Clock className="size-4" />
                     </div>
                     <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
