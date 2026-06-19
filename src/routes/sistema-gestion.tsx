@@ -114,7 +114,7 @@ function SistemaGestionPage() {
             <div className="md:col-span-3">
               <div className="overflow-hidden rounded-2xl border border-border bg-secondary shadow-sm">
                 <img
-                  src={sistemaAsset.url}
+                  src="src/assets/sistema-gestion.jpg"
                   alt="Plataforma de gestión de muestras CAP Vighi"
                   loading="lazy"
                   width={1920}
@@ -133,7 +133,7 @@ function SistemaGestionPage() {
       {/* Pilares */}
       <section className="bg-secondary/40 py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-14 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="mb-14 max-w-5xl">
             <div>
               <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
                 Pilares del servicio
@@ -142,9 +142,8 @@ function SistemaGestionPage() {
                 Calidad operativa en tres dimensiones.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-clinical-slate">
-              Cada pilar se mide, se reporta y se ajusta — el sistema convierte la
-              gestión cotidiana en datos accionables.
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-clinical-slate">
+              Cada pilar se mide, se reporta y se ajusta — el sistema convierte la gestión cotidiana en datos accionables.
             </p>
           </div>
 

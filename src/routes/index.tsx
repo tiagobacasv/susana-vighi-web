@@ -146,10 +146,10 @@ function Index() {
               Días hábiles
             </span>
           </div>
-          <div className="grid gap-12 md:grid-cols-4">
+          <div className="grid gap-12 md:grid-cols-4 text-center">
             {turnaround.map((t) => (
               <div key={t.label}>
-                <div className="mb-6 h-1 w-12 bg-clinical-accent" />
+                <div className="mb-6 h-1 w-12 bg-clinical-accent mx-auto" />
                 <div className="mb-2 text-5xl font-bold tracking-tight">
                   {t.value}
                   <span className="ml-1 text-2xl text-clinical-slate">d</span>
@@ -186,17 +186,17 @@ function Index() {
             </Link>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3 items-stretch">
             {services.map((s) => (
               <article
                 key={s.title}
-                className="group rounded-2xl border border-border p-8 transition-all hover:border-clinical-accent hover:shadow-2xl hover:shadow-clinical-accent/10"
+                className="group flex flex-col rounded-2xl border border-border p-8 transition-all hover:border-clinical-accent hover:shadow-2xl hover:shadow-clinical-accent/10"
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-lg border border-border bg-secondary transition-colors group-hover:border-clinical-accent/30 group-hover:bg-clinical-accent/10">
                   <s.Icon className="size-5 text-clinical-blue transition-colors group-hover:text-clinical-accent" />
                 </div>
                 <h3 className="mb-4 text-xl font-bold">{s.title}</h3>
-                <p className="mb-6 text-sm leading-relaxed text-clinical-slate">
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-clinical-slate">
                   {s.desc}
                 </p>
                 <div className="aspect-[4/3] overflow-hidden rounded-lg bg-secondary">

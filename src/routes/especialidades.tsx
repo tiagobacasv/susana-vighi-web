@@ -281,28 +281,13 @@ function EspecialidadesPage() {
 
       {/* Índice */}
       <section id="indice" className="border-b border-border bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-10">
-          {/* Mobile: 2 cols / Desktop: grid-cols-8 con col-span-2 por chip */}
-          <div className="grid gap-3 grid-cols-2 lg:grid-cols-8">
-            {/* Fila 1 — primeros 4 */}
-            {especialidades.slice(0, 4).map((e) => (
+        <div className="px-6 py-10">
+          <div className="flex gap-2 overflow-x-auto justify-center">
+            {especialidades.map((e) => (
               <a
                 key={e.slug}
                 href={`#${e.slug}`}
-                className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
-              >
-                <e.Icon className="size-5 shrink-0 text-clinical-accent" />
-                <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">{e.numero}</span>
-                <span className="min-w-0 text-xs font-semibold leading-tight">{e.titulo}</span>
-              </a>
-            ))}
-            {/* Fila 2 — spacer + 3 items + spacer */}
-            <div className="hidden lg:block lg:col-span-1" />
-            {especialidades.slice(4).map((e) => (
-              <a
-                key={e.slug}
-                href={`#${e.slug}`}
-                className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+                className="group flex items-center gap-2 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
               >
                 <e.Icon className="size-5 shrink-0 text-clinical-accent" />
                 <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">{e.numero}</span>
@@ -311,7 +296,7 @@ function EspecialidadesPage() {
             ))}
             <a
               href="#subespecialidades"
-              className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              className="group flex items-center gap-2 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
             >
               <Grid2x2 className="size-5 shrink-0 text-clinical-accent" />
               <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">06</span>
@@ -319,13 +304,12 @@ function EspecialidadesPage() {
             </a>
             <a
               href="#complementarios"
-              className="col-span-1 lg:col-span-2 group flex items-center gap-3 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
+              className="group flex items-center gap-2 rounded-lg border border-border px-4 py-3 transition-colors hover:border-clinical-accent hover:bg-secondary"
             >
               <PlusCircle className="size-5 shrink-0 text-clinical-accent" />
               <span className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">07</span>
               <span className="min-w-0 text-xs font-semibold leading-tight">Complementarios</span>
             </a>
-            <div className="hidden lg:block lg:col-span-1" />
           </div>
         </div>
       </section>
