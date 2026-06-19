@@ -66,11 +66,11 @@ function PropositoPage() {
               </p>
             </article>
 
-            <article className="group relative overflow-hidden rounded-2xl border border-border bg-background p-10">
+            <article className="group relative overflow-hidden rounded-2xl border border-border bg-secondary p-10">
               <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
                 02 · Propósito
               </div>
-              <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-clinical-accent text-clinical-blue">
+              <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-clinical-blue text-white">
                 <Target className="size-5" />
               </div>
               <h2 className="text-xs font-mono uppercase tracking-widest text-clinical-accent">

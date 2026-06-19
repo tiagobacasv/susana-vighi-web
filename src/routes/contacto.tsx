@@ -99,7 +99,7 @@ function ContactoPage() {
                         href={`mailto:${e.email}`}
                         className="group flex items-start gap-3 rounded-xl border border-border bg-background p-4 transition-colors hover:border-clinical-accent"
                       >
-                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                        <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-clinical-accent/15 text-clinical-accent">
                           <e.Icon className="size-4" />
                         </div>
                         <div className="min-w-0">
