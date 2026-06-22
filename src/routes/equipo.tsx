@@ -2,6 +2,22 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import neEmiliano from "@/assets/NuestroEquipo/NE-Emiliano_h.png";
+import neAndrea from "@/assets/NuestroEquipo/NE-Andrea_h.png";
+import neFederico from "@/assets/NuestroEquipo/NE-Federico_h.png";
+import neMarysol from "@/assets/NuestroEquipo/NE-Marysol_h.png";
+import neDiana from "@/assets/NuestroEquipo/NE-Diana_h.png";
+import neMauro from "@/assets/NuestroEquipo/NE-Mauro_h.png";
+import neTania from "@/assets/NuestroEquipo/NE-Tania_h.png";
+import neDaniel from "@/assets/NuestroEquipo/NE-Daniel_h.png";
+import neAndreaFH from "@/assets/NuestroEquipo/NE-AndreaFH_h.png";
+import neMiguel from "@/assets/NuestroEquipo/NE-Miguel_h.png";
+import neTobias from "@/assets/NuestroEquipo/NE-Tobias_h.png";
+import neAntonella from "@/assets/NuestroEquipo/NE-Antonella_h.png";
+import neJavier from "@/assets/NuestroEquipo/NE-Javier_h.png";
+import neAdriana from "@/assets/NuestroEquipo/NE-Adriana_h.png";
+import neLaura from "@/assets/NuestroEquipo/NE-Laura_h.png";
+
 import {
   X,
   User,
@@ -37,6 +53,7 @@ const direccion: Member[] = [
   {
     nombre: "Emiliano Pastor",
     rol: "Director Ejecutivo",
+    foto: neEmiliano,
     formacion: [
       { titulo: "Contador Público Nacional", institucion: "UBA" },
       { titulo: "Licenciado en Administración de Empresas", institucion: "UBA" },
@@ -48,6 +65,7 @@ const direccion: Member[] = [
   {
     nombre: "Dra. Andrea Paparatto",
     rol: "Directora Médica",
+    foto: neAndrea,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN98395 / MP451876" },
       { titulo: "Médica Especialista en Citopatología", institucion: "Certificación SAC" },
@@ -65,6 +83,7 @@ const subdireccion: Member[] = [
   {
     nombre: "Dr. Federico Ferrando",
     rol: "Sub-Dirección",
+    foto: neFederico,
     formacion: [
       { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN112223" },
       { titulo: "Especializado en Patología Ginecológica", institucion: "CAP Vighi" },
@@ -75,6 +94,7 @@ const subdireccion: Member[] = [
   {
     nombre: "Dra. Marysol Costoya",
     rol: "Sub-Dirección",
+    foto: neMarysol,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN123151" },
       { titulo: "Especializada en Patología Ginecológica", institucion: "CAP Vighi" },
@@ -88,6 +108,7 @@ const especialistas: Member[] = [
   {
     nombre: "Dra. Diana Miserendino",
     rol: "Especialista en Nefropatología y Gastroenteropatología",
+    foto: neDiana,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2" },
       { titulo: "Médica Especialista en Nefropatología" },
@@ -99,6 +120,7 @@ const especialistas: Member[] = [
   {
     nombre: "Dr. Mauro García Montenegro",
     rol: "Especialista en Hematopatología",
+    foto: neMauro,
     formacion: [
       { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN154271" },
       { titulo: "Médico Especialista en Hematopatología Diagnóstica Integral", institucion: "Ex-Fellow Fundaleu (2015–2020)" },
@@ -114,6 +136,7 @@ const cuerpoMedico: Member[] = [
   {
     nombre: "Dra. Tania Rodriguez",
     rol: "Médica Anatomopatóloga",
+    foto: neTania,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "MN188687" },
       { titulo: "Postgrado de Anatomía Patológica", institucion: "Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela)" },
@@ -124,6 +147,7 @@ const cuerpoMedico: Member[] = [
   {
     nombre: "Dr. Daniel Vila Melgarejo",
     rol: "Patología Forense",
+    foto: neDaniel,
     formacion: [
       { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN159165" },
       { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
@@ -134,6 +158,7 @@ const cuerpoMedico: Member[] = [
   {
     nombre: "Dra. Andrea Flores Herbas",
     rol: "Patología Forense y Pediátrica",
+    foto: neAndreaFH,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN1631960" },
       { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
@@ -147,6 +172,7 @@ const citotecnicos: Member[] = [
   {
     nombre: "Miguel Domenniani",
     rol: "Citotécnico",
+    foto: neMiguel,
     formacion: [
       { titulo: "Matrícula MN241914" },
       { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
@@ -155,6 +181,7 @@ const citotecnicos: Member[] = [
   {
     nombre: "Tobias Pardo",
     rol: "Citotécnico",
+    foto: neTobias,
     formacion: [
       { titulo: "Matrícula MN 377" },
       { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
@@ -163,13 +190,13 @@ const citotecnicos: Member[] = [
 ];
 
 const responsables: Member[] = [
-  { nombre: "Antonella Pandolfi", rol: "Asistente de Dirección" },
-  { nombre: "Javier Pecollo", rol: "Supervisor de Procesos" },
+  { nombre: "Antonella Pandolfi", rol: "Asistente de Dirección", foto: neAntonella },
+  { nombre: "Javier Pecollo", rol: "Supervisor de Procesos", foto: neJavier },
 ];
 
 const coordinadores: Member[] = [
-  { nombre: "Adriana Lopez", rol: "Coordinadora de Citología" },
-  { nombre: "Laura Ureta", rol: "Coordinadora de Inmunohistoquímica" },
+  { nombre: "Adriana Lopez", rol: "Coordinadora de Citología", foto: neAdriana },
+  { nombre: "Laura Ureta", rol: "Coordinadora de Inmunohistoquímica", foto: neLaura },
 ];
 
 // ─── Grid components ──────────────────────────────────────────────────────────
@@ -185,7 +212,7 @@ function MemberCard({ m }: { m: Member }) {
 
   return (
     <div
-      className="relative h-80 cursor-pointer"
+      className="relative h-[295px] cursor-pointer"
       style={{ perspective: "1000px" }}
       onClick={() => setFlipped((f) => !f)}
     >
@@ -201,7 +228,7 @@ function MemberCard({ m }: { m: Member }) {
           {/* Foto / placeholder */}
           <div className="relative flex-1 overflow-hidden">
             {m.foto ? (
-              <img src={m.foto} alt={m.nombre} className="h-full w-full object-cover object-top" />
+              <img src={m.foto} alt={m.nombre} className="h-full w-full object-contain object-center" />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-clinical-blue/8 to-clinical-accent/12">
                 <span className="select-none text-5xl font-black tracking-tight text-clinical-blue/20">{initials}</span>
@@ -286,6 +313,7 @@ function GridView() {
     </div>
   );
 }
+
 
 // ─── Organogram data ──────────────────────────────────────────────────────────
 
