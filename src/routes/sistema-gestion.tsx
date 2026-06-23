@@ -169,9 +169,9 @@ function SistemaGestionPage() {
                   {p.desc}
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-3 border-t border-border pt-6">
+                <div className="mt-8 flex justify-center gap-6 border-t border-border">
                   {p.metrics.map((m) => (
-                    <div key={m.label} className="flex flex-col">
+                    <div key={m.label} className="flex flex-col items-center pt-4 text-center" style={m.sub ? { marginBottom: "-15px" } : undefined}>
                       <span className="text-2xl font-bold tracking-tight text-clinical-blue">
                         {m.value}
                       </span>
