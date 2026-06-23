@@ -225,10 +225,8 @@ function Index() {
             <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
               Pioneros en la incorporación de patología digital e IA en Argentina.
             </h2>
-            <p className="mt-6 max-w-xl text-lg text-white/60">
-              Integramos patología digital e inteligencia artificial a nuestros procesos
-              para optimizar el flujo de trabajo y reducir significativamente los tiempos
-              de informe.
+            <p className="mt-6 max-w-3xl text-lg text-white/60">
+              Integramos patología digital e inteligencia artificial a nuestros procesos para optimizar el flujo de trabajo y reducir significativamente los tiemposde informe.
             </p>
           </div>
           <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
