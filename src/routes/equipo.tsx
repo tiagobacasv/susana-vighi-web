@@ -107,7 +107,7 @@ const subdireccion: Member[] = [
 const especialistas: Member[] = [
   {
     nombre: "Dra. Diana Miserendino",
-    rol: "Especialista en Nefropatología y Gastroenteropatología",
+    rol: "Nefropatología · Gastroenteropatología",
     foto: neDiana,
     formacion: [
       { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2" },
@@ -119,7 +119,7 @@ const especialistas: Member[] = [
   },
   {
     nombre: "Dr. Mauro García Montenegro",
-    rol: "Especialista en Hematopatología",
+    rol: "Hematopatología",
     foto: neMauro,
     formacion: [
       { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN154271" },
