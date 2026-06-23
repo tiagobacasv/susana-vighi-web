@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Gauge, Radar, Activity } from "lucide-react";
 import type { ElementType } from "react";
-import sistemaAsset from "@/assets/sistema-gestion.jpg.asset.json";
+import sistemaAsset from "@/assets/sistema-gestion.jpg";
 
 export const Route = createFileRoute("/sistema-gestion")({
   head: () => ({
@@ -114,7 +114,7 @@ function SistemaGestionPage() {
             <div className="md:col-span-3">
               <div className="overflow-hidden rounded-2xl border border-border bg-secondary shadow-sm">
                 <img
-                  src="src/assets/sistema-gestion.jpg"
+                  src={sistemaAsset}
                   alt="Plataforma de gestión de muestras CAP Vighi"
                   loading="lazy"
                   width={1920}
