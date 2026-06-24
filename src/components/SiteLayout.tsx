@@ -151,7 +151,10 @@ export type HeroVariant =
   | "place"
   | "cells"
   | "dashboard"
-  | "contact";
+  | "contact"
+  | "dna"
+  | "microscope"
+  | "molecules";
 
 export function PageHero({
   eyebrow,
@@ -381,6 +384,118 @@ function HeroDecoration({ variant }: { variant: HeroVariant }) {
         <circle cx="360" cy="175" r="5" fill="var(--clinical-bg)" opacity="0.95" />
         {/* Sombra */}
         <ellipse cx="360" cy="260" rx="34" ry="5" fill={B} opacity="0.18" />
+      </g>
+    );
+  }
+
+  if (variant === "dna") {
+    // Hélice de ADN
+    const helix: Array<[number, number]> = [];
+    for (let i = 0; i < 13; i++) {
+      const y = 20 + i * 27;
+      const x = 340 + Math.sin(i * 0.8) * 60;
+      helix.push([x, y]);
+    }
+    return (
+      <g>
+        {/* Eje central */}
+        <line x1="340" y1="10" x2="340" y2="370" stroke={B} strokeWidth="0.6" opacity="0.25" />
+        {/* Hélice izquierda */}
+        <polyline
+          points={helix.map(([x, y]) => `${x},${y}`).join(" ")}
+          fill="none"
+          stroke={A}
+          strokeWidth="1"
+          opacity="0.4"
+        />
+        {/* Hélice derecha (espejo) */}
+        <polyline
+          points={helix.map(([x, y]) => `${680 - x},${y}`).join(" ")}
+          fill="none"
+          stroke={B}
+          strokeWidth="1"
+          opacity="0.4"
+        />
+        {/* Puentes */}
+        {helix.map(([x, y], i) => (
+          <line
+            key={i}
+            x1={x}
+            y1={y}
+            x2={680 - x}
+            y2={y}
+            stroke={i % 2 === 0 ? A : B}
+            strokeWidth="0.5"
+            opacity="0.18"
+          />
+        ))}
+        {/* Nodos */}
+        {helix.map(([x, y], i) => (
+          <circle key={`c${i}`} cx={x} cy={y} r="3" fill={i % 2 === 0 ? A : B} opacity="0.35" />
+        ))}
+        {helix.map(([x, y], i) => (
+          <circle key={`m${i}`} cx={680 - x} cy={y} r="3" fill={i % 2 === 0 ? A : B} opacity="0.35" />
+        ))}
+      </g>
+    );
+  }
+
+  if (variant === "microscope") {
+    // Lentes y elementos ópticos
+    return (
+      <g>
+        {/* Lente principal (grande) */}
+        <circle cx="340" cy="200" r="65" fill="none" stroke={A} strokeWidth="1.5" opacity="0.25" />
+        <circle cx="340" cy="200" r="65" fill={A} opacity="0.02" />
+        {/* Lentes secundarias */}
+        <circle cx="240" cy="140" r="35" fill="none" stroke={B} strokeWidth="1" opacity="0.2" />
+        <circle cx="440" cy="160" r="40" fill="none" stroke={B} strokeWidth="1" opacity="0.2" />
+        <circle cx="280" cy="280" r="30" fill="none" stroke={A} strokeWidth="0.8" opacity="0.18" />
+        <circle cx="400" cy="290" r="32" fill="none" stroke={A} strokeWidth="0.8" opacity="0.18" />
+        {/* Líneas de luz */}
+        <line x1="340" y1="80" x2="340" y2="135" stroke={A} strokeWidth="0.6" opacity="0.3" />
+        <line x1="340" y1="265" x2="340" y2="320" stroke={A} strokeWidth="0.6" opacity="0.3" />
+        {/* Puntos de foco */}
+        <circle cx="340" cy="200" r="4" fill={A} opacity="0.6" />
+        <circle cx="240" cy="140" r="2" fill={B} opacity="0.5" />
+        <circle cx="440" cy="160" r="2" fill={B} opacity="0.5" />
+      </g>
+    );
+  }
+
+  if (variant === "molecules") {
+    // Moléculas flotantes
+    const nodes: Array<[number, number, number]> = [
+      [200, 110, 8], [300, 140, 10], [380, 100, 6], [480, 130, 9],
+      [220, 210, 7], [350, 230, 11], [420, 200, 8], [520, 240, 6],
+      [260, 300, 9], [380, 310, 7], [450, 280, 10], [550, 320, 6],
+    ];
+    return (
+      <g>
+        {/* Enlaces moleculares */}
+        {nodes.map((node, i) => {
+          const next = nodes[(i + 1) % nodes.length];
+          return (
+            <line
+              key={`bond${i}`}
+              x1={node[0]}
+              y1={node[1]}
+              x2={next[0]}
+              y2={next[1]}
+              stroke={i % 3 === 0 ? A : B}
+              strokeWidth="0.5"
+              opacity="0.12"
+            />
+          );
+        })}
+        {/* Átomos */}
+        {nodes.map(([x, y, r], i) => (
+          <g key={i}>
+            <circle cx={x} cy={y} r={r} fill={i % 3 === 0 ? A : B} opacity="0.12" />
+            <circle cx={x} cy={y} r={r} fill="none" stroke={i % 3 === 0 ? A : B} strokeWidth="0.6" opacity="0.35" />
+            <circle cx={x} cy={y} r={r * 0.4} fill={i % 3 === 0 ? A : B} opacity="0.55" />
+          </g>
+        ))}
       </g>
     );
   }
