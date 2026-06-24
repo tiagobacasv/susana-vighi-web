@@ -274,7 +274,7 @@ function EspecialidadesPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Especialidades"
+        eyebrow="Histopatología · IHQ · Biología Molecular · Citología"
         title="Diagnóstico anatomopatológico integral."
         description="Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad — con tecnología validada y partnerships internacionales."
       />
