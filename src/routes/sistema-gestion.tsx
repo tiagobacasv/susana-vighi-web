@@ -76,7 +76,7 @@ const pilares: Pilar[] = [
 function SistemaGestionPage() {
   return (
     <SiteLayout>
-      <PageHero
+      <PageHero variant="dashboard"
         eyebrow="Celeridad · Trazabilidad · Proactividad"
         title="Los 3 pilares de nuestro servicio."
         description="Integramos eficiencia operativa, seguimiento completo de muestras y vigilancia permanente de procesos orientados hacia la excelencia diagnóstica."

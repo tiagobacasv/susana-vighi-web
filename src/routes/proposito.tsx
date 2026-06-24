@@ -36,7 +36,7 @@ const valores = [
 function PropositoPage() {
   return (
     <SiteLayout>
-      <PageHero
+      <PageHero variant="compass"
         eyebrow="Misión · Propósito · Valores"
         title="Lideramos la especialidad de anatomía patológica."
         description="Nuestra razón de ser guía cada decisión: aportar valor clínico real a través de diagnósticos precisos, rápidos y trazables."

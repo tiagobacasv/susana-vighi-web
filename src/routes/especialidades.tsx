@@ -273,7 +273,7 @@ const complementarios: { titulo: string; Icon: ElementType; detalle: string }[] 
 function EspecialidadesPage() {
   return (
     <SiteLayout>
-      <PageHero
+      <PageHero variant="cells"
         eyebrow="Histopatología · IHQ · Biología Molecular · Citología"
         title="Diagnóstico anatomopatológico integral."
         description="Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad — con tecnología validada y partnerships internacionales."

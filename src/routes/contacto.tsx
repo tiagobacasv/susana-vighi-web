@@ -46,7 +46,7 @@ const emails = [
 function ContactoPage() {
   return (
     <SiteLayout>
-      <PageHero
+      <PageHero variant="contact"
         eyebrow="Teléfonos · Emails · Sede"
         title="Conversemos."
         description="Estamos a disposición de pacientes, médicos derivantes e instituciones para consultas, derivaciones y colaboraciones."
