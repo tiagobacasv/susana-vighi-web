@@ -216,7 +216,7 @@ function LugarPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Nuestro lugar"
+        eyebrow="Infraestructura · Aparatología · Recorrido"
         title="Un edificio diseñado para la Anatomía Patológica."
         description="Especialmente construido para desarrollar la actividad diagnóstica cumpliendo con los estándares de calidad y seguridad requeridos."
       />
