@@ -215,7 +215,7 @@ function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }
 function LugarPage() {
   return (
     <SiteLayout>
-      <PageHero
+      <PageHero variant="place"
         eyebrow="Infraestructura · Aparatología · Recorrido"
         title="Un edificio diseñado para la Anatomía Patológica."
         description="Especialmente construido para desarrollar la actividad diagnóstica cumpliendo con los estándares de calidad y seguridad requeridos."
