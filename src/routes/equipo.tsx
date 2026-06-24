@@ -560,7 +560,7 @@ function EquipoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Nuestro equipo"
+        eyebrow="Médicos · Técnicos · Gestión"
         title="Profesionales formados para el más alto estándar."
         description="Combinamos experiencia médica, gestión de calidad y especialización técnica para sostener un diagnóstico de excelencia."
       />

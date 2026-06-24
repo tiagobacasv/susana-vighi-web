@@ -47,7 +47,7 @@ function ContactoPage() {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="Contacto"
+        eyebrow="Teléfonos · Emails · Sede"
         title="Conversemos."
         description="Estamos a disposición de pacientes, médicos derivantes e instituciones para consultas, derivaciones y colaboraciones."
       />
