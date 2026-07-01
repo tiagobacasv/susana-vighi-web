@@ -122,8 +122,8 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
     const dir = diff >= 0 ? 1 : -1;
 
     if (abs === 0) return { transform: "scale(1) translateX(0%) rotateY(0deg)", zIndex: 10, opacity: 1, filter: "none" };
-    if (abs === 1) return { transform: `scale(0.78) translateX(${dir * 62}%) rotateY(${dir * -35}deg)`, zIndex: 6, opacity: 0.85, filter: "brightness(0.75)" };
-    if (abs === 2) return { transform: `scale(0.58) translateX(${dir * 112}%) rotateY(${dir * -45}deg)`, zIndex: 3, opacity: 0.5, filter: "brightness(0.5)" };
+    if (abs === 1) return { transform: `scale(0.72) translateX(${dir * 68}%) rotateY(${dir * -38}deg)`, zIndex: 6, opacity: 0.8, filter: "brightness(0.7)" };
+    if (abs === 2) return { transform: `scale(0.52) translateX(${dir * 118}%) rotateY(${dir * -48}deg)`, zIndex: 3, opacity: 0.45, filter: "brightness(0.5)" };
     return { opacity: 0, zIndex: 0, transform: `translateX(${dir * 150}%)` };
   };
 
