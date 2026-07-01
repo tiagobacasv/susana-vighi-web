@@ -144,7 +144,7 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
           <div
             key={i}
             onClick={() => !isCenter && setCurrent(i)}
-            style={{ ...style, transition: "all 0.65s cubic-bezier(0.4,0,0.2,1)", position: "absolute", width: "80%", transformOrigin: "center center" }}
+            style={{ ...style, transition: "all 0.65s cubic-bezier(0.4,0,0.2,1)", position: "absolute", width: "86%", transformOrigin: "center center" }}
             className={`overflow-hidden rounded-2xl shadow-2xl ${!isCenter ? "cursor-pointer" : ""}`}
           >
             <img
