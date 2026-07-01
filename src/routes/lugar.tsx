@@ -188,10 +188,10 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
 function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }) {
   return (
     <div className={`flex flex-col overflow-hidden rounded-2xl border border-border md:flex-row ${reverse ? "md:flex-row-reverse" : ""}`}>
-      <div className="md:w-1/2">
+      <div className="md:w-3/5">
         <CoverflowCarousel fotos={piso.fotos} nombre={piso.nombre} />
       </div>
-      <div className="flex flex-col justify-center gap-6 p-10 md:w-1/2">
+      <div className="flex flex-col justify-center gap-6 p-10 md:w-2/5">
         <span className="inline-flex w-fit items-center rounded-full bg-clinical-blue px-3 py-1 font-mono text-xs font-bold uppercase tracking-widest text-white">
           {piso.nivel}
         </span>
@@ -209,6 +209,49 @@ function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }
         </ul>
       </div>
     </div>
+  );
+}
+
+const aparatologia = [
+  { Icon: Layers, title: "Procesador de tejidos", desc: "Deshidratación e inclusión automatizada con trazabilidad por lote." },
+  { Icon: Scissors, title: "Micrótomos de precisión", desc: "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales." },
+  { Icon: Snowflake, title: "Criostato", desc: "Cortes por congelación para biopsias intraoperatorias." },
+  { Icon: Beaker, title: "Coloreador automático", desc: "Tinciones H&E y especiales estandarizadas, sin variabilidad manual." },
+  { Icon: FlaskConical, title: "Plataforma de Inmunohistoquímica", desc: "Marcación automatizada con control de anticuerpos y kits validados." },
+  { Icon: Microscope, title: "Microscopios de alta resolución", desc: "Ópticas de investigación con cámaras digitales para documentación." },
+  { Icon: Cpu, title: "Scanner de patología digital", desc: "Digitalización de preparados a 40x para revisión, consulta y IA." },
+  { Icon: Sparkles, title: "Equipamiento auxiliar", desc: "Baños de flotación, dispensadores de parafina y estufas calibradas." },
+];
+
+function AparatologiaSection() {
+  return (
+    <section className="border-t border-border bg-secondary py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-14 max-w-3xl">
+          <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
+            Aparatología
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+            Tecnología dedicada a cada etapa del proceso.
+          </h2>
+          <p className="mt-6 text-lg text-clinical-slate">
+            Equipamiento de alta complejidad seleccionado para asegurar consistencia,
+            trazabilidad y precisión desde la recepción de la muestra hasta el informe final.
+          </p>
+        </div>
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+          {aparatologia.map((a) => (
+            <div key={a.title} className="group bg-background p-8 transition-colors hover:bg-clinical-accent/5">
+              <div className="mb-6 flex size-11 items-center justify-center rounded-lg bg-clinical-blue">
+                <a.Icon className="size-5 text-white" />
+              </div>
+              <h3 className="mb-2 text-base font-bold tracking-tight">{a.title}</h3>
+              <p className="text-sm leading-relaxed text-clinical-slate">{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
