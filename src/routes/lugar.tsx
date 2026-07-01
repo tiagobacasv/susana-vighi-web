@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin, Microscope, FlaskConical, Beaker, Snowflake, Scissors, Layers, Sparkles, Cpu } from "lucide-react";
 
 // Planta Baja
 import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.jpg";
