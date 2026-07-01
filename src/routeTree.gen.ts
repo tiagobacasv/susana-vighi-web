@@ -15,6 +15,7 @@ import { Route as LugarRouteImport } from './routes/lugar'
 import { Route as EspecialidadesRouteImport } from './routes/especialidades'
 import { Route as EquipoRouteImport } from './routes/equipo'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SistemaGestionRoute = SistemaGestionRouteImport.update({
@@ -47,6 +48,11 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoberturasRoute = CoberturasRouteImport.update({
+  id: '/coberturas',
+  path: '/coberturas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -55,6 +61,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
@@ -64,6 +71,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
@@ -74,6 +82,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
@@ -85,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/coberturas'
     | '/contacto'
     | '/equipo'
     | '/especialidades'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/coberturas'
     | '/contacto'
     | '/equipo'
     | '/especialidades'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/coberturas'
     | '/contacto'
     | '/equipo'
     | '/especialidades'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CoberturasRoute: typeof CoberturasRoute
   ContactoRoute: typeof ContactoRoute
   EquipoRoute: typeof EquipoRoute
   EspecialidadesRoute: typeof EspecialidadesRoute
@@ -165,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coberturas': {
+      id: '/coberturas'
+      path: '/coberturas'
+      fullPath: '/coberturas'
+      preLoaderRoute: typeof CoberturasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CoberturasRoute: CoberturasRoute,
   ContactoRoute: ContactoRoute,
   EquipoRoute: EquipoRoute,
   EspecialidadesRoute: EspecialidadesRoute,
@@ -187,13 +208,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

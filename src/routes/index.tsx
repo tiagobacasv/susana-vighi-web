@@ -244,6 +244,43 @@ function Index() {
         </div>
       </section>
 
+      {/* Coberturas strip */}
+      <section className="border-y border-border bg-secondary py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-2xl">
+              <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
+                Coberturas y centros
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+                Red de obras sociales, prepagas y clínicas.
+              </h2>
+              <p className="mt-4 text-clinical-slate">
+                Trabajamos con las principales coberturas del país y recibimos muestras
+                de sanatorios y centros de salud de referencia.
+              </p>
+            </div>
+            <Link
+              to="/coberturas"
+              className="group flex items-center gap-2 font-semibold italic text-clinical-blue hover:not-italic"
+            >
+              Ver coberturas y centros
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-2">
+            {["OSDE", "Swiss Medical", "Galeno", "Medifé", "Omint", "Medicus", "Sancor Salud", "Accord Salud", "IOMA", "PAMI", "Sanatorio Otamendi", "Sanatorio Anchorena", "Hospital Alemán", "Clínica Bazterrica", "Fundación Favaloro"].map((n) => (
+              <span
+                key={n}
+                className="rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-clinical-slate"
+              >
+                {n}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-32">
         <div className="mt-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
