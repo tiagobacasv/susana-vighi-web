@@ -129,8 +129,8 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
 
   return (
     <div
-      className="relative flex h-96 items-center justify-center overflow-hidden md:h-full md:min-h-[520px]"
-      style={{ perspective: "900px" }}
+      className="relative flex h-[460px] items-center justify-center overflow-hidden md:h-[680px]"
+      style={{ perspective: "1100px" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
