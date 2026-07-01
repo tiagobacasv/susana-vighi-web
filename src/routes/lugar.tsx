@@ -270,6 +270,7 @@ function LugarPage() {
           ))}
         </div>
       </section>
+      <AparatologiaSection />
     </SiteLayout>
   );
 }
