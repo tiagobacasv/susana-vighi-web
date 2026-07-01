@@ -9,6 +9,7 @@ const navLinks = [
   { to: "/lugar", label: "Nuestro lugar" },
   { to: "/especialidades", label: "Especialidades" },
   { to: "/sistema-gestion", label: "Sistema de gestión" },
+  { to: "/coberturas", label: "Coberturas" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
