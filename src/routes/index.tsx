@@ -6,6 +6,14 @@ import histoImg from "@/assets/service-histopathology.jpg";
 import immunoImg from "@/assets/service-immuno.jpg";
 import cytoImg from "@/assets/service-cytology.jpg";
 
+const coberturasLogos = Object.values(
+  import.meta.glob("@/assets/Coberturas/*.{png,jpg,jpeg}", { eager: true, import: "default" }),
+) as string[];
+
+const centrosLogos = Object.values(
+  import.meta.glob("@/assets/CentrosMedicos/*.{png,jpg,jpeg}", { eager: true, import: "default" }),
+) as string[];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -76,6 +84,34 @@ const pillars = [
     desc: "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo.",
   },
 ];
+
+function LogoMarquee({ logos, direction }: { logos: string[]; direction: "left" | "right" }) {
+  return (
+    <div
+      className="marquee-row relative overflow-hidden"
+      style={{
+        maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+      }}
+    >
+      <div
+        className={
+          "flex w-max items-center gap-10 " +
+          (direction === "left" ? "animate-marquee-left" : "animate-marquee-right")
+        }
+      >
+        {[...logos, ...logos].map((src, i) => (
+          <div
+            key={i}
+            className="flex h-16 w-32 shrink-0 items-center justify-center rounded-lg border border-border bg-background p-3"
+          >
+            <img src={src} alt="" loading="lazy" className="max-h-full max-w-full object-contain grayscale opacity-70 transition-all hover:grayscale-0 hover:opacity-100" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Index() {
   return (
@@ -268,16 +304,11 @@ function Index() {
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
-          <div className="mt-10 flex flex-wrap gap-2">
-            {["OSDE", "Swiss Medical", "Galeno", "Medifé", "Omint", "Medicus", "Sancor Salud", "Accord Salud", "IOMA", "PAMI", "Sanatorio Otamendi", "Sanatorio Anchorena", "Hospital Alemán", "Clínica Bazterrica", "Fundación Favaloro"].map((n) => (
-              <span
-                key={n}
-                className="rounded-full border border-border bg-background px-4 py-2 text-xs font-semibold text-clinical-slate"
-              >
-                {n}
-              </span>
-            ))}
-          </div>
+        </div>
+
+        <div className="mt-14 space-y-6">
+          <LogoMarquee logos={coberturasLogos} direction="left" />
+          <LogoMarquee logos={centrosLogos} direction="right" />
         </div>
       </section>
 

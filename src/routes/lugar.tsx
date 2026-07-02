@@ -3,6 +3,11 @@ import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Microscope, FlaskConical, Beaker, Snowflake, Scissors, Layers, Sparkles, Cpu } from "lucide-react";
 
+import tecProcesadores from "@/assets/Tecnologia/procesadores.jpg";
+import tecCorte from "@/assets/Tecnologia/corte.jpg";
+import tecColoreador from "@/assets/Tecnologia/coloreador.jpg";
+import tecCriostato from "@/assets/Tecnologia/criostato.jpg";
+
 // Planta Baja
 import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.jpg";
 import pbS2 from "@/assets/NuestroLugar/PB/Slider02_h.jpg";
@@ -212,16 +217,69 @@ function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }
   );
 }
 
-const aparatologia = [
-  { Icon: Layers, title: "Procesador de tejidos", desc: "Deshidratación e inclusión automatizada con trazabilidad por lote." },
-  { Icon: Scissors, title: "Micrótomos de precisión", desc: "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales." },
-  { Icon: Snowflake, title: "Criostato", desc: "Cortes por congelación para biopsias intraoperatorias." },
-  { Icon: Beaker, title: "Coloreador automático", desc: "Tinciones H&E y especiales estandarizadas, sin variabilidad manual." },
+type Aparato = { Icon: typeof Layers; title: string; desc: string; foto?: string };
+
+const aparatologia: Aparato[] = [
+  { Icon: Layers, title: "Procesador de tejidos", desc: "Deshidratación e inclusión automatizada con trazabilidad por lote.", foto: tecProcesadores },
+  { Icon: Scissors, title: "Micrótomos de precisión", desc: "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales.", foto: tecCorte },
+  { Icon: Snowflake, title: "Criostato", desc: "Cortes por congelación para biopsias intraoperatorias.", foto: tecCriostato },
+  { Icon: Beaker, title: "Coloreador automático", desc: "Tinciones H&E y especiales estandarizadas, sin variabilidad manual.", foto: tecColoreador },
   { Icon: FlaskConical, title: "Plataforma de Inmunohistoquímica", desc: "Marcación automatizada con control de anticuerpos y kits validados." },
   { Icon: Microscope, title: "Microscopios de alta resolución", desc: "Ópticas de investigación con cámaras digitales para documentación." },
   { Icon: Cpu, title: "Scanner de patología digital", desc: "Digitalización de preparados a 40x para revisión, consulta y IA." },
   { Icon: Sparkles, title: "Equipamiento auxiliar", desc: "Baños de flotación, dispensadores de parafina y estufas calibradas." },
 ];
+
+function AparatoCard({ a }: { a: Aparato }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className="relative aspect-square cursor-pointer"
+      style={{ perspective: "1000px" }}
+      onClick={() => setFlipped((f) => !f)}
+    >
+      <div
+        className="relative h-full w-full transition-transform duration-700 ease-in-out"
+        style={{ transformStyle: "preserve-3d", transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
+      >
+        {/* ── Frente ── */}
+        <div
+          className="absolute inset-0 flex flex-col bg-background p-8"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="mb-6 flex size-11 items-center justify-center rounded-lg bg-clinical-blue">
+            <a.Icon className="size-5 text-white" />
+          </div>
+          <h3 className="mb-2 text-base font-bold tracking-tight">{a.title}</h3>
+          <p className="text-sm leading-relaxed text-clinical-slate">{a.desc}</p>
+          {a.foto && (
+            <div className="absolute bottom-4 right-4 rounded-full bg-clinical-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-clinical-accent">
+              ver foto
+            </div>
+          )}
+        </div>
+
+        {/* ── Dorso ── */}
+        <div
+          className="absolute inset-0 overflow-hidden bg-secondary"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          {a.foto ? (
+            <img src={a.foto} alt={a.title} className="h-full w-full object-contain" />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-clinical-blue/8 to-clinical-accent/12">
+              <a.Icon className="size-10 text-clinical-blue/25" />
+            </div>
+          )}
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-5 py-4">
+            <h3 className="text-sm font-bold leading-tight tracking-tight text-white">{a.title}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function AparatologiaSection() {
   return (
@@ -241,13 +299,7 @@ function AparatologiaSection() {
         </div>
         <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
           {aparatologia.map((a) => (
-            <div key={a.title} className="group bg-background p-8 transition-colors hover:bg-clinical-accent/5">
-              <div className="mb-6 flex size-11 items-center justify-center rounded-lg bg-clinical-blue">
-                <a.Icon className="size-5 text-white" />
-              </div>
-              <h3 className="mb-2 text-base font-bold tracking-tight">{a.title}</h3>
-              <p className="text-sm leading-relaxed text-clinical-slate">{a.desc}</p>
-            </div>
+            <AparatoCard key={a.title} a={a} />
           ))}
         </div>
       </div>

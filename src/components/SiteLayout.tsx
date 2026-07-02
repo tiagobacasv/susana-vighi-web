@@ -8,8 +8,8 @@ const navLinks = [
   { to: "/equipo", label: "Nuestro equipo" },
   { to: "/lugar", label: "Nuestro lugar" },
   { to: "/especialidades", label: "Especialidades" },
-  { to: "/sistema-gestion", label: "Sistema de gestión" },
   { to: "/coberturas", label: "Coberturas" },
+  { to: "/sistema-gestion", label: "Sistema de gestión" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
@@ -155,7 +155,8 @@ export type HeroVariant =
   | "contact"
   | "dna"
   | "microscope"
-  | "molecules";
+  | "molecules"
+  | "partners";
 
 export function PageHero({
   eyebrow,
@@ -501,6 +502,60 @@ function HeroDecoration({ variant }: { variant: HeroVariant }) {
     );
   }
 
+  if (variant === "partners") {
+    // Grilla de nodos institucionales conectados (red de coberturas)
+    const nodes: Array<[number, number]> = [
+      [200, 90], [320, 70], [440, 100], [500, 170],
+      [180, 190], [300, 190], [420, 200],
+      [220, 290], [340, 300], [460, 280],
+      [160, 100], [500, 80],
+    ];
+    const links: Array<[number, number]> = [
+      [0, 1], [1, 2], [2, 3], [0, 4], [1, 5], [2, 6], [4, 5], [5, 6],
+      [4, 7], [5, 8], [6, 9], [7, 8], [8, 9], [0, 10], [2, 11],
+    ];
+    return (
+      <g>
+        {links.map(([a, b], i) => (
+          <line
+            key={i}
+            x1={nodes[a][0]}
+            y1={nodes[a][1]}
+            x2={nodes[b][0]}
+            y2={nodes[b][1]}
+            stroke={i % 2 === 0 ? A : B}
+            strokeWidth="0.7"
+            opacity="0.2"
+          />
+        ))}
+        {nodes.map(([x, y], i) => (
+          <g key={i}>
+            <rect
+              x={x - 16}
+              y={y - 16}
+              width="32"
+              height="32"
+              rx="8"
+              fill="none"
+              stroke={i % 3 === 0 ? A : B}
+              strokeWidth="1"
+              opacity="0.3"
+            />
+            <rect
+              x={x - 7}
+              y={y - 7}
+              width="14"
+              height="14"
+              rx="3"
+              fill={i % 3 === 0 ? A : B}
+              opacity="0.5"
+            />
+          </g>
+        ))}
+      </g>
+    );
+  }
+
   // Default: network of nodes
   return (
     <g>
@@ -519,32 +574,60 @@ function HeroDecoration({ variant }: { variant: HeroVariant }) {
       <line x1="190" y1="270" x2="130" y2="320" stroke={B} strokeWidth="0.6" opacity="0.14" />
       <line x1="490" y1="90" x2="530" y2="150" stroke={A} strokeWidth="0.5" opacity="0.13" />
       <line x1="440" y1="310" x2="510" y2="340" stroke={B} strokeWidth="0.5" opacity="0.12" />
-      <circle cx="280" cy="190" r="10" fill={A} opacity="0.35" />
-      <circle cx="280" cy="190" r="5" fill={A} opacity="0.65" />
-      <circle cx="380" cy="110" r="7" fill={A} opacity="0.45" />
-      <circle cx="380" cy="110" r="3.5" fill={A} opacity="0.70" />
-      <circle cx="420" cy="210" r="7" fill={A} opacity="0.40" />
-      <circle cx="420" cy="210" r="3.5" fill={A} opacity="0.65" />
-      <circle cx="340" cy="290" r="6" fill={B} opacity="0.35" />
-      <circle cx="340" cy="290" r="3" fill={B} opacity="0.60" />
-      <circle cx="180" cy="120" r="6" fill={B} opacity="0.30" />
-      <circle cx="180" cy="120" r="3" fill={B} opacity="0.55" />
-      <circle cx="190" cy="270" r="6" fill={B} opacity="0.30" />
-      <circle cx="190" cy="270" r="3" fill={B} opacity="0.55" />
-      <circle cx="490" cy="90" r="5" fill={A} opacity="0.35" />
-      <circle cx="490" cy="90" r="2.5" fill={A} opacity="0.60" />
-      <circle cx="460" cy="160" r="4.5" fill={A} opacity="0.30" />
-      <circle cx="460" cy="160" r="2" fill={A} opacity="0.55" />
-      <circle cx="510" cy="190" r="4" fill={A} opacity="0.28" />
-      <circle cx="510" cy="190" r="2" fill={A} opacity="0.50" />
-      <circle cx="440" cy="310" r="4.5" fill={B} opacity="0.28" />
-      <circle cx="440" cy="310" r="2" fill={B} opacity="0.50" />
-      <circle cx="280" cy="60" r="4" fill={B} opacity="0.25" />
-      <circle cx="280" cy="60" r="2" fill={B} opacity="0.48" />
-      <circle cx="130" cy="320" r="4" fill={B} opacity="0.22" />
-      <circle cx="130" cy="320" r="2" fill={B} opacity="0.44" />
-      <circle cx="530" cy="150" r="3.5" fill={A} opacity="0.22" />
-      <circle cx="510" cy="340" r="3.5" fill={B} opacity="0.20" />
+      {/* Halo del nodo central */}
+      <circle cx="280" cy="190" r="34" fill={A} opacity="0.08" />
+      <circle cx="280" cy="190" r="34" fill="none" stroke={A} strokeWidth="0.6" opacity="0.25" />
+      <rect
+        x="260"
+        y="170"
+        width="40"
+        height="40"
+        rx="10"
+        fill="none"
+        stroke={A}
+        strokeWidth="1.5"
+        opacity="0.6"
+      />
+      <rect x="270" y="180" width="20" height="20" rx="5" fill={A} opacity="0.85" />
+
+      {[
+        [380, 110, 14, A],
+        [420, 210, 14, A],
+        [340, 290, 12, B],
+        [180, 120, 12, B],
+        [190, 270, 12, B],
+        [490, 90, 10, A],
+        [460, 160, 9, A],
+        [510, 190, 8, A],
+        [440, 310, 9, B],
+        [280, 60, 8, B],
+        [130, 320, 8, B],
+        [530, 150, 7, A],
+        [510, 340, 7, B],
+      ].map(([x, y, size, color], i) => (
+        <g key={i}>
+          <rect
+            x={(x as number) - (size as number) / 2}
+            y={(y as number) - (size as number) / 2}
+            width={size}
+            height={size}
+            rx={(size as number) / 4}
+            fill="none"
+            stroke={color as string}
+            strokeWidth="1"
+            opacity="0.3"
+          />
+          <rect
+            x={(x as number) - (size as number) / 4}
+            y={(y as number) - (size as number) / 4}
+            width={(size as number) / 2}
+            height={(size as number) / 2}
+            rx={(size as number) / 8}
+            fill={color as string}
+            opacity="0.55"
+          />
+        </g>
+      ))}
     </g>
   );
 }
