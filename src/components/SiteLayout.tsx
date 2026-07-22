@@ -8,8 +8,11 @@ const navLinks = [
   { to: "/equipo", label: "Nuestro equipo" },
   { to: "/lugar", label: "Nuestro lugar" },
   { to: "/especialidades", label: "Especialidades" },
+  { to: "/derivantes", label: "Derivantes" },
+  { to: "/pacientes", label: "Pacientes" },
   { to: "/coberturas", label: "Coberturas" },
   { to: "/sistema-gestion", label: "Sistema de gestión" },
+  { to: "/novedades", label: "Novedades" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
