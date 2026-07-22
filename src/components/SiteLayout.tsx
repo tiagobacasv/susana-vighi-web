@@ -40,7 +40,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.12em] text-clinical-slate lg:flex">
+        <div className="hidden items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
           {navLinks.slice(1, -1).map((l) => {
             const active = pathname === l.to;
             return (
