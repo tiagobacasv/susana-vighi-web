@@ -11,9 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
 import { Route as PropositoRouteImport } from './routes/proposito'
+import { Route as PacientesRouteImport } from './routes/pacientes'
+import { Route as NovedadesRouteImport } from './routes/novedades'
 import { Route as LugarRouteImport } from './routes/lugar'
 import { Route as EspecialidadesRouteImport } from './routes/especialidades'
 import { Route as EquipoRouteImport } from './routes/equipo'
+import { Route as DerivantesRouteImport } from './routes/derivantes'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
@@ -26,6 +29,16 @@ const SistemaGestionRoute = SistemaGestionRouteImport.update({
 const PropositoRoute = PropositoRouteImport.update({
   id: '/proposito',
   path: '/proposito',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PacientesRoute = PacientesRouteImport.update({
+  id: '/pacientes',
+  path: '/pacientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovedadesRoute = NovedadesRouteImport.update({
+  id: '/novedades',
+  path: '/novedades',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LugarRoute = LugarRouteImport.update({
@@ -41,6 +54,11 @@ const EspecialidadesRoute = EspecialidadesRouteImport.update({
 const EquipoRoute = EquipoRouteImport.update({
   id: '/equipo',
   path: '/equipo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DerivantesRoute = DerivantesRouteImport.update({
+  id: '/derivantes',
+  path: '/derivantes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactoRoute = ContactoRouteImport.update({
@@ -63,9 +81,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -73,9 +94,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -84,9 +108,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -96,9 +123,12 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   fileRoutesByTo: FileRoutesByTo
@@ -106,9 +136,12 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   id:
@@ -116,9 +149,12 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   fileRoutesById: FileRoutesById
@@ -127,9 +163,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoberturasRoute: typeof CoberturasRoute
   ContactoRoute: typeof ContactoRoute
+  DerivantesRoute: typeof DerivantesRoute
   EquipoRoute: typeof EquipoRoute
   EspecialidadesRoute: typeof EspecialidadesRoute
   LugarRoute: typeof LugarRoute
+  NovedadesRoute: typeof NovedadesRoute
+  PacientesRoute: typeof PacientesRoute
   PropositoRoute: typeof PropositoRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
 }
@@ -148,6 +187,20 @@ declare module '@tanstack/react-router' {
       path: '/proposito'
       fullPath: '/proposito'
       preLoaderRoute: typeof PropositoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pacientes': {
+      id: '/pacientes'
+      path: '/pacientes'
+      fullPath: '/pacientes'
+      preLoaderRoute: typeof PacientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novedades': {
+      id: '/novedades'
+      path: '/novedades'
+      fullPath: '/novedades'
+      preLoaderRoute: typeof NovedadesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lugar': {
@@ -169,6 +222,13 @@ declare module '@tanstack/react-router' {
       path: '/equipo'
       fullPath: '/equipo'
       preLoaderRoute: typeof EquipoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/derivantes': {
+      id: '/derivantes'
+      path: '/derivantes'
+      fullPath: '/derivantes'
+      preLoaderRoute: typeof DerivantesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contacto': {
@@ -199,22 +259,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoberturasRoute: CoberturasRoute,
   ContactoRoute: ContactoRoute,
+  DerivantesRoute: DerivantesRoute,
   EquipoRoute: EquipoRoute,
   EspecialidadesRoute: EspecialidadesRoute,
   LugarRoute: LugarRoute,
+  NovedadesRoute: NovedadesRoute,
+  PacientesRoute: PacientesRoute,
   PropositoRoute: PropositoRoute,
   SistemaGestionRoute: SistemaGestionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

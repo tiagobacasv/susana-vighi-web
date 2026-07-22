@@ -583,6 +583,57 @@ function EquipoPage() {
       </div>
 
       {view === "grid" ? <GridView /> : <OrgView />}
+
+      <JoinUs />
     </SiteLayout>
+  );
+}
+
+function JoinUs() {
+  return (
+    <section className="border-t border-border bg-secondary/40 py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-10 rounded-3xl border border-border bg-background p-10 md:grid-cols-5 md:p-14">
+          <div className="md:col-span-3">
+            <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+              Trabajá con nosotros
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-clinical-blue md:text-4xl">
+              Sumate al equipo.
+            </h2>
+            <p className="mt-4 max-w-xl text-clinical-slate">
+              Incorporamos profesionales médicos, citotécnicos, técnicos de laboratorio
+              y personal administrativo comprometidos con la excelencia diagnóstica.
+              Enviá tu CV a nuestra casilla de recursos humanos y detallá el área de interés.
+            </p>
+            <ul className="mt-6 space-y-2 text-sm text-clinical-slate">
+              <li>· Médicos patólogos con especialidad certificada</li>
+              <li>· Citotécnicos con experiencia en screening y citología ginecológica</li>
+              <li>· Técnicos de histología, inmunohistoquímica y biología molecular</li>
+              <li>· Coordinación administrativa y atención al derivante</li>
+            </ul>
+          </div>
+          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-secondary p-8 md:col-span-2">
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                Enviá tu CV a
+              </div>
+              <a
+                href="mailto:cv@susanavighi.com.ar"
+                className="mt-2 block break-all text-lg font-semibold text-clinical-blue hover:text-clinical-accent"
+              >
+                cv@susanavighi.com.ar
+              </a>
+            </div>
+            <a
+              href="mailto:cv@susanavighi.com.ar"
+              className="rounded-lg bg-clinical-blue px-5 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
+            >
+              Postularme
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

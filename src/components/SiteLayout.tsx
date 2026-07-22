@@ -8,8 +8,11 @@ const navLinks = [
   { to: "/equipo", label: "Nuestro equipo" },
   { to: "/lugar", label: "Nuestro lugar" },
   { to: "/especialidades", label: "Especialidades" },
+  { to: "/derivantes", label: "Derivantes" },
+  { to: "/pacientes", label: "Pacientes" },
   { to: "/coberturas", label: "Coberturas" },
   { to: "/sistema-gestion", label: "Sistema de gestión" },
+  { to: "/novedades", label: "Novedades" },
   { to: "/contacto", label: "Contacto" },
 ] as const;
 
@@ -37,7 +40,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.12em] text-clinical-slate lg:flex">
+        <div className="hidden items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
           {navLinks.slice(1, -1).map((l) => {
             const active = pathname === l.to;
             return (
@@ -64,7 +67,7 @@ function Navbar() {
         <button
           aria-label="Abrir menú"
           onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-md border border-border lg:hidden"
+          className="flex size-10 items-center justify-center rounded-md border border-border xl:hidden"
         >
           <span className="flex flex-col gap-1">
             <span className="block h-px w-5 bg-foreground" />
@@ -75,7 +78,7 @@ function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-background xl:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {navLinks.map((l) => (
               <Link
