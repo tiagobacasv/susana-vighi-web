@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
 import { Route as PropositoRouteImport } from './routes/proposito'
+import { Route as PacientesRouteImport } from './routes/pacientes'
+import { Route as NovedadesRouteImport } from './routes/novedades'
 import { Route as LugarRouteImport } from './routes/lugar'
 import { Route as EspecialidadesRouteImport } from './routes/especialidades'
 import { Route as EquipoRouteImport } from './routes/equipo'
@@ -27,6 +29,16 @@ const SistemaGestionRoute = SistemaGestionRouteImport.update({
 const PropositoRoute = PropositoRouteImport.update({
   id: '/proposito',
   path: '/proposito',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PacientesRoute = PacientesRouteImport.update({
+  id: '/pacientes',
+  path: '/pacientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NovedadesRoute = NovedadesRouteImport.update({
+  id: '/novedades',
+  path: '/novedades',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LugarRoute = LugarRouteImport.update({
@@ -73,6 +85,8 @@ export interface FileRoutesByFullPath {
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -84,6 +98,8 @@ export interface FileRoutesByTo {
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -96,6 +112,8 @@ export interface FileRoutesById {
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
+  '/novedades': typeof NovedadesRoute
+  '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
 }
@@ -109,6 +127,8 @@ export interface FileRouteTypes {
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +140,8 @@ export interface FileRouteTypes {
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   id:
@@ -131,6 +153,8 @@ export interface FileRouteTypes {
     | '/equipo'
     | '/especialidades'
     | '/lugar'
+    | '/novedades'
+    | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
   fileRoutesById: FileRoutesById
@@ -143,6 +167,8 @@ export interface RootRouteChildren {
   EquipoRoute: typeof EquipoRoute
   EspecialidadesRoute: typeof EspecialidadesRoute
   LugarRoute: typeof LugarRoute
+  NovedadesRoute: typeof NovedadesRoute
+  PacientesRoute: typeof PacientesRoute
   PropositoRoute: typeof PropositoRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
 }
@@ -161,6 +187,20 @@ declare module '@tanstack/react-router' {
       path: '/proposito'
       fullPath: '/proposito'
       preLoaderRoute: typeof PropositoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pacientes': {
+      id: '/pacientes'
+      path: '/pacientes'
+      fullPath: '/pacientes'
+      preLoaderRoute: typeof PacientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/novedades': {
+      id: '/novedades'
+      path: '/novedades'
+      fullPath: '/novedades'
+      preLoaderRoute: typeof NovedadesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lugar': {
@@ -223,6 +263,8 @@ const rootRouteChildren: RootRouteChildren = {
   EquipoRoute: EquipoRoute,
   EspecialidadesRoute: EspecialidadesRoute,
   LugarRoute: LugarRoute,
+  NovedadesRoute: NovedadesRoute,
+  PacientesRoute: PacientesRoute,
   PropositoRoute: PropositoRoute,
   SistemaGestionRoute: SistemaGestionRoute,
 }
