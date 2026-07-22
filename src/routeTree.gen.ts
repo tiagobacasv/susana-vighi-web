@@ -14,6 +14,7 @@ import { Route as PropositoRouteImport } from './routes/proposito'
 import { Route as LugarRouteImport } from './routes/lugar'
 import { Route as EspecialidadesRouteImport } from './routes/especialidades'
 import { Route as EquipoRouteImport } from './routes/equipo'
+import { Route as DerivantesRouteImport } from './routes/derivantes'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const EquipoRoute = EquipoRouteImport.update({
   path: '/equipo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DerivantesRoute = DerivantesRouteImport.update({
+  id: '/derivantes',
+  path: '/derivantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactoRoute = ContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/coberturas': typeof CoberturasRoute
   '/contacto': typeof ContactoRoute
+  '/derivantes': typeof DerivantesRoute
   '/equipo': typeof EquipoRoute
   '/especialidades': typeof EspecialidadesRoute
   '/lugar': typeof LugarRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/coberturas'
     | '/contacto'
+    | '/derivantes'
     | '/equipo'
     | '/especialidades'
     | '/lugar'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoberturasRoute: typeof CoberturasRoute
   ContactoRoute: typeof ContactoRoute
+  DerivantesRoute: typeof DerivantesRoute
   EquipoRoute: typeof EquipoRoute
   EspecialidadesRoute: typeof EspecialidadesRoute
   LugarRoute: typeof LugarRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EquipoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/derivantes': {
+      id: '/derivantes'
+      path: '/derivantes'
+      fullPath: '/derivantes'
+      preLoaderRoute: typeof DerivantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contacto': {
       id: '/contacto'
       path: '/contacto'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoberturasRoute: CoberturasRoute,
   ContactoRoute: ContactoRoute,
+  DerivantesRoute: DerivantesRoute,
   EquipoRoute: EquipoRoute,
   EspecialidadesRoute: EspecialidadesRoute,
   LugarRoute: LugarRoute,
