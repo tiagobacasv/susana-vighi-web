@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "¿Cómo se entrega el resultado?",
-    a: "El informe original se envía a tu médico derivante. Vos podés retirar una copia con tu DNI o pedirla por mail. No enviamos resultados por teléfono para preservar la confidencialidad.",
+    a: "El informe original se envía a tu médico derivante. Vos podés retirar una copia con tu DNI, pedirla por mail o consultarla por teléfono.",
   },
   {
     q: "¿Trabajan con mi obra social o prepaga?",
@@ -81,7 +81,7 @@ function PacientesPage() {
   return (
     <SiteLayout>
       <PageHero
-        variant="compass"
+        variant="heartbeat"
         eyebrow="Guía clara · Información al paciente"
         title="Acompañamos cada paso."
         description="Recibir un pedido de biopsia o citología puede generar dudas. Acá encontrás información clara sobre qué es cada estudio, cómo prepararte y cómo retirar tu informe."
@@ -121,9 +121,8 @@ function PacientesPage() {
             </h2>
             <p className="mt-5 max-w-xl text-white/75">
               El informe original se envía directamente a tu médico derivante.
-              También podés retirar una copia en nuestra sede o solicitarla por mail
-              acreditando identidad. No entregamos resultados por teléfono para
-              proteger tu confidencialidad.
+              También podés retirar una copia en nuestra sede, solicitarla por mail
+              acreditando identidad o consultarla por teléfono.
             </p>
           </div>
           <div className="space-y-3 md:col-span-2">

@@ -115,7 +115,7 @@ function DerivantesPage() {
   return (
     <SiteLayout>
       <PageHero
-        variant="dna"
+        variant="referral"
         eyebrow="Protocolos · Requisitos · Coordinación"
         title="Para médicos derivantes."
         description="Todo lo que necesitás para enviarnos una muestra: protocolos de fijación, requisitos por tipo de estudio, formularios y contactos directos de coordinación médica."

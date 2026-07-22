@@ -163,7 +163,7 @@ function ContactoPage() {
             {/* Columna formulario */}
             <form
               onSubmit={(e) => e.preventDefault()}
-              className="space-y-4 rounded-2xl border border-border bg-secondary p-8 lg:col-span-2"
+              className="flex flex-col space-y-4 rounded-2xl border border-border bg-secondary p-8 lg:col-span-2"
             >
               <div>
                 <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
@@ -191,13 +191,13 @@ function ContactoPage() {
                   className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-clinical-accent focus:outline-none"
                 />
               </div>
-              <div>
+              <div className="flex flex-1 flex-col">
                 <label className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
                   Mensaje
                 </label>
                 <textarea
                   rows={5}
-                  className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-clinical-accent focus:outline-none"
+                  className="w-full flex-1 resize-none rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-clinical-accent focus:outline-none"
                 />
               </div>
               <button

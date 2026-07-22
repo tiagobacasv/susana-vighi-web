@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-[1800px] items-center justify-between px-8 2xl:px-16">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={logoImg} alt="CAP Vighi" className="h-12 w-auto object-contain" />
           <span className="text-base font-bold uppercase tracking-tight md:text-lg">
@@ -40,7 +40,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-4 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
+        <div className="hidden items-center gap-8 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
           {navLinks.slice(1, -1).map((l) => {
             const active = pathname === l.to;
             return (
@@ -159,7 +159,10 @@ export type HeroVariant =
   | "dna"
   | "microscope"
   | "molecules"
-  | "partners";
+  | "partners"
+  | "referral"
+  | "heartbeat"
+  | "publications";
 
 export function PageHero({
   eyebrow,
@@ -555,6 +558,145 @@ function HeroDecoration({ variant }: { variant: HeroVariant }) {
             />
           </g>
         ))}
+      </g>
+    );
+  }
+
+  if (variant === "referral") {
+    // Flujo de derivación: documento viajando entre dos instituciones
+    return (
+      <g>
+        {/* Nodo origen (institución derivante) */}
+        <rect x="150" y="150" width="70" height="80" rx="8" fill="none" stroke={B} strokeWidth="1.2" opacity="0.35" />
+        <line x1="165" y1="170" x2="205" y2="170" stroke={B} strokeWidth="1" opacity="0.3" />
+        <line x1="165" y1="185" x2="205" y2="185" stroke={B} strokeWidth="1" opacity="0.3" />
+        <line x1="165" y1="200" x2="195" y2="200" stroke={B} strokeWidth="1" opacity="0.3" />
+
+        {/* Nodo destino (CAP Vighi) */}
+        <rect x="440" y="130" width="80" height="90" rx="8" fill="none" stroke={A} strokeWidth="1.4" opacity="0.4" />
+        <circle cx="480" cy="160" r="12" fill="none" stroke={A} strokeWidth="1.2" opacity="0.5" />
+        <circle cx="480" cy="160" r="5" fill={A} opacity="0.6" />
+        <line x1="460" y1="195" x2="500" y2="195" stroke={A} strokeWidth="1" opacity="0.35" />
+        <line x1="460" y1="205" x2="500" y2="205" stroke={A} strokeWidth="1" opacity="0.35" />
+
+        {/* Ruta punteada de derivación */}
+        <path
+          d="M 225 185 Q 330 100 440 175"
+          fill="none"
+          stroke={A}
+          strokeWidth="1.2"
+          strokeDasharray="2 6"
+          opacity="0.4"
+        />
+
+        {/* Documento en tránsito */}
+        <g transform="translate(320, 130)">
+          <rect x="-16" y="-20" width="32" height="40" rx="4" fill="var(--clinical-bg)" stroke={A} strokeWidth="1.2" opacity="0.85" />
+          <line x1="-9" y1="-9" x2="9" y2="-9" stroke={A} strokeWidth="1" opacity="0.5" />
+          <line x1="-9" y1="0" x2="9" y2="0" stroke={A} strokeWidth="1" opacity="0.5" />
+          <line x1="-9" y1="9" x2="3" y2="9" stroke={A} strokeWidth="1" opacity="0.5" />
+        </g>
+
+        {/* Puntos satélite (red de derivantes) */}
+        <circle cx="130" cy="270" r="4" fill={B} opacity="0.35" />
+        <circle cx="200" cy="290" r="3.5" fill={B} opacity="0.3" />
+        <circle cx="530" cy="260" r="4" fill={A} opacity="0.3" />
+        <circle cx="490" cy="290" r="3.5" fill={A} opacity="0.28" />
+        <line x1="150" y1="230" x2="130" y2="270" stroke={B} strokeWidth="0.6" opacity="0.2" />
+        <line x1="185" y1="230" x2="200" y2="290" stroke={B} strokeWidth="0.6" opacity="0.2" />
+        <line x1="480" y1="220" x2="530" y2="260" stroke={A} strokeWidth="0.6" opacity="0.2" />
+        <line x1="460" y1="220" x2="490" y2="290" stroke={A} strokeWidth="0.6" opacity="0.2" />
+      </g>
+    );
+  }
+
+  if (variant === "heartbeat") {
+    // Línea de pulso cardíaco (EKG) con corazón — cuidado al paciente
+    return (
+      <g>
+        {/* Línea base de pulso */}
+        <path
+          d="M 100 220 L 200 220 L 225 220 L 240 160 L 260 280 L 280 190 L 300 220 L 340 220
+             L 365 220 L 380 160 L 400 280 L 420 190 L 440 220 L 540 220"
+          fill="none"
+          stroke={A}
+          strokeWidth="1.6"
+          opacity="0.5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        {/* Segunda línea tenue (eco) */}
+        <path
+          d="M 100 260 L 210 260 L 230 260 L 245 230 L 260 290 L 275 260 L 340 260
+             L 360 260 L 375 235 L 390 285 L 405 260 L 540 260"
+          fill="none"
+          stroke={B}
+          strokeWidth="1"
+          opacity="0.2"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+        />
+        {/* Corazón */}
+        <path
+          d="M320 110 C 305 95 280 100 280 122 C 280 142 320 165 320 165 C 320 165 360 142 360 122 C 360 100 335 95 320 110 Z"
+          fill={A}
+          opacity="0.5"
+        />
+        {/* Puntos de foco a lo largo de la línea */}
+        <circle cx="240" cy="160" r="3" fill={A} opacity="0.6" />
+        <circle cx="380" cy="160" r="3" fill={A} opacity="0.6" />
+      </g>
+    );
+  }
+
+  if (variant === "publications") {
+    // Libro abierto con páginas — publicaciones y actividad académica
+    return (
+      <g>
+        {/* Tapa/lomo del libro */}
+        <path
+          d="M 320 100 L 320 280"
+          stroke={B}
+          strokeWidth="1.4"
+          opacity="0.35"
+        />
+        {/* Página izquierda */}
+        <path
+          d="M 320 110 C 270 95 210 100 175 118 L 175 270 C 210 253 270 248 320 263 Z"
+          fill="none"
+          stroke={A}
+          strokeWidth="1.2"
+          opacity="0.4"
+        />
+        <line x1="195" y1="145" x2="290" y2="132" stroke={A} strokeWidth="0.8" opacity="0.3" />
+        <line x1="195" y1="165" x2="290" y2="153" stroke={A} strokeWidth="0.8" opacity="0.3" />
+        <line x1="195" y1="185" x2="290" y2="174" stroke={A} strokeWidth="0.8" opacity="0.3" />
+        <line x1="195" y1="205" x2="260" y2="197" stroke={A} strokeWidth="0.8" opacity="0.25" />
+
+        {/* Página derecha */}
+        <path
+          d="M 320 110 C 370 95 430 100 465 118 L 465 270 C 430 253 370 248 320 263 Z"
+          fill="none"
+          stroke={B}
+          strokeWidth="1.2"
+          opacity="0.4"
+        />
+        <line x1="350" y1="132" x2="445" y2="145" stroke={B} strokeWidth="0.8" opacity="0.3" />
+        <line x1="350" y1="153" x2="445" y2="165" stroke={B} strokeWidth="0.8" opacity="0.3" />
+        <line x1="350" y1="174" x2="445" y2="185" stroke={B} strokeWidth="0.8" opacity="0.3" />
+        <line x1="350" y1="197" x2="415" y2="205" stroke={B} strokeWidth="0.8" opacity="0.25" />
+
+        {/* Birrete académico flotante */}
+        <g transform="translate(480, 90)">
+          <path d="M -22 0 L 0 -10 L 22 0 L 0 10 Z" fill={A} opacity="0.45" />
+          <line x1="16" y1="4" x2="16" y2="20" stroke={A} strokeWidth="1" opacity="0.4" />
+          <circle cx="16" cy="21" r="2" fill={A} opacity="0.5" />
+        </g>
+
+        {/* Estrellas/destellos de novedad */}
+        <circle cx="150" cy="90" r="2.5" fill={B} opacity="0.4" />
+        <circle cx="500" cy="230" r="2.5" fill={A} opacity="0.35" />
+        <circle cx="140" cy="230" r="2" fill={A} opacity="0.3" />
       </g>
     );
   }

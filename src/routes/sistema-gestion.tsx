@@ -122,9 +122,6 @@ function SistemaGestionPage() {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <p className="mt-3 text-[11px] text-clinical-slate">
-                Imagen referencial — reemplazable por captura real del sistema.
-              </p>
             </div>
           </div>
         </div>

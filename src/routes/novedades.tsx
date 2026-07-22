@@ -77,7 +77,7 @@ function NovedadesPage() {
   return (
     <SiteLayout>
       <PageHero
-        variant="dashboard"
+        variant="publications"
         eyebrow="Academia · Publicaciones · Docencia"
         title="Novedades y publicaciones."
         description="Compartimos la actividad académica, las publicaciones y las incorporaciones técnicas del equipo. Un espacio para seguir de cerca lo que hacemos más allá del diagnóstico."
