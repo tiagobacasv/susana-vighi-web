@@ -67,7 +67,7 @@ function Navbar() {
         <button
           aria-label="Abrir menú"
           onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-md border border-border lg:hidden"
+          className="flex size-10 items-center justify-center rounded-md border border-border xl:hidden"
         >
           <span className="flex flex-col gap-1">
             <span className="block h-px w-5 bg-foreground" />
