@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import { Phone, Mail, MapPin, Clock, Briefcase, FileText, Calculator } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Briefcase, FileText, Calculator, HeartPulse, ClipboardList } from "lucide-react";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
@@ -234,6 +234,50 @@ function ContactoPage() {
               referrerPolicy="no-referrer-when-downgrade"
               className="block w-full"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Accesos rápidos */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Link
+              to="/pacientes"
+              className="group rounded-2xl border border-border bg-secondary p-10 transition-colors hover:border-clinical-accent"
+            >
+              <div className="flex size-11 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                <HeartPulse className="size-5" />
+              </div>
+              <h3 className="mt-6 text-xl font-bold text-clinical-blue">
+                Información para pacientes
+              </h3>
+              <p className="mt-3 text-sm text-clinical-slate">
+                Qué es una biopsia, cómo prepararte, tiempos esperables y cómo retirar
+                tu informe.
+              </p>
+              <span className="mt-6 inline-block text-sm font-medium text-clinical-accent group-hover:underline">
+                Ir a pacientes →
+              </span>
+            </Link>
+            <Link
+              to="/derivantes"
+              className="group rounded-2xl border border-border bg-secondary p-10 transition-colors hover:border-clinical-accent"
+            >
+              <div className="flex size-11 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                <ClipboardList className="size-5" />
+              </div>
+              <h3 className="mt-6 text-xl font-bold text-clinical-blue">
+                Portal para médicos derivantes
+              </h3>
+              <p className="mt-3 text-sm text-clinical-slate">
+                Protocolos de fijación, requisitos por tipo de estudio, formularios y
+                coordinación directa.
+              </p>
+              <span className="mt-6 inline-block text-sm font-medium text-clinical-accent group-hover:underline">
+                Ir a derivantes →
+              </span>
+            </Link>
           </div>
         </div>
       </section>
