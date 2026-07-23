@@ -530,6 +530,28 @@ function EspecialidadesPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA médicos derivantes */}
+      <section className="border-t border-border bg-clinical-blue py-20 text-primary-foreground">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+            Para profesionales
+          </div>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+            ¿Necesitás enviarnos una muestra?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-white/75">
+            Consultá el instructivo completo para médicos derivantes: protocolos de
+            fijación, requisitos por tipo de estudio, formularios y coordinación directa.
+          </p>
+          <Link
+            to="/derivantes"
+            className="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-clinical-blue hover:bg-clinical-accent hover:text-white"
+          >
+            Ir al portal de derivantes →
+          </Link>
+        </div>
+      </section>
       <BackToTop />
     </SiteLayout>
   );
