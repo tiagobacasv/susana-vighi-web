@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import teamWorkImg from "@/assets/NuestroEquipo/TeamWork.png";
 import neEmiliano from "@/assets/NuestroEquipo/NE-Emiliano_h.png";
 import neAndrea from "@/assets/NuestroEquipo/NE-Andrea_h.png";
 import neFederico from "@/assets/NuestroEquipo/NE-Federico_h.png";
@@ -30,6 +31,8 @@ import {
   Stethoscope,
   Wrench,
   ChevronRight,
+  Mail,
+  Quote,
 } from "lucide-react";
 
 export const Route = createFileRoute("/equipo")({
@@ -589,49 +592,78 @@ function EquipoPage() {
   );
 }
 
+const roles = [
+  "Médicos patólogos con especialidad certificada",
+  "Citotécnicos con experiencia en screening y citología ginecológica",
+  "Técnicos de histología, inmunohistoquímica y biología molecular",
+  "Coordinación administrativa y atención al derivante",
+];
+
 function JoinUs() {
   return (
     <section className="border-t border-border bg-secondary/40 py-24">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-10 rounded-3xl border border-border bg-background p-10 md:grid-cols-5 md:p-14">
-          <div className="md:col-span-3">
+        <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
+          {/* Texto principal */}
+          <div>
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
               Trabajá con nosotros
             </div>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-clinical-blue md:text-4xl">
+            <h2 className="mt-3 text-4xl font-bold tracking-tight text-clinical-blue md:text-5xl">
               Sumate al equipo.
             </h2>
-            <p className="mt-4 max-w-xl text-clinical-slate">
-              Incorporamos profesionales médicos, citotécnicos, técnicos de laboratorio
-              y personal administrativo comprometidos con la excelencia diagnóstica.
-              Enviá tu CV a nuestra casilla de recursos humanos y detallá el área de interés.
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-clinical-slate">
+              Incorporamos profesionales comprometidos con la excelencia diagnóstica.
+              Contanos en qué área te especializás.
             </p>
-            <ul className="mt-6 space-y-2 text-sm text-clinical-slate">
-              <li>· Médicos patólogos con especialidad certificada</li>
-              <li>· Citotécnicos con experiencia en screening y citología ginecológica</li>
-              <li>· Técnicos de histología, inmunohistoquímica y biología molecular</li>
-              <li>· Coordinación administrativa y atención al derivante</li>
+            <ul className="mt-8 space-y-3">
+              {roles.map((r) => (
+                <li key={r} className="flex items-start gap-3 text-sm text-clinical-slate">
+                  <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-clinical-accent" />
+                  {r}
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-secondary p-8 md:col-span-2">
-            <div>
-              <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                Enviá tu CV a
+
+          {/* Foto real del equipo trabajando */}
+          <div className="relative aspect-[3/2] overflow-hidden rounded-3xl shadow-xl">
+            <img
+              src={teamWorkImg}
+              alt="Equipo de CAP Vighi trabajando en el laboratorio"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent p-6 pt-16">
+              <Quote className="size-6 text-clinical-accent" />
+              <div className="mt-2 text-center text-[15px] font-semibold italic leading-snug text-white drop-shadow-sm">
+                Si querés ir rápido, ve solo. Si querés llegar lejos, ve acompañado.
               </div>
-              <a
-                href="mailto:cv@susanavighi.com.ar"
-                className="mt-2 block break-all text-lg font-semibold text-clinical-blue hover:text-clinical-accent"
-              >
-                cv@susanavighi.com.ar
-              </a>
+              <Quote className="ml-auto size-6 rotate-180 text-clinical-accent" />
+            </div>
+          </div>
+        </div>
+
+        {/* Barra de postulación */}
+        <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-border pt-10 sm:flex-row sm:items-center">
+          <div>
+            <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-slate">
+              Postulaciones abiertas
             </div>
             <a
               href="mailto:cv@susanavighi.com.ar"
-              className="rounded-lg bg-clinical-blue px-5 py-3 text-center text-sm font-semibold text-primary-foreground hover:opacity-90"
+              className="mt-2 flex items-center gap-2.5 text-xl font-bold text-clinical-blue transition-colors hover:text-clinical-accent"
             >
-              Postularme
+              <Mail className="size-5 shrink-0 text-clinical-accent" />
+              <span className="break-all">cv@susanavighi.com.ar</span>
             </a>
           </div>
+          <a
+            href="mailto:cv@susanavighi.com.ar"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-clinical-blue px-7 py-3.5 font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
+          >
+            Postularme
+            <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </a>
         </div>
       </div>
     </section>
