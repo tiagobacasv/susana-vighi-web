@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "purpose": "Propósito",
+    "team": "Nuestro equipo",
+    "place": "Nuestro lugar",
+    "specialties": "Especialidades",
+    "referring": "Derivantes",
+    "patients": "Pacientes",
+    "coverage": "Coberturas",
+    "quality": "Sistema de gestión",
+    "news": "Novedades",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú"
+  },
+  "lang": {
+    "toggle": "EN",
+    "aria": "Cambiar a inglés"
+  },
+  "footer": {
+    "tagline": "Centro de Anatomía Patológica Dra. Susana Vighi. Lideramos la especialidad con patología digital y los más altos estándares de calidad.",
+    "sections": "Secciones",
+    "contact": "Contacto",
+    "location": "Ciudad de Buenos Aires, Argentina",
+    "hours": "Lun a Vie · 08:00 — 20:00",
+    "rights": "Centro de Anatomía Patológica Dra. Susana Vighi",
+    "quality": "Sistema de gestión de calidad certificado"
+  },
+  "home": {
+    "hero": {
+      "badge": "Patología digital + IA",
+      "titleA": "Lideramos la",
+      "titleB": "anatomía patológica.",
+      "description": "Combinamos experiencia médica, innovación e infraestructura digital para optimizar el flujo de trabajo y reducir los tiempos de informe.",
+      "ctaSpecialties": "Ver especialidades",
+      "ctaContact": "Consultar",
+      "imgAlt": "Muestra histológica digitalizada",
+      "turnaroundBadge": "Tiempo de respuesta"
+    },
+    "turnaround": {
+      "eyebrow": "Tiempos de entrega promedio",
+      "unit": "Días hábiles",
+      "items": {
+        "pap": "Papanicolaou",
+        "biopsy": "Biopsia",
+        "ihq": "Inmunohistoquímica",
+        "biopsyIhq": "Biopsia c/ IHQ"
+      }
+    },
+    "services": {
+      "eyebrow": "Especialidades",
+      "title": "Excelencia en cada muestra.",
+      "description": "Una gama completa de servicios diagnósticos con enfoque integral y personalizado.",
+      "seeAll": "Ver todas las especialidades",
+      "histo": {
+        "title": "Histopatología",
+        "desc": "Procesamiento y análisis de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales."
+      },
+      "ihq": {
+        "title": "Inmunohistoquímica",
+        "desc": "Determinación de biomarcadores para oncología de precisión y terapias dirigidas."
+      },
+      "cyto": {
+        "title": "Citología",
+        "desc": "Papanicolaou y punciones aspirativas (PAAF) con lectura especializada."
+      }
+    },
+    "pillars": {
+      "eyebrow": "Nuestros pilares",
+      "title": "Pioneros en la incorporación de patología digital e IA en Argentina.",
+      "description": "Integramos patología digital e inteligencia artificial a nuestros procesos para optimizar el flujo de trabajo y reducir significativamente los tiempos de informe.",
+      "celeridad": {
+        "title": "Celeridad",
+        "desc": "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible."
+      },
+      "calidad": {
+        "title": "Calidad médica",
+        "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares."
+      },
+      "equipo": {
+        "title": "Equipo",
+        "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes."
+      },
+      "tecnologia": {
+        "title": "Tecnología",
+        "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo."
+      }
+    },
+    "coverage": {
+      "eyebrow": "Coberturas y centros",
+      "title": "Red de obras sociales, prepagas y clínicas.",
+      "description": "Trabajamos con las principales coberturas del país y recibimos muestras de sanatorios y centros de salud de referencia.",
+      "seeAll": "Ver coberturas y centros"
+    },
+    "cta": {
+      "title": "Tres décadas formando un referente en diagnóstico.",
+      "description": "Integramos experiencia clínica, tecnología y un sistema de gestión riguroso para sostener un estándar de excelencia.",
+      "team": "Conocer al equipo",
+      "quality": "Sistema de gestión"
+    }
+  }
+}

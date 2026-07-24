@@ -1,0 +1,28 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+import es from "./locales/es.json";
+import en from "./locales/en.json";
+
+// Initialize synchronously so SSR renders with a valid language.
+// Client-side language preference is applied via useEffect in the toggle.
+if (!i18n.isInitialized) {
+  i18n
+    .use(initReactI18next)
+    .init({
+      resources: {
+        es: { translation: es },
+        en: { translation: en },
+      },
+      lng: "es",
+      fallbackLng: "es",
+      interpolation: { escapeValue: false },
+      react: { useSuspense: false },
+    });
+}
+
+export default i18n;
+
+export const SUPPORTED_LANGS = ["es", "en"] as const;
+export type Lang = (typeof SUPPORTED_LANGS)[number];
+export const LANG_STORAGE_KEY = "capvighi.lang";

@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Home",
+    "purpose": "Purpose",
+    "team": "Our team",
+    "place": "Our facility",
+    "specialties": "Specialties",
+    "referring": "Referring physicians",
+    "patients": "Patients",
+    "coverage": "Insurance",
+    "quality": "Quality system",
+    "news": "News",
+    "contact": "Contact",
+    "openMenu": "Open menu"
+  },
+  "lang": {
+    "toggle": "ES",
+    "aria": "Switch to Spanish"
+  },
+  "footer": {
+    "tagline": "Dr. Susana Vighi Pathology Center. Leading the specialty with digital pathology and the highest quality standards.",
+    "sections": "Sections",
+    "contact": "Contact",
+    "location": "Buenos Aires, Argentina",
+    "hours": "Mon to Fri · 8:00 AM — 8:00 PM",
+    "rights": "Dr. Susana Vighi Pathology Center",
+    "quality": "Certified quality management system"
+  },
+  "home": {
+    "hero": {
+      "badge": "Digital pathology + AI",
+      "titleA": "Leading",
+      "titleB": "anatomic pathology.",
+      "description": "We combine medical expertise, innovation and digital infrastructure to optimize workflow and reduce turnaround times.",
+      "ctaSpecialties": "View specialties",
+      "ctaContact": "Contact us",
+      "imgAlt": "Digitized histology sample",
+      "turnaroundBadge": "Turnaround time"
+    },
+    "turnaround": {
+      "eyebrow": "Average turnaround times",
+      "unit": "Business days",
+      "items": {
+        "pap": "Pap smear",
+        "biopsy": "Biopsy",
+        "ihq": "Immunohistochemistry",
+        "biopsyIhq": "Biopsy w/ IHC"
+      }
+    },
+    "services": {
+      "eyebrow": "Specialties",
+      "title": "Excellence in every sample.",
+      "description": "A complete range of diagnostic services with a comprehensive and personalized approach.",
+      "seeAll": "View all specialties",
+      "histo": {
+        "title": "Histopathology",
+        "desc": "Processing and analysis of biopsies and surgical specimens with routine staining and special techniques."
+      },
+      "ihq": {
+        "title": "Immunohistochemistry",
+        "desc": "Biomarker determination for precision oncology and targeted therapies."
+      },
+      "cyto": {
+        "title": "Cytology",
+        "desc": "Pap smears and fine-needle aspirations (FNA) with specialized reading."
+      }
+    },
+    "pillars": {
+      "eyebrow": "Our pillars",
+      "title": "Pioneers in the adoption of digital pathology and AI in Argentina.",
+      "description": "We integrate digital pathology and artificial intelligence into our processes to optimize workflow and significantly reduce reporting times.",
+      "celeridad": {
+        "title": "Speed",
+        "desc": "Reducing diagnostic times saves lives. Our logistics are designed to report as fast as possible."
+      },
+      "calidad": {
+        "title": "Medical quality",
+        "desc": "We uphold the highest standards through internal controls and peer review."
+      },
+      "equipo": {
+        "title": "Team",
+        "desc": "We train middle-management leaders and run highly efficient teams."
+      },
+      "tecnologia": {
+        "title": "Technology",
+        "desc": "We invest in high-complexity equipment and digital pathology integrated into the workflow."
+      }
+    },
+    "coverage": {
+      "eyebrow": "Insurance & medical centers",
+      "title": "Network of insurers, prepaid plans and clinics.",
+      "description": "We work with the country's leading insurance providers and receive samples from top hospitals and health centers.",
+      "seeAll": "View insurance & centers"
+    },
+    "cta": {
+      "title": "Three decades building a diagnostic reference.",
+      "description": "We integrate clinical expertise, technology and a rigorous management system to sustain a standard of excellence.",
+      "team": "Meet the team",
+      "quality": "Quality system"
+    }
+  }
+}
