@@ -1,19 +1,21 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 import logoImg from "@/assets/fav-icon.png";
+import { useLang } from "@/hooks/use-lang";
 
-const navLinks = [
-  { to: "/", label: "Inicio" },
-  { to: "/proposito", label: "Propósito" },
-  { to: "/equipo", label: "Nuestro equipo" },
-  { to: "/lugar", label: "Nuestro lugar" },
-  { to: "/especialidades", label: "Especialidades" },
-  { to: "/derivantes", label: "Derivantes" },
-  { to: "/pacientes", label: "Pacientes" },
-  { to: "/coberturas", label: "Coberturas" },
-  { to: "/sistema-gestion", label: "Sistema de gestión" },
-  { to: "/novedades", label: "Novedades" },
-  { to: "/contacto", label: "Contacto" },
+const navKeys = [
+  { to: "/", key: "home" },
+  { to: "/proposito", key: "purpose" },
+  { to: "/equipo", key: "team" },
+  { to: "/lugar", key: "place" },
+  { to: "/especialidades", key: "specialties" },
+  { to: "/derivantes", key: "referring" },
+  { to: "/pacientes", key: "patients" },
+  { to: "/coberturas", key: "coverage" },
+  { to: "/sistema-gestion", key: "quality" },
+  { to: "/novedades", key: "news" },
+  { to: "/contacto", key: "contact" },
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -26,9 +28,29 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   );
 }
 
+function LangToggle({ compact = false }: { compact?: boolean }) {
+  const { t } = useTranslation();
+  const { lang, toggleLang } = useLang();
+  const nextLabel = lang === "es" ? "EN" : "ES";
+  return (
+    <button
+      onClick={toggleLang}
+      aria-label={t("lang.aria")}
+      className={
+        compact
+          ? "rounded-md border border-border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-clinical-slate hover:text-foreground"
+          : "rounded-full border border-border px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-clinical-slate transition-colors hover:border-clinical-accent hover:text-foreground"
+      }
+    >
+      {nextLabel}
+    </button>
+  );
+}
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const { t } = useTranslation();
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
@@ -41,7 +63,7 @@ function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
-          {navLinks.slice(1, -1).map((l) => {
+          {navKeys.slice(1, -1).map((l) => {
             const active = pathname === l.to;
             return (
               <Link
@@ -52,7 +74,7 @@ function Navbar() {
                   (active ? "text-foreground" : "")
                 }
               >
-                {l.label}
+                {t(`nav.${l.key}`)}
               </Link>
             );
           })}
@@ -60,34 +82,38 @@ function Navbar() {
             to="/contacto"
             className="rounded-full bg-clinical-blue px-5 py-2.5 text-[11px] text-primary-foreground transition-opacity hover:opacity-90"
           >
-            Contacto
+            {t("nav.contact")}
           </Link>
+          <LangToggle />
         </div>
 
-        <button
-          aria-label="Abrir menú"
-          onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-md border border-border xl:hidden"
-        >
-          <span className="flex flex-col gap-1">
-            <span className="block h-px w-5 bg-foreground" />
-            <span className="block h-px w-5 bg-foreground" />
-            <span className="block h-px w-5 bg-foreground" />
-          </span>
-        </button>
+        <div className="flex items-center gap-2 xl:hidden">
+          <LangToggle compact />
+          <button
+            aria-label={t("nav.openMenu")}
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 items-center justify-center rounded-md border border-border"
+          >
+            <span className="flex flex-col gap-1">
+              <span className="block h-px w-5 bg-foreground" />
+              <span className="block h-px w-5 bg-foreground" />
+              <span className="block h-px w-5 bg-foreground" />
+            </span>
+          </button>
+        </div>
       </div>
 
       {open && (
         <div className="border-t border-border bg-background xl:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {navLinks.map((l) => (
+            {navKeys.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="rounded-md px-3 py-3 text-sm font-medium uppercase tracking-wide text-clinical-slate hover:bg-secondary hover:text-foreground"
               >
-                {l.label}
+                {t(`nav.${l.key}`)}
               </Link>
             ))}
           </div>
@@ -98,6 +124,7 @@ function Navbar() {
 }
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="mt-20 bg-clinical-blue py-20 text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-4">
@@ -107,19 +134,18 @@ function Footer() {
             <span className="text-lg font-bold uppercase tracking-tight">CAP Vighi</span>
           </div>
           <p className="mt-6 max-w-sm text-sm text-white/60">
-            Centro de Anatomía Patológica Dra. Susana Vighi. Lideramos la
-            especialidad con patología digital y los más altos estándares de calidad.
+            {t("footer.tagline")}
           </p>
         </div>
         <div>
           <h4 className="mb-4 font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
-            Secciones
+            {t("footer.sections")}
           </h4>
           <ul className="space-y-3 text-sm text-white/70">
-            {navLinks.map((l) => (
+            {navKeys.map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="hover:text-primary-foreground">
-                  {l.label}
+                  {t(`nav.${l.key}`)}
                 </Link>
               </li>
             ))}
@@ -127,22 +153,22 @@ function Footer() {
         </div>
         <div>
           <h4 className="mb-4 font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
-            Contacto
+            {t("footer.contact")}
           </h4>
           <ul className="space-y-3 text-sm text-white/70">
-            <li>Ciudad de Buenos Aires, Argentina</li>
+            <li>{t("footer.location")}</li>
             <li>
               <a href="mailto:info@susanavighi.com.ar" className="hover:text-primary-foreground">
                 info@susanavighi.com.ar
               </a>
             </li>
-            <li>Lun a Vie · 08:00 — 20:00</li>
+            <li>{t("footer.hours")}</li>
           </ul>
         </div>
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col justify-between gap-4 border-t border-white/10 px-6 pt-8 text-[10px] uppercase tracking-widest text-white/40 md:flex-row">
-        <span>© {new Date().getFullYear()} Centro de Anatomía Patológica Dra. Susana Vighi</span>
-        <span>Sistema de gestión de calidad certificado</span>
+        <span>© {new Date().getFullYear()} {t("footer.rights")}</span>
+        <span>{t("footer.quality")}</span>
       </div>
     </footer>
   );

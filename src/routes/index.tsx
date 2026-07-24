@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Microscope, FlaskConical, ScanLine } from "lucide-react";
 import heroImg from "@/assets/hero-option-1.jpg";
@@ -35,55 +36,24 @@ export const Route = createFileRoute("/")({
 });
 
 const turnaround = [
-  { label: "Papanicolaou", value: "3" },
-  { label: "Biopsia", value: "6" },
-  { label: "Inmunohistoquímica", value: "7" },
-  { label: "Biopsia c/ IHQ", value: "9" },
-];
+  { key: "pap", value: "3" },
+  { key: "biopsy", value: "6" },
+  { key: "ihq", value: "7" },
+  { key: "biopsyIhq", value: "9" },
+] as const;
 
 const services = [
-  {
-    title: "Histopatología",
-    desc: "Procesamiento y análisis de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales.",
-    img: histoImg,
-    Icon: Microscope,
-  },
-  {
-    title: "Inmunohistoquímica",
-    desc: "Determinación de biomarcadores para oncología de precisión y terapias dirigidas.",
-    img: immunoImg,
-    Icon: FlaskConical,
-  },
-  {
-    title: "Citología",
-    desc: "Papanicolaou y punciones aspirativas (PAAF) con lectura especializada.",
-    img: cytoImg,
-    Icon: ScanLine,
-  },
-];
+  { key: "histo", img: histoImg, Icon: Microscope },
+  { key: "ihq", img: immunoImg, Icon: FlaskConical },
+  { key: "cyto", img: cytoImg, Icon: ScanLine },
+] as const;
 
 const pillars = [
-  {
-    n: "01",
-    title: "Celeridad",
-    desc: "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible.",
-  },
-  {
-    n: "02",
-    title: "Calidad médica",
-    desc: "Fomentamos los más altos estándares con controles internos y revisión por pares.",
-  },
-  {
-    n: "03",
-    title: "Equipo",
-    desc: "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes.",
-  },
-  {
-    n: "04",
-    title: "Tecnología",
-    desc: "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo.",
-  },
-];
+  { n: "01", key: "celeridad" },
+  { n: "02", key: "calidad" },
+  { n: "03", key: "equipo" },
+  { n: "04", key: "tecnologia" },
+] as const;
 
 function LogoMarquee({ logos, direction }: { logos: string[]; direction: "left" | "right" }) {
   return (
@@ -114,6 +84,7 @@ function LogoMarquee({ logos, direction }: { logos: string[]; direction: "left" 
 }
 
 function Index() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       {/* Hero */}
@@ -124,29 +95,28 @@ function Index() {
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-clinical-accent/30 bg-clinical-accent/10 px-3 py-1">
                 <span className="size-1.5 animate-pulse rounded-full bg-clinical-accent" />
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-clinical-blue">
-                  Patología digital + IA
+                  {t("home.hero.badge")}
                 </span>
               </div>
               <h1 className="mb-8 text-5xl font-bold leading-[0.95] tracking-tighter text-balance md:text-7xl">
-                Lideramos la <br />
-                <span className="text-clinical-accent">anatomía patológica.</span>
+                {t("home.hero.titleA")} <br />
+                <span className="text-clinical-accent">{t("home.hero.titleB")}</span>
               </h1>
               <p className="mb-10 max-w-lg text-xl leading-relaxed text-clinical-slate">
-                Combinamos experiencia médica, innovación e infraestructura digital
-                para optimizar el flujo de trabajo y reducir los tiempos de informe.
+                {t("home.hero.description")}
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/especialidades"
                   className="rounded-lg bg-clinical-blue px-8 py-4 font-semibold text-primary-foreground transition-all hover:shadow-xl"
                 >
-                  Ver especialidades
+                  {t("home.hero.ctaSpecialties")}
                 </Link>
                 <Link
                   to="/contacto"
                   className="rounded-lg border border-border bg-background px-8 py-4 font-semibold text-foreground transition-all hover:bg-secondary"
                 >
-                  Consultar
+                  {t("home.hero.ctaContact")}
                 </Link>
               </div>
             </div>
@@ -154,7 +124,7 @@ function Index() {
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl ring-1 ring-black/5 rotate-3">
                 <img
                   src={heroImg}
-                  alt="Muestra histológica digitalizada"
+                  alt={t("home.hero.imgAlt")}
                   width={1280}
                   height={1280}
                   className="size-full object-cover"
@@ -163,7 +133,7 @@ function Index() {
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-background p-6 shadow-xl">
                 <div className="text-3xl font-bold text-clinical-blue">24–72hs</div>
                 <div className="font-mono text-xs uppercase tracking-wider text-clinical-slate">
-                  Tiempo de respuesta
+                  {t("home.hero.turnaroundBadge")}
                 </div>
               </div>
             </div>
@@ -176,21 +146,23 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12 flex items-baseline justify-between">
             <span className="font-mono text-xs uppercase tracking-widest text-clinical-slate">
-              Tiempos de entrega promedio
+              {t("home.turnaround.eyebrow")}
             </span>
             <span className="hidden font-mono text-[10px] uppercase tracking-widest text-clinical-slate md:block">
-              Días hábiles
+              {t("home.turnaround.unit")}
             </span>
           </div>
           <div className="grid gap-12 md:grid-cols-4 text-center">
-            {turnaround.map((t) => (
-              <div key={t.label}>
+            {turnaround.map((tt) => (
+              <div key={tt.key}>
                 <div className="mb-6 h-1 w-12 bg-clinical-accent mx-auto" />
                 <div className="mb-2 text-5xl font-bold tracking-tight">
-                  {t.value}
+                  {tt.value}
                   <span className="ml-1 text-2xl text-clinical-slate">d</span>
                 </div>
-                <div className="text-sm font-semibold text-foreground">{t.label}</div>
+                <div className="text-sm font-semibold text-foreground">
+                  {t(`home.turnaround.items.${tt.key}`)}
+                </div>
               </div>
             ))}
           </div>
@@ -203,21 +175,20 @@ function Index() {
           <div className="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                Especialidades
+                {t("home.services.eyebrow")}
               </span>
               <h2 className="mt-4 text-4xl font-bold tracking-tight">
-                Excelencia en cada muestra.
+                {t("home.services.title")}
               </h2>
               <p className="mt-6 text-lg text-clinical-slate">
-                Una gama completa de servicios diagnósticos con enfoque integral y
-                personalizado.
+                {t("home.services.description")}
               </p>
             </div>
             <Link
               to="/especialidades"
               className="group flex items-center gap-2 font-semibold italic text-clinical-blue hover:not-italic"
             >
-              Ver todas las especialidades
+              {t("home.services.seeAll")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
@@ -225,20 +196,20 @@ function Index() {
           <div className="grid gap-8 md:grid-cols-3 items-stretch">
             {services.map((s) => (
               <article
-                key={s.title}
+                key={s.key}
                 className="group flex flex-col rounded-2xl border border-border p-8 transition-all hover:border-clinical-accent hover:shadow-2xl hover:shadow-clinical-accent/10"
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-lg border border-border bg-secondary transition-colors group-hover:border-clinical-accent/30 group-hover:bg-clinical-accent/10">
                   <s.Icon className="size-5 text-clinical-blue transition-colors group-hover:text-clinical-accent" />
                 </div>
-                <h3 className="mb-4 text-xl font-bold">{s.title}</h3>
+                <h3 className="mb-4 text-xl font-bold">{t(`home.services.${s.key}.title`)}</h3>
                 <p className="mb-6 flex-1 text-sm leading-relaxed text-clinical-slate">
-                  {s.desc}
+                  {t(`home.services.${s.key}.desc`)}
                 </p>
                 <div className="aspect-[4/3] overflow-hidden rounded-lg bg-secondary">
                   <img
                     src={s.img}
-                    alt={s.title}
+                    alt={t(`home.services.${s.key}.title`)}
                     loading="lazy"
                     width={800}
                     height={600}
@@ -256,13 +227,13 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-20 max-w-3xl">
             <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-              Nuestros pilares
+              {t("home.pillars.eyebrow")}
             </span>
             <h2 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Pioneros en la incorporación de patología digital e IA en Argentina.
+              {t("home.pillars.title")}
             </h2>
             <p className="mt-6 max-w-3xl text-lg text-white/60">
-              Integramos patología digital e inteligencia artificial a nuestros procesos para optimizar el flujo de trabajo y reducir significativamente los tiemposde informe.
+              {t("home.pillars.description")}
             </p>
           </div>
           <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
@@ -272,8 +243,12 @@ function Index() {
                 className="group bg-clinical-blue p-10 transition-colors hover:bg-white/5"
               >
                 <div className="mb-8 font-mono text-sm text-clinical-accent">{p.n}</div>
-                <h3 className="mb-4 text-xl font-bold tracking-tight">{p.title}</h3>
-                <p className="text-sm leading-relaxed text-white/60">{p.desc}</p>
+                <h3 className="mb-4 text-xl font-bold tracking-tight">
+                  {t(`home.pillars.${p.key}.title`)}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/60">
+                  {t(`home.pillars.${p.key}.desc`)}
+                </p>
               </div>
             ))}
           </div>
@@ -286,21 +261,20 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                Coberturas y centros
+                {t("home.coverage.eyebrow")}
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-                Red de obras sociales, prepagas y clínicas.
+                {t("home.coverage.title")}
               </h2>
               <p className="mt-4 text-clinical-slate">
-                Trabajamos con las principales coberturas del país y recibimos muestras
-                de sanatorios y centros de salud de referencia.
+                {t("home.coverage.description")}
               </p>
             </div>
             <Link
               to="/coberturas"
               className="group flex items-center gap-2 font-semibold italic text-clinical-blue hover:not-italic"
             >
-              Ver coberturas y centros
+              {t("home.coverage.seeAll")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
@@ -317,27 +291,23 @@ function Index() {
         <div className="mt-20 mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
           <div>
             <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-              Tres décadas formando un referente en diagnóstico.
+              {t("home.cta.title")}
             </h2>
           </div>
           <div>
-            <p className="text-lg text-clinical-slate">
-              Integramos experiencia clínica,
-              tecnología y un sistema de gestión riguroso para sostener un estándar de
-              excelencia.
-            </p>
+            <p className="text-lg text-clinical-slate">{t("home.cta.description")}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/equipo"
                 className="rounded-lg bg-clinical-blue px-6 py-3 font-semibold text-primary-foreground hover:opacity-90"
               >
-                Conocer al equipo
+                {t("home.cta.team")}
               </Link>
               <Link
                 to="/sistema-gestion"
                 className="rounded-lg border border-border px-6 py-3 font-semibold hover:bg-secondary"
               >
-                Sistema de gestión
+                {t("home.cta.quality")}
               </Link>
             </div>
           </div>
