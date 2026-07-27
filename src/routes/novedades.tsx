@@ -163,6 +163,43 @@ function NovedadesPage() {
           </p>
         </div>
       </section>
+
+      {/* Casos clínicos destacados */}
+      <section className="border-t border-border bg-background py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-12 max-w-3xl">
+            <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+              {t("novedades.casos.eyebrow")}
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+              {t("novedades.casos.title")}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-clinical-slate">
+              {t("novedades.casos.description")}
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {casos.map((c) => (
+              <article
+                key={c.area}
+                className="rounded-2xl border border-border bg-secondary p-7"
+              >
+                <div className="flex size-11 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                  <Microscope className="size-5" />
+                </div>
+                <div className="mt-5 font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
+                  {c.area}
+                </div>
+                <p className="mt-2 text-sm text-clinical-slate">{c.text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-10 text-sm text-clinical-slate">
+            {t("novedades.casos.soon")}
+          </p>
+        </div>
+      </section>
     </SiteLayout>
   );
 }
+
