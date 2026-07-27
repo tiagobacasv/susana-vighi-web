@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import { BookOpen, Presentation, GraduationCap, Newspaper } from "lucide-react";
+import { BookOpen, Presentation, GraduationCap, Newspaper, Microscope } from "lucide-react";
 
 export const Route = createFileRoute("/novedades")({
   head: () => ({
@@ -74,6 +75,11 @@ const destacados = [
 ];
 
 function NovedadesPage() {
+  const { t } = useTranslation();
+  const casos = t("novedades.casos.items", { returnObjects: true }) as {
+    area: string;
+    text: string;
+  }[];
   return (
     <SiteLayout>
       <PageHero
