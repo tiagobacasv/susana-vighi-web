@@ -7,7 +7,7 @@
     "specialties": "Specialties",
     "referring": "Referring physicians",
     "patients": "Patients",
-    "coverage": "Insurance",
+    "coverage": "Coverage",
     "quality": "Quality system",
     "news": "News",
     "contact": "Contact",
@@ -18,11 +18,11 @@
     "aria": "Switch to Spanish"
   },
   "footer": {
-    "tagline": "Dr. Susana Vighi Pathology Center. Leading the specialty with digital pathology and the highest quality standards.",
+    "tagline": "Dr. Susana Vighi Pathology Center. Leading anatomic pathology through digital pathology and the highest quality standards.",
     "sections": "Sections",
     "contact": "Contact",
     "location": "Buenos Aires, Argentina",
-    "hours": "Mon to Fri · 8:00 AM — 8:00 PM",
+    "hours": "Mon to Fri · 08:00 — 20:00",
     "rights": "Dr. Susana Vighi Pathology Center",
     "quality": "Certified quality management system"
   },
@@ -31,14 +31,14 @@
       "badge": "Digital pathology + AI",
       "titleA": "Leading",
       "titleB": "anatomic pathology.",
-      "description": "We combine medical expertise, innovation and digital infrastructure to optimize workflow and reduce turnaround times.",
-      "ctaSpecialties": "View specialties",
-      "ctaContact": "Contact us",
+      "description": "We combine medical expertise, innovation, and digital infrastructure to streamline workflow and shorten report turnaround times.",
+      "ctaSpecialties": "See specialties",
+      "ctaContact": "Get in touch",
       "imgAlt": "Digitized histology sample",
       "turnaroundBadge": "Turnaround time"
     },
     "turnaround": {
-      "eyebrow": "Average turnaround times",
+      "eyebrow": "Average turnaround",
       "unit": "Business days",
       "items": {
         "pap": "Pap smear",
@@ -50,53 +50,217 @@
     "services": {
       "eyebrow": "Specialties",
       "title": "Excellence in every sample.",
-      "description": "A complete range of diagnostic services with a comprehensive and personalized approach.",
-      "seeAll": "View all specialties",
-      "histo": {
-        "title": "Histopathology",
-        "desc": "Processing and analysis of biopsies and surgical specimens with routine staining and special techniques."
-      },
-      "ihq": {
-        "title": "Immunohistochemistry",
-        "desc": "Biomarker determination for precision oncology and targeted therapies."
-      },
-      "cyto": {
-        "title": "Cytology",
-        "desc": "Pap smears and fine-needle aspirations (FNA) with specialized reading."
-      }
+      "description": "A complete range of diagnostic services with an integrated, personalized approach.",
+      "seeAll": "See all specialties",
+      "histo": { "title": "Histopathology", "desc": "Processing and analysis of biopsies and surgical specimens with routine stains and special techniques." },
+      "ihq": { "title": "Immunohistochemistry", "desc": "Biomarker determination for precision oncology and targeted therapies." },
+      "cyto": { "title": "Cytology", "desc": "Pap smears and fine-needle aspirations (FNA) with specialized reading." }
     },
     "pillars": {
       "eyebrow": "Our pillars",
-      "title": "Pioneers in the adoption of digital pathology and AI in Argentina.",
-      "description": "We integrate digital pathology and artificial intelligence into our processes to optimize workflow and significantly reduce reporting times.",
-      "celeridad": {
-        "title": "Speed",
-        "desc": "Reducing diagnostic times saves lives. Our logistics are designed to report as fast as possible."
-      },
-      "calidad": {
-        "title": "Medical quality",
-        "desc": "We uphold the highest standards through internal controls and peer review."
-      },
-      "equipo": {
-        "title": "Team",
-        "desc": "We train middle-management leaders and run highly efficient teams."
-      },
-      "tecnologia": {
-        "title": "Technology",
-        "desc": "We invest in high-complexity equipment and digital pathology integrated into the workflow."
-      }
+      "title": "Pioneers of digital pathology and AI in Argentina.",
+      "description": "We integrate digital pathology and AI into our workflow to streamline processes and significantly reduce turnaround times.",
+      "celeridad": { "title": "Speed", "desc": "Faster diagnosis can save lives. Our logistics are designed to report as soon as possible." },
+      "calidad": { "title": "Medical quality", "desc": "We uphold the highest standards through internal controls and peer review." },
+      "equipo": { "title": "Team", "desc": "We train our leaders and run highly efficient specialized teams." },
+      "tecnologia": { "title": "Technology", "desc": "We invest in high-complexity instrumentation and workflow-integrated digital pathology." }
     },
     "coverage": {
-      "eyebrow": "Insurance & medical centers",
-      "title": "Network of insurers, prepaid plans and clinics.",
-      "description": "We work with the country's leading insurance providers and receive samples from top hospitals and health centers.",
-      "seeAll": "View insurance & centers"
+      "eyebrow": "Coverage and centers",
+      "title": "Network of insurers, HMOs, and clinics.",
+      "description": "We work with the country's leading insurers and receive samples from major hospitals and health centers.",
+      "seeAll": "See coverage and centers"
     },
     "cta": {
       "title": "Three decades building a diagnostic reference.",
-      "description": "We integrate clinical expertise, technology and a rigorous management system to sustain a standard of excellence.",
+      "description": "We combine clinical expertise, technology, and a rigorous management system to sustain a standard of excellence.",
       "team": "Meet the team",
       "quality": "Quality system"
+    }
+  },
+  "especialidades": {
+    "hero": {
+      "eyebrow": "Histopathology · IHC · Molecular Biology · Cytology",
+      "title": "Integrated anatomic pathology diagnosis.",
+      "description": "Molecular Biology, Immunohistochemistry, and High-Complexity Techniques — with validated technology and international partnerships."
+    },
+    "indexLabels": { "specialty": "Specialty", "sub": "Subspecialties", "comp": "Complementary" },
+    "partnership": "Partnership",
+    "panelsHeading": "Panels tailored to clinical and morphological context",
+    "shippingLabel": "Sample shipping",
+    "sub": {
+      "eyebrow": "06 · Subspecialties",
+      "title": "Diagnostic expertise by system and organ.",
+      "description": "Our medical team integrates specialists dedicated to specific areas of surgical pathology, enabling a well-grounded approach in every clinical context."
+    },
+    "comp": {
+      "eyebrow": "07 · Complementary services",
+      "title": "Services that support the report.",
+      "description": "Additional studies and services that integrate into the diagnostic workflow when required."
+    },
+    "cta": {
+      "eyebrow": "For professionals",
+      "title": "Need to send us a sample?",
+      "description": "See the full guide for referring physicians: fixation protocols, requirements by study type, forms, and direct coordination.",
+      "button": "Go to the referring portal →"
+    },
+    "backToTop": "Back to top",
+    "items": {
+      "biologia-molecular": {
+        "titulo": "Molecular Biology",
+        "resumen": "Molecular Biology is a key tool for precision diagnosis: it impacts prognosis and therapeutic selection. Our service integrates validated molecular techniques in close correlation with anatomopathological findings, ensuring reliable results aligned with current scientific standards.",
+        "partnership": "BenchMark ULTRA System — Roche ©",
+        "destacados": [
+          { "titulo": "Advanced technology", "detalle": "The BenchMark ULTRA is the most innovative and fully automated in situ hybridization slide staining system from Roche Tissue Diagnostics. Individual sliding drawers for one-piece workflow and a menu of over 250 ready-to-use assays." },
+          { "titulo": "Automated techniques", "detalle": "Performed under stable conditions, with identical antisera and computerized controls." },
+          { "titulo": "Biomolecular diagnosis enables", "detalle": "Improved quality of life and increased chances in pregnancy management." }
+        ]
+      },
+      "inmunohistoquimica": {
+        "titulo": "Immunohistochemistry",
+        "resumen": "An essential tool for modern anatomic pathology: tumor typing, evaluation of prognostic and predictive factors — providing decisive information for classification and clinical decisions. We use standardized techniques with automated protocols on Ventana's BenchMark Ultra platform, with monoclonal and polyclonal antibodies and rigorous quality controls.",
+        "partnership": "BenchMark Ultra Platform — Ventana / Roche ©",
+        "paneles": [
+          { "titulo": "Microsatellite Instability", "detalle": "MLH1 (M1) · PMS2 (A16-4) · MSH2 (G219-1129) · MSH6 (SP93)" },
+          { "titulo": "PDL-1 · BRAF", "detalle": "Key markers in precision oncology. Provides essential information for therapeutic selection." },
+          { "titulo": "Immune Microenvironment — Endometrial Panel", "detalle": "CD3 · CD4 · CD8 · CD16 · CD20 · CD45 · CD56 · CD68 · CD138" },
+          { "titulo": "Breast Pathology", "detalle": "Hormone receptors (Estrogen and Progesterone) · Her2-Neu · Ki-67 · Proteins 5/6 · 8/18 · P-53" },
+          { "titulo": "Hematopathology Panels", "detalle": "Classification of lymphoid and myeloid neoplasms." },
+          { "titulo": "Unknown Primary Origin Panels", "detalle": "Oriented to identifying the primary tumor site." },
+          { "titulo": "Epithelial, Mesenchymal and Neuroendocrine Panels", "detalle": "For accurate tumor categorization." }
+        ]
+      },
+      "tecnicas-alta-complejidad": {
+        "titulo": "High-Complexity Techniques",
+        "resumen": "Complementary methods to the anatomopathological diagnosis that expand the resolution, sensitivity, and precision of the report in complex pathologies.",
+        "sub": [
+          {
+            "titulo": "Flow Cytometry",
+            "descripcion": "A rapid diagnostic method that provides multiple parameters from cells and particles from liquid samples or fresh solid tissue. Invaluable in Hematopathology: diagnosis, classification, and determination of prognostic factors in lymphoproliferative entities.",
+            "envio": [
+              "Fresh material: tissue biopsies refrigerated with ice (do not freeze). Send same day.",
+              "Peripheral blood and fluids: EDTA tube at room temperature (do not refrigerate). Send same day."
+            ]
+          },
+          {
+            "titulo": "Immunofluorescence",
+            "descripcion": "Technique using fluorescent markers to identify molecules on the cell surface. Performed on fresh tissue.",
+            "bullets": ["Renal biopsies", "Skin biopsies", "Ocular biopsies"],
+            "envio": ["Fresh material: tissue biopsies refrigerated with ice (do not freeze). Send same day."]
+          },
+          {
+            "titulo": "Electron Microscopy",
+            "descripcion": "Technique that provides high-resolution images of cellular ultrastructure. Used as a complementary method to anatomopathological diagnosis.",
+            "envio": ["Paraffin blocks.", "Attach histological report."]
+          }
+        ]
+      },
+      "histopatologia": {
+        "titulo": "Histopathology",
+        "resumen": "Processing and diagnosis of biopsies and surgical specimens with routine stains and special techniques. Average turnaround: 6 business days for biopsy and 9 business days for biopsy with immunohistochemistry."
+      },
+      "citologia": {
+        "titulo": "Cytology — Pap smear and FNA",
+        "resumen": "Cervicovaginal screening (Pap smear) with specialized reading and fast delivery — 3 business days on average — and evaluation of samples obtained by fine-needle aspiration (FNA) from solid organs."
+      }
+    },
+    "subespecialidades": [
+      { "area": "Breast & Gynecologic Pathology", "items": ["Breast pathology", "Gynecologic pathology", "Lower genital tract pathology", "Obstetric and placental pathology"] },
+      { "area": "Onco-hematology & Lymphoproliferative", "items": ["Hematopathology", "Lymphoproliferative syndromes", "Bone marrow"] },
+      { "area": "Digestive & Hepatic Pathology", "items": ["Gastrointestinal pathology", "Hepatic pathology", "Pancreatic and biliary pathology"] },
+      { "area": "Uropathology & Nephropathology", "items": ["Urological pathology", "Medical renal pathology", "Prostatic pathology"] },
+      { "area": "Dermatopathology & Soft Tissue", "items": ["Dermatopathology", "Soft tissue tumors", "Bone and joint pathology"] },
+      { "area": "Other areas", "items": ["Pulmonary pathology", "Endocrine pathology", "Head and neck pathology", "Neuropathology", "Ophthalmic pathology", "Pediatric pathology"] }
+    ],
+    "complementarios": [
+      { "titulo": "Intraoperative frozen section biopsy", "detalle": "Rapid diagnosis during surgery to define immediate management of the specimen." },
+      { "titulo": "Special histochemical stains", "detalle": "Wide battery of complementary stains (PAS, Trichrome, Reticulin, Ziehl-Neelsen, Giemsa, among others) for tissue characterization." },
+      { "titulo": "Consultation and second opinion", "detalle": "Review of cases from other centers, with slide re-interpretation and additional studies when appropriate." },
+      { "titulo": "Clinical-pathological consultation", "detalle": "Ongoing dialogue with treating physicians to correlate morphological findings with clinical context and guide therapeutic decisions." }
+    ]
+  },
+  "derivantes": {
+    "hero": {
+      "eyebrow": "Protocols · Requirements · Coordination",
+      "title": "For referring physicians.",
+      "description": "Everything you need to send us a sample: fixation protocols, requirements by study type, forms, and direct medical coordination contacts."
+    },
+    "circuit": { "eyebrow": "Referral circuit", "title": "From collection to report." },
+    "requirements": { "eyebrow": "Requirements by study type", "title": "Sample preparation." },
+    "warning": "For any question about fixation, transport, or timing, contact our medical coordination before sending the sample.",
+    "forms": {
+      "title": "Forms and protocols",
+      "description": "Download the referral form as a PDF or request the fixation protocols and study-specific guides by email.",
+      "download": "Download form (PDF)",
+      "request": "Request by email"
+    },
+    "coord": {
+      "eyebrow": "Medical coordination",
+      "title": "Let's talk directly.",
+      "linesLabel": "Rotating lines",
+      "seeAll": "See all contact details →"
+    },
+    "pasos": [
+      { "titulo": "Request", "texto": "Complete the form with patient data, presumptive diagnosis, prior studies, and referring physician details." },
+      { "titulo": "Sample fixation", "texto": "10% buffered formalin at 10:1 volume relative to the tissue. Container labeled with patient name and ID." },
+      { "titulo": "Shipping or pickup", "texto": "Free pickup within Buenos Aires city and metro area by phone coordination. We also receive shipments from across the country." },
+      { "titulo": "Reception and traceability", "texto": "Each sample gets a unique traceability code and reception confirmation to the referring physician." }
+    ],
+    "requisitos": [
+      { "tipo": "Needle / endoscopic biopsy", "items": ["10% buffered formalin", "Labeled with name and ID", "Request with precise anatomical location", "Attach endoscopic report if applicable"] },
+      { "tipo": "Surgical specimen", "items": ["Immediate fixation in 10% formalin (10:1 volume)", "Do not cut before sending unless instructed", "Request with complete clinical and surgical data", "Coordinate pickup within 24 hours"] },
+      { "tipo": "Gynecologic cytology (Pap)", "items": ["Smear on identified slide", "Fixation with cytology spray or 96° alcohol", "Clinical data: LMP, hormonal therapy, history"] },
+      { "tipo": "Fine needle aspiration (FNA)", "items": ["Air-dried (Diff-Quick) and fixed (Papanicolaou) smears", "Material in liquid medium for cell block if applicable", "Request with location, size, and ultrasound"] },
+      { "tipo": "Intraoperative biopsy (frozen)", "items": ["Coordinate in advance by phone", "Fresh sample, unfixed, in sterile container", "Immediate transport to the lab"] },
+      { "tipo": "Molecular studies / Complex IHC", "items": ["Sample fixed in 10% formalin (min 6h, max 48h)", "Paraffin block with representative material", "Request detailing required markers"] }
+    ]
+  },
+  "pacientes": {
+    "hero": {
+      "eyebrow": "Clear guide · Patient information",
+      "title": "We're with you every step.",
+      "description": "A biopsy or cytology request can raise questions. Here you'll find clear information on what each study is, how to prepare, and how to pick up your report."
+    },
+    "bloques": [
+      { "title": "What is a biopsy?", "text": "It's the microscopic study of a tissue or cell sample obtained by a physician. Our pathologists analyze it to establish an accurate diagnosis that guides treatment." },
+      { "title": "How long does the report take?", "text": "Most studies are delivered within 24 to 72 business hours. More complex studies (immunohistochemistry, molecular biology) may require additional time." },
+      { "title": "How do I pick up my report?", "text": "The report is delivered to your referring physician; you can also pick it up in person with your ID or request it by email with proof of identity." },
+      { "title": "Where are we?", "text": "Concepción Arenal 3732, Buenos Aires. Open Monday to Friday from 8:00 to 20:00." }
+    ],
+    "portal": {
+      "eyebrow": "Report pickup",
+      "title": "Your report, available.",
+      "description": "The original report is sent directly to your referring physician. You can also pick up a copy at our office, request it by email with proof of identity, or check by phone.",
+      "in": "In person",
+      "inValue": "Concepción Arenal 3732, Buenos Aires · Mon–Fri 08:00 to 20:00",
+      "mail": "By email",
+      "phone": "Phone"
+    },
+    "faqTitle": "Everything you might be wondering.",
+    "faqEyebrow": "Frequently asked questions",
+    "faqFooter": "Didn't find what you were looking for?",
+    "faqCta": "Write to us",
+    "faqs": [
+      { "q": "Do I need an appointment to drop off a sample?", "a": "No appointment needed. You can come Monday to Friday from 8:00 to 20:00. For surgical specimens or material with special requirements, we coordinate pickup by phone." },
+      { "q": "What should I bring on the day of the sample?", "a": "Yes: the original medical order, your ID, and your health insurance credential if applicable. If you have related prior studies, bring them too." },
+      { "q": "How is the result delivered?", "a": "The original report is sent to your referring physician. You can pick up a copy with your ID, request it by email, or check by phone." },
+      { "q": "Do you work with my insurer?", "a": "We work with the main insurers, HMOs, and hospitals in the country. See the full list in the Coverage section or call us to confirm your coverage." },
+      { "q": "What if my doctor requests a second opinion?", "a": "We accept consultations and second opinions on material already processed at another laboratory. Bring the paraffin blocks and original slides along with the previous report." },
+      { "q": "Can I request the same report years later?", "a": "Yes. We keep slides and paraffin blocks for the periods required by current regulations. You can request a copy of the report or the original material with proof of identity." },
+      { "q": "How do you protect my data?", "a": "We operate under Law 25.326 on Personal Data Protection. Your clinical information is confidential and only shared with you and your treating physician." }
+    ]
+  },
+  "novedades": {
+    "casos": {
+      "eyebrow": "Featured clinical cases",
+      "title": "Academic casuistry.",
+      "description": "A selection of representative cases from the laboratory with formative value for residents and colleagues. Content curated by our medical team.",
+      "soon": "Soon we will publish cases with histological images, clinical correlation, and diagnostic discussion.",
+      "items": [
+        { "area": "Breast pathology", "text": "IHC and molecular correlation in triple-negative carcinomas." },
+        { "area": "Hematopathology", "text": "Large B-cell lymphomas: subtyping by immunophenotypic profile." },
+        { "area": "Uropathology", "text": "Renal carcinomas with uncommon morphological findings." }
+      ]
     }
   }
 }

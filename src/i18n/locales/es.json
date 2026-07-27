@@ -69,22 +69,10 @@
       "eyebrow": "Nuestros pilares",
       "title": "Pioneros en la incorporación de patología digital e IA en Argentina.",
       "description": "Integramos patología digital e inteligencia artificial a nuestros procesos para optimizar el flujo de trabajo y reducir significativamente los tiempos de informe.",
-      "celeridad": {
-        "title": "Celeridad",
-        "desc": "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible."
-      },
-      "calidad": {
-        "title": "Calidad médica",
-        "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares."
-      },
-      "equipo": {
-        "title": "Equipo",
-        "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes."
-      },
-      "tecnologia": {
-        "title": "Tecnología",
-        "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo."
-      }
+      "celeridad": { "title": "Celeridad", "desc": "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible." },
+      "calidad": { "title": "Calidad médica", "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares." },
+      "equipo": { "title": "Equipo", "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes." },
+      "tecnologia": { "title": "Tecnología", "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo." }
     },
     "coverage": {
       "eyebrow": "Coberturas y centros",
@@ -97,6 +85,191 @@
       "description": "Integramos experiencia clínica, tecnología y un sistema de gestión riguroso para sostener un estándar de excelencia.",
       "team": "Conocer al equipo",
       "quality": "Sistema de gestión"
+    }
+  },
+  "especialidades": {
+    "hero": {
+      "eyebrow": "Histopatología · IHQ · Biología Molecular · Citología",
+      "title": "Diagnóstico anatomopatológico integral.",
+      "description": "Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad — con tecnología validada y partnerships internacionales."
+    },
+    "indexLabels": { "specialty": "Especialidad", "sub": "Subespecialidades", "comp": "Complementarios" },
+    "partnership": "Partnership",
+    "panelsHeading": "Paneles orientados según contexto clínico y morfológico",
+    "shippingLabel": "Envío de muestras",
+    "sub": {
+      "eyebrow": "06 · Subespecialidades",
+      "title": "Pericia diagnóstica por sistema y órgano.",
+      "description": "Nuestro cuerpo médico integra especialistas con dedicación específica en distintas áreas de la patología quirúrgica, lo que permite un abordaje fundamentado en cada contexto clínico."
+    },
+    "comp": {
+      "eyebrow": "07 · Servicios complementarios",
+      "title": "Prestaciones que acompañan al informe.",
+      "description": "Estudios y servicios adicionales que se integran al flujo diagnóstico cuando el caso lo requiere."
+    },
+    "cta": {
+      "eyebrow": "Para profesionales",
+      "title": "¿Necesitás enviarnos una muestra?",
+      "description": "Consultá el instructivo completo para médicos derivantes: protocolos de fijación, requisitos por tipo de estudio, formularios y coordinación directa.",
+      "button": "Ir al portal de derivantes →"
+    },
+    "backToTop": "Volver al inicio",
+    "items": {
+      "biologia-molecular": {
+        "titulo": "Biología Molecular",
+        "resumen": "La Biología Molecular es una herramienta clave para el diagnóstico de precisión: impacta en el pronóstico y la selección terapéutica de los pacientes. Nuestro servicio integra técnicas moleculares validadas en estrecha correlación con los hallazgos anatomopatológicos, garantizando resultados confiables y alineados con estándares científicos actuales.",
+        "partnership": "Sistema BenchMark ULTRA — Roche ©",
+        "destacados": [
+          { "titulo": "Tecnología de avanzada", "detalle": "El sistema BenchMark ULTRA es el sistema de tinción por láminas de hibridación in situ más innovador y totalmente automatizado de Roche Tissue Diagnostics. Cajones deslizantes individuales para flujo de trabajo de una sola pieza y un menú de más de 250 ensayos listos para usar." },
+          { "titulo": "Técnicas automatizadas", "detalle": "Efectuadas en condiciones estables, con idénticos antisueros y controles computarizados." },
+          { "titulo": "El diagnóstico biomolecular permite", "detalle": "Elevar las posibilidades y calidad de vida humana e incrementar las probabilidades en la gestación del embarazo." }
+        ]
+      },
+      "inmunohistoquimica": {
+        "titulo": "Inmunohistoquímica",
+        "resumen": "Herramienta esencial para el diagnóstico anatomopatológico actual: tipificación tumoral, evaluación de factores pronósticos y predictivos, aportando información decisiva para la clasificación y toma de decisiones clínicas. Utilizamos técnicas estandarizadas con protocolos automatizados en plataforma BenchMark Ultra de Ventana, con anticuerpos monoclonales y policlonales y controles de calidad rigurosos.",
+        "partnership": "Plataforma BenchMark Ultra — Ventana / Roche ©",
+        "paneles": [
+          { "titulo": "Inestabilidad Microsatelital", "detalle": "MLH1 (M1) · PMS2 (A16-4) · MSH2 (G219-1129) · MSH6 (SP93)" },
+          { "titulo": "PDL-1 · BRAF", "detalle": "Marcadores clave en oncología de precisión. Aporta información fundamental para la selección terapéutica." },
+          { "titulo": "Microambiente Inmunológico — Panel Endometrio", "detalle": "CD3 · CD4 · CD8 · CD16 · CD20 · CD45 · CD56 · CD68 · CD138" },
+          { "titulo": "Patología Mamaria", "detalle": "Receptores Hormonales (Estrógeno y Progesterona) · Her2-Neu · Ki-67 · Proteínas 5/6 · 8/18 · P-53" },
+          { "titulo": "Paneles de Hematopatología", "detalle": "Clasificación de neoplasias linfoides y mieloides." },
+          { "titulo": "Paneles de Origen Primario Desconocido", "detalle": "Orientado a la identificación del sitio primario tumoral." },
+          { "titulo": "Paneles Epiteliales, Mesenquimáticos y Neuroendócrinos", "detalle": "Para la correcta categorización tumoral." }
+        ]
+      },
+      "tecnicas-alta-complejidad": {
+        "titulo": "Técnicas de Alta Complejidad",
+        "resumen": "Métodos complementarios al diagnóstico anatomopatológico que amplían la resolución, sensibilidad y precisión del informe en patologías complejas.",
+        "sub": [
+          {
+            "titulo": "Citometría de Flujo",
+            "descripcion": "Método de diagnóstico rápido que provee múltiples parámetros, obtenidos de células y partículas provenientes de muestras líquidas o tejidos sólidos de material en fresco. Valor auxiliar invaluable en Hematopatología: diagnóstico, clasificación y determinación de factores pronósticos en entidades linfoproliferativas.",
+            "envio": [
+              "Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día.",
+              "Sangre periférica y líquidos: tubo con EDTA a temperatura ambiente (no refrigerar). Enviar en el día."
+            ]
+          },
+          {
+            "titulo": "Inmunofluorescencia",
+            "descripcion": "Técnica que utiliza marcadores fluorescentes para identificar moléculas adheridas en la superficie celular. Se realiza sobre tejidos en fresco.",
+            "bullets": ["Biopsias renales", "Biopsias de piel", "Biopsias oculares"],
+            "envio": ["Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día."]
+          },
+          {
+            "titulo": "Microscopía Electrónica",
+            "descripcion": "Técnica que obtiene imágenes de alta resolución sobre la ultraestructura celular. Utilizada como método complementario al diagnóstico anatomopatológico.",
+            "envio": ["Tacos de parafina.", "Adjuntar informe histológico."]
+          }
+        ]
+      },
+      "histopatologia": {
+        "titulo": "Histopatología",
+        "resumen": "Procesamiento y diagnóstico de biopsias y piezas quirúrgicas con coloraciones de rutina y técnicas especiales. Tiempo de entrega promedio: 6 días hábiles para biopsia y 9 días hábiles para biopsia con inmunohistoquímica."
+      },
+      "citologia": {
+        "titulo": "Citología — Papanicolaou y PAAF",
+        "resumen": "Screening cervicovaginal (Papanicolaou) con lectura especializada y entrega ágil — 3 días hábiles promedio — y estudio de muestras obtenidas por punción aspirativa con aguja fina (PAAF) de órganos sólidos."
+      }
+    },
+    "subespecialidades": [
+      { "area": "Patología Mamaria & Ginecológica", "items": ["Patología mamaria", "Patología ginecológica", "Patología del tracto genital inferior", "Patología obstétrica y placentaria"] },
+      { "area": "Oncohematología & Linfoproliferativos", "items": ["Hematopatología", "Síndromes linfoproliferativos", "Médula ósea"] },
+      { "area": "Patología Digestiva & Hepática", "items": ["Patología gastrointestinal", "Patología hepática", "Patología pancreática y biliar"] },
+      { "area": "Uropatología & Nefropatología", "items": ["Patología urológica", "Patología renal médica", "Patología prostática"] },
+      { "area": "Dermatopatología & Tejidos Blandos", "items": ["Dermatopatología", "Tumores de tejidos blandos", "Patología ósea y articular"] },
+      { "area": "Otras áreas", "items": ["Patología pulmonar", "Patología endócrina", "Patología de cabeza y cuello", "Neuropatología", "Patología oftálmica", "Patología pediátrica"] }
+    ],
+    "complementarios": [
+      { "titulo": "Biopsia por congelación intraoperatoria", "detalle": "Diagnóstico rápido durante el acto quirúrgico para definir conducta inmediata sobre la pieza." },
+      { "titulo": "Tinciones histoquímicas especiales", "detalle": "Batería amplia de coloraciones complementarias (PAS, Tricrómico, Reticulina, Ziehl-Neelsen, Giemsa, entre otras) para caracterización tisular." },
+      { "titulo": "Consulta y segunda opinión", "detalle": "Revisión de casos derivados de otros centros, con reinterpretación de láminas y ampliación de estudios cuando corresponde." },
+      { "titulo": "Interconsulta clínico-patológica", "detalle": "Diálogo permanente con médicos tratantes para correlacionar hallazgos morfológicos con el contexto clínico y orientar conducta terapéutica." }
+    ]
+  },
+  "derivantes": {
+    "hero": {
+      "eyebrow": "Protocolos · Requisitos · Coordinación",
+      "title": "Para médicos derivantes.",
+      "description": "Todo lo que necesitás para enviarnos una muestra: protocolos de fijación, requisitos por tipo de estudio, formularios y contactos directos de coordinación médica."
+    },
+    "circuit": { "eyebrow": "Circuito de derivación", "title": "De la toma al informe." },
+    "requirements": { "eyebrow": "Requisitos por tipo de estudio", "title": "Preparación de la muestra." },
+    "warning": "Ante cualquier duda sobre fijación, transporte o tiempos, comunicate con nuestra coordinación médica antes de enviar la muestra.",
+    "forms": {
+      "title": "Formularios y protocolos",
+      "description": "Descargá el formulario de derivación en PDF o solicitá por mail los protocolos de fijación y guías por tipo de estudio.",
+      "download": "Descargar formulario (PDF)",
+      "request": "Solicitar por mail"
+    },
+    "coord": {
+      "eyebrow": "Coordinación médica",
+      "title": "Hablemos directamente.",
+      "linesLabel": "Líneas rotativas",
+      "seeAll": "Ver todos los datos de contacto →"
+    },
+    "pasos": [
+      { "titulo": "Solicitud", "texto": "Completá el formulario con datos del paciente, diagnóstico presuntivo, estudios previos y datos del profesional derivante." },
+      { "titulo": "Fijación de la muestra", "texto": "Formol al 10% tamponado en volumen 10:1 respecto al tejido. Recipiente rotulado con nombre y DNI del paciente." },
+      { "titulo": "Envío o retiro", "texto": "Retiro sin cargo dentro de CABA y GBA coordinando por teléfono. También recibimos envíos de todo el país." },
+      { "titulo": "Recepción y trazabilidad", "texto": "Cada muestra recibe código único de trazabilidad y confirmación de recepción al médico derivante." }
+    ],
+    "requisitos": [
+      { "tipo": "Biopsia por punción / endoscópica", "items": ["Formol al 10% tamponado", "Rotulado con nombre y DNI", "Solicitud con localización anatómica precisa", "Adjuntar informe endoscópico si corresponde"] },
+      { "tipo": "Pieza quirúrgica", "items": ["Fijación inmediata en formol 10% (volumen 10:1)", "No cortar previo al envío salvo indicación", "Solicitud con dato clínico y quirúrgico completo", "Coordinar retiro dentro de las 24hs"] },
+      { "tipo": "Citología ginecológica (PAP)", "items": ["Extendido en portaobjeto identificado", "Fijación con spray citológico o alcohol 96°", "Datos clínicos: FUM, terapia hormonal, antecedentes"] },
+      { "tipo": "Punción con aguja fina (PAAF)", "items": ["Extendidos secados al aire (Diff-Quick) y fijados (Papanicolaou)", "Material en medio líquido para bloque celular si aplica", "Solicitud con localización, tamaño y ecografía"] },
+      { "tipo": "Biopsia intraoperatoria (congelación)", "items": ["Coordinar previamente por teléfono", "Muestra en fresco, sin fijar, en recipiente estéril", "Traslado inmediato al laboratorio"] },
+      { "tipo": "Estudios moleculares / IHQ compleja", "items": ["Muestra fijada en formol 10% (mínimo 6 hs, máximo 48 hs)", "Bloque de parafina con material representativo", "Solicitud detallando marcadores requeridos"] }
+    ]
+  },
+  "pacientes": {
+    "hero": {
+      "eyebrow": "Guía clara · Información al paciente",
+      "title": "Acompañamos cada paso.",
+      "description": "Recibir un pedido de biopsia o citología puede generar dudas. Acá encontrás información clara sobre qué es cada estudio, cómo prepararte y cómo retirar tu informe."
+    },
+    "bloques": [
+      { "title": "¿Qué es una biopsia?", "text": "Es el estudio microscópico de una muestra de tejido o células obtenida por un médico. Nuestros patólogos analizan la muestra para establecer un diagnóstico preciso que guíe el tratamiento." },
+      { "title": "¿Cuánto demora el informe?", "text": "La mayoría de los estudios se entregan entre 24 y 72 horas hábiles. Los estudios de mayor complejidad (inmunohistoquímica, biología molecular) pueden requerir plazos adicionales." },
+      { "title": "¿Cómo retiro mi informe?", "text": "El informe se entrega a tu médico derivante y también podés retirarlo personalmente en nuestra sede con DNI, o solicitarlo por mail acreditando identidad." },
+      { "title": "¿Dónde estamos?", "text": "Concepción Arenal 3732, Ciudad Autónoma de Buenos Aires. Atención de lunes a viernes de 08:00 a 20:00 hs." }
+    ],
+    "portal": {
+      "eyebrow": "Retiro de informes",
+      "title": "Tu informe, disponible.",
+      "description": "El informe original se envía directamente a tu médico derivante. También podés retirar una copia en nuestra sede, solicitarla por mail acreditando identidad o consultarla por teléfono.",
+      "in": "Presencial",
+      "inValue": "Concepción Arenal 3732, CABA · Lun a Vie 08:00 a 20:00",
+      "mail": "Por mail",
+      "phone": "Teléfono"
+    },
+    "faqTitle": "Todo lo que tal vez te estés preguntando.",
+    "faqEyebrow": "Preguntas frecuentes",
+    "faqFooter": "¿No encontrás lo que buscás?",
+    "faqCta": "Escribinos",
+    "faqs": [
+      { "q": "¿Necesito turno para dejar una muestra?", "a": "No es necesario turno. Podés acercarte de lunes a viernes de 08:00 a 20:00 hs. Si es una pieza quirúrgica o material que requiere condiciones especiales, coordinamos el retiro por teléfono." },
+      { "q": "¿Tengo que traer algo el día de la muestra?", "a": "Sí: la orden médica original, tu DNI y la credencial de tu obra social o prepaga si corresponde. Si ya tenés estudios previos relacionados, traelos también." },
+      { "q": "¿Cómo se entrega el resultado?", "a": "El informe original se envía a tu médico derivante. Vos podés retirar una copia con tu DNI, pedirla por mail o consultarla por teléfono." },
+      { "q": "¿Trabajan con mi obra social o prepaga?", "a": "Trabajamos con las principales obras sociales, prepagas y sanatorios del país. Consultá el listado completo en la sección Coberturas o llamanos para confirmar tu cobertura." },
+      { "q": "¿Qué pasa si mi médico pide una segunda opinión?", "a": "Recibimos consultas y segundas opiniones sobre material ya procesado en otro laboratorio. Traé los tacos de parafina y los preparados originales junto con el informe previo." },
+      { "q": "¿Puedo pedir el mismo informe años después?", "a": "Sí. Conservamos los preparados y tacos de parafina por los plazos que exige la normativa vigente. Podés solicitar una copia del informe o el material original acreditando identidad." },
+      { "q": "¿Cómo cuidan mis datos?", "a": "Trabajamos bajo la Ley 25.326 de Protección de Datos Personales. Tu información clínica es confidencial y solo se comparte con vos y con tu médico tratante." }
+    ]
+  },
+  "novedades": {
+    "casos": {
+      "eyebrow": "Casos clínicos destacados",
+      "title": "Casuística académica.",
+      "description": "Selección de casos representativos del laboratorio con valor formativo para residentes y colegas. Contenido curado por el cuerpo médico.",
+      "soon": "Próximamente publicaremos casos con imágenes histológicas, correlación clínica y discusión diagnóstica.",
+      "items": [
+        { "area": "Patología mamaria", "text": "Correlación IHQ y molecular en carcinomas triple negativos." },
+        { "area": "Hematopatología", "text": "Linfomas B de células grandes: subtipificación por perfil inmunofenotípico." },
+        { "area": "Uropatología", "text": "Carcinomas renales con hallazgos morfológicos infrecuentes." }
+      ]
     }
   }
 }
