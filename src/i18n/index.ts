@@ -4,8 +4,6 @@ import { initReactI18next } from "react-i18next";
 import es from "./locales/es.json";
 import en from "./locales/en.json";
 
-// Initialize synchronously so SSR renders with a valid language.
-// Client-side language preference is applied via useEffect in the toggle.
 if (!i18n.isInitialized) {
   i18n
     .use(initReactI18next)

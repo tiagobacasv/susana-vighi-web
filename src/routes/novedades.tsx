@@ -23,59 +23,21 @@ export const Route = createFileRoute("/novedades")({
   component: NovedadesPage,
 });
 
-const categorias = [
-  {
-    Icon: BookOpen,
-    tag: "Publicaciones",
-    title: "Trabajos y artículos del equipo",
-    desc: "Producción científica en revistas nacionales e internacionales de anatomía patológica y disciplinas asociadas.",
-  },
-  {
-    Icon: Presentation,
-    tag: "Congresos",
-    title: "Participación en congresos",
-    desc: "Presentaciones, ponencias y trabajos libres del equipo en congresos de la especialidad.",
-  },
-  {
-    Icon: GraduationCap,
-    tag: "Docencia",
-    title: "Formación y residencias",
-    desc: "Rotaciones, ateneos y actividades académicas orientadas a la formación de nuevos patólogos.",
-  },
-  {
-    Icon: Newspaper,
-    tag: "Novedades técnicas",
-    title: "Incorporaciones y actualizaciones",
-    desc: "Nuevos marcadores incorporados, mejoras en la plataforma diagnóstica y actualizaciones de nuestros protocolos.",
-  },
-];
-
-const destacados = [
-  {
-    fecha: "2025 · En curso",
-    categoria: "Novedades técnicas",
-    titulo: "Incorporación de nuevos paneles de inmunohistoquímica",
-    resumen:
-      "Ampliamos progresivamente el panel de marcadores disponibles para diagnóstico y estadificación oncológica, incluyendo determinaciones predictivas de tratamiento.",
-  },
-  {
-    fecha: "2025",
-    categoria: "Docencia",
-    titulo: "Programa de rotaciones para residentes",
-    resumen:
-      "Recibimos residentes y becarios de instituciones de todo el país para rotaciones de subespecialidad en distintas áreas del laboratorio.",
-  },
-  {
-    fecha: "Actividad continua",
-    categoria: "Congresos",
-    titulo: "Presencia académica del equipo",
-    resumen:
-      "Nuestros profesionales participan regularmente en congresos y jornadas de la Sociedad Argentina de Patología y sociedades internacionales afines.",
-  },
-];
+const categoriaIcons = [BookOpen, Presentation, GraduationCap, Newspaper];
 
 function NovedadesPage() {
   const { t } = useTranslation();
+  const categorias = t("novedades.categorias", { returnObjects: true }) as {
+    tag: string;
+    title: string;
+    desc: string;
+  }[];
+  const destacados = t("novedades.destacados", { returnObjects: true }) as {
+    fecha: string;
+    categoria: string;
+    titulo: string;
+    resumen: string;
+  }[];
   const casos = t("novedades.casos.items", { returnObjects: true }) as {
     area: string;
     text: string;
@@ -84,9 +46,9 @@ function NovedadesPage() {
     <SiteLayout>
       <PageHero
         variant="publications"
-        eyebrow="Academia · Publicaciones · Docencia"
-        title="Novedades y publicaciones."
-        description="Compartimos la actividad académica, las publicaciones y las incorporaciones técnicas del equipo. Un espacio para seguir de cerca lo que hacemos más allá del diagnóstico."
+        eyebrow={t("novedades.hero.eyebrow")}
+        title={t("novedades.hero.title")}
+        description={t("novedades.hero.description")}
       />
 
       {/* Categorías */}
@@ -94,32 +56,35 @@ function NovedadesPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-12">
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
-              Nuestra actividad
+              {t("novedades.activity.eyebrow")}
             </div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-              Cuatro frentes.
+              {t("novedades.activity.title")}
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {categorias.map((c) => (
-              <article
-                key={c.tag}
-                className="flex gap-6 rounded-2xl border border-border bg-secondary p-8"
-              >
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-clinical-blue text-white">
-                  <c.Icon className="size-5" />
-                </div>
-                <div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
-                    {c.tag}
+            {categorias.map((c, i) => {
+              const Icon = categoriaIcons[i];
+              return (
+                <article
+                  key={c.tag}
+                  className="flex gap-6 rounded-2xl border border-border bg-secondary p-8"
+                >
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                    <Icon className="size-5" />
                   </div>
-                  <h3 className="mt-2 text-lg font-bold text-clinical-blue">
-                    {c.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-clinical-slate">{c.desc}</p>
-                </div>
-              </article>
-            ))}
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
+                      {c.tag}
+                    </div>
+                    <h3 className="mt-2 text-lg font-bold text-clinical-blue">
+                      {c.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-clinical-slate">{c.desc}</p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -129,10 +94,10 @@ function NovedadesPage() {
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-12">
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
-              Últimas actualizaciones
+              {t("novedades.updates.eyebrow")}
             </div>
             <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-              Lo que estamos haciendo.
+              {t("novedades.updates.title")}
             </h2>
           </div>
           <div className="space-y-6">
@@ -158,8 +123,7 @@ function NovedadesPage() {
           </div>
 
           <p className="mt-12 text-center text-sm text-clinical-slate">
-            Estamos preparando la publicación completa de trabajos, ponencias y
-            programa académico. Volvé pronto para actualizaciones.
+            {t("novedades.comingSoon")}
           </p>
         </div>
       </section>

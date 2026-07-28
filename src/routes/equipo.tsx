@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -51,160 +52,53 @@ export const Route = createFileRoute("/equipo")({
 
 type FormacionItem = { titulo: string; institucion?: string };
 type Member = { nombre: string; rol: string; foto?: string; formacion?: FormacionItem[] };
+type MemberTr = { rol: string; formacion?: FormacionItem[] };
+type MemberBase = { nombre: string; foto?: string };
 
-const direccion: Member[] = [
-  {
-    nombre: "Emiliano Pastor",
-    rol: "Director Ejecutivo",
-    foto: neEmiliano,
-    formacion: [
-      { titulo: "Contador Público Nacional", institucion: "UBA" },
-      { titulo: "Licenciado en Administración de Empresas", institucion: "UBA" },
-      { titulo: "Máster en Finanzas Corporativas", institucion: "UCEMA" },
-      { titulo: "Gerencia de Finanzas", institucion: "División Centro América — The Coca-Cola Company" },
-      { titulo: "Gerencia de Planeamiento Estratégico", institucion: "Región BPU — The Coca-Cola Company" },
-    ],
-  },
-  {
-    nombre: "Dra. Andrea Paparatto",
-    rol: "Directora Médica",
-    foto: neAndrea,
-    formacion: [
-      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN98395 / MP451876" },
-      { titulo: "Médica Especialista en Citopatología", institucion: "Certificación SAC" },
-      { titulo: "Médica Especialista en Uropatología" },
-      { titulo: "Médica Especialista en Patología Osteoarticular" },
-      { titulo: "Ex Secretaria de Actas SAP", institucion: "Período 2011–2013" },
-      { titulo: "Ex Residente, Jefa de Residentes y Médica de Planta", institucion: "CEMIC" },
-      { titulo: "Ex Patóloga Staff", institucion: "Centro de Patología Dr. Boris Elsner" },
-      { titulo: "Visiting Fellow de Patología", institucion: "MD Anderson Cancer Center, Houston, Texas, USA" },
-    ],
-  },
+const direccionBase: MemberBase[] = [
+  { nombre: "Emiliano Pastor", foto: neEmiliano },
+  { nombre: "Dra. Andrea Paparatto", foto: neAndrea },
 ];
 
-const subdireccion: Member[] = [
-  {
-    nombre: "Dr. Federico Ferrando",
-    rol: "Sub-Dirección",
-    foto: neFederico,
-    formacion: [
-      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN112223" },
-      { titulo: "Especializado en Patología Ginecológica", institucion: "CAP Vighi" },
-      { titulo: "Ex Docente de Anatomía Patológica", institucion: "Escuela de Técnicos de Histología" },
-      { titulo: "Ex Residente", institucion: "Hospital Ramos Mejía" },
-    ],
-  },
-  {
-    nombre: "Dra. Marysol Costoya",
-    rol: "Sub-Dirección",
-    foto: neMarysol,
-    formacion: [
-      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN123151" },
-      { titulo: "Especializada en Patología Ginecológica", institucion: "CAP Vighi" },
-      { titulo: "Médica Especialista en Citopatología", institucion: "Certificación SAC" },
-      { titulo: "Ex Residente", institucion: "Hospital de Clínicas — UBA" },
-    ],
-  },
+const subdireccionBase: MemberBase[] = [
+  { nombre: "Dr. Federico Ferrando", foto: neFederico },
+  { nombre: "Dra. Marysol Costoya", foto: neMarysol },
 ];
 
-const especialistas: Member[] = [
-  {
-    nombre: "Dra. Diana Miserendino",
-    rol: "Nefropatología · Gastroenteropatología",
-    foto: neDiana,
-    formacion: [
-      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2" },
-      { titulo: "Médica Especialista en Nefropatología" },
-      { titulo: "Médica Especialista en Gastroenteropatología" },
-      { titulo: "Ex Patóloga Staff", institucion: "Centro de Patología Dr. Boris Elsner" },
-      { titulo: "Ex Residente, Jefa de Residentes e Instructora Nefropatóloga", institucion: "Hospital JM Ramos Mejía" },
-    ],
-  },
-  {
-    nombre: "Dr. Mauro García Montenegro",
-    rol: "Hematopatología",
-    foto: neMauro,
-    formacion: [
-      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación · MN154271" },
-      { titulo: "Médico Especialista en Hematopatología Diagnóstica Integral", institucion: "Ex-Fellow Fundaleu (2015–2020)" },
-      { titulo: "MSc en Biología Molecular Médica", institucion: "Facultad de Farmacia y Bioquímica — UBA" },
-      { titulo: "Vicepresidente SOLAHP", institucion: "Soc. Latinoamericana de Hematopatología (2025–2027)" },
-      { titulo: "Médico Concurrente Lab. Genética de Neoplasias Linfoides", institucion: "IMEX-CONICET — Academia Nacional de Medicina" },
-      { titulo: "Visiting Fellow", institucion: "Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)" },
-    ],
-  },
+const especialistasBase: MemberBase[] = [
+  { nombre: "Dra. Diana Miserendino", foto: neDiana },
+  { nombre: "Dr. Mauro García Montenegro", foto: neMauro },
 ];
 
-const cuerpoMedico: Member[] = [
-  {
-    nombre: "Dra. Tania Rodriguez",
-    rol: "Médica Anatomopatóloga",
-    foto: neTania,
-    formacion: [
-      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "MN188687" },
-      { titulo: "Postgrado de Anatomía Patológica", institucion: "Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela)" },
-      { titulo: "Especialidad en Medicina Legal", institucion: "Inst. Universitario de la Policía Federal Argentina" },
-      { titulo: "Ex Patóloga Staff", institucion: "Hospital Luisa C. de Gandulfo (Lomas de Zamora)" },
-    ],
-  },
-  {
-    nombre: "Dr. Daniel Vila Melgarejo",
-    rol: "Patología Forense",
-    foto: neDaniel,
-    formacion: [
-      { titulo: "Médico Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN159165" },
-      { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
-      { titulo: "Ex Residente", institucion: "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
-      { titulo: "Fellow en Patología", institucion: "Hospital Británico" },
-    ],
-  },
-  {
-    nombre: "Dra. Andrea Flores Herbas",
-    rol: "Patología Forense y Pediátrica",
-    foto: neAndreaFH,
-    formacion: [
-      { titulo: "Médica Especialista en Anatomía Patológica", institucion: "Min. de Salud de la Nación — Certif. SAP · MN1631960" },
-      { titulo: "Diplomatura en Patología Forense", institucion: "UCA" },
-      { titulo: "Ex Residente", institucion: "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
-      { titulo: "Becaria en Patología Pediátrica", institucion: "Hospital Garrahan" },
-    ],
-  },
+const cuerpoMedicoBase: MemberBase[] = [
+  { nombre: "Dra. Tania Rodriguez", foto: neTania },
+  { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
+  { nombre: "Dra. Andrea Flores Herbas", foto: neAndreaFH },
 ];
 
-const citotecnicos: Member[] = [
-  {
-    nombre: "Miguel Domenniani",
-    rol: "Citotécnico",
-    foto: neMiguel,
-    formacion: [
-      { titulo: "Matrícula MN241914" },
-      { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
-    ],
-  },
-  {
-    nombre: "Tobias Pardo",
-    rol: "Citotécnico",
-    foto: neTobias,
-    formacion: [
-      { titulo: "Matrícula MN 377" },
-      { titulo: "Citotecnólogo Universitario", institucion: "Instituto Universitario CEMIC (IUC)" },
-    ],
-  },
+const citotecnicosBase: MemberBase[] = [
+  { nombre: "Miguel Domenniani", foto: neMiguel },
+  { nombre: "Tobias Pardo", foto: neTobias },
 ];
 
-const responsables: Member[] = [
-  { nombre: "Antonella Pandolfi", rol: "Asistente de Dirección", foto: neAntonella },
-  { nombre: "Javier Pecollo", rol: "Supervisor de Procesos", foto: neJavier },
+const responsablesBase: MemberBase[] = [
+  { nombre: "Antonella Pandolfi", foto: neAntonella },
+  { nombre: "Javier Pecollo", foto: neJavier },
 ];
 
-const coordinadores: Member[] = [
-  { nombre: "Adriana Lopez", rol: "Coordinadora de Citología", foto: neAdriana },
-  { nombre: "Laura Ureta", rol: "Coordinadora de Inmunohistoquímica", foto: neLaura },
+const coordinadoresBase: MemberBase[] = [
+  { nombre: "Adriana Lopez", foto: neAdriana },
+  { nombre: "Laura Ureta", foto: neLaura },
 ];
+
+function mergeMembers(base: MemberBase[], tr: MemberTr[]): Member[] {
+  return base.map((b, i) => ({ ...b, rol: tr[i]?.rol ?? "", formacion: tr[i]?.formacion }));
+}
 
 // ─── Grid components ──────────────────────────────────────────────────────────
 
 function MemberCard({ m }: { m: Member }) {
+  const { t } = useTranslation();
   const [flipped, setFlipped] = useState(false);
   const initials = m.nombre
     .split(" ")
@@ -239,7 +133,7 @@ function MemberCard({ m }: { m: Member }) {
             )}
             {/* Hint de flip */}
             <div className="absolute bottom-2 right-2 rounded-full bg-black/30 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm">
-              ver más
+              {t("equipo.hints.verMas")}
             </div>
           </div>
           {/* Nombre y rol */}
@@ -273,9 +167,9 @@ function MemberCard({ m }: { m: Member }) {
               ))}
             </ul>
           ) : (
-            <p className="text-xs text-clinical-slate">Información no disponible.</p>
+            <p className="text-xs text-clinical-slate">{t("equipo.hints.infoNoDisponible")}</p>
           )}
-          <p className="mt-3 text-right text-[10px] text-clinical-slate/50">click para volver</p>
+          <p className="mt-3 text-right text-[10px] text-clinical-slate/50">{t("equipo.hints.clickVolver")}</p>
         </div>
       </div>
     </div>
@@ -302,16 +196,28 @@ function GridSection({ label, members }: { label: string; members: Member[] }) {
 }
 
 function GridView() {
+  const { t } = useTranslation();
+  const groups = t("equipo.groups", { returnObjects: true }) as Record<string, string>;
+  const membersTr = t("equipo.members", { returnObjects: true }) as Record<string, MemberTr[]>;
+
+  const direccion = mergeMembers(direccionBase, membersTr.direccion);
+  const subdireccion = mergeMembers(subdireccionBase, membersTr.subdireccion);
+  const especialistas = mergeMembers(especialistasBase, membersTr.especialistas);
+  const cuerpoMedico = mergeMembers(cuerpoMedicoBase, membersTr.cuerpoMedico);
+  const citotecnicos = mergeMembers(citotecnicosBase, membersTr.citotecnicos);
+  const responsables = mergeMembers(responsablesBase, membersTr.responsables);
+  const coordinadores = mergeMembers(coordinadoresBase, membersTr.coordinadores);
+
   return (
     <div className="py-24">
       <div className="mx-auto max-w-7xl px-6 space-y-20">
-        <GridSection label="Dirección" members={direccion} />
-        <GridSection label="Sub-Dirección" members={subdireccion} />
-        <GridSection label="Médicos Especialistas" members={especialistas} />
-        <GridSection label="Cuerpo Médico" members={cuerpoMedico} />
-        <GridSection label="Citotécnicos" members={citotecnicos} />
-        <GridSection label="Responsables de Área" members={responsables} />
-        <GridSection label="Coordinadores" members={coordinadores} />
+        <GridSection label={groups.direccion} members={direccion} />
+        <GridSection label={groups.subdireccion} members={subdireccion} />
+        <GridSection label={groups.especialistas} members={especialistas} />
+        <GridSection label={groups.cuerpoMedico} members={cuerpoMedico} />
+        <GridSection label={groups.citotecnicos} members={citotecnicos} />
+        <GridSection label={groups.responsables} members={responsables} />
+        <GridSection label={groups.coordinadores} members={coordinadores} />
       </div>
     </div>
   );
@@ -329,26 +235,38 @@ interface NodeDef {
   details: string[];
 }
 
-const ND: Record<string, NodeDef> = {
-  de: { id: "de", title: "Dirección Ejecutiva", name: "Emiliano Pastor", Icon: User, primary: true, details: ["Contador Público Nacional (UBA)", "Lic. en Administración de Empresas (UBA)", "Máster en Finanzas Corporativas (UCEMA)", "Experiencia en Coca-Cola Company"] },
-  ad: { id: "ad", title: "Asistente de Dirección", name: "Antonella Pandolfi", Icon: Settings, details: [] },
-  ti: { id: "ti", title: "Tecnología e Innovación", Icon: Lightbulb, details: ["Pioneros en la incorporación de IA aplicada a la Anatomía Patológica en Argentina", "Patología digital integrada al flujo de trabajo"] },
-  dm: { id: "dm", title: "Dirección Médica", name: "Dra. Andrea Paparatto", Icon: Stethoscope, primary: true, details: ["Especialista en Anatomía Patológica (MN98395 / MP451876)", "Especialista en Citopatología y Uropatología", "Ex Visiting Fellow en MD Anderson Cancer Center, Houston"] },
-  sp: { id: "sp", title: "Supervisión de Procesos", name: "Javier Pecollo", Icon: Settings, details: [] },
-  ga: { id: "ga", title: "Gerencia Administrativa", Icon: Building2, details: [] },
-  gc: { id: "gc", title: "Gerencia Comercial", name: "Nicolás Santillán", Icon: TrendingUp, details: [] },
-  sm: { id: "sm", title: "Subdirección Médica", name: "Costoya / Ferrando", Icon: User, details: ["Dra. Marysol Costoya — Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología", "Dr. Federico Ferrando — Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica"] },
-  rc: { id: "rc", title: "Citos y BPs", Icon: Microscope, details: ["Miguel Domenniani — Citotécnico", "Tobias Pardo — Citotécnico"] },
-  aa: { id: "aa", title: "Área Administrativa", Icon: Building2, details: [] },
-  al: { id: "al", title: "Área Logística", Icon: Settings, details: [] },
-  am: { id: "am", title: "Área Médica", Icon: Stethoscope, details: ["Dra. Diana Miserendino — Nefropatología y Gastroenteropatología (MN100367)", "Dr. Mauro García Montenegro — Hematopatología (MN154271) · Vicepresidente SOLAHP 2025–2027", "Dra. Tania Rodriguez (MN188687)", "Dr. Daniel Vila Melgarejo — Patología Forense (MN159165)", "Dra. Andrea Flores Herbas — Patología Forense y Pediátrica (MN1631960)"] },
-  at: { id: "at", title: "Área Técnica", Icon: Wrench, details: [] },
-  ai: { id: "ai", title: "Área Inmunohistoquímica", Icon: FlaskConical, details: ["Adriana Lopez — Coordinadora de Citología", "Laura Ureta — Coordinadora de Inmunohistoquímica"] },
+type NodeBase = { id: string; name?: string; Icon: React.ElementType; primary?: boolean };
+type NodeTr = { title: string; details: string[] };
+
+const NDBase: Record<string, NodeBase> = {
+  de: { id: "de", name: "Emiliano Pastor", Icon: User, primary: true },
+  ad: { id: "ad", name: "Antonella Pandolfi", Icon: Settings },
+  ti: { id: "ti", Icon: Lightbulb },
+  dm: { id: "dm", name: "Dra. Andrea Paparatto", Icon: Stethoscope, primary: true },
+  sp: { id: "sp", name: "Javier Pecollo", Icon: Settings },
+  ga: { id: "ga", Icon: Building2 },
+  gc: { id: "gc", name: "Nicolás Santillán", Icon: TrendingUp },
+  sm: { id: "sm", name: "Costoya / Ferrando", Icon: User },
+  rc: { id: "rc", Icon: Microscope },
+  aa: { id: "aa", Icon: Building2 },
+  al: { id: "al", Icon: Settings },
+  am: { id: "am", Icon: Stethoscope },
+  at: { id: "at", Icon: Wrench },
+  ai: { id: "ai", Icon: FlaskConical },
 };
+
+function buildND(nodesTr: Record<string, NodeTr>): Record<string, NodeDef> {
+  const out: Record<string, NodeDef> = {};
+  for (const key in NDBase) {
+    out[key] = { ...NDBase[key], title: nodesTr[key]?.title ?? "", details: nodesTr[key]?.details ?? [] };
+  }
+  return out;
+}
 
 // ─── Organogram components ────────────────────────────────────────────────────
 
 function OrgModal({ node, onClose }: { node: NodeDef; onClose: () => void }) {
+  const { t } = useTranslation();
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
@@ -371,7 +289,7 @@ function OrgModal({ node, onClose }: { node: NodeDef; onClose: () => void }) {
             ))}
           </ul>
         ) : (
-          <p className="mt-4 text-sm text-clinical-slate">Información no disponible.</p>
+          <p className="mt-4 text-sm text-clinical-slate">{t("equipo.hints.infoNoDisponible")}</p>
         )}
       </div>
     </div>
@@ -419,15 +337,21 @@ function LevelBadge({ n, label, sub }: { n: string; label: string; sub?: string 
 }
 
 function OrgView() {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState<NodeDef | null>(null);
   const open = (node: NodeDef) => setSelected(node);
+
+  const nodesTr = t("equipo.org.nodes", { returnObjects: true }) as Record<string, NodeTr>;
+  const ND = buildND(nodesTr);
+  const nivelPrefix = t("equipo.org.nivel");
+  const levels = t("equipo.org.levels", { returnObjects: true }) as Record<string, string>;
 
   const GuideLine = ({ n, label, sub }: { n?: string; label?: string; sub?: string }) => (
     <div className="mb-6 flex items-center gap-3">
       <div className="shrink-0 ml-3 flex flex-col items-center">
         {n && (
           <span className="inline-flex items-center rounded-full bg-clinical-blue px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest text-white">
-            NIVEL {n}
+            {nivelPrefix} {n}
           </span>
         )}
         {label && (
@@ -450,7 +374,7 @@ function OrgView() {
       <div className="overflow-x-auto py-12">
         <div className="ml-0 min-w-[900px] w-full pl-2 pr-8">
 
-          <GuideLine n="1" label="ESTRATÉGICO" />
+          <GuideLine n="1" label={levels["1"]} />
 
           {/* ── NIVEL 1 ─────────────────────────────── */}
           <div className="mx-auto w-full max-w-5xl py-8">
@@ -488,7 +412,7 @@ function OrgView() {
               <VLine h="h-8" />
             </div>
           </div>
-          <GuideLine n="2" label="TÁCTICO"/>
+          <GuideLine n="2" label={levels["2"]}/>
 
           {/* ── NIVEL 2 ─────────────────────────────── */}
           <div className="w-full px-40 py-6">
@@ -505,7 +429,7 @@ function OrgView() {
             </div>
           </div>
 
-          <GuideLine n="3" label="OPERATIVO" />
+          <GuideLine n="3" label={levels["3"]} />
 
           {/* ── NIVEL 3 ─────────────────────────────── */}
           <div className="w-full px-40 py-6">
@@ -545,7 +469,7 @@ function OrgView() {
           <GuideLine />
 
           <p className="mt-8 text-center font-mono text-[10px] uppercase tracking-widest text-clinical-slate/60">
-            Hacé clic en cada nodo para ver más información
+            {t("equipo.org.footerHint")}
           </p>
         </div>
       </div>
@@ -558,14 +482,16 @@ function OrgView() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 function EquipoPage() {
+  const { t } = useTranslation();
   const [view, setView] = useState<"grid" | "org">("grid");
 
   return (
     <SiteLayout>
-      <PageHero variant="team"
-        eyebrow="Médicos · Técnicos · Gestión"
-        title="Profesionales formados para el más alto estándar."
-        description="Combinamos experiencia médica, gestión de calidad y especialización técnica para sostener un diagnóstico de excelencia."
+      <PageHero
+        variant="team"
+        eyebrow={t("equipo.hero.eyebrow")}
+        title={t("equipo.hero.title")}
+        description={t("equipo.hero.description")}
       />
 
       <div className="border-b border-border">
@@ -574,13 +500,13 @@ function EquipoPage() {
             onClick={() => setView("grid")}
             className={cn("rounded-lg px-4 py-2 text-sm font-semibold transition-colors", view === "grid" ? "bg-clinical-blue text-primary-foreground" : "text-clinical-slate hover:bg-secondary")}
           >
-            Vista grilla
+            {t("equipo.viewToggle.grid")}
           </button>
           <button
             onClick={() => setView("org")}
             className={cn("rounded-lg px-4 py-2 text-sm font-semibold transition-colors", view === "org" ? "bg-clinical-blue text-primary-foreground" : "text-clinical-slate hover:bg-secondary")}
           >
-            Organigrama
+            {t("equipo.viewToggle.org")}
           </button>
         </div>
       </div>
@@ -592,14 +518,10 @@ function EquipoPage() {
   );
 }
 
-const roles = [
-  "Médicos patólogos con especialidad certificada",
-  "Citotécnicos con experiencia en screening y citología ginecológica",
-  "Técnicos de histología, inmunohistoquímica y biología molecular",
-  "Coordinación administrativa y atención al derivante",
-];
-
 function JoinUs() {
+  const { t } = useTranslation();
+  const roles = t("equipo.joinUs.roles", { returnObjects: true }) as string[];
+
   return (
     <section className="border-t border-border bg-secondary/40 py-24">
       <div className="mx-auto max-w-7xl px-6">
@@ -607,14 +529,13 @@ function JoinUs() {
           {/* Texto principal */}
           <div>
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
-              Trabajá con nosotros
+              {t("equipo.joinUs.eyebrow")}
             </div>
             <h2 className="mt-3 text-4xl font-bold tracking-tight text-clinical-blue md:text-5xl">
-              Sumate al equipo.
+              {t("equipo.joinUs.title")}
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-clinical-slate">
-              Incorporamos profesionales comprometidos con la excelencia diagnóstica.
-              Contanos en qué área te especializás.
+              {t("equipo.joinUs.description")}
             </p>
             <ul className="mt-8 space-y-3">
               {roles.map((r) => (
@@ -630,13 +551,13 @@ function JoinUs() {
           <div className="relative aspect-[3/2] overflow-hidden rounded-3xl shadow-xl">
             <img
               src={teamWorkImg}
-              alt="Equipo de CAP Vighi trabajando en el laboratorio"
+              alt={t("equipo.joinUs.imgAlt")}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent p-6 pt-16">
               <Quote className="size-6 text-clinical-accent" />
               <div className="mt-2 text-center text-[15px] font-semibold italic leading-snug text-white drop-shadow-sm">
-                Si querés ir rápido, ve solo. Si querés llegar lejos, ve acompañado.
+                {t("equipo.joinUs.quote")}
               </div>
               <Quote className="ml-auto size-6 rotate-180 text-clinical-accent" />
             </div>
@@ -647,7 +568,7 @@ function JoinUs() {
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-border pt-10 sm:flex-row sm:items-center">
           <div>
             <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-slate">
-              Postulaciones abiertas
+              {t("equipo.joinUs.postulaciones")}
             </div>
             <a
               href="mailto:cv@susanavighi.com.ar"
@@ -661,7 +582,7 @@ function JoinUs() {
             href="mailto:cv@susanavighi.com.ar"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-clinical-blue px-7 py-3.5 font-semibold text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
           >
-            Postularme
+            {t("equipo.joinUs.postularme")}
             <ChevronRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

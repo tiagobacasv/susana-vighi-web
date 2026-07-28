@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Microscope, FlaskConical, Beaker, Snowflake, Scissors, Layers, Sparkles, Cpu } from "lucide-react";
@@ -48,61 +49,14 @@ export const Route = createFileRoute("/lugar")({
   component: LugarPage,
 });
 
-const pisos = [
-  {
-    nivel: "PB",
-    nombre: "Planta Baja",
-    desc: "Acceso principal y gestión operativa del centro.",
-    areas: ["Recepción", "Gerencia Administrativa", "Administración", "Facturación y Sistemas", "Comedor"],
-    fotos: [
-      { src: pbS1, label: "Recepción" },
-      { src: pbS2, label: "Gerencia Administrativa" },
-      { src: pbS3, label: "Administración" },
-      { src: pbS4, label: "Facturación y Sistemas" },
-      { src: pbS5, label: "Comedor" },
-    ],
-  },
-  {
-    nivel: "1°",
-    nombre: "Primer Piso",
-    desc: "Área de dirección médica y staff de patólogos.",
-    areas: ["Dirección Médica", "Sala de Reuniones", "Sub-Dirección Médica", "Sector Patólogos Staff"],
-    fotos: [
-      { src: p1S1, label: "Dirección Médica" },
-      { src: p1S2, label: "Sala de Reuniones" },
-      { src: p1S3, label: "Sub-Dirección Médica" },
-      { src: p1S4, label: "Sector Patólogos Staff" },
-      { src: p1S5, label: "Sector Patólogos Staff" },
-    ],
-  },
-  {
-    nivel: "2°",
-    nombre: "Segundo Piso — Laboratorio",
-    desc: "Procesamiento integral de muestras histológicas con flujo ordenado y trazable.",
-    areas: ["Sector de Corte", "Sector de Inclusión", "Sector de Inmunohistoquímica", "Sector de Procesamiento y Coloración", "Sector de Macroscopía"],
-    fotos: [
-      { src: p2S1, label: "Sector de Corte" },
-      { src: p2S2, label: "Sector de Inclusión" },
-      { src: p2S3, label: "Sector de Inmunohistoquímica" },
-      { src: p2S4, label: "Sector de Procesamiento y Coloración" },
-      { src: p2S5, label: "Sector de Macroscopía" },
-    ],
-  },
-  {
-    nivel: "3°",
-    nombre: "Tercer Piso",
-    desc: "Gestión estratégica, capacitación y espacios de reunión.",
-    areas: ["Sala de Reuniones", "Dirección Ejecutiva"],
-    fotos: [
-      { src: p3S1, label: "Sala de Reuniones" },
-      { src: p3S2, label: "Sala de Reuniones" },
-      { src: p3S3, label: "Sala de Reuniones" },
-      { src: p3S4, label: "Dirección Ejecutiva" },
-      { src: p3S5, label: "Dirección Ejecutiva" },
-    ],
-  },
+const pisoFotoSrcs = [
+  [pbS1, pbS2, pbS3, pbS4, pbS5],
+  [p1S1, p1S2, p1S3, p1S4, p1S5],
+  [p2S1, p2S2, p2S3, p2S4, p2S5],
+  [p3S1, p3S2, p3S3, p3S4, p3S5],
 ];
 
+type PisoTr = { nivel: string; nombre: string; desc: string; areas: string[]; fotos: string[] };
 type Foto = { src: string; label: string };
 
 function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string }) {
@@ -190,7 +144,9 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
   );
 }
 
-function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }) {
+type PisoConFotos = Omit<PisoTr, "fotos"> & { fotos: Foto[] };
+
+function PisoCard({ piso, reverse }: { piso: PisoConFotos; reverse: boolean }) {
   return (
     <div className={`flex flex-col overflow-hidden rounded-2xl border border-border md:flex-row ${reverse ? "md:flex-row-reverse" : ""}`}>
       <div className="md:w-3/5">
@@ -217,20 +173,13 @@ function PisoCard({ piso, reverse }: { piso: typeof pisos[0]; reverse: boolean }
   );
 }
 
+type AparatoTr = { title: string; desc: string };
 type Aparato = { Icon: typeof Layers; title: string; desc: string; foto?: string };
 
-const aparatologia: Aparato[] = [
-  { Icon: Layers, title: "Procesador de tejidos", desc: "Deshidratación e inclusión automatizada con trazabilidad por lote.", foto: tecProcesadores },
-  { Icon: Scissors, title: "Micrótomos de precisión", desc: "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales.", foto: tecCorte },
-  { Icon: Snowflake, title: "Criostato", desc: "Cortes por congelación para biopsias intraoperatorias.", foto: tecCriostato },
-  { Icon: Beaker, title: "Coloreador automático", desc: "Tinciones H&E y especiales estandarizadas, sin variabilidad manual.", foto: tecColoreador },
-  { Icon: FlaskConical, title: "Plataforma de Inmunohistoquímica", desc: "Marcación automatizada con control de anticuerpos y kits validados." },
-  { Icon: Microscope, title: "Microscopios de alta resolución", desc: "Ópticas de investigación con cámaras digitales para documentación." },
-  { Icon: Cpu, title: "Scanner de patología digital", desc: "Digitalización de preparados a 40x para revisión, consulta y IA." },
-  { Icon: Sparkles, title: "Equipamiento auxiliar", desc: "Baños de flotación, dispensadores de parafina y estufas calibradas." },
-];
+const aparatoIcons = [Layers, Scissors, Snowflake, Beaker, FlaskConical, Microscope, Cpu, Sparkles];
+const aparatoFotos = [tecProcesadores, tecCorte, tecCriostato, tecColoreador, undefined, undefined, undefined, undefined];
 
-function AparatoCard({ a }: { a: Aparato }) {
+function AparatoCard({ a, verFotoLabel }: { a: Aparato; verFotoLabel: string }) {
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -255,7 +204,7 @@ function AparatoCard({ a }: { a: Aparato }) {
           <p className="text-sm leading-relaxed text-clinical-slate">{a.desc}</p>
           {a.foto && (
             <div className="absolute bottom-4 right-4 rounded-full bg-clinical-accent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-clinical-accent">
-              ver foto
+              {verFotoLabel}
             </div>
           )}
         </div>
@@ -282,24 +231,31 @@ function AparatoCard({ a }: { a: Aparato }) {
 }
 
 function AparatologiaSection() {
+  const { t } = useTranslation();
+  const items = t("lugar.aparatologia.items", { returnObjects: true }) as AparatoTr[];
+  const verFotoLabel = t("lugar.aparatologia.verFoto");
+
   return (
     <section className="border-t border-border bg-secondary py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-14 max-w-3xl">
           <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-            Aparatología
+            {t("lugar.aparatologia.eyebrow")}
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Tecnología dedicada a cada etapa del proceso.
+            {t("lugar.aparatologia.title")}
           </h2>
           <p className="mt-6 text-lg text-clinical-slate">
-            Equipamiento de alta complejidad seleccionado para asegurar consistencia,
-            trazabilidad y precisión desde la recepción de la muestra hasta el informe final.
+            {t("lugar.aparatologia.description")}
           </p>
         </div>
         <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
-          {aparatologia.map((a) => (
-            <AparatoCard key={a.title} a={a} />
+          {items.map((item, i) => (
+            <AparatoCard
+              key={item.title}
+              a={{ Icon: aparatoIcons[i], title: item.title, desc: item.desc, foto: aparatoFotos[i] }}
+              verFotoLabel={verFotoLabel}
+            />
           ))}
         </div>
       </div>
@@ -308,12 +264,20 @@ function AparatologiaSection() {
 }
 
 function LugarPage() {
+  const { t } = useTranslation();
+  const pisosTr = t("lugar.pisos", { returnObjects: true }) as PisoTr[];
+  const pisos = pisosTr.map((p, i) => ({
+    ...p,
+    fotos: p.fotos.map((label, j) => ({ src: pisoFotoSrcs[i][j], label })),
+  }));
+
   return (
     <SiteLayout>
-      <PageHero variant="place"
-        eyebrow="Infraestructura · Aparatología · Recorrido"
-        title="Un edificio diseñado para la Anatomía Patológica."
-        description="Especialmente construido para desarrollar la actividad diagnóstica cumpliendo con los estándares de calidad y seguridad requeridos."
+      <PageHero
+        variant="place"
+        eyebrow={t("lugar.hero.eyebrow")}
+        title={t("lugar.hero.title")}
+        description={t("lugar.hero.description")}
       />
       <section className="py-24">
         <div className="mx-auto max-w-7xl space-y-8 px-6">

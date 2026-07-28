@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { ShieldCheck, Building2, ArrowRight } from "lucide-react";
 import osde from "@/assets/Coberturas/osde_logo.png";
@@ -148,13 +149,14 @@ function LogoGrid({ logos }: { logos: string[] }) {
 }
 
 function CoberturasPage() {
+  const { t } = useTranslation();
   return (
     <SiteLayout>
       <PageHero
         variant="network"
-        eyebrow="Coberturas · Red de centros"
-        title="Trabajamos con las principales coberturas y centros de salud."
-        description="Coordinamos la recepción y el circuito administrativo con obras sociales, medicina prepaga y clínicas de referencia."
+        eyebrow={t("coberturas.hero.eyebrow")}
+        title={t("coberturas.hero.title")}
+        description={t("coberturas.hero.description")}
       />
 
       <section className="py-20">
@@ -168,12 +170,12 @@ function CoberturasPage() {
                 01
               </span>
               <h2 className="text-2xl font-bold tracking-tight">
-                Obras sociales y prepagas
+                {t("coberturas.obrasSociales.title")}
               </h2>
             </div>
           </div>
           <p className="mb-8 max-w-2xl text-sm text-clinical-slate">
-            Consultá por autorizaciones y modalidad de cobertura para cada estudio.
+            {t("coberturas.obrasSociales.description")}
           </p>
           <LogoGrid logos={coberturasLogos} />
         </div>
@@ -190,21 +192,21 @@ function CoberturasPage() {
                 02
               </span>
               <h2 className="text-2xl font-bold tracking-tight">
-                Centros y sanatorios asociados
+                {t("coberturas.centros.title")}
               </h2>
             </div>
           </div>
           <p className="mb-8 max-w-2xl text-sm text-clinical-slate">
-            Recibimos muestras derivadas de las principales instituciones médicas del área metropolitana.
+            {t("coberturas.centros.description")}
           </p>
 
           <h3 className="mb-6 font-mono text-xs uppercase tracking-widest text-clinical-slate">
-            Clínicas y Sanatorios
+            {t("coberturas.centros.clinicas")}
           </h3>
           <LogoGrid logos={clinicasSanatorios} />
 
           <h3 className="mb-6 mt-14 font-mono text-xs uppercase tracking-widest text-clinical-slate">
-            Centros Médicos
+            {t("coberturas.centros.centrosMedicos")}
           </h3>
           <LogoGrid logos={centrosMedicos} />
         </div>
@@ -213,13 +215,13 @@ function CoberturasPage() {
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="text-clinical-slate">
-            ¿No encontrás tu obra social? Consultanos, incorporamos nuevas coberturas periódicamente.
+            {t("coberturas.closing.text")}
           </p>
           <Link
             to="/contacto"
             className="mt-6 inline-flex items-center gap-2 rounded-lg bg-clinical-blue px-6 py-3 font-semibold text-primary-foreground hover:opacity-90"
           >
-            Consultar cobertura
+            {t("coberturas.closing.button")}
             <ArrowRight className="size-4" />
           </Link>
         </div>

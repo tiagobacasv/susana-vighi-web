@@ -261,20 +261,20 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-2xl">
               <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                {t("home.coverage.eyebrow")}
+                {t("home.insurance.eyebrow")}
               </span>
               <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-                {t("home.coverage.title")}
+                {t("home.insurance.title")}
               </h2>
               <p className="mt-4 text-clinical-slate">
-                {t("home.coverage.description")}
+                {t("home.insurance.description")}
               </p>
             </div>
             <Link
               to="/coberturas"
               className="group flex items-center gap-2 font-semibold italic text-clinical-blue hover:not-italic"
             >
-              {t("home.coverage.seeAll")}
+              {t("home.insurance.seeAll")}
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>

@@ -12,8 +12,8 @@ const navKeys = [
   { to: "/especialidades", key: "specialties" },
   { to: "/derivantes", key: "referring" },
   { to: "/pacientes", key: "patients" },
-  { to: "/coberturas", key: "coverage" },
-  { to: "/sistema-gestion", key: "quality" },
+  { to: "/coberturas", key: "insurance" },
+  { to: "/sistema-gestion", key: "management" },
   { to: "/novedades", key: "news" },
   { to: "/contacto", key: "contact" },
 ] as const;
@@ -30,20 +30,39 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
 function LangToggle({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation();
-  const { lang, toggleLang } = useLang();
-  const nextLabel = lang === "es" ? "EN" : "ES";
+  const { lang, setLang } = useLang();
+
+  const pill = (value: "es" | "en", label: string) => {
+    const active = lang === value;
+    return (
+      <button
+        onClick={() => setLang(value)}
+        aria-pressed={active}
+        className={
+          (compact ? "px-2 py-0.5 text-[9px]" : "px-2.5 py-1 text-[10px]") +
+          " rounded-full font-mono font-semibold uppercase tracking-wider transition-colors " +
+          (active
+            ? "bg-clinical-blue text-primary-foreground"
+            : "text-clinical-slate hover:text-foreground")
+        }
+      >
+        {label}
+      </button>
+    );
+  };
+
   return (
-    <button
-      onClick={toggleLang}
+    <div
+      role="group"
       aria-label={t("lang.aria")}
       className={
-        compact
-          ? "rounded-md border border-border px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-clinical-slate hover:text-foreground"
-          : "rounded-full border border-border px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-clinical-slate transition-colors hover:border-clinical-accent hover:text-foreground"
+        (compact ? "gap-0.5 p-0.5" : "gap-1 p-1") +
+        " flex items-center rounded-full border border-border bg-secondary"
       }
     >
-      {nextLabel}
-    </button>
+      {pill("es", "ES")}
+      {pill("en", "EN")}
+    </div>
   );
 }
 
@@ -234,7 +253,6 @@ function HeroDecoration({ variant }: { variant: HeroVariant }) {
   const B = "var(--clinical-blue)";
 
   if (variant === "compass") {
-    // Misión · Propósito · Valores — brújula / dianas concéntricas
     return (
       <g>
         {[140, 110, 80, 50, 24].map((r, i) => (

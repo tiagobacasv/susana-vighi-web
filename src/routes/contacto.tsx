@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Phone, Mail, MapPin, Clock, Briefcase, FileText, Calculator, HeartPulse, ClipboardList } from "lucide-react";
 
@@ -21,35 +22,23 @@ const telefonos = [
 ];
 
 const emails = [
-  {
-    label: "Consultas generales",
-    email: "anatomia.patologica@susanavighi.com.ar",
-    Icon: Mail,
-  },
-  {
-    label: "Presupuestos",
-    email: "presupuestosvighi@susanavighi.com.ar",
-    Icon: Calculator,
-  },
-  {
-    label: "Solicitud de servicio",
-    email: "solicituddeservicio@susanavighi.com.ar",
-    Icon: FileText,
-  },
-  {
-    label: "Recursos humanos · CV",
-    email: "cv@susanavighi.com.ar",
-    Icon: Briefcase,
-  },
+  { email: "anatomia.patologica@susanavighi.com.ar", Icon: Mail },
+  { email: "presupuestosvighi@susanavighi.com.ar", Icon: Calculator },
+  { email: "solicituddeservicio@susanavighi.com.ar", Icon: FileText },
+  { email: "cv@susanavighi.com.ar", Icon: Briefcase },
 ];
 
 function ContactoPage() {
+  const { t } = useTranslation();
+  const emailLabels = t("contacto.emails.items", { returnObjects: true }) as { label: string }[];
+
   return (
     <SiteLayout>
-      <PageHero variant="contact"
-        eyebrow="Teléfonos · Emails · Sede"
-        title="Conversemos."
-        description="Estamos a disposición de pacientes, médicos derivantes e instituciones para consultas, derivaciones y colaboraciones."
+      <PageHero
+        variant="contact"
+        eyebrow={t("contacto.hero.eyebrow")}
+        title={t("contacto.hero.title")}
+        description={t("contacto.hero.description")}
       />
 
       {/* Bloque principal: datos + formulario */}
@@ -65,17 +54,17 @@ function ContactoPage() {
                     <Phone className="size-4" />
                   </div>
                   <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                    Teléfonos · Líneas rotativas
+                    {t("contacto.phones.title")}
                   </h3>
                 </div>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {telefonos.map((t) => (
-                    <li key={t.num}>
+                  {telefonos.map((tel) => (
+                    <li key={tel.num}>
                       <a
-                        href={t.href}
+                        href={tel.href}
                         className="block rounded-xl border border-border bg-background px-4 py-3 text-center text-base font-semibold text-clinical-blue transition-colors hover:border-clinical-accent hover:text-clinical-accent"
                       >
-                        {t.num}
+                        {tel.num}
                       </a>
                     </li>
                   ))}
@@ -89,11 +78,11 @@ function ContactoPage() {
                     <Mail className="size-4" />
                   </div>
                   <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                    Casillas de correo
+                    {t("contacto.emails.title")}
                   </h3>
                 </div>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {emails.map((e) => (
+                  {emails.map((e, i) => (
                     <li key={e.email}>
                       <a
                         href={`mailto:${e.email}`}
@@ -104,7 +93,7 @@ function ContactoPage() {
                         </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-mono uppercase tracking-widest text-clinical-slate">
-                            {e.label}
+                            {emailLabels[i]?.label}
                           </div>
                           <div className="mt-1 truncate text-sm font-medium text-clinical-blue group-hover:text-clinical-accent">
                             {e.email}
@@ -124,14 +113,14 @@ function ContactoPage() {
                       <MapPin className="size-4" />
                     </div>
                     <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                      Dirección
+                      {t("contacto.address.title")}
                     </h3>
                   </div>
                   <p className="mt-5 text-base font-semibold text-clinical-blue">
                     Concepción Arenal 3732
                   </p>
                   <p className="text-sm text-clinical-slate">
-                    Ciudad Autónoma de Buenos Aires · C1427EKH · Argentina
+                    {t("contacto.address.line2")}
                   </p>
                   <a
                     href="https://maps.google.com/?q=Concepci%C3%B3n+Arenal+3732,+CABA,+Argentina"
@@ -139,7 +128,7 @@ function ContactoPage() {
                     rel="noreferrer"
                     className="mt-4 inline-block text-sm font-medium text-clinical-accent hover:underline"
                   >
-                    Ver en Google Maps →
+                    {t("contacto.address.mapLink")}
                   </a>
                 </article>
 
@@ -149,13 +138,13 @@ function ContactoPage() {
                       <Clock className="size-4" />
                     </div>
                     <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                      Horarios de atención
+                      {t("contacto.hours.title")}
                     </h3>
                   </div>
                   <p className="mt-5 text-base font-semibold text-clinical-blue">
-                    Lunes a Viernes
+                    {t("contacto.hours.days")}
                   </p>
-                  <p className="text-sm text-clinical-slate">08:00 — 20:00 hs</p>
+                  <p className="text-sm text-clinical-slate">{t("contacto.hours.time")}</p>
                 </article>
               </div>
             </div>
@@ -167,15 +156,15 @@ function ContactoPage() {
             >
               <div>
                 <h3 className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                  Enviar consulta
+                  {t("contacto.form.title")}
                 </h3>
                 <p className="mt-2 text-sm text-clinical-slate">
-                  Te respondemos a la brevedad.
+                  {t("contacto.form.description")}
                 </p>
               </div>
               <div>
                 <label className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  Nombre
+                  {t("contacto.form.name")}
                 </label>
                 <input
                   type="text"
@@ -184,7 +173,7 @@ function ContactoPage() {
               </div>
               <div>
                 <label className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  Email
+                  {t("contacto.form.email")}
                 </label>
                 <input
                   type="email"
@@ -193,7 +182,7 @@ function ContactoPage() {
               </div>
               <div className="flex flex-1 flex-col">
                 <label className="mb-2 block font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                  Mensaje
+                  {t("contacto.form.message")}
                 </label>
                 <textarea
                   rows={5}
@@ -204,7 +193,7 @@ function ContactoPage() {
                 type="submit"
                 className="w-full rounded-lg bg-clinical-blue px-6 py-3 font-semibold text-primary-foreground hover:opacity-90"
               >
-                Enviar consulta
+                {t("contacto.form.submit")}
               </button>
             </form>
           </div>
@@ -217,10 +206,10 @@ function ContactoPage() {
           <div className="mb-6 flex items-end justify-between gap-4">
             <div>
               <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
-                Cómo llegar
+                {t("contacto.map.eyebrow")}
               </div>
               <h2 className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
-                Concepción Arenal 3732, CABA
+                {t("contacto.map.address")}
               </h2>
             </div>
           </div>
@@ -250,14 +239,13 @@ function ContactoPage() {
                 <HeartPulse className="size-5" />
               </div>
               <h3 className="mt-6 text-xl font-bold text-clinical-blue">
-                Información para pacientes
+                {t("contacto.quickAccess.pacientes.title")}
               </h3>
               <p className="mt-3 text-sm text-clinical-slate">
-                Qué es una biopsia, cómo prepararte, tiempos esperables y cómo retirar
-                tu informe.
+                {t("contacto.quickAccess.pacientes.description")}
               </p>
               <span className="mt-6 inline-block text-sm font-medium text-clinical-accent group-hover:underline">
-                Ir a pacientes →
+                {t("contacto.quickAccess.pacientes.link")}
               </span>
             </Link>
             <Link
@@ -268,14 +256,13 @@ function ContactoPage() {
                 <ClipboardList className="size-5" />
               </div>
               <h3 className="mt-6 text-xl font-bold text-clinical-blue">
-                Portal para médicos derivantes
+                {t("contacto.quickAccess.derivantes.title")}
               </h3>
               <p className="mt-3 text-sm text-clinical-slate">
-                Protocolos de fijación, requisitos por tipo de estudio, formularios y
-                coordinación directa.
+                {t("contacto.quickAccess.derivantes.description")}
               </p>
               <span className="mt-6 inline-block text-sm font-medium text-clinical-accent group-hover:underline">
-                Ir a derivantes →
+                {t("contacto.quickAccess.derivantes.link")}
               </span>
             </Link>
           </div>
