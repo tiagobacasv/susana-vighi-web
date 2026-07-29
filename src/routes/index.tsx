@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout } from "@/components/SiteLayout";
 import { Microscope, FlaskConical, ScanLine } from "lucide-react";
 import heroImg from "@/assets/hero-option-1.jpg";
@@ -18,18 +19,10 @@ const centrosLogos = Object.values(
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CAP Vighi — Centro de Anatomía Patológica Dra. Susana Vighi" },
-      {
-        name: "description",
-        content:
-          "Laboratorio de anatomía patológica en Buenos Aires. Patología digital, inmunohistoquímica y biopsias con tiempos de respuesta líderes.",
-      },
-      { property: "og:title", content: "CAP Vighi — Anatomía Patológica de precisión" },
-      {
-        property: "og:description",
-        content:
-          "Diagnóstico anatomopatológico de excelencia, integrando patología digital e inteligencia artificial.",
-      },
+      { title: seoText("seo.home.title") },
+      { name: "description", content: seoText("seo.home.description") },
+      { property: "og:title", content: seoText("seo.home.ogTitle") },
+      { property: "og:description", content: seoText("seo.home.ogDescription") },
     ],
   }),
   component: Index,
@@ -85,6 +78,11 @@ function LogoMarquee({ logos, direction }: { logos: string[]; direction: "left" 
 
 function Index() {
   const { t } = useTranslation();
+  const stats = t("home.stats.items", { returnObjects: true }) as {
+    value: string;
+    label: string;
+    placeholder?: boolean;
+  }[];
   return (
     <SiteLayout>
       {/* Hero */}
@@ -242,13 +240,49 @@ function Index() {
                 key={p.n}
                 className="group bg-clinical-blue p-10 transition-colors hover:bg-white/5"
               >
-                <div className="mb-8 font-mono text-sm text-clinical-accent">{p.n}</div>
                 <h3 className="mb-4 text-xl font-bold tracking-tight">
                   {t(`home.pillars.${p.key}.title`)}
                 </h3>
                 <p className="text-sm leading-relaxed text-white/60">
                   {t(`home.pillars.${p.key}.desc`)}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-background py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 max-w-3xl">
+            <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
+              {t("home.stats.eyebrow")}
+            </span>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight text-balance text-clinical-blue md:text-5xl">
+              {t("home.stats.title")}
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {stats.map((s) => (
+              <div
+                key={s.label}
+                className={
+                  "relative rounded-2xl border p-8 " +
+                  (s.placeholder
+                    ? "border-dashed border-clinical-slate/30 bg-secondary/40"
+                    : "border-border bg-secondary")
+                }
+              >
+                {s.placeholder && (
+                  <span className="absolute right-4 top-4 rounded-full bg-clinical-slate/10 px-2.5 py-1 font-mono text-[9px] uppercase tracking-widest text-clinical-slate">
+                    {t("home.stats.placeholderTag")}
+                  </span>
+                )}
+                <div className="font-mono text-4xl font-bold tabular-nums text-clinical-blue md:text-5xl">
+                  {s.value}
+                </div>
+                <div className="mt-3 text-sm text-clinical-slate">{s.label}</div>
               </div>
             ))}
           </div>

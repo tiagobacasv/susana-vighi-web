@@ -1,4 +1,72 @@
 {
+  "seo": {
+    "home": {
+      "title": "CAP Vighi — Dr. Susana Vighi Pathology Center",
+      "description": "Anatomic pathology laboratory in Buenos Aires. Digital pathology, immunohistochemistry, and biopsies with leading turnaround times.",
+      "ogTitle": "CAP Vighi — Precision Anatomic Pathology",
+      "ogDescription": "Diagnostic excellence in anatomic pathology, integrating digital pathology and artificial intelligence."
+    },
+    "proposito": {
+      "title": "Purpose and Mission — CAP Vighi",
+      "description": "Mission and purpose of the Dr. Susana Vighi Pathology Center: leading the specialty across LATAM with international standards and turnaround times.",
+      "ogTitle": "Purpose and Mission — CAP Vighi",
+      "ogDescription": "Faster diagnosis can save lives. We're expanding our leadership across the region."
+    },
+    "equipo": {
+      "title": "Our Team — CAP Vighi",
+      "description": "Medical and technical team of the Dr. Susana Vighi Pathology Center.",
+      "ogTitle": "Our Team — CAP Vighi",
+      "ogDescription": "Specialist pathologists, cytotechnologists, and specialized technicians."
+    },
+    "lugar": {
+      "title": "Our Facility — CAP Vighi",
+      "description": "Building specially designed for Anatomic Pathology, meeting quality and safety standards.",
+      "ogTitle": "Our Facility — CAP Vighi",
+      "ogDescription": "Four floors designed for diagnostic precision and traceability."
+    },
+    "especialidades": {
+      "title": "Specialties — CAP Vighi",
+      "description": "Molecular Biology, Immunohistochemistry, and High-Complexity Techniques: flow cytometry, immunofluorescence, and electron microscopy.",
+      "ogTitle": "Specialties — CAP Vighi",
+      "ogDescription": "Comprehensive anatomic pathology diagnosis: molecular biology, immunohistochemistry, and high-complexity techniques."
+    },
+    "derivantes": {
+      "title": "Referring Physicians — CAP Vighi",
+      "description": "Guide for referring physicians: sample collection, fixation and shipping, requirements by study type, forms, and medical coordination contacts.",
+      "ogTitle": "Referring Physicians — CAP Vighi",
+      "ogDescription": "Protocols, requirements, and coordination for sending samples to the Dr. Susana Vighi Pathology Center."
+    },
+    "pacientes": {
+      "title": "Patient Information — CAP Vighi",
+      "description": "What a biopsy is, how to prepare, expected turnaround times, how to pick up your report, and answers to patients' most frequent questions.",
+      "ogTitle": "Patient Information — CAP Vighi",
+      "ogDescription": "A clear, human guide for patients: what to expect, how to prepare, and how to pick up your report at CAP Vighi."
+    },
+    "coberturas": {
+      "title": "Insurance and Centers — CAP Vighi",
+      "description": "Insurers, HMOs, and health centers we work with in anatomic pathology.",
+      "ogTitle": "Insurance and Centers — CAP Vighi",
+      "ogDescription": "Network of insurers, prepaid health plans, and clinics affiliated with CAP Vighi."
+    },
+    "sistemaGestion": {
+      "title": "Management System — CAP Vighi",
+      "description": "The 3 pillars of service at the Dr. Susana Vighi Pathology Center: Speed, Traceability, and Proactivity.",
+      "ogTitle": "Management System — CAP Vighi",
+      "ogDescription": "Operational efficiency, real-time tracking, and continuous monitoring aimed at diagnostic excellence."
+    },
+    "contacto": {
+      "title": "Contact — CAP Vighi",
+      "description": "Phone numbers, emails, and address of the Dr. Susana Vighi Pathology Center in Buenos Aires.",
+      "ogTitle": "Contact — CAP Vighi",
+      "ogDescription": "We're available to patients, referring physicians, and institutions."
+    },
+    "novedades": {
+      "title": "News and Publications — CAP Vighi",
+      "description": "Academic activity, publications, conference participation, and technical updates from the Dr. Susana Vighi Pathology Center.",
+      "ogTitle": "News and Publications — CAP Vighi",
+      "ogDescription": "Academic case highlights, publications, and conference participation from the CAP Vighi team."
+    }
+  },
   "nav": {
     "home": "Home",
     "purpose": "Purpose",
@@ -64,6 +132,16 @@
       "calidad": { "title": "Medical quality", "desc": "We uphold the highest standards through internal controls and peer review." },
       "equipo": { "title": "Team", "desc": "We train our leaders and run highly efficient specialized teams." },
       "tecnologia": { "title": "Technology", "desc": "We invest in high-complexity instrumentation and workflow-integrated digital pathology." }
+    },
+    "stats": {
+      "eyebrow": "By the numbers",
+      "title": "The numbers behind our track record.",
+      "placeholderTag": "Sample data",
+      "items": [
+        { "value": "30+", "label": "Years of experience" },
+        { "value": "10,000+", "label": "Protocols processed monthly" },
+        { "value": "2,000+", "label": "Physicians who trust us" }
+      ]
     },
     "insurance": {
       "eyebrow": "Insurance and centers",
@@ -406,13 +484,13 @@
         "sp": { "title": "Process Supervision", "details": [] },
         "ga": { "title": "Administrative Management", "details": [] },
         "gc": { "title": "Commercial Management", "details": [] },
-        "sm": { "title": "Deputy Medical Direction", "details": ["Dra. Marysol Costoya — Specialist in Anatomic Pathology (MN123151) · Gynecologic Pathology and Cytopathology", "Dr. Federico Ferrando — Specialist in Anatomic Pathology (MN112223) · Gynecologic Pathology"] },
-        "rc": { "title": "Cytology & Bone Marrow", "details": ["Miguel Domenniani — Cytotechnologist", "Tobias Pardo — Cytotechnologist"] },
+        "sm": { "title": "Medical Sub-Direction", "details": ["Dra. Marysol Costoya — Specialist in Anatomic Pathology (MN123151) · Gynecologic Pathology and Cytopathology", "Dr. Federico Ferrando — Specialist in Anatomic Pathology (MN112223) · Gynecologic Pathology"] },
+        "rc": { "title": "Cytology & Biopsies", "details": ["Miguel Domenniani — Cytotechnologist", "Tobias Pardo — Cytotechnologist"] },
         "aa": { "title": "Administrative Area", "details": [] },
         "al": { "title": "Logistics Area", "details": [] },
         "am": { "title": "Medical Area", "details": ["Dra. Diana Miserendino — Nephropathology and Gastroenteropathology (MN100367)", "Dr. Mauro García Montenegro — Hematopathology (MN154271) · Vice President SOLAHP 2025–2027", "Dra. Tania Rodriguez (MN188687)", "Dr. Daniel Vila Melgarejo — Forensic Pathology (MN159165)", "Dra. Andrea Flores Herbas — Forensic and Pediatric Pathology (MN1631960)"] },
         "at": { "title": "Technical Area", "details": [] },
-        "ai": { "title": "Immunohistochemistry Area", "details": ["Adriana Lopez — Cytology Coordinator", "Laura Ureta — Immunohistochemistry Coordinator"] }
+        "ai": { "title": "IHC Area", "details": ["Adriana Lopez — Cytology Coordinator", "Laura Ureta — Immunohistochemistry Coordinator"] }
       }
     },
     "joinUs": {
@@ -438,13 +516,11 @@
       "description": "Our purpose guides every decision: delivering real clinical value through precise, fast, and traceable diagnostics."
     },
     "mission": {
-      "numLabel": "01 · Mission",
       "title": "Our mission",
       "quote": "“Faster diagnosis can save lives.”",
       "text": "Every hour counts. We design our processes so the report reaches the treating physician sooner, because shortening the wait improves clinical decisions and patient outcomes."
     },
     "purpose": {
-      "numLabel": "02 · Purpose",
       "title": "Our purpose",
       "quote": "Expand our leadership across LATAM with international quality standards and turnaround times.",
       "text": "We combine medical expertise, technological innovation, and our own infrastructure to position ourselves as a regional benchmark in anatomic pathology."
@@ -646,21 +722,21 @@
       "title": "News and publications.",
       "description": "We share the team's academic activity, publications, and technical updates. A space to keep up with what we do beyond diagnosis."
     },
-    "activity": {
-      "eyebrow": "Our activity",
-      "title": "Four fronts."
-    },
-    "categorias": [
-      { "tag": "Publications", "title": "Papers and articles by our team", "desc": "Scientific output in national and international journals of anatomic pathology and related disciplines." },
-      { "tag": "Conferences", "title": "Conference participation", "desc": "Presentations, talks, and free papers by our team at specialty conferences." },
-      { "tag": "Teaching", "title": "Training and residencies", "desc": "Rotations, case discussions, and academic activities aimed at training new pathologists." },
-      { "tag": "Technical updates", "title": "New additions and updates", "desc": "New markers added, diagnostic platform improvements, and protocol updates." }
-    ],
     "updates": {
       "eyebrow": "Latest updates",
       "title": "What we're working on."
     },
     "destacados": [
+      {
+        "fecha": "July 21, 2026",
+        "categoria": "Press",
+        "fuente": "Comunicar Salud",
+        "titulo": "What is the cost of a late diagnosis?",
+        "quote": "The cost of diagnosis is constant; the cost of delay is exponential.",
+        "resumen": "Our Medical Director, Dra. Andrea Paparatto, took part in this feature on how diagnostic turnaround time affects the sustainability of the healthcare system.",
+        "cta": "Read the full article",
+        "url": "https://comunicar-salud.com.ar/nota/48656/el-costo-oculto-de-la-demora-por-que-el-tiempo-diagnostico-es-la-variable-clave-para-la-sustentabilidad-del-sistema/"
+      },
       { "fecha": "2025 · Ongoing", "categoria": "Technical updates", "titulo": "New immunohistochemistry panels added", "resumen": "We are progressively expanding the panel of markers available for oncology diagnosis and staging, including treatment-predictive determinations." },
       { "fecha": "2025", "categoria": "Teaching", "titulo": "Resident rotation program", "resumen": "We host residents and fellows from institutions across the country for subspecialty rotations in different areas of the lab." },
       { "fecha": "Ongoing", "categoria": "Conferences", "titulo": "Academic presence of our team", "resumen": "Our professionals regularly participate in conferences and meetings of the Argentine Society of Pathology and related international societies." }

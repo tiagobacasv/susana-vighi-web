@@ -1,24 +1,17 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { HeartPulse, Clock, FileText, MapPin, Plus, Minus } from "lucide-react";
 
 export const Route = createFileRoute("/pacientes")({
   head: () => ({
     meta: [
-      { title: "Información para pacientes — CAP Vighi" },
-      {
-        name: "description",
-        content:
-          "Qué es una biopsia, cómo prepararte, tiempos esperables, cómo retirar tu informe y respuestas a las preguntas más frecuentes de pacientes.",
-      },
-      { property: "og:title", content: "Información para pacientes — CAP Vighi" },
-      {
-        property: "og:description",
-        content:
-          "Guía clara y humana para pacientes: qué esperar, cómo prepararte y cómo retirar tu informe en el CAP Vighi.",
-      },
+      { title: seoText("seo.pacientes.title") },
+      { name: "description", content: seoText("seo.pacientes.description") },
+      { property: "og:title", content: seoText("seo.pacientes.ogTitle") },
+      { property: "og:description", content: seoText("seo.pacientes.ogDescription") },
     ],
   }),
   component: PacientesPage,

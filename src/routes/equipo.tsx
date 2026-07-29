@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -39,10 +40,10 @@ import {
 export const Route = createFileRoute("/equipo")({
   head: () => ({
     meta: [
-      { title: "Nuestro equipo — CAP Vighi" },
-      { name: "description", content: "Equipo médico y técnico del Centro de Anatomía Patológica Dra. Susana Vighi." },
-      { property: "og:title", content: "Nuestro equipo — CAP Vighi" },
-      { property: "og:description", content: "Médicos patólogos, citotecnólogos y técnicos especializados." },
+      { title: seoText("seo.equipo.title") },
+      { name: "description", content: seoText("seo.equipo.description") },
+      { property: "og:title", content: seoText("seo.equipo.ogTitle") },
+      { property: "og:description", content: seoText("seo.equipo.ogDescription") },
     ],
   }),
   component: EquipoPage,

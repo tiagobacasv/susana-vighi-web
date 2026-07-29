@@ -1,4 +1,72 @@
 {
+  "seo": {
+    "home": {
+      "title": "CAP Vighi — Centro de Anatomía Patológica Dra. Susana Vighi",
+      "description": "Laboratorio de anatomía patológica en Buenos Aires. Patología digital, inmunohistoquímica y biopsias con tiempos de respuesta líderes.",
+      "ogTitle": "CAP Vighi — Anatomía Patológica de precisión",
+      "ogDescription": "Diagnóstico anatomopatológico de excelencia, integrando patología digital e inteligencia artificial."
+    },
+    "proposito": {
+      "title": "Propósito y Misión — CAP Vighi",
+      "description": "Misión y propósito del Centro de Anatomía Patológica Dra. Susana Vighi: liderar la especialidad en LATAM con estándares y tiempos internacionales.",
+      "ogTitle": "Propósito y Misión — CAP Vighi",
+      "ogDescription": "Reducir tiempos de diagnóstico puede salvar vidas. Expandimos el liderazgo en toda la región."
+    },
+    "equipo": {
+      "title": "Nuestro equipo — CAP Vighi",
+      "description": "Equipo médico y técnico del Centro de Anatomía Patológica Dra. Susana Vighi.",
+      "ogTitle": "Nuestro equipo — CAP Vighi",
+      "ogDescription": "Médicos patólogos, citotecnólogos y técnicos especializados."
+    },
+    "lugar": {
+      "title": "Nuestro lugar — CAP Vighi",
+      "description": "Edificio especialmente diseñado para la actividad de Anatomía Patológica, cumpliendo estándares de calidad y seguridad.",
+      "ogTitle": "Nuestro lugar — CAP Vighi",
+      "ogDescription": "Cuatro pisos diseñados para la precisión diagnóstica y la trazabilidad."
+    },
+    "especialidades": {
+      "title": "Especialidades — CAP Vighi",
+      "description": "Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad: citometría de flujo, inmunofluorescencia y microscopía electrónica.",
+      "ogTitle": "Especialidades — CAP Vighi",
+      "ogDescription": "Diagnóstico anatomopatológico integral: biología molecular, inmunohistoquímica y técnicas de alta complejidad."
+    },
+    "derivantes": {
+      "title": "Médicos derivantes — CAP Vighi",
+      "description": "Instructivo para médicos derivantes: toma, fijación y envío de muestras, requisitos por tipo de estudio, formularios y contactos de coordinación médica.",
+      "ogTitle": "Médicos derivantes — CAP Vighi",
+      "ogDescription": "Protocolos, requisitos y coordinación para el envío de muestras al Centro de Anatomía Patológica Dra. Susana Vighi."
+    },
+    "pacientes": {
+      "title": "Información para pacientes — CAP Vighi",
+      "description": "Qué es una biopsia, cómo prepararte, tiempos esperables, cómo retirar tu informe y respuestas a las preguntas más frecuentes de pacientes.",
+      "ogTitle": "Información para pacientes — CAP Vighi",
+      "ogDescription": "Guía clara y humana para pacientes: qué esperar, cómo prepararte y cómo retirar tu informe en el CAP Vighi."
+    },
+    "coberturas": {
+      "title": "Coberturas y centros — CAP Vighi",
+      "description": "Obras sociales, prepagas y centros de salud con los que trabajamos en anatomía patológica.",
+      "ogTitle": "Coberturas y centros — CAP Vighi",
+      "ogDescription": "Red de obras sociales, medicina prepaga y clínicas asociadas a CAP Vighi."
+    },
+    "sistemaGestion": {
+      "title": "Sistema de gestión — CAP Vighi",
+      "description": "Los 3 pilares del servicio del Centro de Anatomía Patológica Dra. Susana Vighi: Celeridad, Trazabilidad y Proactividad.",
+      "ogTitle": "Sistema de gestión — CAP Vighi",
+      "ogDescription": "Eficiencia operativa, seguimiento en tiempo real y monitoreo continuo orientados a la excelencia diagnóstica."
+    },
+    "contacto": {
+      "title": "Contacto — CAP Vighi",
+      "description": "Teléfonos, emails y dirección del Centro de Anatomía Patológica Dra. Susana Vighi en Buenos Aires.",
+      "ogTitle": "Contacto — CAP Vighi",
+      "ogDescription": "Estamos a disposición de pacientes, médicos derivantes e instituciones."
+    },
+    "novedades": {
+      "title": "Novedades y publicaciones — CAP Vighi",
+      "description": "Actividad académica, publicaciones, participaciones en congresos y novedades técnicas del Centro de Anatomía Patológica Dra. Susana Vighi.",
+      "ogTitle": "Novedades y publicaciones — CAP Vighi",
+      "ogDescription": "Casos de interés académico, publicaciones y participaciones en congresos del equipo CAP Vighi."
+    }
+  },
   "nav": {
     "home": "Inicio",
     "purpose": "Propósito",
@@ -73,6 +141,16 @@
       "calidad": { "title": "Calidad médica", "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares." },
       "equipo": { "title": "Equipo", "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes." },
       "tecnologia": { "title": "Tecnología", "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo." }
+    },
+    "stats": {
+      "eyebrow": "En números",
+      "title": "Los números detrás de nuestra trayectoria.",
+      "placeholderTag": "Dato de ejemplo",
+      "items": [
+        { "value": "30+", "label": "Años de trayectoria" },
+        { "value": "10.000+", "label": "Protocolos procesados al mes" },
+        { "value": "2.000+", "label": "Médicos que confían en nosotros" }
+      ]
     },
     "insurance": {
       "eyebrow": "Coberturas y centros",
@@ -421,7 +499,7 @@
         "al": { "title": "Área Logística", "details": [] },
         "am": { "title": "Área Médica", "details": ["Dra. Diana Miserendino — Nefropatología y Gastroenteropatología (MN100367)", "Dr. Mauro García Montenegro — Hematopatología (MN154271) · Vicepresidente SOLAHP 2025–2027", "Dra. Tania Rodriguez (MN188687)", "Dr. Daniel Vila Melgarejo — Patología Forense (MN159165)", "Dra. Andrea Flores Herbas — Patología Forense y Pediátrica (MN1631960)"] },
         "at": { "title": "Área Técnica", "details": [] },
-        "ai": { "title": "Área Inmunohistoquímica", "details": ["Adriana Lopez — Coordinadora de Citología", "Laura Ureta — Coordinadora de Inmunohistoquímica"] }
+        "ai": { "title": "Área IHQ", "details": ["Adriana Lopez — Coordinadora de Citología", "Laura Ureta — Coordinadora de Inmunohistoquímica"] }
       }
     },
     "joinUs": {
@@ -447,13 +525,11 @@
       "description": "Nuestra razón de ser guía cada decisión: aportar valor clínico real a través de diagnósticos precisos, rápidos y trazables."
     },
     "mission": {
-      "numLabel": "01 · Misión",
       "title": "Nuestra misión",
       "quote": "“Reducir tiempos de diagnóstico puede salvar vidas.”",
       "text": "Cada hora cuenta. Diseñamos nuestros procesos para que el informe llegue antes al médico tratante, porque acortar la espera mejora decisiones clínicas y resultados para el paciente."
     },
     "purpose": {
-      "numLabel": "02 · Propósito",
       "title": "Nuestro propósito",
       "quote": "Expandir el liderazgo en toda la región LATAM con estándares de calidad y tiempos internacionales.",
       "text": "Combinamos experiencia médica, innovación tecnológica e infraestructura propia para posicionarnos como referencia regional en anatomía patológica."
@@ -655,21 +731,21 @@
       "title": "Novedades y publicaciones.",
       "description": "Compartimos la actividad académica, las publicaciones y las incorporaciones técnicas del equipo. Un espacio para seguir de cerca lo que hacemos más allá del diagnóstico."
     },
-    "activity": {
-      "eyebrow": "Nuestra actividad",
-      "title": "Cuatro frentes."
-    },
-    "categorias": [
-      { "tag": "Publicaciones", "title": "Trabajos y artículos del equipo", "desc": "Producción científica en revistas nacionales e internacionales de anatomía patológica y disciplinas asociadas." },
-      { "tag": "Congresos", "title": "Participación en congresos", "desc": "Presentaciones, ponencias y trabajos libres del equipo en congresos de la especialidad." },
-      { "tag": "Docencia", "title": "Formación y residencias", "desc": "Rotaciones, ateneos y actividades académicas orientadas a la formación de nuevos patólogos." },
-      { "tag": "Novedades técnicas", "title": "Incorporaciones y actualizaciones", "desc": "Nuevos marcadores incorporados, mejoras en la plataforma diagnóstica y actualizaciones de nuestros protocolos." }
-    ],
     "updates": {
       "eyebrow": "Últimas actualizaciones",
       "title": "Lo que estamos haciendo."
     },
     "destacados": [
+      {
+        "fecha": "21 de julio de 2026",
+        "categoria": "Prensa",
+        "fuente": "Comunicar Salud",
+        "titulo": "¿Cuál es el costo de llegar tarde a un diagnóstico?",
+        "quote": "El costo del diagnóstico es constante; el costo de la demora es exponencial.",
+        "resumen": "Nuestra Directora Médica, la Dra. Andrea Paparatto, participó en esta nota sobre el impacto del tiempo diagnóstico en la sustentabilidad del sistema de salud.",
+        "cta": "Leer la nota completa",
+        "url": "https://comunicar-salud.com.ar/nota/48656/el-costo-oculto-de-la-demora-por-que-el-tiempo-diagnostico-es-la-variable-clave-para-la-sustentabilidad-del-sistema/"
+      },
       { "fecha": "2025 · En curso", "categoria": "Novedades técnicas", "titulo": "Incorporación de nuevos paneles de inmunohistoquímica", "resumen": "Ampliamos progresivamente el panel de marcadores disponibles para diagnóstico y estadificación oncológica, incluyendo determinaciones predictivas de tratamiento." },
       { "fecha": "2025", "categoria": "Docencia", "titulo": "Programa de rotaciones para residentes", "resumen": "Recibimos residentes y becarios de instituciones de todo el país para rotaciones de subespecialidad en distintas áreas del laboratorio." },
       { "fecha": "Actividad continua", "categoria": "Congresos", "titulo": "Presencia académica del equipo", "resumen": "Nuestros profesionales participan regularmente en congresos y jornadas de la Sociedad Argentina de Patología y sociedades internacionales afines." }

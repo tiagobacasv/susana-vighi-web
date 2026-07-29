@@ -1,15 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Target, Compass } from "lucide-react";
 
 export const Route = createFileRoute("/proposito")({
   head: () => ({
     meta: [
-      { title: "Propósito y Misión — CAP Vighi" },
-      { name: "description", content: "Misión y propósito del Centro de Anatomía Patológica Dra. Susana Vighi: liderar la especialidad en LATAM con estándares y tiempos internacionales." },
-      { property: "og:title", content: "Propósito y Misión — CAP Vighi" },
-      { property: "og:description", content: "Reducir tiempos de diagnóstico puede salvar vidas. Expandimos el liderazgo en toda la región." },
+      { title: seoText("seo.proposito.title") },
+      { name: "description", content: seoText("seo.proposito.description") },
+      { property: "og:title", content: seoText("seo.proposito.ogTitle") },
+      { property: "og:description", content: seoText("seo.proposito.ogDescription") },
     ],
   }),
   component: PropositoPage,
@@ -35,9 +36,6 @@ function PropositoPage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-8 md:grid-cols-2">
             <article className="group relative overflow-hidden rounded-2xl border border-border bg-secondary p-10">
-              <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                {t("proposito.mission.numLabel")}
-              </div>
               <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-clinical-blue text-white">
                 <Compass className="size-5" />
               </div>
@@ -53,9 +51,6 @@ function PropositoPage() {
             </article>
 
             <article className="group relative overflow-hidden rounded-2xl border border-border bg-secondary p-10">
-              <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                {t("proposito.purpose.numLabel")}
-              </div>
               <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-clinical-blue text-white">
                 <Target className="size-5" />
               </div>

@@ -73,6 +73,39 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const medicalOrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  name: "CAP Vighi — Centro de Anatomía Patológica Dra. Susana Vighi",
+  alternateName: "CAP Vighi",
+  url: "https://www.susanavighi.com.ar",
+  logo: "https://www.susanavighi.com.ar/assets/fav-icon.png",
+  medicalSpecialty: "Pathology",
+  telephone: ["+541145517752", "+541145517267", "+541120359667"],
+  email: "anatomia.patologica@susanavighi.com.ar",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Concepción Arenal 3732",
+    addressLocality: "Buenos Aires",
+    addressRegion: "CABA",
+    postalCode: "C1427EKH",
+    addressCountry: "AR",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "20:00",
+  },
+  employee: [
+    { "@type": "Physician", name: "Dra. Andrea Paparatto", jobTitle: "Directora Médica", medicalSpecialty: "Pathology" },
+    { "@type": "Physician", name: "Dr. Federico Ferrando", jobTitle: "Sub-Director Médico", medicalSpecialty: "Pathology" },
+    { "@type": "Physician", name: "Dra. Marysol Costoya", jobTitle: "Sub-Directora Médica", medicalSpecialty: "Pathology" },
+    { "@type": "Physician", name: "Dra. Diana Miserendino", jobTitle: "Médica Especialista", medicalSpecialty: "Nephropathology" },
+    { "@type": "Physician", name: "Dr. Mauro García Montenegro", jobTitle: "Médico Especialista", medicalSpecialty: "Hematopathology" },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -93,6 +126,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(medicalOrganizationSchema),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -102,7 +141,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>

@@ -1,15 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Phone, Mail, MapPin, Clock, Briefcase, FileText, Calculator, HeartPulse, ClipboardList } from "lucide-react";
 
 export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
-      { title: "Contacto — CAP Vighi" },
-      { name: "description", content: "Teléfonos, emails y dirección del Centro de Anatomía Patológica Dra. Susana Vighi en Buenos Aires." },
-      { property: "og:title", content: "Contacto — CAP Vighi" },
-      { property: "og:description", content: "Estamos a disposición de pacientes, médicos derivantes e instituciones." },
+      { title: seoText("seo.contacto.title") },
+      { name: "description", content: seoText("seo.contacto.description") },
+      { property: "og:title", content: seoText("seo.contacto.ogTitle") },
+      { property: "og:description", content: seoText("seo.contacto.ogDescription") },
     ],
   }),
   component: ContactoPage,

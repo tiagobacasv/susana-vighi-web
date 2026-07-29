@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import {
   FlaskConical,
@@ -23,18 +24,10 @@ import { useEffect, useState, type ElementType } from "react";
 export const Route = createFileRoute("/especialidades")({
   head: () => ({
     meta: [
-      { title: "Especialidades — CAP Vighi" },
-      {
-        name: "description",
-        content:
-          "Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad: citometría de flujo, inmunofluorescencia y microscopía electrónica.",
-      },
-      { property: "og:title", content: "Especialidades — CAP Vighi" },
-      {
-        property: "og:description",
-        content:
-          "Diagnóstico anatomopatológico integral: biología molecular, inmunohistoquímica y técnicas de alta complejidad.",
-      },
+      { title: seoText("seo.especialidades.title") },
+      { name: "description", content: seoText("seo.especialidades.description") },
+      { property: "og:title", content: seoText("seo.especialidades.ogTitle") },
+      { property: "og:description", content: seoText("seo.especialidades.ogDescription") },
     ],
   }),
   component: EspecialidadesPage,

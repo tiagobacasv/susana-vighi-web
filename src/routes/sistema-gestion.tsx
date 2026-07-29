@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Gauge, Radar, Activity } from "lucide-react";
 import sistemaAsset from "@/assets/sistema-gestion.jpg";
@@ -7,18 +8,10 @@ import sistemaAsset from "@/assets/sistema-gestion.jpg";
 export const Route = createFileRoute("/sistema-gestion")({
   head: () => ({
     meta: [
-      { title: "Sistema de gestión — CAP Vighi" },
-      {
-        name: "description",
-        content:
-          "Los 3 pilares del servicio del Centro de Anatomía Patológica Dra. Susana Vighi: Celeridad, Trazabilidad y Proactividad.",
-      },
-      { property: "og:title", content: "Sistema de gestión — CAP Vighi" },
-      {
-        property: "og:description",
-        content:
-          "Eficiencia operativa, seguimiento en tiempo real y monitoreo continuo orientados a la excelencia diagnóstica.",
-      },
+      { title: seoText("seo.sistemaGestion.title") },
+      { name: "description", content: seoText("seo.sistemaGestion.description") },
+      { property: "og:title", content: seoText("seo.sistemaGestion.ogTitle") },
+      { property: "og:description", content: seoText("seo.sistemaGestion.ogDescription") },
     ],
   }),
   component: SistemaGestionPage,
@@ -30,7 +23,6 @@ type Metric = { label: string; value: string; sub?: string };
 type PilarTr = { titulo: string; subtitulo: string; desc: string; metrics: Metric[] };
 
 const pilarIcons = [Gauge, Radar, Activity];
-const pilarNums = ["01", "02", "03"];
 
 // ───────────────────────────────────────────────────────────────────────────────
 
@@ -114,9 +106,6 @@ function SistemaGestionPage() {
                   key={p.titulo}
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-background p-8 transition-colors hover:border-clinical-accent"
                 >
-                  <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
-                    {pilarNums[i]}
-                  </div>
                   <div className="mb-6 flex size-12 items-center justify-center rounded-xl bg-clinical-blue text-white shadow-sm">
                     <Icon className="size-5" />
                   </div>

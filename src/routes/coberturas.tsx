@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { ShieldCheck, Building2, ArrowRight } from "lucide-react";
 import osde from "@/assets/Coberturas/osde_logo.png";
@@ -54,18 +55,10 @@ import ivi from "@/assets/CentrosMedicos/logo-ivi.png";
 export const Route = createFileRoute("/coberturas")({
   head: () => ({
     meta: [
-      { title: "Coberturas y centros — CAP Vighi" },
-      {
-        name: "description",
-        content:
-          "Obras sociales, prepagas y centros de salud con los que trabajamos en anatomía patológica.",
-      },
-      { property: "og:title", content: "Coberturas y centros — CAP Vighi" },
-      {
-        property: "og:description",
-        content:
-          "Red de obras sociales, medicina prepaga y clínicas asociadas a CAP Vighi.",
-      },
+      { title: seoText("seo.coberturas.title") },
+      { name: "description", content: seoText("seo.coberturas.description") },
+      { property: "og:title", content: seoText("seo.coberturas.ogTitle") },
+      { property: "og:description", content: seoText("seo.coberturas.ogDescription") },
     ],
   }),
   component: CoberturasPage,
@@ -166,9 +159,6 @@ function CoberturasPage() {
               <ShieldCheck className="size-5 text-white" />
             </div>
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                01
-              </span>
               <h2 className="text-2xl font-bold tracking-tight">
                 {t("coberturas.obrasSociales.title")}
               </h2>
@@ -188,9 +178,6 @@ function CoberturasPage() {
               <Building2 className="size-5 text-white" />
             </div>
             <div>
-              <span className="font-mono text-xs uppercase tracking-widest text-clinical-accent">
-                02
-              </span>
               <h2 className="text-2xl font-bold tracking-tight">
                 {t("coberturas.centros.title")}
               </h2>

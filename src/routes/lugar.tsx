@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Microscope, FlaskConical, Beaker, Snowflake, Scissors, Layers, Sparkles, Cpu } from "lucide-react";
@@ -8,6 +9,10 @@ import tecProcesadores from "@/assets/Tecnologia/procesadores.jpg";
 import tecCorte from "@/assets/Tecnologia/corte.jpg";
 import tecColoreador from "@/assets/Tecnologia/coloreador.jpg";
 import tecCriostato from "@/assets/Tecnologia/criostato.jpg";
+import tecBenchmarkUltra from "@/assets/Tecnologia/benchmarkultra.jpg";
+import tecMicroscopio from "@/assets/Tecnologia/microscopio.jpg";
+import tecPatologiaDigital from "@/assets/Tecnologia/patologiadigital.jpg";
+import tecEquipamientoAuxiliar from "@/assets/Tecnologia/equipamientoauxiliar.jpg";
 
 // Planta Baja
 import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.jpg";
@@ -40,10 +45,10 @@ import p3S5 from "@/assets/NuestroLugar/3P/Slider05_h.jpg";
 export const Route = createFileRoute("/lugar")({
   head: () => ({
     meta: [
-      { title: "Nuestro lugar — CAP Vighi" },
-      { name: "description", content: "Edificio especialmente diseñado para la actividad de Anatomía Patológica, cumpliendo estándares de calidad y seguridad." },
-      { property: "og:title", content: "Nuestro lugar — CAP Vighi" },
-      { property: "og:description", content: "Cuatro pisos diseñados para la precisión diagnóstica y la trazabilidad." },
+      { title: seoText("seo.lugar.title") },
+      { name: "description", content: seoText("seo.lugar.description") },
+      { property: "og:title", content: seoText("seo.lugar.ogTitle") },
+      { property: "og:description", content: seoText("seo.lugar.ogDescription") },
     ],
   }),
   component: LugarPage,
@@ -177,7 +182,7 @@ type AparatoTr = { title: string; desc: string };
 type Aparato = { Icon: typeof Layers; title: string; desc: string; foto?: string };
 
 const aparatoIcons = [Layers, Scissors, Snowflake, Beaker, FlaskConical, Microscope, Cpu, Sparkles];
-const aparatoFotos = [tecProcesadores, tecCorte, tecCriostato, tecColoreador, undefined, undefined, undefined, undefined];
+const aparatoFotos = [tecProcesadores, tecCorte, tecCriostato, tecColoreador, tecBenchmarkUltra, tecMicroscopio, tecPatologiaDigital, tecEquipamientoAuxiliar];
 
 function AparatoCard({ a, verFotoLabel }: { a: Aparato; verFotoLabel: string }) {
   const [flipped, setFlipped] = useState(false);

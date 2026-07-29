@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import {
   ClipboardList,
@@ -15,18 +16,10 @@ import {
 export const Route = createFileRoute("/derivantes")({
   head: () => ({
     meta: [
-      { title: "Médicos derivantes — CAP Vighi" },
-      {
-        name: "description",
-        content:
-          "Instructivo para médicos derivantes: toma, fijación y envío de muestras, requisitos por tipo de estudio, formularios y contactos de coordinación médica.",
-      },
-      { property: "og:title", content: "Médicos derivantes — CAP Vighi" },
-      {
-        property: "og:description",
-        content:
-          "Protocolos, requisitos y coordinación para el envío de muestras al Centro de Anatomía Patológica Dra. Susana Vighi.",
-      },
+      { title: seoText("seo.derivantes.title") },
+      { name: "description", content: seoText("seo.derivantes.description") },
+      { property: "og:title", content: seoText("seo.derivantes.ogTitle") },
+      { property: "og:description", content: seoText("seo.derivantes.ogDescription") },
     ],
   }),
   component: DerivantesPage,
@@ -76,10 +69,10 @@ function DerivantesPage() {
                 key={p.n}
                 className="relative rounded-2xl border border-border bg-secondary p-8"
               >
-                <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
+                <div className="absolute right-6 top-6 font-mono text-[10px] uppercase tracking-widest text-clinical-slate">
                   {p.n}
                 </div>
-                <div className="mt-4 flex size-11 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                <div className="flex size-11 items-center justify-center rounded-lg bg-clinical-blue text-white">
                   <p.Icon className="size-5" />
                 </div>
                 <h3 className="mt-5 text-lg font-bold text-clinical-blue">
