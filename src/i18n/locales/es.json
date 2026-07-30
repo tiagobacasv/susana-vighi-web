@@ -79,6 +79,7 @@
     "management": "Sistema de gestión",
     "news": "Novedades",
     "contact": "Contacto",
+    "login": "Ingresar",
     "openMenu": "Abrir menú"
   },
   "lang": {
@@ -310,7 +311,7 @@
     },
     "bloques": [
       { "title": "¿Qué es una biopsia?", "text": "Es el estudio microscópico de una muestra de tejido o células obtenida por un médico. Nuestros patólogos analizan la muestra para establecer un diagnóstico preciso que guíe el tratamiento." },
-      { "title": "¿Cuánto demora el informe?", "text": "La mayoría de los estudios se entregan entre 24 y 72 horas hábiles. Los estudios de mayor complejidad (inmunohistoquímica, biología molecular) pueden requerir plazos adicionales." },
+      { "title": "¿Cuánto demora el informe?", "text": "Los plazos varían según el tipo de estudio: Papanicolaou 3 días hábiles, biopsia 6 días hábiles, inmunohistoquímica 7 días hábiles y biopsia con IHQ 9 días hábiles. Los estudios de mayor complejidad (biología molecular, técnicas especiales) pueden requerir plazos adicionales." },
       { "title": "¿Cómo retiro mi informe?", "text": "El informe se entrega a tu médico derivante y también podés retirarlo personalmente en nuestra sede con DNI, o solicitarlo por mail acreditando identidad." },
       { "title": "¿Dónde estamos?", "text": "Concepción Arenal 3732, Ciudad Autónoma de Buenos Aires. Atención de lunes a viernes de 08:00 a 20:00 hs." }
     ],
@@ -719,6 +720,14 @@
         "metrics": [{ "value": "Rojo Cero", "label": "Objetivo permanente" }]
       }
     ],
+    "access": {
+      "eyebrow": "Acceso para médicos e instituciones",
+      "title": "Consultá los informes de tus pacientes derivados.",
+      "description": "Médicos e instituciones con usuario asignado pueden ingresar al sistema para consultar el estado de sus derivaciones y descargar los informes de sus pacientes, con historial completo y trazabilidad.",
+      "cta": "Ingresar al sistema",
+      "requestText": "¿Todavía no tenés usuario?",
+      "requestLink": "Solicitalo a nuestro correo"
+    },
     "closing": {
       "eyebrow": "Compromiso operativo",
       "title": "La calidad diagnóstica también se construye con procesos medibles.",

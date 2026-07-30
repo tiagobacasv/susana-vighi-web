@@ -1,8 +1,41 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import { ChevronDown, LogIn } from "lucide-react";
 import logoImg from "@/assets/fav-icon.png";
 import { useLang } from "@/hooks/use-lang";
+import { SISTEMA_LOGIN_URL } from "@/lib/constants";
+
+function FlagAR({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 16" className={className} aria-hidden="true">
+      <rect width="24" height="16" fill="#74ACDF" />
+      <rect y="5.33" width="24" height="5.33" fill="#F6F6F6" />
+      <circle cx="12" cy="8" r="1.7" fill="#F6B40E" stroke="#85340A" strokeWidth="0.25" />
+    </svg>
+  );
+}
+
+function FlagUS({ className }: { className?: string }) {
+  const stripeH = 16 / 7;
+  return (
+    <svg viewBox="0 0 24 16" className={className} aria-hidden="true">
+      <rect width="24" height="16" fill="#FFFFFF" />
+      {[0, 1, 2, 3, 4, 5, 6].map(
+        (i) =>
+          i % 2 === 0 && (
+            <rect key={i} y={i * stripeH} width="24" height={stripeH} fill="#B22234" />
+          ),
+      )}
+      <rect width="10.5" height={stripeH * 4} fill="#3C3B6E" />
+    </svg>
+  );
+}
+
+const LANG_OPTIONS = [
+  { value: "es", Flag: FlagAR, label: "Español" },
+  { value: "en", Flag: FlagUS, label: "English" },
+] as const;
 
 const navKeys = [
   { to: "/", key: "home" },
@@ -31,37 +64,56 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 function LangToggle({ compact = false }: { compact?: boolean }) {
   const { t } = useTranslation();
   const { lang, setLang } = useLang();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const pill = (value: "es" | "en", label: string) => {
-    const active = lang === value;
-    return (
-      <button
-        onClick={() => setLang(value)}
-        aria-pressed={active}
-        className={
-          (compact ? "px-2 py-0.5 text-[9px]" : "px-2.5 py-1 text-[10px]") +
-          " rounded-full font-mono font-semibold uppercase tracking-wider transition-colors " +
-          (active
-            ? "bg-clinical-blue text-primary-foreground"
-            : "text-clinical-slate hover:text-foreground")
-        }
-      >
-        {label}
-      </button>
-    );
-  };
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [open]);
+
+  const current = LANG_OPTIONS.find((o) => o.value === lang) ?? LANG_OPTIONS[0];
 
   return (
-    <div
-      role="group"
-      aria-label={t("lang.aria")}
-      className={
-        (compact ? "gap-0.5 p-0.5" : "gap-1 p-1") +
-        " flex items-center rounded-full border border-border bg-secondary"
-      }
-    >
-      {pill("es", "ES")}
-      {pill("en", "EN")}
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        aria-label={t("lang.aria")}
+        aria-expanded={open}
+        className={
+          (compact ? "gap-1 px-2 py-1 text-[11px]" : "gap-1.5 px-3 py-1.5 text-xs") +
+          " flex items-center rounded-full border border-border bg-secondary font-medium text-foreground transition-colors hover:border-clinical-accent/50"
+        }
+      >
+        <current.Flag className={compact ? "h-2.5 w-auto rounded-[1px]" : "h-3 w-auto rounded-[1px]"} />
+        <span className="uppercase tracking-wide">{current.value}</span>
+        <ChevronDown className={compact ? "size-3" : "size-3.5"} />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-full z-50 mt-2 min-w-36 overflow-hidden rounded-lg border border-border bg-background shadow-lg">
+          {LANG_OPTIONS.map((o) => (
+            <button
+              key={o.value}
+              onClick={() => {
+                setLang(o.value);
+                setOpen(false);
+              }}
+              className={
+                "flex w-full items-center gap-2.5 px-3 py-2.5 text-left text-sm transition-colors hover:bg-secondary " +
+                (lang === o.value ? "font-semibold text-clinical-blue" : "text-clinical-slate")
+              }
+            >
+              <o.Flag className="h-3.5 w-auto rounded-[1px]" />
+              {o.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -81,7 +133,7 @@ function Navbar() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 text-[10px] font-semibold uppercase tracking-[0.1em] text-clinical-slate xl:flex">
+        <div className="hidden items-center gap-5 text-[10px] font-semibold uppercase tracking-[0.08em] text-clinical-slate xl:flex">
           {navKeys.slice(1, -1).map((l) => {
             const active = pathname === l.to;
             return (
@@ -103,6 +155,16 @@ function Navbar() {
           >
             {t("nav.contact")}
           </Link>
+          <a
+            href={SISTEMA_LOGIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            title={t("nav.login")}
+            aria-label={t("nav.login")}
+            className="flex size-9 items-center justify-center rounded-full border border-border text-clinical-slate transition-colors hover:border-clinical-accent/50 hover:text-clinical-accent"
+          >
+            <LogIn className="size-4" />
+          </a>
           <LangToggle />
         </div>
 
@@ -135,6 +197,14 @@ function Navbar() {
                 {t(`nav.${l.key}`)}
               </Link>
             ))}
+            <a
+              href={SISTEMA_LOGIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-md px-3 py-3 text-sm font-medium uppercase tracking-wide text-clinical-accent hover:bg-secondary"
+            >
+              {t("nav.login")}
+            </a>
           </div>
         </div>
       )}

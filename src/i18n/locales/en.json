@@ -79,6 +79,7 @@
     "management": "Management system",
     "news": "News",
     "contact": "Contact",
+    "login": "Log in",
     "openMenu": "Open menu"
   },
   "lang": {
@@ -301,7 +302,7 @@
     },
     "bloques": [
       { "title": "What is a biopsy?", "text": "It's the microscopic study of a tissue or cell sample obtained by a physician. Our pathologists analyze it to establish an accurate diagnosis that guides treatment." },
-      { "title": "How long does the report take?", "text": "Most studies are delivered within 24 to 72 business hours. More complex studies (immunohistochemistry, molecular biology) may require additional time." },
+      { "title": "How long does the report take?", "text": "Turnaround varies by study type: Pap smear 3 business days, biopsy 6 business days, immunohistochemistry 7 business days, and biopsy with IHC 9 business days. More complex studies (molecular biology, special techniques) may require additional time." },
       { "title": "How do I pick up my report?", "text": "The report is delivered to your referring physician; you can also pick it up in person with your ID or request it by email with proof of identity." },
       { "title": "Where are we?", "text": "Concepción Arenal 3732, Buenos Aires. Open Monday to Friday from 8:00 to 20:00." }
     ],
@@ -710,6 +711,14 @@
         "metrics": [{ "value": "Zero Red", "label": "Standing goal" }]
       }
     ],
+    "access": {
+      "eyebrow": "Access for physicians and institutions",
+      "title": "Check your referred patients' reports.",
+      "description": "Physicians and institutions with an assigned user can log in to the system to check the status of their referrals and download their patients' reports, with full history and traceability.",
+      "cta": "Log in to the system",
+      "requestText": "Don't have a user yet?",
+      "requestLink": "Request one by email"
+    },
     "closing": {
       "eyebrow": "Operational commitment",
       "title": "Diagnostic quality is also built with measurable processes.",

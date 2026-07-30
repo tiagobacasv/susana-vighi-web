@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
-import { Gauge, Radar, Activity } from "lucide-react";
+import { Gauge, Radar, Activity, LogIn } from "lucide-react";
 import sistemaAsset from "@/assets/sistema-gestion.jpg";
+import { SISTEMA_LOGIN_URL } from "@/lib/constants";
 
 export const Route = createFileRoute("/sistema-gestion")({
   head: () => ({
@@ -39,6 +40,49 @@ function SistemaGestionPage() {
         title={t("sistemaGestion.hero.title")}
         description={t("sistemaGestion.hero.description")}
       />
+
+      {/* Acceso al sistema */}
+      <section className="border-b border-border bg-background py-10">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col gap-6 rounded-2xl border border-border bg-secondary p-6 md:flex-row md:items-center md:justify-between md:p-7">
+            <div className="flex items-start gap-4">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-clinical-blue text-white">
+                <LogIn className="size-5" />
+              </div>
+              <div>
+                <div className="font-mono text-[10px] uppercase tracking-widest text-clinical-accent">
+                  {t("sistemaGestion.access.eyebrow")}
+                </div>
+                <h2 className="mt-1 text-lg font-bold tracking-tight text-clinical-blue">
+                  {t("sistemaGestion.access.title")}
+                </h2>
+                <p className="mt-1 max-w-xl text-sm text-clinical-slate">
+                  {t("sistemaGestion.access.description")}
+                </p>
+              </div>
+            </div>
+            <div className="shrink-0 md:text-right">
+              <a
+                href={SISTEMA_LOGIN_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-lg bg-clinical-blue px-6 py-3 font-semibold text-primary-foreground hover:opacity-90"
+              >
+                {t("sistemaGestion.access.cta")}
+              </a>
+              <p className="mt-2 text-xs text-clinical-slate">
+                {t("sistemaGestion.access.requestText")}{" "}
+                <a
+                  href="mailto:anatomia.patologica@susanavighi.com.ar"
+                  className="font-semibold text-clinical-blue hover:underline"
+                >
+                  {t("sistemaGestion.access.requestLink")}
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Imagen referencial del sistema */}
       <section className="border-b border-border bg-background">
