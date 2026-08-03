@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { ChevronDown, LogIn } from "lucide-react";
 import logoImg from "@/assets/fav-icon.png";
+import logoWhiteImg from "@/assets/icon-white.png";
 import { useLang } from "@/hooks/use-lang";
 import { SISTEMA_LOGIN_URL } from "@/lib/constants";
 
@@ -219,7 +220,7 @@ function Footer() {
       <div className="mx-auto grid max-w-7xl gap-16 px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2.5">
-            <img src={logoImg} alt="CAP Vighi" className="h-16 w-auto object-contain" />
+            <img src={logoWhiteImg} alt="CAP Vighi" className="h-16 w-auto object-contain" />
             <span className="text-lg font-bold uppercase tracking-tight">CAP Vighi</span>
           </div>
           <p className="mt-6 max-w-sm text-sm text-white/60">
@@ -257,7 +258,16 @@ function Footer() {
       </div>
       <div className="mx-auto mt-16 flex max-w-7xl flex-col justify-between gap-4 border-t border-white/10 px-6 pt-8 text-[10px] uppercase tracking-widest text-white/40 md:flex-row">
         <span>© {new Date().getFullYear()} {t("footer.rights")}</span>
-        <span>{t("footer.quality")}</span>
+        <span>
+          {t("footer.pressKit.label")}:{" "}
+          <a href="/brandbook-cap-vighi.pdf" download className="underline underline-offset-2 hover:text-white/70">
+            {t("footer.pressKit.manual")}
+          </a>
+          {" · "}
+          <a href={logoImg} download="cap-vighi-logo.png" className="underline underline-offset-2 hover:text-white/70">
+            {t("footer.pressKit.logo")}
+          </a>
+        </span>
       </div>
     </footer>
   );

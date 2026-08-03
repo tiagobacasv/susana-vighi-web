@@ -93,7 +93,11 @@
     "location": "Ciudad de Buenos Aires, Argentina",
     "hours": "Lun a Vie · 08:00 — 20:00",
     "rights": "CAP Vighi",
-    "quality": "Sistema de gestión de calidad certificado"
+    "pressKit": {
+      "label": "Kit de prensa",
+      "manual": "Manual de marca",
+      "logo": "Logo"
+    }
   },
   "home": {
     "hero": {
