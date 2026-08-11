@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
 import { Route as PropositoRouteImport } from './routes/proposito'
 import { Route as PacientesRouteImport } from './routes/pacientes'
@@ -21,6 +22,11 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SistemaGestionRoute = SistemaGestionRouteImport.update({
   id: '/sistema-gestion',
   path: '/sistema-gestion',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/pacientes'
     | '/proposito'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -171,10 +183,18 @@ export interface RootRouteChildren {
   PacientesRoute: typeof PacientesRoute
   PropositoRoute: typeof PropositoRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sistema-gestion': {
       id: '/sistema-gestion'
       path: '/sistema-gestion'
@@ -267,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   PacientesRoute: PacientesRoute,
   PropositoRoute: PropositoRoute,
   SistemaGestionRoute: SistemaGestionRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
