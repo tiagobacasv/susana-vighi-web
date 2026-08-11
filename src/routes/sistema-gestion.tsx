@@ -13,7 +13,9 @@ export const Route = createFileRoute("/sistema-gestion")({
       { name: "description", content: seoText("seo.sistemaGestion.description") },
       { property: "og:title", content: seoText("seo.sistemaGestion.ogTitle") },
       { property: "og:description", content: seoText("seo.sistemaGestion.ogDescription") },
+      { property: "og:url", content: "/sistema-gestion" },
     ],
+    links: [{ rel: "canonical", href: "/sistema-gestion" }],
   }),
   component: SistemaGestionPage,
 });

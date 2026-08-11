@@ -28,7 +28,9 @@ export const Route = createFileRoute("/especialidades")({
       { name: "description", content: seoText("seo.especialidades.description") },
       { property: "og:title", content: seoText("seo.especialidades.ogTitle") },
       { property: "og:description", content: seoText("seo.especialidades.ogDescription") },
+      { property: "og:url", content: "/especialidades" },
     ],
+    links: [{ rel: "canonical", href: "/especialidades" }],
   }),
   component: EspecialidadesPage,
 });

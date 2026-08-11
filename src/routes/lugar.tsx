@@ -49,7 +49,9 @@ export const Route = createFileRoute("/lugar")({
       { name: "description", content: seoText("seo.lugar.description") },
       { property: "og:title", content: seoText("seo.lugar.ogTitle") },
       { property: "og:description", content: seoText("seo.lugar.ogDescription") },
+      { property: "og:url", content: "/lugar" },
     ],
+    links: [{ rel: "canonical", href: "/lugar" }],
   }),
   component: LugarPage,
 });

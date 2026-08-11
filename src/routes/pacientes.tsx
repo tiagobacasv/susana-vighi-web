@@ -12,7 +12,9 @@ export const Route = createFileRoute("/pacientes")({
       { name: "description", content: seoText("seo.pacientes.description") },
       { property: "og:title", content: seoText("seo.pacientes.ogTitle") },
       { property: "og:description", content: seoText("seo.pacientes.ogDescription") },
+      { property: "og:url", content: "/pacientes" },
     ],
+    links: [{ rel: "canonical", href: "/pacientes" }],
   }),
   component: PacientesPage,
 });

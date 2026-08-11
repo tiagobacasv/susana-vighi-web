@@ -59,7 +59,9 @@ export const Route = createFileRoute("/coberturas")({
       { name: "description", content: seoText("seo.coberturas.description") },
       { property: "og:title", content: seoText("seo.coberturas.ogTitle") },
       { property: "og:description", content: seoText("seo.coberturas.ogDescription") },
+      { property: "og:url", content: "/coberturas" },
     ],
+    links: [{ rel: "canonical", href: "/coberturas" }],
   }),
   component: CoberturasPage,
 });

@@ -11,7 +11,9 @@ export const Route = createFileRoute("/contacto")({
       { name: "description", content: seoText("seo.contacto.description") },
       { property: "og:title", content: seoText("seo.contacto.ogTitle") },
       { property: "og:description", content: seoText("seo.contacto.ogDescription") },
+      { property: "og:url", content: "/contacto" },
     ],
+    links: [{ rel: "canonical", href: "/contacto" }],
   }),
   component: ContactoPage,
 });
