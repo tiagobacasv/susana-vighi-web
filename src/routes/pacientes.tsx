@@ -158,9 +158,13 @@ function FaqItem({
   defaultOpen?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+  const panelId = `faq-${q.replace(/\W+/g, "-").toLowerCase()}`;
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-secondary">
       <button
+        type="button"
+        aria-expanded={open}
+        aria-controls={panelId}
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
       >
@@ -172,7 +176,7 @@ function FaqItem({
         )}
       </button>
       {open && (
-        <div className="border-t border-border bg-background px-6 py-5 text-sm text-clinical-slate">
+        <div id={panelId} role="region" className="border-t border-border bg-background px-6 py-5 text-sm text-clinical-slate">
           {a}
         </div>
       )}

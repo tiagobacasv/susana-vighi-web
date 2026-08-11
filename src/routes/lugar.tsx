@@ -95,6 +95,9 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
 
   return (
     <div
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={nombre}
       className="relative flex h-[460px] items-center justify-center overflow-hidden md:h-[680px]"
       style={{ perspective: "1100px" }}
       onMouseEnter={() => setPaused(true)}
@@ -131,10 +134,10 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
         );
       })}
 
-      <button onClick={prev} className="absolute left-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+      <button onClick={prev} type="button" aria-label={`${nombre}: anterior`} className="absolute left-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
         <ChevronLeft className="size-5" />
       </button>
-      <button onClick={next} className="absolute right-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+      <button onClick={next} type="button" aria-label={`${nombre}: siguiente`} className="absolute right-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
         <ChevronRight className="size-5" />
       </button>
 
@@ -142,6 +145,9 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
         {fotos.map((_, i) => (
           <button
             key={i}
+            type="button"
+            aria-label={`${nombre}: foto ${i + 1}`}
+            aria-current={i === current}
             onClick={() => setCurrent(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/50"}`}
           />
