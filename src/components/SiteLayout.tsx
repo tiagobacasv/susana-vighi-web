@@ -46,6 +46,7 @@ const navKeys = [
   { to: "/especialidades", key: "specialties" },
   { to: "/derivantes", key: "referring" },
   { to: "/pacientes", key: "patients" },
+  { to: "/segunda-opinion", key: "secondOpinion" },
   { to: "/coberturas", key: "insurance" },
   { to: "/sistema-gestion", key: "management" },
   { to: "/novedades", key: "news" },

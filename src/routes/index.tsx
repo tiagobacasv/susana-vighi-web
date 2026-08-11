@@ -23,7 +23,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: seoText("seo.home.description") },
       { property: "og:title", content: seoText("seo.home.ogTitle") },
       { property: "og:description", content: seoText("seo.home.ogDescription") },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });

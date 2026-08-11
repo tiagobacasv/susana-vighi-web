@@ -5,42 +5,42 @@ import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, MapPin, Microscope, FlaskConical, Beaker, Snowflake, Scissors, Layers, Sparkles, Cpu } from "lucide-react";
 
-import tecProcesadores from "@/assets/Tecnologia/procesadores.jpg";
-import tecCorte from "@/assets/Tecnologia/corte.jpg";
-import tecColoreador from "@/assets/Tecnologia/coloreador.jpg";
-import tecCriostato from "@/assets/Tecnologia/criostato.jpg";
-import tecBenchmarkUltra from "@/assets/Tecnologia/benchmarkultra.jpg";
-import tecMicroscopio from "@/assets/Tecnologia/microscopio.jpg";
-import tecPatologiaDigital from "@/assets/Tecnologia/patologiadigital.jpg";
-import tecEquipamientoAuxiliar from "@/assets/Tecnologia/equipamientoauxiliar.jpg";
+import tecProcesadores from "@/assets/Tecnologia/procesadores.webp";
+import tecCorte from "@/assets/Tecnologia/corte.webp";
+import tecColoreador from "@/assets/Tecnologia/coloreador.webp";
+import tecCriostato from "@/assets/Tecnologia/criostato.webp";
+import tecBenchmarkUltra from "@/assets/Tecnologia/benchmarkultra.webp";
+import tecMicroscopio from "@/assets/Tecnologia/microscopio.webp";
+import tecPatologiaDigital from "@/assets/Tecnologia/patologiadigital.webp";
+import tecEquipamientoAuxiliar from "@/assets/Tecnologia/equipamientoauxiliar.webp";
 
 // Planta Baja
-import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.jpg";
-import pbS2 from "@/assets/NuestroLugar/PB/Slider02_h.jpg";
-import pbS3 from "@/assets/NuestroLugar/PB/Slider03_h.jpg";
-import pbS4 from "@/assets/NuestroLugar/PB/Slider04_h.jpg";
-import pbS5 from "@/assets/NuestroLugar/PB/Slider05_h.jpg";
+import pbS1 from "@/assets/NuestroLugar/PB/Slider01_h.webp";
+import pbS2 from "@/assets/NuestroLugar/PB/Slider02_h.webp";
+import pbS3 from "@/assets/NuestroLugar/PB/Slider03_h.webp";
+import pbS4 from "@/assets/NuestroLugar/PB/Slider04_h.webp";
+import pbS5 from "@/assets/NuestroLugar/PB/Slider05_h.webp";
 
 // Primer Piso
-import p1S1 from "@/assets/NuestroLugar/1P/Slider01_h.jpg";
-import p1S2 from "@/assets/NuestroLugar/1P/Slider02_h.jpg";
-import p1S3 from "@/assets/NuestroLugar/1P/Slider03_h.jpg";
-import p1S4 from "@/assets/NuestroLugar/1P/Slider04_h.jpg";
-import p1S5 from "@/assets/NuestroLugar/1P/Slider05_h.jpg";
+import p1S1 from "@/assets/NuestroLugar/1P/Slider01_h.webp";
+import p1S2 from "@/assets/NuestroLugar/1P/Slider02_h.webp";
+import p1S3 from "@/assets/NuestroLugar/1P/Slider03_h.webp";
+import p1S4 from "@/assets/NuestroLugar/1P/Slider04_h.webp";
+import p1S5 from "@/assets/NuestroLugar/1P/Slider05_h.webp";
 
 // Segundo Piso
-import p2S1 from "@/assets/NuestroLugar/2P/Slider01_h.jpg";
-import p2S2 from "@/assets/NuestroLugar/2P/Slider02_h.jpg";
-import p2S3 from "@/assets/NuestroLugar/2P/Slider03_h.jpg";
-import p2S4 from "@/assets/NuestroLugar/2P/Slider04_h.jpg";
-import p2S5 from "@/assets/NuestroLugar/2P/Slider05_h.jpg";
+import p2S1 from "@/assets/NuestroLugar/2P/Slider01_h.webp";
+import p2S2 from "@/assets/NuestroLugar/2P/Slider02_h.webp";
+import p2S3 from "@/assets/NuestroLugar/2P/Slider03_h.webp";
+import p2S4 from "@/assets/NuestroLugar/2P/Slider04_h.webp";
+import p2S5 from "@/assets/NuestroLugar/2P/Slider05_h.webp";
 
 // Tercer Piso
-import p3S1 from "@/assets/NuestroLugar/3P/Slider01_h.jpg";
-import p3S2 from "@/assets/NuestroLugar/3P/Slider02_h.jpg";
-import p3S3 from "@/assets/NuestroLugar/3P/Slider03_h.jpg";
-import p3S4 from "@/assets/NuestroLugar/3P/Slider04_h.jpg";
-import p3S5 from "@/assets/NuestroLugar/3P/Slider05_h.jpg";
+import p3S1 from "@/assets/NuestroLugar/3P/Slider01_h.webp";
+import p3S2 from "@/assets/NuestroLugar/3P/Slider02_h.webp";
+import p3S3 from "@/assets/NuestroLugar/3P/Slider03_h.webp";
+import p3S4 from "@/assets/NuestroLugar/3P/Slider04_h.webp";
+import p3S5 from "@/assets/NuestroLugar/3P/Slider05_h.webp";
 
 export const Route = createFileRoute("/lugar")({
   head: () => ({
@@ -49,7 +49,9 @@ export const Route = createFileRoute("/lugar")({
       { name: "description", content: seoText("seo.lugar.description") },
       { property: "og:title", content: seoText("seo.lugar.ogTitle") },
       { property: "og:description", content: seoText("seo.lugar.ogDescription") },
+      { property: "og:url", content: "/lugar" },
     ],
+    links: [{ rel: "canonical", href: "/lugar" }],
   }),
   component: LugarPage,
 });
@@ -93,6 +95,9 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
 
   return (
     <div
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={nombre}
       className="relative flex h-[460px] items-center justify-center overflow-hidden md:h-[680px]"
       style={{ perspective: "1100px" }}
       onMouseEnter={() => setPaused(true)}
@@ -129,10 +134,10 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
         );
       })}
 
-      <button onClick={prev} className="absolute left-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+      <button onClick={prev} type="button" aria-label={`${nombre}: anterior`} className="absolute left-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
         <ChevronLeft className="size-5" />
       </button>
-      <button onClick={next} className="absolute right-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
+      <button onClick={next} type="button" aria-label={`${nombre}: siguiente`} className="absolute right-3 z-20 flex size-9 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-sm transition hover:bg-white/40">
         <ChevronRight className="size-5" />
       </button>
 
@@ -140,6 +145,9 @@ function CoverflowCarousel({ fotos, nombre }: { fotos: Foto[]; nombre: string })
         {fotos.map((_, i) => (
           <button
             key={i}
+            type="button"
+            aria-label={`${nombre}: foto ${i + 1}`}
+            aria-current={i === current}
             onClick={() => setCurrent(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/50"}`}
           />

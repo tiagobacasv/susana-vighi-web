@@ -65,6 +65,12 @@
       "description": "Actividad académica, publicaciones, participaciones en congresos y novedades técnicas del Centro de Anatomía Patológica Dra. Susana Vighi.",
       "ogTitle": "Novedades y publicaciones — CAP Vighi",
       "ogDescription": "Casos de interés académico, publicaciones y participaciones en congresos del equipo CAP Vighi."
+    },
+    "segundaOpinion": {
+      "title": "Segunda opinión diagnóstica — CAP Vighi",
+      "description": "Revisión de diagnósticos anatomopatológicos por especialistas: circuito de envío de tacos y vidrios, requisitos y tiempos de respuesta.",
+      "ogTitle": "Segunda opinión diagnóstica — CAP Vighi",
+      "ogDescription": "Revisión experta de biopsias y citologías por subespecialistas del Centro de Anatomía Patológica Dra. Susana Vighi."
     }
   },
   "nav": {
@@ -80,7 +86,8 @@
     "news": "Novedades",
     "contact": "Contacto",
     "login": "Ingresar",
-    "openMenu": "Abrir menú"
+    "openMenu": "Abrir menú",
+    "secondOpinion": "Segunda opinión"
   },
   "lang": {
     "toggle": "EN",
@@ -142,19 +149,40 @@
       "eyebrow": "Nuestros pilares",
       "title": "Pioneros en la incorporación de patología digital e IA en Argentina.",
       "description": "Integramos patología digital e inteligencia artificial a nuestros procesos para optimizar el flujo de trabajo y reducir significativamente los tiempos de informe.",
-      "celeridad": { "title": "Celeridad", "desc": "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible." },
-      "calidad": { "title": "Calidad médica", "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares." },
-      "equipo": { "title": "Equipo", "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes." },
-      "tecnologia": { "title": "Tecnología", "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo." }
+      "celeridad": {
+        "title": "Celeridad",
+        "desc": "Reducir tiempos de diagnóstico puede salvar vidas. La logística está diseñada para informar lo antes posible."
+      },
+      "calidad": {
+        "title": "Calidad médica",
+        "desc": "Fomentamos los más altos estándares con controles internos y revisión por pares."
+      },
+      "equipo": {
+        "title": "Equipo",
+        "desc": "Formamos a nuestros líderes en mandos medios y gestionamos equipos altamente eficientes."
+      },
+      "tecnologia": {
+        "title": "Tecnología",
+        "desc": "Invertimos en aparatología de alta complejidad y patología digital integrada al flujo."
+      }
     },
     "stats": {
       "eyebrow": "En números",
       "title": "Los números detrás de nuestra trayectoria.",
       "placeholderTag": "Dato de ejemplo",
       "items": [
-        { "value": "30+", "label": "Años de trayectoria" },
-        { "value": "10.000+", "label": "Protocolos procesados al mes" },
-        { "value": "2.000+", "label": "Médicos que confían en nosotros" }
+        {
+          "value": "30+",
+          "label": "Años de trayectoria"
+        },
+        {
+          "value": "10.000+",
+          "label": "Protocolos procesados al mes"
+        },
+        {
+          "value": "2.000+",
+          "label": "Médicos que confían en nosotros"
+        }
       ]
     },
     "insurance": {
@@ -176,7 +204,11 @@
       "title": "Diagnóstico anatomopatológico integral.",
       "description": "Biología Molecular, Inmunohistoquímica y Técnicas de Alta Complejidad — con tecnología validada y partnerships internacionales."
     },
-    "indexLabels": { "specialty": "Especialidad", "sub": "Subespecialidades", "comp": "Complementarios" },
+    "indexLabels": {
+      "specialty": "Especialidad",
+      "sub": "Subespecialidades",
+      "comp": "Complementarios"
+    },
     "partnership": "Partnership",
     "panelsHeading": "Paneles orientados según contexto clínico y morfológico",
     "shippingLabel": "Envío de muestras",
@@ -203,9 +235,18 @@
         "resumen": "La Biología Molecular es una herramienta clave para el diagnóstico de precisión: impacta en el pronóstico y la selección terapéutica de los pacientes. Nuestro servicio integra técnicas moleculares validadas en estrecha correlación con los hallazgos anatomopatológicos, garantizando resultados confiables y alineados con estándares científicos actuales.",
         "partnership": "Sistema BenchMark ULTRA — Roche ©",
         "destacados": [
-          { "titulo": "Tecnología de avanzada", "detalle": "El sistema BenchMark ULTRA es el sistema de tinción por láminas de hibridación in situ más innovador y totalmente automatizado de Roche Tissue Diagnostics. Cajones deslizantes individuales para flujo de trabajo de una sola pieza y un menú de más de 250 ensayos listos para usar." },
-          { "titulo": "Técnicas automatizadas", "detalle": "Efectuadas en condiciones estables, con idénticos antisueros y controles computarizados." },
-          { "titulo": "El diagnóstico biomolecular permite", "detalle": "Elevar las posibilidades y calidad de vida humana e incrementar las probabilidades en la gestación del embarazo." }
+          {
+            "titulo": "Tecnología de avanzada",
+            "detalle": "El sistema BenchMark ULTRA es el sistema de tinción por láminas de hibridación in situ más innovador y totalmente automatizado de Roche Tissue Diagnostics. Cajones deslizantes individuales para flujo de trabajo de una sola pieza y un menú de más de 250 ensayos listos para usar."
+          },
+          {
+            "titulo": "Técnicas automatizadas",
+            "detalle": "Efectuadas en condiciones estables, con idénticos antisueros y controles computarizados."
+          },
+          {
+            "titulo": "El diagnóstico biomolecular permite",
+            "detalle": "Elevar las posibilidades y calidad de vida humana e incrementar las probabilidades en la gestación del embarazo."
+          }
         ]
       },
       "inmunohistoquimica": {
@@ -213,13 +254,34 @@
         "resumen": "Herramienta esencial para el diagnóstico anatomopatológico actual: tipificación tumoral, evaluación de factores pronósticos y predictivos, aportando información decisiva para la clasificación y toma de decisiones clínicas. Utilizamos técnicas estandarizadas con protocolos automatizados en plataforma BenchMark Ultra de Ventana, con anticuerpos monoclonales y policlonales y controles de calidad rigurosos.",
         "partnership": "Plataforma BenchMark Ultra — Ventana / Roche ©",
         "paneles": [
-          { "titulo": "Inestabilidad Microsatelital", "detalle": "MLH1 (M1) · PMS2 (A16-4) · MSH2 (G219-1129) · MSH6 (SP93)" },
-          { "titulo": "PDL-1 · BRAF", "detalle": "Marcadores clave en oncología de precisión. Aporta información fundamental para la selección terapéutica." },
-          { "titulo": "Microambiente Inmunológico — Panel Endometrio", "detalle": "CD3 · CD4 · CD8 · CD16 · CD20 · CD45 · CD56 · CD68 · CD138" },
-          { "titulo": "Patología Mamaria", "detalle": "Receptores Hormonales (Estrógeno y Progesterona) · Her2-Neu · Ki-67 · Proteínas 5/6 · 8/18 · P-53" },
-          { "titulo": "Paneles de Hematopatología", "detalle": "Clasificación de neoplasias linfoides y mieloides." },
-          { "titulo": "Paneles de Origen Primario Desconocido", "detalle": "Orientado a la identificación del sitio primario tumoral." },
-          { "titulo": "Paneles Epiteliales, Mesenquimáticos y Neuroendócrinos", "detalle": "Para la correcta categorización tumoral." }
+          {
+            "titulo": "Inestabilidad Microsatelital",
+            "detalle": "MLH1 (M1) · PMS2 (A16-4) · MSH2 (G219-1129) · MSH6 (SP93)"
+          },
+          {
+            "titulo": "PDL-1 · BRAF",
+            "detalle": "Marcadores clave en oncología de precisión. Aporta información fundamental para la selección terapéutica."
+          },
+          {
+            "titulo": "Microambiente Inmunológico — Panel Endometrio",
+            "detalle": "CD3 · CD4 · CD8 · CD16 · CD20 · CD45 · CD56 · CD68 · CD138"
+          },
+          {
+            "titulo": "Patología Mamaria",
+            "detalle": "Receptores Hormonales (Estrógeno y Progesterona) · Her2-Neu · Ki-67 · Proteínas 5/6 · 8/18 · P-53"
+          },
+          {
+            "titulo": "Paneles de Hematopatología",
+            "detalle": "Clasificación de neoplasias linfoides y mieloides."
+          },
+          {
+            "titulo": "Paneles de Origen Primario Desconocido",
+            "detalle": "Orientado a la identificación del sitio primario tumoral."
+          },
+          {
+            "titulo": "Paneles Epiteliales, Mesenquimáticos y Neuroendócrinos",
+            "detalle": "Para la correcta categorización tumoral."
+          }
         ]
       },
       "tecnicas-alta-complejidad": {
@@ -237,13 +299,22 @@
           {
             "titulo": "Inmunofluorescencia",
             "descripcion": "Técnica que utiliza marcadores fluorescentes para identificar moléculas adheridas en la superficie celular. Se realiza sobre tejidos en fresco.",
-            "bullets": ["Biopsias renales", "Biopsias de piel", "Biopsias oculares"],
-            "envio": ["Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día."]
+            "bullets": [
+              "Biopsias renales",
+              "Biopsias de piel",
+              "Biopsias oculares"
+            ],
+            "envio": [
+              "Material en fresco: biopsias de tejidos refrigeradas con hielo (no congelar). Enviar en el día."
+            ]
           },
           {
             "titulo": "Microscopía Electrónica",
             "descripcion": "Técnica que obtiene imágenes de alta resolución sobre la ultraestructura celular. Utilizada como método complementario al diagnóstico anatomopatológico.",
-            "envio": ["Tacos de parafina.", "Adjuntar informe histológico."]
+            "envio": [
+              "Tacos de parafina.",
+              "Adjuntar informe histológico."
+            ]
           }
         ]
       },
@@ -257,18 +328,76 @@
       }
     },
     "subespecialidades": [
-      { "area": "Patología Mamaria & Ginecológica", "items": ["Patología mamaria", "Patología ginecológica", "Patología del tracto genital inferior", "Patología obstétrica y placentaria"] },
-      { "area": "Oncohematología & Linfoproliferativos", "items": ["Hematopatología", "Síndromes linfoproliferativos", "Médula ósea"] },
-      { "area": "Patología Digestiva & Hepática", "items": ["Patología gastrointestinal", "Patología hepática", "Patología pancreática y biliar"] },
-      { "area": "Uropatología & Nefropatología", "items": ["Patología urológica", "Patología renal médica", "Patología prostática"] },
-      { "area": "Dermatopatología & Tejidos Blandos", "items": ["Dermatopatología", "Tumores de tejidos blandos", "Patología ósea y articular"] },
-      { "area": "Otras áreas", "items": ["Patología pulmonar", "Patología endócrina", "Patología de cabeza y cuello", "Neuropatología", "Patología oftálmica", "Patología pediátrica"] }
+      {
+        "area": "Patología Mamaria & Ginecológica",
+        "items": [
+          "Patología mamaria",
+          "Patología ginecológica",
+          "Patología del tracto genital inferior",
+          "Patología obstétrica y placentaria"
+        ]
+      },
+      {
+        "area": "Oncohematología & Linfoproliferativos",
+        "items": [
+          "Hematopatología",
+          "Síndromes linfoproliferativos",
+          "Médula ósea"
+        ]
+      },
+      {
+        "area": "Patología Digestiva & Hepática",
+        "items": [
+          "Patología gastrointestinal",
+          "Patología hepática",
+          "Patología pancreática y biliar"
+        ]
+      },
+      {
+        "area": "Uropatología & Nefropatología",
+        "items": [
+          "Patología urológica",
+          "Patología renal médica",
+          "Patología prostática"
+        ]
+      },
+      {
+        "area": "Dermatopatología & Tejidos Blandos",
+        "items": [
+          "Dermatopatología",
+          "Tumores de tejidos blandos",
+          "Patología ósea y articular"
+        ]
+      },
+      {
+        "area": "Otras áreas",
+        "items": [
+          "Patología pulmonar",
+          "Patología endócrina",
+          "Patología de cabeza y cuello",
+          "Neuropatología",
+          "Patología oftálmica",
+          "Patología pediátrica"
+        ]
+      }
     ],
     "complementarios": [
-      { "titulo": "Biopsia por congelación intraoperatoria", "detalle": "Diagnóstico rápido durante el acto quirúrgico para definir conducta inmediata sobre la pieza." },
-      { "titulo": "Tinciones histoquímicas especiales", "detalle": "Batería amplia de coloraciones complementarias (PAS, Tricrómico, Reticulina, Ziehl-Neelsen, Giemsa, entre otras) para caracterización tisular." },
-      { "titulo": "Consulta y segunda opinión", "detalle": "Revisión de casos derivados de otros centros, con reinterpretación de láminas y ampliación de estudios cuando corresponde." },
-      { "titulo": "Interconsulta clínico-patológica", "detalle": "Diálogo permanente con médicos tratantes para correlacionar hallazgos morfológicos con el contexto clínico y orientar conducta terapéutica." }
+      {
+        "titulo": "Biopsia por congelación intraoperatoria",
+        "detalle": "Diagnóstico rápido durante el acto quirúrgico para definir conducta inmediata sobre la pieza."
+      },
+      {
+        "titulo": "Tinciones histoquímicas especiales",
+        "detalle": "Batería amplia de coloraciones complementarias (PAS, Tricrómico, Reticulina, Ziehl-Neelsen, Giemsa, entre otras) para caracterización tisular."
+      },
+      {
+        "titulo": "Consulta y segunda opinión",
+        "detalle": "Revisión de casos derivados de otros centros, con reinterpretación de láminas y ampliación de estudios cuando corresponde."
+      },
+      {
+        "titulo": "Interconsulta clínico-patológica",
+        "detalle": "Diálogo permanente con médicos tratantes para correlacionar hallazgos morfológicos con el contexto clínico y orientar conducta terapéutica."
+      }
     ]
   },
   "derivantes": {
@@ -277,8 +406,14 @@
       "title": "Para médicos derivantes.",
       "description": "Todo lo que necesitás para enviarnos una muestra: protocolos de fijación, requisitos por tipo de estudio, formularios y contactos directos de coordinación médica."
     },
-    "circuit": { "eyebrow": "Circuito de derivación", "title": "De la toma al informe." },
-    "requirements": { "eyebrow": "Requisitos por tipo de estudio", "title": "Preparación de la muestra." },
+    "circuit": {
+      "eyebrow": "Circuito de derivación",
+      "title": "De la toma al informe."
+    },
+    "requirements": {
+      "eyebrow": "Requisitos por tipo de estudio",
+      "title": "Preparación de la muestra."
+    },
     "warning": "Ante cualquier duda sobre fijación, transporte o tiempos, comunicate con nuestra coordinación médica antes de enviar la muestra.",
     "forms": {
       "title": "Formularios y protocolos",
@@ -293,18 +428,74 @@
       "seeAll": "Ver todos los datos de contacto →"
     },
     "pasos": [
-      { "titulo": "Solicitud", "texto": "Completá el formulario con datos del paciente, diagnóstico presuntivo, estudios previos y datos del profesional derivante." },
-      { "titulo": "Fijación de la muestra", "texto": "Formol al 10% tamponado en volumen 10:1 respecto al tejido. Recipiente rotulado con nombre y DNI del paciente." },
-      { "titulo": "Envío o retiro", "texto": "Retiro sin cargo dentro de CABA y GBA coordinando por teléfono. También recibimos envíos de todo el país." },
-      { "titulo": "Recepción y trazabilidad", "texto": "Cada muestra recibe código único de trazabilidad y confirmación de recepción al médico derivante." }
+      {
+        "titulo": "Solicitud",
+        "texto": "Completá el formulario con datos del paciente, diagnóstico presuntivo, estudios previos y datos del profesional derivante."
+      },
+      {
+        "titulo": "Fijación de la muestra",
+        "texto": "Formol al 10% tamponado en volumen 10:1 respecto al tejido. Recipiente rotulado con nombre y DNI del paciente."
+      },
+      {
+        "titulo": "Envío o retiro",
+        "texto": "Retiro sin cargo dentro de CABA y GBA coordinando por teléfono. También recibimos envíos de todo el país."
+      },
+      {
+        "titulo": "Recepción y trazabilidad",
+        "texto": "Cada muestra recibe código único de trazabilidad y confirmación de recepción al médico derivante."
+      }
     ],
     "requisitos": [
-      { "tipo": "Biopsia por punción / endoscópica", "items": ["Formol al 10% tamponado", "Rotulado con nombre y DNI", "Solicitud con localización anatómica precisa", "Adjuntar informe endoscópico si corresponde"] },
-      { "tipo": "Pieza quirúrgica", "items": ["Fijación inmediata en formol 10% (volumen 10:1)", "No cortar previo al envío salvo indicación", "Solicitud con dato clínico y quirúrgico completo", "Coordinar retiro dentro de las 24hs"] },
-      { "tipo": "Citología ginecológica (PAP)", "items": ["Extendido en portaobjeto identificado", "Fijación con spray citológico o alcohol 96°", "Datos clínicos: FUM, terapia hormonal, antecedentes"] },
-      { "tipo": "Punción con aguja fina (PAAF)", "items": ["Extendidos secados al aire (Diff-Quick) y fijados (Papanicolaou)", "Material en medio líquido para bloque celular si aplica", "Solicitud con localización, tamaño y ecografía"] },
-      { "tipo": "Biopsia intraoperatoria (congelación)", "items": ["Coordinar previamente por teléfono", "Muestra en fresco, sin fijar, en recipiente estéril", "Traslado inmediato al laboratorio"] },
-      { "tipo": "Estudios moleculares / IHQ compleja", "items": ["Muestra fijada en formol 10% (mínimo 6 hs, máximo 48 hs)", "Bloque de parafina con material representativo", "Solicitud detallando marcadores requeridos"] }
+      {
+        "tipo": "Biopsia por punción / endoscópica",
+        "items": [
+          "Formol al 10% tamponado",
+          "Rotulado con nombre y DNI",
+          "Solicitud con localización anatómica precisa",
+          "Adjuntar informe endoscópico si corresponde"
+        ]
+      },
+      {
+        "tipo": "Pieza quirúrgica",
+        "items": [
+          "Fijación inmediata en formol 10% (volumen 10:1)",
+          "No cortar previo al envío salvo indicación",
+          "Solicitud con dato clínico y quirúrgico completo",
+          "Coordinar retiro dentro de las 24hs"
+        ]
+      },
+      {
+        "tipo": "Citología ginecológica (PAP)",
+        "items": [
+          "Extendido en portaobjeto identificado",
+          "Fijación con spray citológico o alcohol 96°",
+          "Datos clínicos: FUM, terapia hormonal, antecedentes"
+        ]
+      },
+      {
+        "tipo": "Punción con aguja fina (PAAF)",
+        "items": [
+          "Extendidos secados al aire (Diff-Quick) y fijados (Papanicolaou)",
+          "Material en medio líquido para bloque celular si aplica",
+          "Solicitud con localización, tamaño y ecografía"
+        ]
+      },
+      {
+        "tipo": "Biopsia intraoperatoria (congelación)",
+        "items": [
+          "Coordinar previamente por teléfono",
+          "Muestra en fresco, sin fijar, en recipiente estéril",
+          "Traslado inmediato al laboratorio"
+        ]
+      },
+      {
+        "tipo": "Estudios moleculares / IHQ compleja",
+        "items": [
+          "Muestra fijada en formol 10% (mínimo 6 hs, máximo 48 hs)",
+          "Bloque de parafina con material representativo",
+          "Solicitud detallando marcadores requeridos"
+        ]
+      }
     ]
   },
   "pacientes": {
@@ -314,10 +505,22 @@
       "description": "Recibir un pedido de biopsia o citología puede generar dudas. Acá encontrás información clara sobre qué es cada estudio, cómo prepararte y cómo retirar tu informe."
     },
     "bloques": [
-      { "title": "¿Qué es una biopsia?", "text": "Es el estudio microscópico de una muestra de tejido o células obtenida por un médico. Nuestros patólogos analizan la muestra para establecer un diagnóstico preciso que guíe el tratamiento." },
-      { "title": "¿Cuánto demora el informe?", "text": "Los plazos varían según el tipo de estudio: Papanicolaou 3 días hábiles, biopsia 6 días hábiles, inmunohistoquímica 7 días hábiles y biopsia con IHQ 9 días hábiles. Los estudios de mayor complejidad (biología molecular, técnicas especiales) pueden requerir plazos adicionales." },
-      { "title": "¿Cómo retiro mi informe?", "text": "El informe se entrega a tu médico derivante y también podés retirarlo personalmente en nuestra sede con DNI, o solicitarlo por mail acreditando identidad." },
-      { "title": "¿Dónde estamos?", "text": "Concepción Arenal 3732, Ciudad Autónoma de Buenos Aires. Atención de lunes a viernes de 08:00 a 20:00 hs." }
+      {
+        "title": "¿Qué es una biopsia?",
+        "text": "Es el estudio microscópico de una muestra de tejido o células obtenida por un médico. Nuestros patólogos analizan la muestra para establecer un diagnóstico preciso que guíe el tratamiento."
+      },
+      {
+        "title": "¿Cuánto demora el informe?",
+        "text": "Los plazos varían según el tipo de estudio: Papanicolaou 3 días hábiles, biopsia 6 días hábiles, inmunohistoquímica 7 días hábiles y biopsia con IHQ 9 días hábiles. Los estudios de mayor complejidad (biología molecular, técnicas especiales) pueden requerir plazos adicionales."
+      },
+      {
+        "title": "¿Cómo retiro mi informe?",
+        "text": "El informe se entrega a tu médico derivante y también podés retirarlo personalmente en nuestra sede con DNI, o solicitarlo por mail acreditando identidad."
+      },
+      {
+        "title": "¿Dónde estamos?",
+        "text": "Concepción Arenal 3732, Ciudad Autónoma de Buenos Aires. Atención de lunes a viernes de 08:00 a 20:00 hs."
+      }
     ],
     "portal": {
       "eyebrow": "Retiro de informes",
@@ -333,13 +536,34 @@
     "faqFooter": "¿No encontrás lo que buscás?",
     "faqCta": "Escribinos",
     "faqs": [
-      { "q": "¿Necesito turno para dejar una muestra?", "a": "No es necesario turno. Podés acercarte de lunes a viernes de 08:00 a 20:00 hs. Si es una pieza quirúrgica o material que requiere condiciones especiales, coordinamos el retiro por teléfono." },
-      { "q": "¿Tengo que traer algo el día de la muestra?", "a": "Sí: la orden médica original, tu DNI y la credencial de tu obra social o prepaga si corresponde. Si ya tenés estudios previos relacionados, traelos también." },
-      { "q": "¿Cómo se entrega el resultado?", "a": "El informe original se envía a tu médico derivante. Vos podés retirar una copia con tu DNI, pedirla por mail o consultarla por teléfono." },
-      { "q": "¿Trabajan con mi obra social o prepaga?", "a": "Trabajamos con las principales obras sociales, prepagas y sanatorios del país. Consultá el listado completo en la sección Coberturas o llamanos para confirmar tu cobertura." },
-      { "q": "¿Qué pasa si mi médico pide una segunda opinión?", "a": "Recibimos consultas y segundas opiniones sobre material ya procesado en otro laboratorio. Traé los tacos de parafina y los preparados originales junto con el informe previo." },
-      { "q": "¿Puedo pedir el mismo informe años después?", "a": "Sí. Conservamos los preparados y tacos de parafina por los plazos que exige la normativa vigente. Podés solicitar una copia del informe o el material original acreditando identidad." },
-      { "q": "¿Cómo cuidan mis datos?", "a": "Trabajamos bajo la Ley 25.326 de Protección de Datos Personales. Tu información clínica es confidencial y solo se comparte con vos y con tu médico tratante." }
+      {
+        "q": "¿Necesito turno para dejar una muestra?",
+        "a": "No es necesario turno. Podés acercarte de lunes a viernes de 08:00 a 20:00 hs. Si es una pieza quirúrgica o material que requiere condiciones especiales, coordinamos el retiro por teléfono."
+      },
+      {
+        "q": "¿Tengo que traer algo el día de la muestra?",
+        "a": "Sí: la orden médica original, tu DNI y la credencial de tu obra social o prepaga si corresponde. Si ya tenés estudios previos relacionados, traelos también."
+      },
+      {
+        "q": "¿Cómo se entrega el resultado?",
+        "a": "El informe original se envía a tu médico derivante. Vos podés retirar una copia con tu DNI, pedirla por mail o consultarla por teléfono."
+      },
+      {
+        "q": "¿Trabajan con mi obra social o prepaga?",
+        "a": "Trabajamos con las principales obras sociales, prepagas y sanatorios del país. Consultá el listado completo en la sección Coberturas o llamanos para confirmar tu cobertura."
+      },
+      {
+        "q": "¿Qué pasa si mi médico pide una segunda opinión?",
+        "a": "Recibimos consultas y segundas opiniones sobre material ya procesado en otro laboratorio. Traé los tacos de parafina y los preparados originales junto con el informe previo."
+      },
+      {
+        "q": "¿Puedo pedir el mismo informe años después?",
+        "a": "Sí. Conservamos los preparados y tacos de parafina por los plazos que exige la normativa vigente. Podés solicitar una copia del informe o el material original acreditando identidad."
+      },
+      {
+        "q": "¿Cómo cuidan mis datos?",
+        "a": "Trabajamos bajo la Ley 25.326 de Protección de Datos Personales. Tu información clínica es confidencial y solo se comparte con vos y con tu médico tratante."
+      }
     ]
   },
   "equipo": {
@@ -348,7 +572,10 @@
       "title": "Profesionales formados para el más alto estándar.",
       "description": "Combinamos experiencia médica, gestión de calidad y especialización técnica para sostener un diagnóstico de excelencia."
     },
-    "viewToggle": { "grid": "Vista grilla", "org": "Organigrama" },
+    "viewToggle": {
+      "grid": "Vista grilla",
+      "org": "Organigrama"
+    },
     "hints": {
       "verMas": "ver más",
       "clickVolver": "click para volver",
@@ -368,24 +595,61 @@
         {
           "rol": "Director Ejecutivo",
           "formacion": [
-            { "titulo": "Contador Público Nacional", "institucion": "UBA" },
-            { "titulo": "Licenciado en Administración de Empresas", "institucion": "UBA" },
-            { "titulo": "Máster en Finanzas Corporativas", "institucion": "UCEMA" },
-            { "titulo": "Gerencia de Finanzas", "institucion": "División Centro América — The Coca-Cola Company" },
-            { "titulo": "Gerencia de Planeamiento Estratégico", "institucion": "Región BPU — The Coca-Cola Company" }
+            {
+              "titulo": "Contador Público Nacional",
+              "institucion": "UBA"
+            },
+            {
+              "titulo": "Licenciado en Administración de Empresas",
+              "institucion": "UBA"
+            },
+            {
+              "titulo": "Máster en Finanzas Corporativas",
+              "institucion": "UCEMA"
+            },
+            {
+              "titulo": "Gerencia de Finanzas",
+              "institucion": "División Centro América — The Coca-Cola Company"
+            },
+            {
+              "titulo": "Gerencia de Planeamiento Estratégico",
+              "institucion": "Región BPU — The Coca-Cola Company"
+            }
           ]
         },
         {
           "rol": "Directora Médica",
           "formacion": [
-            { "titulo": "Médica Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación — Certif. SAP · MN98395 / MP451876" },
-            { "titulo": "Médica Especialista en Citopatología", "institucion": "Certificación SAC" },
-            { "titulo": "Médica Especialista en Uropatología" },
-            { "titulo": "Médica Especialista en Patología Osteoarticular" },
-            { "titulo": "Ex Secretaria de Actas SAP", "institucion": "Período 2011–2013" },
-            { "titulo": "Ex Residente, Jefa de Residentes y Médica de Planta", "institucion": "CEMIC" },
-            { "titulo": "Ex Patóloga Staff", "institucion": "Centro de Patología Dr. Boris Elsner" },
-            { "titulo": "Visiting Fellow de Patología", "institucion": "MD Anderson Cancer Center, Houston, Texas, USA" }
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN98395 / MP451876"
+            },
+            {
+              "titulo": "Médica Especialista en Citopatología",
+              "institucion": "Certificación SAC"
+            },
+            {
+              "titulo": "Médica Especialista en Uropatología"
+            },
+            {
+              "titulo": "Médica Especialista en Patología Osteoarticular"
+            },
+            {
+              "titulo": "Ex Secretaria de Actas SAP",
+              "institucion": "Período 2011–2013"
+            },
+            {
+              "titulo": "Ex Residente, Jefa de Residentes y Médica de Planta",
+              "institucion": "CEMIC"
+            },
+            {
+              "titulo": "Ex Patóloga Staff",
+              "institucion": "Centro de Patología Dr. Boris Elsner"
+            },
+            {
+              "titulo": "Visiting Fellow de Patología",
+              "institucion": "MD Anderson Cancer Center, Houston, Texas, USA"
+            }
           ]
         }
       ],
@@ -393,19 +657,43 @@
         {
           "rol": "Sub-Dirección",
           "formacion": [
-            { "titulo": "Médico Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación · MN112223" },
-            { "titulo": "Especializado en Patología Ginecológica", "institucion": "CAP Vighi" },
-            { "titulo": "Ex Docente de Anatomía Patológica", "institucion": "Escuela de Técnicos de Histología" },
-            { "titulo": "Ex Residente", "institucion": "Hospital Ramos Mejía" }
+            {
+              "titulo": "Médico Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación · MN112223"
+            },
+            {
+              "titulo": "Especializado en Patología Ginecológica",
+              "institucion": "CAP Vighi"
+            },
+            {
+              "titulo": "Ex Docente de Anatomía Patológica",
+              "institucion": "Escuela de Técnicos de Histología"
+            },
+            {
+              "titulo": "Ex Residente",
+              "institucion": "Hospital Ramos Mejía"
+            }
           ]
         },
         {
           "rol": "Sub-Dirección",
           "formacion": [
-            { "titulo": "Médica Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123151" },
-            { "titulo": "Especializada en Patología Ginecológica", "institucion": "CAP Vighi" },
-            { "titulo": "Médica Especialista en Citopatología", "institucion": "Certificación SAC" },
-            { "titulo": "Ex Residente", "institucion": "Hospital de Clínicas — UBA" }
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123151"
+            },
+            {
+              "titulo": "Especializada en Patología Ginecológica",
+              "institucion": "CAP Vighi"
+            },
+            {
+              "titulo": "Médica Especialista en Citopatología",
+              "institucion": "Certificación SAC"
+            },
+            {
+              "titulo": "Ex Residente",
+              "institucion": "Hospital de Clínicas — UBA"
+            }
           ]
         }
       ],
@@ -413,22 +701,53 @@
         {
           "rol": "Nefropatología · Gastroenteropatología",
           "formacion": [
-            { "titulo": "Médica Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2" },
-            { "titulo": "Médica Especialista en Nefropatología" },
-            { "titulo": "Médica Especialista en Gastroenteropatología" },
-            { "titulo": "Ex Patóloga Staff", "institucion": "Centro de Patología Dr. Boris Elsner" },
-            { "titulo": "Ex Residente, Jefa de Residentes e Instructora Nefropatóloga", "institucion": "Hospital JM Ramos Mejía" }
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN100367 / MP23630-2"
+            },
+            {
+              "titulo": "Médica Especialista en Nefropatología"
+            },
+            {
+              "titulo": "Médica Especialista en Gastroenteropatología"
+            },
+            {
+              "titulo": "Ex Patóloga Staff",
+              "institucion": "Centro de Patología Dr. Boris Elsner"
+            },
+            {
+              "titulo": "Ex Residente, Jefa de Residentes e Instructora Nefropatóloga",
+              "institucion": "Hospital JM Ramos Mejía"
+            }
           ]
         },
         {
           "rol": "Hematopatología",
           "formacion": [
-            { "titulo": "Médico Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación · MN154271" },
-            { "titulo": "Médico Especialista en Hematopatología Diagnóstica Integral", "institucion": "Ex-Fellow Fundaleu (2015–2020)" },
-            { "titulo": "MSc en Biología Molecular Médica", "institucion": "Facultad de Farmacia y Bioquímica — UBA" },
-            { "titulo": "Vicepresidente SOLAHP", "institucion": "Soc. Latinoamericana de Hematopatología (2025–2027)" },
-            { "titulo": "Médico Concurrente Lab. Genética de Neoplasias Linfoides", "institucion": "IMEX-CONICET — Academia Nacional de Medicina" },
-            { "titulo": "Visiting Fellow", "institucion": "Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)" }
+            {
+              "titulo": "Médico Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación · MN154271"
+            },
+            {
+              "titulo": "Médico Especialista en Hematopatología Diagnóstica Integral",
+              "institucion": "Ex-Fellow Fundaleu (2015–2020)"
+            },
+            {
+              "titulo": "MSc en Biología Molecular Médica",
+              "institucion": "Facultad de Farmacia y Bioquímica — UBA"
+            },
+            {
+              "titulo": "Vicepresidente SOLAHP",
+              "institucion": "Soc. Latinoamericana de Hematopatología (2025–2027)"
+            },
+            {
+              "titulo": "Médico Concurrente Lab. Genética de Neoplasias Linfoides",
+              "institucion": "IMEX-CONICET — Academia Nacional de Medicina"
+            },
+            {
+              "titulo": "Visiting Fellow",
+              "institucion": "Hospital Universitario Marqués de Valdecilla — IDIVAL, España (2019)"
+            }
           ]
         }
       ],
@@ -436,28 +755,64 @@
         {
           "rol": "Médica Anatomopatóloga",
           "formacion": [
-            { "titulo": "Médica Especialista en Anatomía Patológica", "institucion": "MN188687" },
-            { "titulo": "Postgrado de Anatomía Patológica", "institucion": "Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela)" },
-            { "titulo": "Especialidad en Medicina Legal", "institucion": "Inst. Universitario de la Policía Federal Argentina" },
-            { "titulo": "Ex Patóloga Staff", "institucion": "Hospital Luisa C. de Gandulfo (Lomas de Zamora)" }
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "MN188687"
+            },
+            {
+              "titulo": "Postgrado de Anatomía Patológica",
+              "institucion": "Hospital Universitario Dr. Carlos Arvelo, Caracas (Venezuela)"
+            },
+            {
+              "titulo": "Especialidad en Medicina Legal",
+              "institucion": "Inst. Universitario de la Policía Federal Argentina"
+            },
+            {
+              "titulo": "Ex Patóloga Staff",
+              "institucion": "Hospital Luisa C. de Gandulfo (Lomas de Zamora)"
+            }
           ]
         },
         {
           "rol": "Patología Forense",
           "formacion": [
-            { "titulo": "Médico Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165" },
-            { "titulo": "Diplomatura en Patología Forense", "institucion": "UCA" },
-            { "titulo": "Ex Residente", "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
-            { "titulo": "Fellow en Patología", "institucion": "Hospital Británico" }
+            {
+              "titulo": "Médico Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165"
+            },
+            {
+              "titulo": "Diplomatura en Patología Forense",
+              "institucion": "UCA"
+            },
+            {
+              "titulo": "Ex Residente",
+              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
+            },
+            {
+              "titulo": "Fellow en Patología",
+              "institucion": "Hospital Británico"
+            }
           ]
         },
         {
           "rol": "Patología Forense y Pediátrica",
           "formacion": [
-            { "titulo": "Médica Especialista en Anatomía Patológica", "institucion": "Min. de Salud de la Nación — Certif. SAP · MN1631960" },
-            { "titulo": "Diplomatura en Patología Forense", "institucion": "UCA" },
-            { "titulo": "Ex Residente", "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón" },
-            { "titulo": "Becaria en Patología Pediátrica", "institucion": "Hospital Garrahan" }
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN1631960"
+            },
+            {
+              "titulo": "Diplomatura en Patología Forense",
+              "institucion": "UCA"
+            },
+            {
+              "titulo": "Ex Residente",
+              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
+            },
+            {
+              "titulo": "Becaria en Patología Pediátrica",
+              "institucion": "Hospital Garrahan"
+            }
           ]
         }
       ],
@@ -465,46 +820,137 @@
         {
           "rol": "Citotécnico",
           "formacion": [
-            { "titulo": "Matrícula MN241914" },
-            { "titulo": "Citotecnólogo Universitario", "institucion": "Instituto Universitario CEMIC (IUC)" }
+            {
+              "titulo": "Matrícula MN241914"
+            },
+            {
+              "titulo": "Citotecnólogo Universitario",
+              "institucion": "Instituto Universitario CEMIC (IUC)"
+            }
           ]
         },
         {
           "rol": "Citotécnico",
           "formacion": [
-            { "titulo": "Matrícula MN 377" },
-            { "titulo": "Citotecnólogo Universitario", "institucion": "Instituto Universitario CEMIC (IUC)" }
+            {
+              "titulo": "Matrícula MN 377"
+            },
+            {
+              "titulo": "Citotecnólogo Universitario",
+              "institucion": "Instituto Universitario CEMIC (IUC)"
+            }
           ]
         }
       ],
       "responsables": [
-        { "rol": "Asistente de Dirección" },
-        { "rol": "Supervisor de Procesos" }
+        {
+          "rol": "Asistente de Dirección"
+        },
+        {
+          "rol": "Supervisor de Procesos"
+        }
       ],
       "coordinadores": [
-        { "rol": "Coordinadora de Citología" },
-        { "rol": "Coordinadora de Inmunohistoquímica" }
+        {
+          "rol": "Coordinadora de Citología"
+        },
+        {
+          "rol": "Coordinadora de Inmunohistoquímica"
+        }
       ]
     },
     "org": {
-      "levels": { "1": "ESTRATÉGICO", "2": "TÁCTICO", "3": "OPERATIVO" },
+      "levels": {
+        "1": "ESTRATÉGICO",
+        "2": "TÁCTICO",
+        "3": "OPERATIVO"
+      },
       "nivel": "NIVEL",
       "footerHint": "Hacé clic en cada nodo para ver más información",
       "nodes": {
-        "de": { "title": "Dirección Ejecutiva", "details": ["Contador Público Nacional (UBA)", "Lic. en Administración de Empresas (UBA)", "Máster en Finanzas Corporativas (UCEMA)", "Experiencia en Coca-Cola Company"] },
-        "ad": { "title": "Asistente de Dirección", "details": [] },
-        "ti": { "title": "Tecnología e Innovación", "details": ["Pioneros en la incorporación de IA aplicada a la Anatomía Patológica en Argentina", "Patología digital integrada al flujo de trabajo"] },
-        "dm": { "title": "Dirección Médica", "details": ["Especialista en Anatomía Patológica (MN98395 / MP451876)", "Especialista en Citopatología y Uropatología", "Ex Visiting Fellow en MD Anderson Cancer Center, Houston"] },
-        "sp": { "title": "Supervisión de Procesos", "details": [] },
-        "ga": { "title": "Gerencia Administrativa", "details": [] },
-        "gc": { "title": "Gerencia Comercial", "details": [] },
-        "sm": { "title": "Subdirección Médica", "details": ["Dra. Marysol Costoya — Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología", "Dr. Federico Ferrando — Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica"] },
-        "rc": { "title": "Citos y BPs", "details": ["Miguel Domenniani — Citotécnico", "Tobias Pardo — Citotécnico"] },
-        "aa": { "title": "Área Administrativa", "details": [] },
-        "al": { "title": "Área Logística", "details": [] },
-        "am": { "title": "Área Médica", "details": ["Dra. Diana Miserendino — Nefropatología y Gastroenteropatología (MN100367)", "Dr. Mauro García Montenegro — Hematopatología (MN154271) · Vicepresidente SOLAHP 2025–2027", "Dra. Tania Rodriguez (MN188687)", "Dr. Daniel Vila Melgarejo — Patología Forense (MN159165)", "Dra. Andrea Flores Herbas — Patología Forense y Pediátrica (MN1631960)"] },
-        "at": { "title": "Área Técnica", "details": [] },
-        "ai": { "title": "Área IHQ", "details": ["Adriana Lopez — Coordinadora de Citología", "Laura Ureta — Coordinadora de Inmunohistoquímica"] }
+        "de": {
+          "title": "Dirección Ejecutiva",
+          "details": [
+            "Contador Público Nacional (UBA)",
+            "Lic. en Administración de Empresas (UBA)",
+            "Máster en Finanzas Corporativas (UCEMA)",
+            "Experiencia en Coca-Cola Company"
+          ]
+        },
+        "ad": {
+          "title": "Asistente de Dirección",
+          "details": []
+        },
+        "ti": {
+          "title": "Tecnología e Innovación",
+          "details": [
+            "Pioneros en la incorporación de IA aplicada a la Anatomía Patológica en Argentina",
+            "Patología digital integrada al flujo de trabajo"
+          ]
+        },
+        "dm": {
+          "title": "Dirección Médica",
+          "details": [
+            "Especialista en Anatomía Patológica (MN98395 / MP451876)",
+            "Especialista en Citopatología y Uropatología",
+            "Ex Visiting Fellow en MD Anderson Cancer Center, Houston"
+          ]
+        },
+        "sp": {
+          "title": "Supervisión de Procesos",
+          "details": []
+        },
+        "ga": {
+          "title": "Gerencia Administrativa",
+          "details": []
+        },
+        "gc": {
+          "title": "Gerencia Comercial",
+          "details": []
+        },
+        "sm": {
+          "title": "Subdirección Médica",
+          "details": [
+            "Dra. Marysol Costoya — Especialista en Anatomía Patológica (MN123151) · Patología Ginecológica y Citopatología",
+            "Dr. Federico Ferrando — Especialista en Anatomía Patológica (MN112223) · Patología Ginecológica"
+          ]
+        },
+        "rc": {
+          "title": "Citos y BPs",
+          "details": [
+            "Miguel Domenniani — Citotécnico",
+            "Tobias Pardo — Citotécnico"
+          ]
+        },
+        "aa": {
+          "title": "Área Administrativa",
+          "details": []
+        },
+        "al": {
+          "title": "Área Logística",
+          "details": []
+        },
+        "am": {
+          "title": "Área Médica",
+          "details": [
+            "Dra. Diana Miserendino — Nefropatología y Gastroenteropatología (MN100367)",
+            "Dr. Mauro García Montenegro — Hematopatología (MN154271) · Vicepresidente SOLAHP 2025–2027",
+            "Dra. Tania Rodriguez (MN188687)",
+            "Dr. Daniel Vila Melgarejo — Patología Forense (MN159165)",
+            "Dra. Andrea Flores Herbas — Patología Forense y Pediátrica (MN1631960)"
+          ]
+        },
+        "at": {
+          "title": "Área Técnica",
+          "details": []
+        },
+        "ai": {
+          "title": "Área IHQ",
+          "details": [
+            "Adriana Lopez — Coordinadora de Citología",
+            "Laura Ureta — Coordinadora de Inmunohistoquímica"
+          ]
+        }
       }
     },
     "joinUs": {
@@ -547,10 +993,22 @@
       "eyebrow": "Valores que nos definen",
       "title": "Los pilares que sostienen nuestra práctica.",
       "items": [
-        { "titulo": "Celeridad", "texto": "La celeridad le otorga virtud al diagnóstico médico. Reducir tiempos de informe acelera decisiones clínicas que pueden cambiar el curso de una vida." },
-        { "titulo": "Calidad", "texto": "Fomentamos los más altos estándares de calidad médica mediante protocolos estandarizados, controles internos y revisión por pares." },
-        { "titulo": "Innovación", "texto": "Invertimos en aparatología de alta complejidad y somos pioneros en patología digital e inteligencia artificial en Argentina." },
-        { "titulo": "Equipo", "texto": "Gestionamos equipos altamente eficientes y formamos a nuestros líderes en mandos medios para sostener una cultura de mejora continua." }
+        {
+          "titulo": "Celeridad",
+          "texto": "La celeridad le otorga virtud al diagnóstico médico. Reducir tiempos de informe acelera decisiones clínicas que pueden cambiar el curso de una vida."
+        },
+        {
+          "titulo": "Calidad",
+          "texto": "Fomentamos los más altos estándares de calidad médica mediante protocolos estandarizados, controles internos y revisión por pares."
+        },
+        {
+          "titulo": "Innovación",
+          "texto": "Invertimos en aparatología de alta complejidad y somos pioneros en patología digital e inteligencia artificial en Argentina."
+        },
+        {
+          "titulo": "Equipo",
+          "texto": "Gestionamos equipos altamente eficientes y formamos a nuestros líderes en mandos medios para sostener una cultura de mejora continua."
+        }
       ]
     }
   },
@@ -565,29 +1023,73 @@
         "nivel": "PB",
         "nombre": "Planta Baja",
         "desc": "Acceso principal y gestión operativa del centro.",
-        "areas": ["Recepción", "Gerencia Administrativa", "Administración", "Facturación y Sistemas", "Comedor"],
-        "fotos": ["Recepción", "Gerencia Administrativa", "Administración", "Facturación y Sistemas", "Comedor"]
+        "areas": [
+          "Recepción",
+          "Gerencia Administrativa",
+          "Administración",
+          "Facturación y Sistemas",
+          "Comedor"
+        ],
+        "fotos": [
+          "Recepción",
+          "Gerencia Administrativa",
+          "Administración",
+          "Facturación y Sistemas",
+          "Comedor"
+        ]
       },
       {
         "nivel": "1°",
         "nombre": "Primer Piso",
         "desc": "Área de dirección médica y staff de patólogos.",
-        "areas": ["Dirección Médica", "Sala de Reuniones", "Sub-Dirección Médica", "Sector Patólogos Staff"],
-        "fotos": ["Dirección Médica", "Sala de Reuniones", "Sub-Dirección Médica", "Sector Patólogos Staff", "Sector Patólogos Staff"]
+        "areas": [
+          "Dirección Médica",
+          "Sala de Reuniones",
+          "Sub-Dirección Médica",
+          "Sector Patólogos Staff"
+        ],
+        "fotos": [
+          "Dirección Médica",
+          "Sala de Reuniones",
+          "Sub-Dirección Médica",
+          "Sector Patólogos Staff",
+          "Sector Patólogos Staff"
+        ]
       },
       {
         "nivel": "2°",
         "nombre": "Segundo Piso — Laboratorio",
         "desc": "Procesamiento integral de muestras histológicas con flujo ordenado y trazable.",
-        "areas": ["Sector de Corte", "Sector de Inclusión", "Sector de Inmunohistoquímica", "Sector de Procesamiento y Coloración", "Sector de Macroscopía"],
-        "fotos": ["Sector de Corte", "Sector de Inclusión", "Sector de Inmunohistoquímica", "Sector de Procesamiento y Coloración", "Sector de Macroscopía"]
+        "areas": [
+          "Sector de Corte",
+          "Sector de Inclusión",
+          "Sector de Inmunohistoquímica",
+          "Sector de Procesamiento y Coloración",
+          "Sector de Macroscopía"
+        ],
+        "fotos": [
+          "Sector de Corte",
+          "Sector de Inclusión",
+          "Sector de Inmunohistoquímica",
+          "Sector de Procesamiento y Coloración",
+          "Sector de Macroscopía"
+        ]
       },
       {
         "nivel": "3°",
         "nombre": "Tercer Piso",
         "desc": "Gestión estratégica, capacitación y espacios de reunión.",
-        "areas": ["Sala de Reuniones", "Dirección Ejecutiva"],
-        "fotos": ["Sala de Reuniones", "Sala de Reuniones", "Sala de Reuniones", "Dirección Ejecutiva", "Dirección Ejecutiva"]
+        "areas": [
+          "Sala de Reuniones",
+          "Dirección Ejecutiva"
+        ],
+        "fotos": [
+          "Sala de Reuniones",
+          "Sala de Reuniones",
+          "Sala de Reuniones",
+          "Dirección Ejecutiva",
+          "Dirección Ejecutiva"
+        ]
       }
     ],
     "aparatologia": {
@@ -596,14 +1098,38 @@
       "description": "Equipamiento de alta complejidad seleccionado para asegurar consistencia, trazabilidad y precisión desde la recepción de la muestra hasta el informe final.",
       "verFoto": "ver foto",
       "items": [
-        { "title": "Procesador de tejidos", "desc": "Deshidratación e inclusión automatizada con trazabilidad por lote." },
-        { "title": "Micrótomos de precisión", "desc": "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales." },
-        { "title": "Criostato", "desc": "Cortes por congelación para biopsias intraoperatorias." },
-        { "title": "Coloreador automático", "desc": "Tinciones H&E y especiales estandarizadas, sin variabilidad manual." },
-        { "title": "Plataforma de Inmunohistoquímica", "desc": "Marcación automatizada con control de anticuerpos y kits validados." },
-        { "title": "Microscopios de alta resolución", "desc": "Ópticas de investigación con cámaras digitales para documentación." },
-        { "title": "Scanner de patología digital", "desc": "Digitalización de preparados a 40x para revisión, consulta y IA." },
-        { "title": "Equipamiento auxiliar", "desc": "Baños de flotación, dispensadores de parafina y estufas calibradas." }
+        {
+          "title": "Procesador de tejidos",
+          "desc": "Deshidratación e inclusión automatizada con trazabilidad por lote."
+        },
+        {
+          "title": "Micrótomos de precisión",
+          "desc": "Cortes uniformes de 3–5 µm para histología de rutina y técnicas especiales."
+        },
+        {
+          "title": "Criostato",
+          "desc": "Cortes por congelación para biopsias intraoperatorias."
+        },
+        {
+          "title": "Coloreador automático",
+          "desc": "Tinciones H&E y especiales estandarizadas, sin variabilidad manual."
+        },
+        {
+          "title": "Plataforma de Inmunohistoquímica",
+          "desc": "Marcación automatizada con control de anticuerpos y kits validados."
+        },
+        {
+          "title": "Microscopios de alta resolución",
+          "desc": "Ópticas de investigación con cámaras digitales para documentación."
+        },
+        {
+          "title": "Scanner de patología digital",
+          "desc": "Digitalización de preparados a 40x para revisión, consulta y IA."
+        },
+        {
+          "title": "Equipamiento auxiliar",
+          "desc": "Baños de flotación, dispensadores de parafina y estufas calibradas."
+        }
       ]
     }
   },
@@ -613,14 +1139,24 @@
       "title": "Conversemos.",
       "description": "Estamos a disposición de pacientes, médicos derivantes e instituciones para consultas, derivaciones y colaboraciones."
     },
-    "phones": { "title": "Teléfonos · Líneas rotativas" },
+    "phones": {
+      "title": "Teléfonos · Líneas rotativas"
+    },
     "emails": {
       "title": "Casillas de correo",
       "items": [
-        { "label": "Consultas generales" },
-        { "label": "Presupuestos" },
-        { "label": "Solicitud de servicio" },
-        { "label": "Recursos humanos · CV" }
+        {
+          "label": "Consultas generales"
+        },
+        {
+          "label": "Presupuestos"
+        },
+        {
+          "label": "Solicitud de servicio"
+        },
+        {
+          "label": "Recursos humanos · CV"
+        }
       ]
     },
     "address": {
@@ -690,7 +1226,13 @@
       "title": "Un tablero único para cada muestra.",
       "description": "Sistema interno de gestión de protocolos diseñado por el laboratorio: permite asignar responsables, registrar tiempos por etapa y visualizar el estado en vivo de la operación.",
       "imgAlt": "Plataforma de gestión de muestras CAP Vighi",
-      "stages": ["Recepción", "Procesamiento", "Lectura", "Validación", "Entrega"]
+      "stages": [
+        "Recepción",
+        "Procesamiento",
+        "Lectura",
+        "Validación",
+        "Entrega"
+      ]
     },
     "pillars": {
       "eyebrow": "Pilares del servicio",
@@ -703,8 +1245,14 @@
         "subtitulo": "Mayor eficiencia operativa sobre una creciente cantidad de muestras.",
         "desc": "Optimizamos continuamente los flujos de trabajo para sostener tiempos de entrega reducidos sin comprometer la calidad diagnóstica. Los resultados se validan mensualmente con reportes de tendencia.",
         "metrics": [
-          { "value": "630", "label": "Protocolos diarios" },
-          { "value": "5", "label": "Días hábiles promedio" }
+          {
+            "value": "630",
+            "label": "Protocolos diarios"
+          },
+          {
+            "value": "5",
+            "label": "Días hábiles promedio"
+          }
         ]
       },
       {
@@ -712,16 +1260,33 @@
         "subtitulo": "Seguimiento en tiempo real y previsibilidad de entrega.",
         "desc": "Cada muestra cuenta con seguimiento completo desde la recepción hasta la entrega del informe. El sistema identifica el estado de cada protocolo mediante semáforos y compara automáticamente fechas teóricas y reales.",
         "metrics": [
-          { "value": "OT", "label": "On Time", "sub": "En término" },
-          { "value": "DY", "label": "Delayed", "sub": "Demorado" },
-          { "value": "LT", "label": "Late", "sub": "Atrasado" }
+          {
+            "value": "OT",
+            "label": "On Time",
+            "sub": "En término"
+          },
+          {
+            "value": "DY",
+            "label": "Delayed",
+            "sub": "Demorado"
+          },
+          {
+            "value": "LT",
+            "label": "Late",
+            "sub": "Atrasado"
+          }
         ]
       },
       {
         "titulo": "Proactividad",
         "subtitulo": "Monitoreo continuo para anticipar desvíos y mejorar resultados.",
         "desc": "Utilizamos mapas de calor para identificar atrasos, asignamos responsables por actividad y realizamos evaluaciones semanales de desempeño sectorial.",
-        "metrics": [{ "value": "Rojo Cero", "label": "Objetivo permanente" }]
+        "metrics": [
+          {
+            "value": "Rojo Cero",
+            "label": "Objetivo permanente"
+          }
+        ]
       }
     ],
     "access": {
@@ -759,9 +1324,24 @@
         "cta": "Leer la nota completa",
         "url": "https://comunicar-salud.com.ar/nota/48656/el-costo-oculto-de-la-demora-por-que-el-tiempo-diagnostico-es-la-variable-clave-para-la-sustentabilidad-del-sistema/"
       },
-      { "fecha": "2025 · En curso", "categoria": "Novedades técnicas", "titulo": "Incorporación de nuevos paneles de inmunohistoquímica", "resumen": "Ampliamos progresivamente el panel de marcadores disponibles para diagnóstico y estadificación oncológica, incluyendo determinaciones predictivas de tratamiento." },
-      { "fecha": "2025", "categoria": "Docencia", "titulo": "Programa de rotaciones para residentes", "resumen": "Recibimos residentes y becarios de instituciones de todo el país para rotaciones de subespecialidad en distintas áreas del laboratorio." },
-      { "fecha": "Actividad continua", "categoria": "Congresos", "titulo": "Presencia académica del equipo", "resumen": "Nuestros profesionales participan regularmente en congresos y jornadas de la Sociedad Argentina de Patología y sociedades internacionales afines." }
+      {
+        "fecha": "2025 · En curso",
+        "categoria": "Novedades técnicas",
+        "titulo": "Incorporación de nuevos paneles de inmunohistoquímica",
+        "resumen": "Ampliamos progresivamente el panel de marcadores disponibles para diagnóstico y estadificación oncológica, incluyendo determinaciones predictivas de tratamiento."
+      },
+      {
+        "fecha": "2025",
+        "categoria": "Docencia",
+        "titulo": "Programa de rotaciones para residentes",
+        "resumen": "Recibimos residentes y becarios de instituciones de todo el país para rotaciones de subespecialidad en distintas áreas del laboratorio."
+      },
+      {
+        "fecha": "Actividad continua",
+        "categoria": "Congresos",
+        "titulo": "Presencia académica del equipo",
+        "resumen": "Nuestros profesionales participan regularmente en congresos y jornadas de la Sociedad Argentina de Patología y sociedades internacionales afines."
+      }
     ],
     "comingSoon": "Estamos preparando la publicación completa de trabajos, ponencias y programa académico. Volvé pronto para actualizaciones.",
     "casos": {
@@ -770,10 +1350,76 @@
       "description": "Selección de casos representativos del laboratorio con valor formativo para residentes y colegas. Contenido curado por el cuerpo médico.",
       "soon": "Próximamente publicaremos casos con imágenes histológicas, correlación clínica y discusión diagnóstica.",
       "items": [
-        { "area": "Patología mamaria", "text": "Correlación IHQ y molecular en carcinomas triple negativos." },
-        { "area": "Hematopatología", "text": "Linfomas B de células grandes: subtipificación por perfil inmunofenotípico." },
-        { "area": "Uropatología", "text": "Carcinomas renales con hallazgos morfológicos infrecuentes." }
+        {
+          "area": "Patología mamaria",
+          "text": "Correlación IHQ y molecular en carcinomas triple negativos."
+        },
+        {
+          "area": "Hematopatología",
+          "text": "Linfomas B de células grandes: subtipificación por perfil inmunofenotípico."
+        },
+        {
+          "area": "Uropatología",
+          "text": "Carcinomas renales con hallazgos morfológicos infrecuentes."
+        }
       ]
+    }
+  },
+  "segundaOpinion": {
+    "hero": {
+      "eyebrow": "Servicio para pacientes y profesionales",
+      "title": "Segunda opinión diagnóstica",
+      "description": "Revisión del material histológico o citológico por nuestros subespecialistas, con informe complementario y ampliación de técnicas cuando el caso lo requiere."
+    },
+    "casos": {
+      "eyebrow": "Cuándo solicitarla",
+      "title": "Casos en los que una segunda lectura aporta valor",
+      "text": "La revisión por un segundo patólogo es una práctica habitual en centros de referencia internacionales, especialmente antes de iniciar tratamientos oncológicos.",
+      "items": [
+        "Diagnóstico oncológico previo al inicio del tratamiento",
+        "Discordancia entre la clínica, la imagen y el informe",
+        "Lesiones de diagnóstico difícil o poco frecuentes",
+        "Necesidad de ampliar inmunohistoquímica o biología molecular",
+        "Pedido del paciente o de su médico tratante",
+        "Casos derivados desde otras provincias o del exterior"
+      ]
+    },
+    "circuito": {
+      "eyebrow": "Circuito",
+      "title": "Cómo es el proceso, paso a paso",
+      "items": [
+        {
+          "titulo": "Solicitud",
+          "texto": "El paciente o el médico tratante nos contacta por mail o teléfono indicando el estudio a revisar."
+        },
+        {
+          "titulo": "Envío del material",
+          "texto": "Se solicitan los tacos de parafina y/o vidrios al laboratorio de origen, junto con el informe original."
+        },
+        {
+          "titulo": "Revisión",
+          "texto": "El caso es asignado al subespecialista correspondiente, que puede indicar técnicas complementarias."
+        },
+        {
+          "titulo": "Informe",
+          "texto": "Se emite un informe de segunda opinión y se devuelve el material al laboratorio de origen o al paciente."
+        }
+      ]
+    },
+    "requisitos": {
+      "title": "Qué necesitamos recibir",
+      "items": [
+        "Tacos de parafina y/o preparados histológicos originales",
+        "Copia del informe anatomopatológico previo",
+        "Resumen de historia clínica y estudios por imágenes relevantes",
+        "Datos de contacto del paciente y del médico tratante",
+        "Orden médica cuando el estudio se factura por cobertura"
+      ]
+    },
+    "contacto": {
+      "title": "Coordiná tu segunda opinión",
+      "text": "Escribinos indicando el tipo de estudio y el laboratorio de origen. Te respondemos con las instrucciones de envío y los tiempos estimados.",
+      "cta": "Ver instructivo para derivantes"
     }
   }
 }

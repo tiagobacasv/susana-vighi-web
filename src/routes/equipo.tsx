@@ -44,7 +44,9 @@ export const Route = createFileRoute("/equipo")({
       { name: "description", content: seoText("seo.equipo.description") },
       { property: "og:title", content: seoText("seo.equipo.ogTitle") },
       { property: "og:description", content: seoText("seo.equipo.ogDescription") },
+      { property: "og:url", content: "/equipo" },
     ],
+    links: [{ rel: "canonical", href: "/equipo" }],
   }),
   component: EquipoPage,
 });

@@ -9,7 +9,9 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
+import { Route as SegundaOpinionRouteImport } from './routes/segunda-opinion'
 import { Route as PropositoRouteImport } from './routes/proposito'
 import { Route as PacientesRouteImport } from './routes/pacientes'
 import { Route as NovedadesRouteImport } from './routes/novedades'
@@ -21,9 +23,19 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SistemaGestionRoute = SistemaGestionRouteImport.update({
   id: '/sistema-gestion',
   path: '/sistema-gestion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SegundaOpinionRoute = SegundaOpinionRouteImport.update({
+  id: '/segunda-opinion',
+  path: '/segunda-opinion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropositoRoute = PropositoRouteImport.update({
@@ -88,7 +100,9 @@ export interface FileRoutesByFullPath {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
+  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,7 +115,9 @@ export interface FileRoutesByTo {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
+  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -115,7 +131,9 @@ export interface FileRoutesById {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
+  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,7 +148,9 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
+    | '/segunda-opinion'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,7 +163,9 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
+    | '/segunda-opinion'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -156,7 +178,9 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
+    | '/segunda-opinion'
     | '/sistema-gestion'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -170,16 +194,32 @@ export interface RootRouteChildren {
   NovedadesRoute: typeof NovedadesRoute
   PacientesRoute: typeof PacientesRoute
   PropositoRoute: typeof PropositoRoute
+  SegundaOpinionRoute: typeof SegundaOpinionRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sistema-gestion': {
       id: '/sistema-gestion'
       path: '/sistema-gestion'
       fullPath: '/sistema-gestion'
       preLoaderRoute: typeof SistemaGestionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/segunda-opinion': {
+      id: '/segunda-opinion'
+      path: '/segunda-opinion'
+      fullPath: '/segunda-opinion'
+      preLoaderRoute: typeof SegundaOpinionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/proposito': {
@@ -266,18 +306,10 @@ const rootRouteChildren: RootRouteChildren = {
   NovedadesRoute: NovedadesRoute,
   PacientesRoute: PacientesRoute,
   PropositoRoute: PropositoRoute,
+  SegundaOpinionRoute: SegundaOpinionRoute,
   SistemaGestionRoute: SistemaGestionRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

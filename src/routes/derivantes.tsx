@@ -20,7 +20,9 @@ export const Route = createFileRoute("/derivantes")({
       { name: "description", content: seoText("seo.derivantes.description") },
       { property: "og:title", content: seoText("seo.derivantes.ogTitle") },
       { property: "og:description", content: seoText("seo.derivantes.ogDescription") },
+      { property: "og:url", content: "/derivantes" },
     ],
+    links: [{ rel: "canonical", href: "/derivantes" }],
   }),
   component: DerivantesPage,
 });

@@ -16,7 +16,7 @@ if (!i18n.isInitialized) {
       fallbackLng: "es",
       interpolation: { escapeValue: false },
       react: { useSuspense: false },
-      initImmediate: false,
+
     });
 }
 

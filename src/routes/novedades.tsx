@@ -16,7 +16,9 @@ export const Route = createFileRoute("/novedades")({
       { name: "description", content: seoText("seo.novedades.description") },
       { property: "og:title", content: seoText("seo.novedades.ogTitle") },
       { property: "og:description", content: seoText("seo.novedades.ogDescription") },
+      { property: "og:url", content: "/novedades" },
     ],
+    links: [{ rel: "canonical", href: "/novedades" }],
   }),
   component: NovedadesPage,
 });

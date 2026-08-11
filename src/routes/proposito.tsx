@@ -11,7 +11,9 @@ export const Route = createFileRoute("/proposito")({
       { name: "description", content: seoText("seo.proposito.description") },
       { property: "og:title", content: seoText("seo.proposito.ogTitle") },
       { property: "og:description", content: seoText("seo.proposito.ogDescription") },
+      { property: "og:url", content: "/proposito" },
     ],
+    links: [{ rel: "canonical", href: "/proposito" }],
   }),
   component: PropositoPage,
 });
