@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
-import { Route as SegundaOpinionRouteImport } from './routes/segunda-opinion'
 import { Route as PropositoRouteImport } from './routes/proposito'
 import { Route as PacientesRouteImport } from './routes/pacientes'
 import { Route as NovedadesRouteImport } from './routes/novedades'
@@ -31,11 +30,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const SistemaGestionRoute = SistemaGestionRouteImport.update({
   id: '/sistema-gestion',
   path: '/sistema-gestion',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SegundaOpinionRoute = SegundaOpinionRouteImport.update({
-  id: '/segunda-opinion',
-  path: '/segunda-opinion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropositoRoute = PropositoRouteImport.update({
@@ -100,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
-  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -115,7 +108,6 @@ export interface FileRoutesByTo {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
-  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -131,7 +123,6 @@ export interface FileRoutesById {
   '/novedades': typeof NovedadesRoute
   '/pacientes': typeof PacientesRoute
   '/proposito': typeof PropositoRoute
-  '/segunda-opinion': typeof SegundaOpinionRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -148,7 +139,6 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
-    | '/segunda-opinion'
     | '/sistema-gestion'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
@@ -163,7 +153,6 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
-    | '/segunda-opinion'
     | '/sistema-gestion'
     | '/sitemap.xml'
   id:
@@ -178,7 +167,6 @@ export interface FileRouteTypes {
     | '/novedades'
     | '/pacientes'
     | '/proposito'
-    | '/segunda-opinion'
     | '/sistema-gestion'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -194,7 +182,6 @@ export interface RootRouteChildren {
   NovedadesRoute: typeof NovedadesRoute
   PacientesRoute: typeof PacientesRoute
   PropositoRoute: typeof PropositoRoute
-  SegundaOpinionRoute: typeof SegundaOpinionRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -213,13 +200,6 @@ declare module '@tanstack/react-router' {
       path: '/sistema-gestion'
       fullPath: '/sistema-gestion'
       preLoaderRoute: typeof SistemaGestionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/segunda-opinion': {
-      id: '/segunda-opinion'
-      path: '/segunda-opinion'
-      fullPath: '/segunda-opinion'
-      preLoaderRoute: typeof SegundaOpinionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/proposito': {
@@ -306,10 +286,19 @@ const rootRouteChildren: RootRouteChildren = {
   NovedadesRoute: NovedadesRoute,
   PacientesRoute: PacientesRoute,
   PropositoRoute: PropositoRoute,
-  SegundaOpinionRoute: SegundaOpinionRoute,
   SistemaGestionRoute: SistemaGestionRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

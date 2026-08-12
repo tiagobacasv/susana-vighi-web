@@ -65,12 +65,6 @@
       "description": "Actividad académica, publicaciones, participaciones en congresos y novedades técnicas del Centro de Anatomía Patológica Dra. Susana Vighi.",
       "ogTitle": "Novedades y publicaciones — CAP Vighi",
       "ogDescription": "Casos de interés académico, publicaciones y participaciones en congresos del equipo CAP Vighi."
-    },
-    "segundaOpinion": {
-      "title": "Segunda opinión diagnóstica — CAP Vighi",
-      "description": "Revisión de diagnósticos anatomopatológicos por especialistas: circuito de envío de tacos y vidrios, requisitos y tiempos de respuesta.",
-      "ogTitle": "Segunda opinión diagnóstica — CAP Vighi",
-      "ogDescription": "Revisión experta de biopsias y citologías por subespecialistas del Centro de Anatomía Patológica Dra. Susana Vighi."
     }
   },
   "nav": {
@@ -86,8 +80,7 @@
     "news": "Novedades",
     "contact": "Contacto",
     "login": "Ingresar",
-    "openMenu": "Abrir menú",
-    "secondOpinion": "Segunda opinión"
+    "openMenu": "Abrir menú"
   },
   "lang": {
     "toggle": "EN",
@@ -417,9 +410,9 @@
     "warning": "Ante cualquier duda sobre fijación, transporte o tiempos, comunicate con nuestra coordinación médica antes de enviar la muestra.",
     "forms": {
       "title": "Formularios y protocolos",
-      "description": "Descargá el formulario de derivación en PDF o solicitá por mail los protocolos de fijación y guías por tipo de estudio.",
-      "download": "Descargar formulario (PDF)",
-      "request": "Solicitar por mail"
+      "description": "Descargá el instructivo completo con protocolos de fijación y guías por tipo de estudio, o el formulario de derivación en blanco.",
+      "downloadInstructivo": "Descargar instructivo (PDF)",
+      "download": "Descargar formulario (PDF)"
     },
     "coord": {
       "eyebrow": "Coordinación médica",
@@ -1363,63 +1356,6 @@
           "text": "Carcinomas renales con hallazgos morfológicos infrecuentes."
         }
       ]
-    }
-  },
-  "segundaOpinion": {
-    "hero": {
-      "eyebrow": "Servicio para pacientes y profesionales",
-      "title": "Segunda opinión diagnóstica",
-      "description": "Revisión del material histológico o citológico por nuestros subespecialistas, con informe complementario y ampliación de técnicas cuando el caso lo requiere."
-    },
-    "casos": {
-      "eyebrow": "Cuándo solicitarla",
-      "title": "Casos en los que una segunda lectura aporta valor",
-      "text": "La revisión por un segundo patólogo es una práctica habitual en centros de referencia internacionales, especialmente antes de iniciar tratamientos oncológicos.",
-      "items": [
-        "Diagnóstico oncológico previo al inicio del tratamiento",
-        "Discordancia entre la clínica, la imagen y el informe",
-        "Lesiones de diagnóstico difícil o poco frecuentes",
-        "Necesidad de ampliar inmunohistoquímica o biología molecular",
-        "Pedido del paciente o de su médico tratante",
-        "Casos derivados desde otras provincias o del exterior"
-      ]
-    },
-    "circuito": {
-      "eyebrow": "Circuito",
-      "title": "Cómo es el proceso, paso a paso",
-      "items": [
-        {
-          "titulo": "Solicitud",
-          "texto": "El paciente o el médico tratante nos contacta por mail o teléfono indicando el estudio a revisar."
-        },
-        {
-          "titulo": "Envío del material",
-          "texto": "Se solicitan los tacos de parafina y/o vidrios al laboratorio de origen, junto con el informe original."
-        },
-        {
-          "titulo": "Revisión",
-          "texto": "El caso es asignado al subespecialista correspondiente, que puede indicar técnicas complementarias."
-        },
-        {
-          "titulo": "Informe",
-          "texto": "Se emite un informe de segunda opinión y se devuelve el material al laboratorio de origen o al paciente."
-        }
-      ]
-    },
-    "requisitos": {
-      "title": "Qué necesitamos recibir",
-      "items": [
-        "Tacos de parafina y/o preparados histológicos originales",
-        "Copia del informe anatomopatológico previo",
-        "Resumen de historia clínica y estudios por imágenes relevantes",
-        "Datos de contacto del paciente y del médico tratante",
-        "Orden médica cuando el estudio se factura por cobertura"
-      ]
-    },
-    "contacto": {
-      "title": "Coordiná tu segunda opinión",
-      "text": "Escribinos indicando el tipo de estudio y el laboratorio de origen. Te respondemos con las instrucciones de envío y los tiempos estimados.",
-      "cta": "Ver instructivo para derivantes"
     }
   }
 }

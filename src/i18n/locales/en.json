@@ -65,12 +65,6 @@
       "description": "Academic activity, publications, conference participation, and technical updates from the Dr. Susana Vighi Pathology Center.",
       "ogTitle": "News and Publications — CAP Vighi",
       "ogDescription": "Academic case highlights, publications, and conference participation from the CAP Vighi team."
-    },
-    "segundaOpinion": {
-      "title": "Second opinion — CAP Vighi",
-      "description": "Expert review of pathology diagnoses: how to send blocks and slides, requirements and turnaround times.",
-      "ogTitle": "Second opinion — CAP Vighi",
-      "ogDescription": "Expert review of biopsies and cytology by subspecialists at Centro de Anatomía Patológica Dra. Susana Vighi."
     }
   },
   "nav": {
@@ -86,8 +80,7 @@
     "news": "News",
     "contact": "Contact",
     "login": "Log in",
-    "openMenu": "Open menu",
-    "secondOpinion": "Second opinion"
+    "openMenu": "Open menu"
   },
   "lang": {
     "toggle": "ES",
@@ -417,9 +410,9 @@
     "warning": "For any question about fixation, transport, or timing, contact our medical coordination before sending the sample.",
     "forms": {
       "title": "Forms and protocols",
-      "description": "Download the referral form as a PDF or request the fixation protocols and study-specific guides by email.",
-      "download": "Download form (PDF)",
-      "request": "Request by email"
+      "description": "Download the full guide with fixation protocols and study-specific requirements, or the blank referral form.",
+      "downloadInstructivo": "Download full guide (PDF)",
+      "download": "Download form (PDF)"
     },
     "coord": {
       "eyebrow": "Medical coordination",
@@ -1363,63 +1356,6 @@
           "text": "Renal carcinomas with uncommon morphological findings."
         }
       ]
-    }
-  },
-  "segundaOpinion": {
-    "hero": {
-      "eyebrow": "For patients and physicians",
-      "title": "Diagnostic second opinion",
-      "description": "Review of your histology or cytology material by our subspecialists, with a complementary report and additional techniques when the case requires them."
-    },
-    "casos": {
-      "eyebrow": "When to request it",
-      "title": "Cases where a second read adds value",
-      "text": "Review by a second pathologist is standard practice at international referral centers, particularly before starting oncology treatment.",
-      "items": [
-        "Cancer diagnosis prior to starting treatment",
-        "Discordance between clinical findings, imaging and the report",
-        "Difficult or rare lesions",
-        "Need to extend immunohistochemistry or molecular biology",
-        "Request from the patient or the treating physician",
-        "Cases referred from other provinces or from abroad"
-      ]
-    },
-    "circuito": {
-      "eyebrow": "Process",
-      "title": "How it works, step by step",
-      "items": [
-        {
-          "titulo": "Request",
-          "texto": "The patient or treating physician contacts us by email or phone indicating the study to be reviewed."
-        },
-        {
-          "titulo": "Material shipment",
-          "texto": "Paraffin blocks and/or slides are requested from the originating laboratory, along with the original report."
-        },
-        {
-          "titulo": "Review",
-          "texto": "The case is assigned to the relevant subspecialist, who may order complementary techniques."
-        },
-        {
-          "titulo": "Report",
-          "texto": "A second opinion report is issued and the material is returned to the originating laboratory or the patient."
-        }
-      ]
-    },
-    "requisitos": {
-      "title": "What we need to receive",
-      "items": [
-        "Paraffin blocks and/or original histology slides",
-        "Copy of the previous pathology report",
-        "Clinical summary and relevant imaging studies",
-        "Contact details of the patient and treating physician",
-        "Medical order when the study is billed through insurance"
-      ]
-    },
-    "contacto": {
-      "title": "Coordinate your second opinion",
-      "text": "Write to us indicating the type of study and the originating laboratory. We will reply with shipping instructions and estimated turnaround times.",
-      "cta": "See referring physician guide"
     }
   }
 }

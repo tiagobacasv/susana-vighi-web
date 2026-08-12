@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { seoText } from "@/i18n";
+import { useLang } from "@/hooks/use-lang";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import {
   ClipboardList,
@@ -36,6 +37,9 @@ const pasosMeta = [
 
 function DerivantesPage() {
   const { t } = useTranslation();
+  const { lang } = useLang();
+  const instructivoHref = lang === "en" ? "/instructivo-derivantes-en.pdf" : "/instructivo-derivantes.pdf";
+  const formularioHref = lang === "en" ? "/formulario-derivacion-en.pdf" : "/formulario-derivacion.pdf";
   const pasos = t("derivantes.pasos", { returnObjects: true }) as {
     titulo: string;
     texto: string;
@@ -146,19 +150,20 @@ function DerivantesPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="/formulario-derivacion.pdf"
+                  href={instructivoHref}
                   download
                   className="inline-flex items-center gap-2 rounded-lg bg-clinical-blue px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
                 >
                   <FileDown className="size-4" />
-                  {t("derivantes.forms.download")}
+                  {t("derivantes.forms.downloadInstructivo")}
                 </a>
                 <a
-                  href="mailto:solicituddeservicio@susanavighi.com.ar"
+                  href={formularioHref}
+                  download
                   className="inline-flex items-center gap-2 rounded-lg border border-clinical-blue px-5 py-3 text-sm font-semibold text-clinical-blue hover:bg-clinical-blue hover:text-primary-foreground"
                 >
-                  <Mail className="size-4" />
-                  {t("derivantes.forms.request")}
+                  <FileDown className="size-4" />
+                  {t("derivantes.forms.download")}
                 </a>
               </div>
             </article>
