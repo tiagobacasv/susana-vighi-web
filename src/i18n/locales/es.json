@@ -807,6 +807,24 @@
               "institucion": "Hospital Garrahan"
             }
           ]
+        },
+        {
+          "rol": "Médico Anatomopatólogo",
+          "formacion": [
+            {
+              "titulo": "Médico Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
+            }
+          ]
+        },
+        {
+          "rol": "Médica Anatomopatóloga",
+          "formacion": [
+            {
+              "titulo": "Médica Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123450"
+            }
+          ]
         }
       ],
       "citotecnicos": [
@@ -841,6 +859,9 @@
         },
         {
           "rol": "Supervisor de Procesos"
+        },
+        {
+          "rol": "Gerente Administrativo"
         }
       ],
       "coordinadores": [

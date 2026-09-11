@@ -77,6 +77,8 @@ const cuerpoMedicoBase: MemberBase[] = [
   { nombre: "Dra. Tania Rodriguez", foto: neTania },
   { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
   { nombre: "Dra. Andrea Flores Herbas", foto: neAndreaFH },
+  { nombre: "Dr. Daniel Greco" },
+  { nombre: "Dra. Pilar Carballo" },
 ];
 
 const citotecnicosBase: MemberBase[] = [
@@ -87,6 +89,7 @@ const citotecnicosBase: MemberBase[] = [
 const responsablesBase: MemberBase[] = [
   { nombre: "Antonella Pandolfi", foto: neAntonella },
   { nombre: "Javier Pecollo", foto: neJavier },
+  { nombre: "Nicolás Santillán" },
 ];
 
 const coordinadoresBase: MemberBase[] = [

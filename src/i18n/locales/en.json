@@ -807,6 +807,24 @@
               "institucion": "Hospital Garrahan"
             }
           ]
+        },
+        {
+          "rol": "Anatomic Pathologist",
+          "formacion": [
+            {
+              "titulo": "Physician Specialized in Anatomic Pathology",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
+            }
+          ]
+        },
+        {
+          "rol": "Anatomic Pathologist",
+          "formacion": [
+            {
+              "titulo": "Physician Specialized in Anatomic Pathology",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123450"
+            }
+          ]
         }
       ],
       "citotecnicos": [
@@ -841,6 +859,9 @@
         },
         {
           "rol": "Process Supervisor"
+        },
+        {
+          "rol": "Administrative Manager"
         }
       ],
       "coordinadores": [
