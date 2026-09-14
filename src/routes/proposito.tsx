@@ -88,7 +88,7 @@ function PropositoPage() {
         </div>
       </section>
 
-      {/* Valores (movidos debajo del quote) */}
+      {/* Valores */}
       <section className="border-t border-border py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 max-w-3xl">
