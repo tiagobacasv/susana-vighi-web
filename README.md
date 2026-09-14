@@ -9,7 +9,6 @@ Esta guía es para cualquiera que agarre el proyecto de cero. Es la única fuent
 - **TanStack Start** (SSR) + **TanStack Router** (file-based routing) + **React 19**
 - **Tailwind CSS v4** + **shadcn/ui** (`src/components/ui/`)
 - **i18next** / **react-i18next** para ES/EN
-- Scaffold inicial generado con [lovable.dev](https://lovable.dev) (de ahí `@lovable.dev/vite-tanstack-config`, `.lovable/`, `src/lib/lovable-error-reporting.ts`)
 - Deploy: **Cloudflare Workers** vía `wrangler.json` (`dist/server` + `dist/client`)
 
 ## Comandos
@@ -21,9 +20,11 @@ npm run lint      # ESLint
 npm run format    # Prettier (escribe in-place)
 ```
 
-**Usamos `npm`, no `bun`.** El proyecto tiene un `bun.lock` de cuando se scaffoldeó con lovable.dev, pero en la práctica `bun install` rompe dependencias nativas (esbuild/rolldown) en este entorno — quedó `npm` como estándar de trabajo real. `CLAUDE.md` todavía dice `bun dev`/`bun build`; si lo tocás, actualizalo a `npm`.
+**Usamos `npm`, no `bun`.** Queda un `bun.lock` del scaffold inicial, pero en la práctica `bun install` rompe dependencias nativas (esbuild/rolldown) en este entorno — quedó `npm` como estándar de trabajo real.
 
 No hay test suite configurado.
+
+**Sobre el deploy:** `npm run build` genera `dist/server/` + `dist/client/` (vía Nitro, preset `cloudflare-module`, configurado en `vite.config.ts`). Nitro escribe su propio `dist/server/wrangler.json` con el `main`/`assets` correctos para ese build — es ese archivo (no el `wrangler.json` de la raíz) el que manda al desplegar, por ejemplo con `npx nitro deploy --prebuilt` desde `dist/server/`. El `wrangler.json` de la raíz sirve como config base (nombre, `compatibility_date`) pero Nitro pisa `main`/`assets` a propósito — vas a ver un par de `WARN` al respecto en el build, son esperables.
 
 ## Mapa del proyecto
 

@@ -11,7 +11,7 @@ npm run lint     # ESLint
 npm run format   # Prettier (writes in place)
 ```
 
-Use `npm`, not `bun`. The repo has a leftover `bun.lock` from the initial lovable.dev scaffold, but `bun install` breaks native deps (esbuild/rolldown) in this environment — `npm` is the working standard.
+Use `npm`, not `bun`. The repo has a leftover `bun.lock` from the initial scaffold, but `bun install` breaks native deps (esbuild/rolldown) in this environment — `npm` is the working standard.
 
 No test suite is configured.
 
