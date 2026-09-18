@@ -20,6 +20,8 @@ import neAntonella from "@/assets/NuestroEquipo/NE-Antonella_h.png";
 import neJavier from "@/assets/NuestroEquipo/NE-Javier_h.png";
 import neAdriana from "@/assets/NuestroEquipo/NE-Adriana_h.png";
 import neLaura from "@/assets/NuestroEquipo/NE-Laura_h.png";
+import neDanielG from "@/assets/NuestroEquipo/NE-DanielG_h.png";
+import neNicolas from "@/assets/NuestroEquipo/NE-Nicolas_h.png";
 
 import {
   X,
@@ -77,7 +79,7 @@ const cuerpoMedicoBase: MemberBase[] = [
   { nombre: "Dra. Tania Rodriguez", foto: neTania },
   { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
   { nombre: "Dra. Andrea Flores Herbas", foto: neAndreaFH },
-  { nombre: "Dr. Daniel Greco" },
+  { nombre: "Dr. Daniel Greco", foto: neDanielG },
   { nombre: "Dra. Pilar Carballo" },
 ];
 
@@ -89,7 +91,7 @@ const citotecnicosBase: MemberBase[] = [
 const responsablesBase: MemberBase[] = [
   { nombre: "Antonella Pandolfi", foto: neAntonella },
   { nombre: "Javier Pecollo", foto: neJavier },
-  { nombre: "Nicolás Santillán" },
+  { nombre: "Nicolás Santillán", foto: neNicolas },
 ];
 
 const coordinadoresBase: MemberBase[] = [
