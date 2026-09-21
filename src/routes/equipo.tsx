@@ -106,6 +106,35 @@ function mergeMembers(base: MemberBase[], tr: MemberTr[]): Member[] {
 
 // ─── Grid components ──────────────────────────────────────────────────────────
 
+function MemberCardStatic({ m }: { m: Member }) {
+  const initials = m.nombre
+    .split(" ")
+    .filter((w) => w.length > 2)
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join("");
+
+  return (
+    <div className="relative flex h-[295px] flex-col overflow-hidden rounded-xl border border-border bg-background">
+      {/* Foto / placeholder */}
+      <div className="relative flex-1 overflow-hidden">
+        {m.foto ? (
+          <img src={m.foto} alt={m.nombre} className="h-full w-full object-contain object-center" />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-clinical-blue/8 to-clinical-accent/12">
+            <span className="select-none text-5xl font-black tracking-tight text-clinical-blue/20">{initials}</span>
+          </div>
+        )}
+      </div>
+      {/* Nombre y rol */}
+      <div className="border-t border-border px-5 py-4">
+        <h3 className="text-sm font-bold leading-tight tracking-tight">{m.nombre}</h3>
+        <p className="mt-1 text-[11px] font-semibold uppercase tracking-wider text-clinical-accent">{m.rol}</p>
+      </div>
+    </div>
+  );
+}
+
 function MemberCard({ m }: { m: Member }) {
   const { t } = useTranslation();
   const [flipped, setFlipped] = useState(false);
@@ -185,7 +214,7 @@ function MemberCard({ m }: { m: Member }) {
   );
 }
 
-function GridSection({ label, members }: { label: string; members: Member[] }) {
+function GridSection({ label, members, flippable = true }: { label: string; members: Member[]; flippable?: boolean }) {
   return (
     <section>
       <div className="mb-8 flex items-center gap-4">
@@ -196,9 +225,9 @@ function GridSection({ label, members }: { label: string; members: Member[] }) {
         </span>
       </div>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((m) => (
-          <MemberCard key={m.nombre} m={m} />
-        ))}
+        {members.map((m) =>
+          flippable ? <MemberCard key={m.nombre} m={m} /> : <MemberCardStatic key={m.nombre} m={m} />
+        )}
       </div>
     </section>
   );
@@ -225,8 +254,8 @@ function GridView() {
         <GridSection label={groups.especialistas} members={especialistas} />
         <GridSection label={groups.cuerpoMedico} members={cuerpoMedico} />
         <GridSection label={groups.citotecnicos} members={citotecnicos} />
-        <GridSection label={groups.responsables} members={responsables} />
-        <GridSection label={groups.coordinadores} members={coordinadores} />
+        <GridSection label={groups.responsables} members={responsables} flippable={false} />
+        <GridSection label={groups.coordinadores} members={coordinadores} flippable={false} />
       </div>
     </div>
   );
