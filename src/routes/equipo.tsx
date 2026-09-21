@@ -252,7 +252,7 @@ const NDBase: Record<string, NodeBase> = {
   ti: { id: "ti", Icon: Lightbulb },
   dm: { id: "dm", name: "Dra. Andrea Paparatto", Icon: Stethoscope, primary: true },
   sp: { id: "sp", name: "Javier Pecollo", Icon: Settings },
-  ga: { id: "ga", Icon: Building2 },
+  ga: { id: "ga", name: "Nicolás Santillán", Icon: Building2 },
   gc: { id: "gc", name: "Nicolás Santillán", Icon: TrendingUp },
   sm: { id: "sm", name: "Costoya / Ferrando", Icon: User },
   rc: { id: "rc", Icon: Microscope },
