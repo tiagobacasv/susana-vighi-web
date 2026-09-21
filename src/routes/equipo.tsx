@@ -21,6 +21,7 @@ import neJavier from "@/assets/NuestroEquipo/NE-Javier_h.png";
 import neAdriana from "@/assets/NuestroEquipo/NE-Adriana_h.png";
 import neLaura from "@/assets/NuestroEquipo/NE-Laura_h.png";
 import neDanielG from "@/assets/NuestroEquipo/NE-DanielG_h.png";
+import nePilar from "@/assets/NuestroEquipo/NE-Pilar_h.png";
 import neNicolas from "@/assets/NuestroEquipo/NE-Nicolas_h.png";
 
 import {
@@ -80,7 +81,7 @@ const cuerpoMedicoBase: MemberBase[] = [
   { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
   { nombre: "Dra. Andrea Flores Herbas", foto: neAndreaFH },
   { nombre: "Dr. Daniel Greco", foto: neDanielG },
-  { nombre: "Dra. Pilar Carballo" },
+  { nombre: "Dra. Pilar Carballo", foto: nePilar },
 ];
 
 const citotecnicosBase: MemberBase[] = [
@@ -90,8 +91,8 @@ const citotecnicosBase: MemberBase[] = [
 
 const responsablesBase: MemberBase[] = [
   { nombre: "Antonella Pandolfi", foto: neAntonella },
-  { nombre: "Javier Pecollo", foto: neJavier },
   { nombre: "Nicolás Santillán", foto: neNicolas },
+  { nombre: "Javier Pecollo", foto: neJavier },
 ];
 
 const coordinadoresBase: MemberBase[] = [
