@@ -78,8 +78,8 @@ const especialistasBase: MemberBase[] = [
 
 const cuerpoMedicoBase: MemberBase[] = [
   { nombre: "Dra. Tania Rodriguez", foto: neTania },
-  { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
   { nombre: "Dra. Andrea Flores Herbas", foto: neAndreaFH },
+  { nombre: "Dr. Daniel Vila Melgarejo", foto: neDaniel },
   { nombre: "Dr. Daniel Greco", foto: neDanielG },
   { nombre: "Dra. Pilar Carballo", foto: nePilar },
 ];

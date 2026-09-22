@@ -771,27 +771,6 @@
           "formacion": [
             {
               "titulo": "Physician Specialized in Anatomic Pathology",
-              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165"
-            },
-            {
-              "titulo": "Postgraduate Diploma in Forensic Pathology",
-              "institucion": "UCA"
-            },
-            {
-              "titulo": "Former Resident",
-              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
-            },
-            {
-              "titulo": "Fellow in Pathology",
-              "institucion": "Hospital Británico"
-            }
-          ]
-        },
-        {
-          "rol": "Anatomic Pathologist",
-          "formacion": [
-            {
-              "titulo": "Physician Specialized in Anatomic Pathology",
               "institucion": "Min. de Salud de la Nación — Certif. SAP · MN1631960"
             },
             {
@@ -813,6 +792,27 @@
           "formacion": [
             {
               "titulo": "Physician Specialized in Anatomic Pathology",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165"
+            },
+            {
+              "titulo": "Postgraduate Diploma in Forensic Pathology",
+              "institucion": "UCA"
+            },
+            {
+              "titulo": "Former Resident",
+              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
+            },
+            {
+              "titulo": "Fellow in Pathology",
+              "institucion": "Hospital Británico"
+            }
+          ]
+        },
+        {
+          "rol": "Anatomic Pathologist",
+          "formacion": [
+            {
+              "titulo": "Physician Specialized in Anatomic Pathology",
               "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
             }
           ]
@@ -823,6 +823,22 @@
             {
               "titulo": "Physician Specialized in Anatomic Pathology",
               "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123450"
+            },
+            {
+              "titulo": "Residency and Chief Residency",
+              "institucion": "Hospital de Clínicas José de San Martín (UBA)"
+            },
+            {
+              "titulo": "Staff Physician",
+              "institucion": "Instituto Oncológico Ángel Roffo (UBA)"
+            },
+            {
+              "titulo": "Director of the Tumor Biobank",
+              "institucion": "Instituto de Oncología Ángel Roffo (UBA)"
+            },
+            {
+              "titulo": "Master's Degree in Molecular Oncology",
+              "institucion": "Centro de Estudios Biosanitarios, Madrid, Spain"
             }
           ]
         }
@@ -858,10 +874,10 @@
           "rol": "Executive Assistant"
         },
         {
-          "rol": "Process Supervisor"
+          "rol": "Administrative & Commercial Manager"
         },
         {
-          "rol": "Administrative & Commercial Manager"
+          "rol": "Process Supervisor"
         }
       ],
       "coordinadores": [

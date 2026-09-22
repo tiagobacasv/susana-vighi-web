@@ -153,7 +153,9 @@ function EspecialidadesPage() {
               key={e.slug}
               id={e.slug}
               className={
-                "scroll-mt-24 py-20 " + (idx % 2 === 1 ? "bg-background" : "")
+                "scroll-mt-24 py-20 " +
+                (idx % 2 === 1 ? "bg-background" : "") +
+                (idx > 0 ? " border-t border-border" : "")
               }
             >
               <div className="mx-auto max-w-7xl px-6">
@@ -334,7 +336,7 @@ function EspecialidadesPage() {
       {/* Servicios complementarios */}
       <section
         id="complementarios"
-        className="scroll-mt-24 border-t border-border bg-secondary/40 py-24"
+        className="scroll-mt-24 border-t border-border bg-secondary/30 py-24"
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-14 max-w-3xl">
@@ -378,23 +380,25 @@ function EspecialidadesPage() {
       </section>
 
       {/* CTA médicos derivantes */}
-      <section className="border-t border-border bg-clinical-blue py-20 text-primary-foreground">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
-            {t("especialidades.cta.eyebrow")}
+      <section className="border-t border-border py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-2xl border border-border bg-secondary p-10 text-center md:p-14">
+            <div className="font-mono text-[11px] uppercase tracking-widest text-clinical-accent">
+              {t("especialidades.cta.eyebrow")}
+            </div>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-clinical-blue md:text-4xl">
+              {t("especialidades.cta.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-clinical-slate">
+              {t("especialidades.cta.description")}
+            </p>
+            <Link
+              to="/derivantes"
+              className="mt-8 inline-block rounded-lg bg-clinical-blue px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90"
+            >
+              {t("especialidades.cta.button")}
+            </Link>
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-            {t("especialidades.cta.title")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-white/75">
-            {t("especialidades.cta.description")}
-          </p>
-          <Link
-            to="/derivantes"
-            className="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-clinical-blue hover:bg-clinical-accent hover:text-white"
-          >
-            {t("especialidades.cta.button")}
-          </Link>
         </div>
       </section>
       <BackToTop label={t("especialidades.backToTop")} />

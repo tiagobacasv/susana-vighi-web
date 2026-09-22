@@ -767,27 +767,6 @@
           ]
         },
         {
-          "rol": "Médico Anatomopatólogo",
-          "formacion": [
-            {
-              "titulo": "Médico Especialista en Anatomía Patológica",
-              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165"
-            },
-            {
-              "titulo": "Diplomatura en Patología Forense",
-              "institucion": "UCA"
-            },
-            {
-              "titulo": "Ex Residente",
-              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
-            },
-            {
-              "titulo": "Fellow en Patología",
-              "institucion": "Hospital Británico"
-            }
-          ]
-        },
-        {
           "rol": "Médica Anatomopatóloga",
           "formacion": [
             {
@@ -813,6 +792,27 @@
           "formacion": [
             {
               "titulo": "Médico Especialista en Anatomía Patológica",
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN159165"
+            },
+            {
+              "titulo": "Diplomatura en Patología Forense",
+              "institucion": "UCA"
+            },
+            {
+              "titulo": "Ex Residente",
+              "institucion": "Hospital HIGA San Martín — Universidad Mayor de San Simón"
+            },
+            {
+              "titulo": "Fellow en Patología",
+              "institucion": "Hospital Británico"
+            }
+          ]
+        },
+        {
+          "rol": "Médico Anatomopatólogo",
+          "formacion": [
+            {
+              "titulo": "Médico Especialista en Anatomía Patológica",
               "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
             }
           ]
@@ -823,6 +823,22 @@
             {
               "titulo": "Médica Especialista en Anatomía Patológica",
               "institucion": "Min. de Salud de la Nación — Certif. SAP · MN123450"
+            },
+            {
+              "titulo": "Residencia y Jefatura de Residencia",
+              "institucion": "Hospital de Clínicas José de San Martín (UBA)"
+            },
+            {
+              "titulo": "Médica de Planta",
+              "institucion": "Instituto Oncológico Ángel Roffo (UBA)"
+            },
+            {
+              "titulo": "Directora del Biobanco de Tumores",
+              "institucion": "Instituto de Oncología Ángel Roffo (UBA)"
+            },
+            {
+              "titulo": "Máster en Oncología Molecular",
+              "institucion": "Centro de Estudios Biosanitarios, Madrid, España"
             }
           ]
         }
@@ -858,10 +874,10 @@
           "rol": "Asistente de Dirección"
         },
         {
-          "rol": "Supervisor de Procesos"
+          "rol": "Gerente Administrativo y Comercial"
         },
         {
-          "rol": "Gerente Administrativo y Comercial"
+          "rol": "Supervisor de Procesos"
         }
       ],
       "coordinadores": [
