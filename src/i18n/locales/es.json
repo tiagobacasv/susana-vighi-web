@@ -813,7 +813,35 @@
           "formacion": [
             {
               "titulo": "Médico Especialista en Anatomía Patológica",
-              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
+              "institucion": "UBA — Carrera de Médico Especialista · MN171254"
+            },
+            {
+              "titulo": "Ex Jefe de Residentes de Anatomía Patológica",
+              "institucion": "Hospital de Clínicas José de San Martín — UBA (2023–2024)"
+            },
+            {
+              "titulo": "Médico Patólogo — Diag. Molecular y Biomarcadores",
+              "institucion": "Argenetics S.A. (2025–actualidad)"
+            },
+            {
+              "titulo": "Médico Patólogo — Biopsias Intraoperatorias",
+              "institucion": "Sanatorio Mater Dei (2023–2026)"
+            },
+            {
+              "titulo": "Ex Médico de Staff de Anatomía Patológica",
+              "institucion": "Hospital César Milstein (PAMI) · 2025–2026"
+            },
+            {
+              "titulo": "Becario de Investigación en Salud Pública",
+              "institucion": "GCBA — Hospital Durand (2023–2024)"
+            },
+            {
+              "titulo": "Miembro Titular",
+              "institucion": "SAP — Academia Internacional de Patología"
+            },
+            {
+              "titulo": "Miembro de la Digital Pathology Association",
+              "institucion": "Carmel, Indiana — EE. UU."
             }
           ]
         },
