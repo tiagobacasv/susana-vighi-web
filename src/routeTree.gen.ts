@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SumateAVighiRouteImport } from './routes/sumate-a-vighi'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaGestionRouteImport } from './routes/sistema-gestion'
 import { Route as PropositoRouteImport } from './routes/proposito'
@@ -22,6 +23,11 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as CoberturasRouteImport } from './routes/coberturas'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SumateAVighiRoute = SumateAVighiRouteImport.update({
+  id: '/sumate-a-vighi',
+  path: '/sumate-a-vighi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sumate-a-vighi': typeof SumateAVighiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sumate-a-vighi': typeof SumateAVighiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/proposito': typeof PropositoRoute
   '/sistema-gestion': typeof SistemaGestionRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sumate-a-vighi': typeof SumateAVighiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/proposito'
     | '/sistema-gestion'
     | '/sitemap.xml'
+    | '/sumate-a-vighi'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
     | '/proposito'
     | '/sistema-gestion'
     | '/sitemap.xml'
+    | '/sumate-a-vighi'
   id:
     | '__root__'
     | '/'
@@ -169,6 +180,7 @@ export interface FileRouteTypes {
     | '/proposito'
     | '/sistema-gestion'
     | '/sitemap.xml'
+    | '/sumate-a-vighi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,10 +196,18 @@ export interface RootRouteChildren {
   PropositoRoute: typeof PropositoRoute
   SistemaGestionRoute: typeof SistemaGestionRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SumateAVighiRoute: typeof SumateAVighiRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sumate-a-vighi': {
+      id: '/sumate-a-vighi'
+      path: '/sumate-a-vighi'
+      fullPath: '/sumate-a-vighi'
+      preLoaderRoute: typeof SumateAVighiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -288,6 +308,7 @@ const rootRouteChildren: RootRouteChildren = {
   PropositoRoute: PropositoRoute,
   SistemaGestionRoute: SistemaGestionRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SumateAVighiRoute: SumateAVighiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

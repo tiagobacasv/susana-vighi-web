@@ -129,6 +129,10 @@ function Index() {
                   height={1280}
                   className="size-full object-cover"
                 />
+                {/* Barrido tipo escáner de portaobjetos digital */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-16 bg-gradient-to-b from-transparent via-clinical-accent/40 to-transparent motion-safe:block motion-safe:animate-scan-sweep">
+                  <div className="absolute inset-x-0 top-1/2 h-px bg-clinical-accent/80" />
+                </div>
               </div>
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-background p-6 shadow-xl">
                 <div className="text-3xl font-bold text-clinical-blue">24–72hs</div>

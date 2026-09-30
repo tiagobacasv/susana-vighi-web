@@ -285,7 +285,7 @@ story.append(tiempos_t)
 story.append(Spacer(1, 10))
 story.append(Paragraph(
     "More complex studies (molecular biology, special techniques) may require "
-    "additional time. Intraoperative (frozen section) biopsies are reported during the surgical procedure.",
+    "additional time.",
     styles["BodySlate"],
 ))
 

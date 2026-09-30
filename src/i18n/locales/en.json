@@ -65,6 +65,12 @@
       "description": "Academic activity, publications, conference participation, and technical updates from the Dr. Susana Vighi Pathology Center.",
       "ogTitle": "News and Publications — CAP Vighi",
       "ogDescription": "Academic case highlights, publications, and conference participation from the CAP Vighi team."
+    },
+    "sumate": {
+      "title": "Join CAP Vighi",
+      "description": "Work with us: the profiles we're looking for, our values, benefits, and how to apply to the Dr. Susana Vighi Anatomic Pathology Center.",
+      "ogTitle": "Join CAP Vighi",
+      "ogDescription": "We're looking for physicians, technicians, and administrative professionals to join our team."
     }
   },
   "nav": {
@@ -93,6 +99,7 @@
     "location": "Buenos Aires, Argentina",
     "hours": "Mon to Fri · 08:00 — 20:00",
     "rights": "CAP Vighi",
+    "joinUs": "Join our team",
     "pressKit": {
       "label": "Press kit",
       "manual": "Brand manual",
@@ -813,31 +820,19 @@
           "formacion": [
             {
               "titulo": "Physician Specialized in Anatomic Pathology",
-              "institucion": "UBA — Carrera de Médico Especialista · MN171254"
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
             },
             {
-              "titulo": "Former Chief Resident in Anatomic Pathology",
+              "titulo": "Former Resident and Chief Resident",
               "institucion": "Hospital de Clínicas José de San Martín — UBA (2023–2024)"
-            },
-            {
-              "titulo": "Pathologist — Mol. Diagnostics and Biomarkers",
-              "institucion": "Argenetics S.A. (2025–actualidad)"
-            },
-            {
-              "titulo": "Pathologist — Intraoperative Biopsies",
-              "institucion": "Sanatorio Mater Dei (2023–2026)"
-            },
-            {
-              "titulo": "Former Staff Physician in Anatomic Pathology",
-              "institucion": "Hospital César Milstein (PAMI) · 2025–2026"
             },
             {
               "titulo": "Public Health Research Fellow",
               "institucion": "GCBA — Hospital Durand (2023–2024)"
             },
             {
-              "titulo": "Titular Member",
-              "institucion": "SAP — Academia Internacional de Patología"
+              "titulo": "Molecular Diagnostics and Biomarkers",
+              "institucion": "Argenetics S.A. (2025–actualidad)"
             },
             {
               "titulo": "Member of the Digital Pathology Association",
@@ -1287,8 +1282,7 @@
       "stages": [
         "Reception",
         "Processing",
-        "Reading",
-        "Validation",
+        "Report",
         "Delivery"
       ]
     },
@@ -1421,6 +1415,101 @@
           "text": "Renal carcinomas with uncommon morphological findings."
         }
       ]
+    }
+  },
+  "sumate": {
+    "hero": {
+      "eyebrow": "Work with us",
+      "title": "Join the CAP Vighi team.",
+      "description": "We're looking for professionals who combine medical rigor, a service mindset, and a drive to innovate in anatomic pathology."
+    },
+    "filosofia": {
+      "eyebrow": "Our philosophy",
+      "title": "Diagnostic quality starts with people.",
+      "texto": "We've integrated digital pathology and artificial intelligence into our processes, but diagnostic precision ultimately depends on the team behind it. That's why we invest in continuous training, leading-edge technology, and a workplace that rewards rigor and collaboration."
+    },
+    "pulse": {
+      "quote": "Reducing diagnostic turnaround times can save lives."
+    },
+    "valores": {
+      "eyebrow": "What defines us",
+      "title": "Five values that guide our everyday work.",
+      "items": [
+        {
+          "titulo": "Medical excellence",
+          "texto": "We uphold the highest diagnostic quality standards in every report, with internal controls and peer review."
+        },
+        {
+          "titulo": "Constant innovation",
+          "texto": "We adopt digital pathology, artificial intelligence, and new techniques as soon as they're validated for clinical practice."
+        },
+        {
+          "titulo": "Teamwork",
+          "texto": "No diagnosis is the work of one person alone — physicians, technicians, and administration work as a single mechanism."
+        },
+        {
+          "titulo": "Ethics and responsibility",
+          "texto": "Every sample represents a real patient — we act with the seriousness and confidentiality that requires."
+        },
+        {
+          "titulo": "Professional development",
+          "texto": "We support resident training and the growth of mid-level managers within the organization."
+        }
+      ]
+    },
+    "perfiles": {
+      "eyebrow": "Who we're looking for",
+      "title": "Profiles we're currently recruiting.",
+      "items": [
+        {
+          "titulo": "Physicians specialized in Anatomic Pathology",
+          "texto": "To join our medical staff or one of our diagnostic subspecialties."
+        },
+        {
+          "titulo": "Laboratory technicians",
+          "texto": "Histotechnology, cytotechnology, and immunohistochemistry."
+        },
+        {
+          "titulo": "Healthcare administrative staff",
+          "texto": "Referring-physician coordination, patient care, and quality management."
+        },
+        {
+          "titulo": "Residents and professionals in training",
+          "texto": "Training opportunities for those taking their first steps in the specialty."
+        }
+      ]
+    },
+    "beneficios": {
+      "eyebrow": "What we offer",
+      "title": "Benefits of joining the team.",
+      "items": [
+        {
+          "titulo": "Collaborative environment",
+          "texto": "A team that discusses cases and shares criteria, not isolated silos."
+        },
+        {
+          "titulo": "Leading-edge technology",
+          "texto": "Digital pathology, immunohistochemistry, and molecular biology built into the daily workflow."
+        },
+        {
+          "titulo": "Growth opportunities",
+          "texto": "Real career paths toward mid-level management and roles of greater responsibility."
+        },
+        {
+          "titulo": "Stability",
+          "texto": "Over three decades of track record and sustained growth in the specialty."
+        },
+        {
+          "titulo": "Continuous training",
+          "texto": "A team that keeps learning and shares knowledge in-house, every day."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Interested in joining?",
+      "title": "Send us your CV.",
+      "description": "Tell us what area you specialize in and how you'd like to contribute to the team.",
+      "button": "Send CV to cv@susanavighi.com.ar"
     }
   }
 }

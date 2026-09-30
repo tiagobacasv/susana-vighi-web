@@ -65,6 +65,12 @@
       "description": "Actividad académica, publicaciones, participaciones en congresos y novedades técnicas del Centro de Anatomía Patológica Dra. Susana Vighi.",
       "ogTitle": "Novedades y publicaciones — CAP Vighi",
       "ogDescription": "Casos de interés académico, publicaciones y participaciones en congresos del equipo CAP Vighi."
+    },
+    "sumate": {
+      "title": "Sumate a Vighi — CAP Vighi",
+      "description": "Trabajá con nosotros: perfiles que buscamos, valores, beneficios y cómo postularte al Centro de Anatomía Patológica Dra. Susana Vighi.",
+      "ogTitle": "Sumate a Vighi — CAP Vighi",
+      "ogDescription": "Buscamos médicos, técnicos y profesionales administrativos para sumarse a nuestro equipo."
     }
   },
   "nav": {
@@ -93,6 +99,7 @@
     "location": "Ciudad de Buenos Aires, Argentina",
     "hours": "Lun a Vie · 08:00 — 20:00",
     "rights": "CAP Vighi",
+    "joinUs": "Sumate al equipo",
     "pressKit": {
       "label": "Kit de prensa",
       "manual": "Manual de marca",
@@ -813,31 +820,19 @@
           "formacion": [
             {
               "titulo": "Médico Especialista en Anatomía Patológica",
-              "institucion": "UBA — Carrera de Médico Especialista · MN171254"
+              "institucion": "Min. de Salud de la Nación — Certif. SAP · MN171254"
             },
             {
-              "titulo": "Ex Jefe de Residentes de Anatomía Patológica",
+              "titulo": "Ex Residente y Jefe de Residentes",
               "institucion": "Hospital de Clínicas José de San Martín — UBA (2023–2024)"
-            },
-            {
-              "titulo": "Médico Patólogo — Diag. Molecular y Biomarcadores",
-              "institucion": "Argenetics S.A. (2025–actualidad)"
-            },
-            {
-              "titulo": "Médico Patólogo — Biopsias Intraoperatorias",
-              "institucion": "Sanatorio Mater Dei (2023–2026)"
-            },
-            {
-              "titulo": "Ex Médico de Staff de Anatomía Patológica",
-              "institucion": "Hospital César Milstein (PAMI) · 2025–2026"
             },
             {
               "titulo": "Becario de Investigación en Salud Pública",
               "institucion": "GCBA — Hospital Durand (2023–2024)"
             },
             {
-              "titulo": "Miembro Titular",
-              "institucion": "SAP — Academia Internacional de Patología"
+              "titulo": "Diagnóstico Molecular y Biomarcadores",
+              "institucion": "Argenetics S.A. (2025–actualidad)"
             },
             {
               "titulo": "Miembro de la Digital Pathology Association",
@@ -1287,8 +1282,7 @@
       "stages": [
         "Recepción",
         "Procesamiento",
-        "Lectura",
-        "Validación",
+        "Informe",
         "Entrega"
       ]
     },
@@ -1421,6 +1415,101 @@
           "text": "Carcinomas renales con hallazgos morfológicos infrecuentes."
         }
       ]
+    }
+  },
+  "sumate": {
+    "hero": {
+      "eyebrow": "Trabajá con nosotros",
+      "title": "Sumate al equipo CAP Vighi.",
+      "description": "Buscamos profesionales que combinen rigor médico, vocación de servicio y ganas de innovar en anatomía patológica."
+    },
+    "filosofia": {
+      "eyebrow": "Nuestra filosofía",
+      "title": "La calidad diagnóstica empieza por las personas.",
+      "texto": "Integramos patología digital e inteligencia artificial a nuestros procesos, pero la precisión del diagnóstico depende, ante todo, del equipo que lo sostiene. Por eso invertimos en formación continua, en tecnología de punta y en un ambiente de trabajo que premia el rigor y la colaboración."
+    },
+    "pulse": {
+      "quote": "Reducir tiempos de diagnóstico puede salvar vidas."
+    },
+    "valores": {
+      "eyebrow": "Lo que nos define",
+      "title": "Cinco valores que guían nuestro trabajo diario.",
+      "items": [
+        {
+          "titulo": "Excelencia médica",
+          "texto": "Sostenemos los más altos estándares de calidad diagnóstica en cada informe, con controles internos y revisión por pares."
+        },
+        {
+          "titulo": "Innovación constante",
+          "texto": "Incorporamos patología digital, inteligencia artificial y nuevas técnicas apenas están validadas para la práctica clínica."
+        },
+        {
+          "titulo": "Trabajo en equipo",
+          "texto": "Ningún diagnóstico es obra de una sola persona: médicos, técnicos y administración funcionan como un mismo engranaje."
+        },
+        {
+          "titulo": "Ética y responsabilidad",
+          "texto": "Cada muestra representa a un paciente real — actuamos con la seriedad y confidencialidad que eso exige."
+        },
+        {
+          "titulo": "Desarrollo profesional",
+          "texto": "Acompañamos la formación de residentes y el crecimiento de mandos medios dentro de la organización."
+        }
+      ]
+    },
+    "perfiles": {
+      "eyebrow": "A quién buscamos",
+      "title": "Perfiles que estamos incorporando.",
+      "items": [
+        {
+          "titulo": "Médicos especialistas en Anatomía Patológica",
+          "texto": "Para sumarse al cuerpo médico o a alguna de nuestras subespecialidades diagnósticas."
+        },
+        {
+          "titulo": "Técnicos de laboratorio",
+          "texto": "Histotecnología, citotecnología e inmunohistoquímica."
+        },
+        {
+          "titulo": "Personal administrativo sanitario",
+          "texto": "Coordinación de derivantes, atención a pacientes y gestión de calidad."
+        },
+        {
+          "titulo": "Residentes y profesionales en formación",
+          "texto": "Espacios de formación para quienes están dando sus primeros pasos en la especialidad."
+        }
+      ]
+    },
+    "beneficios": {
+      "eyebrow": "Qué ofrecemos",
+      "title": "Beneficios de formar parte del equipo.",
+      "items": [
+        {
+          "titulo": "Entorno colaborativo",
+          "texto": "Un equipo que discute casos y comparte criterios, no compartimentos aislados."
+        },
+        {
+          "titulo": "Tecnología de punta",
+          "texto": "Patología digital, inmunohistoquímica y biología molecular integradas al flujo diario."
+        },
+        {
+          "titulo": "Oportunidades de crecimiento",
+          "texto": "Caminos reales de desarrollo hacia mandos medios y roles de mayor responsabilidad."
+        },
+        {
+          "titulo": "Estabilidad",
+          "texto": "Más de tres décadas de trayectoria y crecimiento sostenido en la especialidad."
+        },
+        {
+          "titulo": "Formación continua",
+          "texto": "Un equipo que se actualiza permanentemente y comparte conocimiento puertas adentro."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "¿Te interesa sumarte?",
+      "title": "Mandanos tu CV.",
+      "description": "Contanos en qué área te especializás y en qué te gustaría aportar al equipo.",
+      "button": "Enviar CV a cv@susanavighi.com.ar"
     }
   }
 }

@@ -239,6 +239,11 @@ function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/sumate-a-vighi" className="hover:text-primary-foreground">
+                {t("footer.joinUs")}
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

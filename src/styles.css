@@ -42,6 +42,44 @@
   --color-clinical-surface: var(--clinical-surface);
 }
 
+/* Definidas en @theme (no como CSS suelto) para que Tailwind genere la utilidad
+   y funcionen variantes como motion-safe:animate-*. */
+@theme {
+  --animate-marquee-left: marquee-left 45s linear infinite;
+  --animate-marquee-right: marquee-right 55s linear infinite;
+  --animate-float-slow: float-slow 7s ease-in-out infinite;
+  --animate-drift-slow: drift-slow 12s ease-in-out infinite;
+  --animate-scan-sweep: scan-sweep 4.5s ease-in-out infinite;
+
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(3deg); }
+  }
+
+  @keyframes drift-slow {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(18px, -22px) rotate(6deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+  @keyframes scan-sweep {
+    0% { top: -6%; opacity: 0; }
+    8% { opacity: 1; }
+    92% { opacity: 1; }
+    100% { top: 104%; opacity: 0; }
+  }
+}
+
 :root {
   --radius: 0.75rem;
 
@@ -74,32 +112,6 @@
 }
 
 @layer utilities {
-  @keyframes marquee-left {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes marquee-right {
-    from {
-      transform: translateX(-50%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-
-  .animate-marquee-left {
-    animation: marquee-left 45s linear infinite;
-  }
-
-  .animate-marquee-right {
-    animation: marquee-right 55s linear infinite;
-  }
-
   .marquee-row:hover .animate-marquee-left,
   .marquee-row:hover .animate-marquee-right {
     animation-play-state: paused;

@@ -332,7 +332,7 @@ story.append(tiempos_t)
 story.append(Spacer(1, 10))
 story.append(Paragraph(
     "Los estudios de mayor complejidad (biología molecular, técnicas especiales) pueden "
-    "requerir plazos adicionales. La biopsia intraoperatoria (congelación) se informa en el acto quirúrgico.",
+    "requerir plazos adicionales.",
     styles["BodySlate"],
 ))
 
