@@ -20,7 +20,7 @@ npm run lint      # ESLint
 npm run format    # Prettier (escribe in-place)
 ```
 
-**Usamos `npm`, no `bun`.** Queda un `bun.lock` del scaffold inicial, pero en la práctica `bun install` rompe dependencias nativas (esbuild/rolldown) en este entorno — quedó `npm` como estándar de trabajo real.
+**Usamos `npm`, no `bun`.** `bun install` rompe dependencias nativas (esbuild/rolldown) en este entorno, así que el único lockfile es `package-lock.json`. No agregues un `bun.lock`: Cloudflare detecta bun por ese archivo y corre `bun install --frozen-lockfile`, que falla apenas el lockfile queda desactualizado.
 
 No hay test suite configurado.
 

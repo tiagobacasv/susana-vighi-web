@@ -11,7 +11,7 @@ npm run lint     # ESLint
 npm run format   # Prettier (writes in place)
 ```
 
-Use `npm`, not `bun`. The repo has a leftover `bun.lock` from the initial scaffold, but `bun install` breaks native deps (esbuild/rolldown) in this environment — `npm` is the working standard.
+Use `npm`, not `bun`. `bun install` breaks native deps (esbuild/rolldown) in this environment, so `package-lock.json` is the only lockfile. Do not add a `bun.lock` — Cloudflare picks bun from that file and its frozen install fails when the lockfile drifts.
 
 No test suite is configured.
 
