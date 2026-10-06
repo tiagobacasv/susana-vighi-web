@@ -4,9 +4,11 @@ import { seoText } from "@/i18n";
 import { SiteLayout, PageHero } from "@/components/SiteLayout";
 import { Microscope } from "lucide-react";
 import comunicarSaludLogo from "@/assets/comunicar-salud-logo.svg";
+import linkedinLogo from "@/assets/linkedin-logo.svg";
 
 const fuenteLogos: Record<string, string> = {
   "Comunicar Salud": comunicarSaludLogo,
+  LinkedIn: linkedinLogo,
 };
 
 export const Route = createFileRoute("/novedades")({

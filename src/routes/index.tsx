@@ -135,7 +135,9 @@ function Index() {
                 </div>
               </div>
               <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-background p-6 shadow-xl">
-                <div className="text-3xl font-bold text-clinical-blue">24–72hs</div>
+                <div className="text-3xl font-bold text-clinical-blue">
+                  {t("home.hero.turnaroundValue")}
+                </div>
                 <div className="font-mono text-xs uppercase tracking-wider text-clinical-slate">
                   {t("home.hero.turnaroundBadge")}
                 </div>

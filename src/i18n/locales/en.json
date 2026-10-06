@@ -115,7 +115,8 @@
       "ctaSpecialties": "See specialties",
       "ctaContact": "Get in touch",
       "imgAlt": "Digitized histology sample",
-      "turnaroundBadge": "Turnaround time"
+      "turnaroundValue": "3 – 9",
+      "turnaroundBadge": "Business days"
     },
     "turnaround": {
       "eyebrow": "Average turnaround",
@@ -1366,6 +1367,16 @@
       "title": "What we're working on."
     },
     "destacados": [
+      {
+        "fecha": "September 23, 2026",
+        "categoria": "News",
+        "fuente": "LinkedIn",
+        "titulo": "CAP Vighi at Mamapalooza",
+        "quote": "Reducing diagnostic turnaround times can save lives.",
+        "resumen": "Our Medical Director, Dra. Andrea Paparatto, and our Deputy Director, Dra. Marysol Costoya, took part in Mamapalooza 2026 at La Rural, together with CIMA and Asociación Civil Unidas.",
+        "cta": "View the post",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7508550762386337792"
+      },
       {
         "fecha": "July 21, 2026",
         "categoria": "Press",

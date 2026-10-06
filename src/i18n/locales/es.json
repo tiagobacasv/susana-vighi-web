@@ -115,7 +115,8 @@
       "ctaSpecialties": "Ver especialidades",
       "ctaContact": "Consultar",
       "imgAlt": "Muestra histológica digitalizada",
-      "turnaroundBadge": "Tiempo de respuesta"
+      "turnaroundValue": "3 – 9",
+      "turnaroundBadge": "Días hábiles"
     },
     "turnaround": {
       "eyebrow": "Tiempos de entrega promedio",
@@ -1366,6 +1367,16 @@
       "title": "Lo que estamos haciendo."
     },
     "destacados": [
+      {
+        "fecha": "23 de septiembre de 2026",
+        "categoria": "Novedades",
+        "fuente": "LinkedIn",
+        "titulo": "CAP Vighi presente en Mamapalooza",
+        "quote": "Reducir tiempos de diagnóstico puede salvar vidas.",
+        "resumen": "Nuestra Directora Médica, la Dra. Andrea Paparatto, y nuestra Vicedirectora, la Dra. Marysol Costoya, participaron de Mamapalooza 2026 en La Rural, junto a CIMA y Asociación Civil Unidas.",
+        "cta": "Ver la publicación",
+        "url": "https://www.linkedin.com/feed/update/urn:li:activity:7508550762386337792"
+      },
       {
         "fecha": "21 de julio de 2026",
         "categoria": "Prensa",
