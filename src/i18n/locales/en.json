@@ -541,12 +541,12 @@
         "a": "No appointment needed. You can come Monday to Friday from 8:00 to 20:00. For surgical specimens or material with special requirements, we coordinate pickup by phone."
       },
       {
-        "q": "What should I bring on the day of the sample?",
+        "q": "What should I bring when I drop off a sample?",
         "a": "Yes: the original medical order, your ID, and your health insurance credential if applicable. If you have related prior studies, bring them too."
       },
       {
         "q": "How is the result delivered?",
-        "a": "The original report is sent to your referring physician. You can pick up a copy with your ID, request it by email, or check by phone."
+        "a": "The original report is sent to your referring physician. You can pick up a copy in person, or request one by email or by phone."
       },
       {
         "q": "Do you work with my insurer?",
